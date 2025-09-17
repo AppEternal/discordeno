@@ -1,0 +1,1 @@
+{"version":3,"file":"presence.d.ts","sourceRoot":"","sources":["../../src/transformers/presence.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,KAAK,qBAAqB,EAAkB,MAAM,mBAAmB,CAAA;AAC9E,OAAO,KAAK,EAAE,GAAG,EAAE,MAAM,WAAW,CAAA;AACpC,OAAO,KAAK,EAAE,cAAc,EAAQ,MAAM,YAAY,CAAA;AAEtD,wBAAgB,iBAAiB,CAAC,GAAG,EAAE,GAAG,EAAE,OAAO,EAAE,qBAAqB,GAAG,cAAc,CAY1F"}

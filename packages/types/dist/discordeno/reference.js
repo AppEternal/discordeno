@@ -1,0 +1,12 @@
+/** Types for: https://discord.com/developers/docs/reference */ /**
+ * This is not a mapping of any discord documented type, however there is some docs that refer to an object like this:
+ * https://discord.com/developers/docs/reference#uploading-files, the second paragraph
+ *
+ * > All files[n] parameters must include a valid `Content-Disposition` subpart header with a filename and unique name parameter.
+ *
+ * The blob maps to the FormData data sent and the name maps to the FormData file name.
+ *
+ * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/FormData/set}
+ */ export { };
+
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uL3NyYy9kaXNjb3JkZW5vL3JlZmVyZW5jZS50cyJdLCJzb3VyY2VzQ29udGVudCI6WyIvKiogVHlwZXMgZm9yOiBodHRwczovL2Rpc2NvcmQuY29tL2RldmVsb3BlcnMvZG9jcy9yZWZlcmVuY2UgKi9cblxuLyoqXG4gKiBUaGlzIGlzIG5vdCBhIG1hcHBpbmcgb2YgYW55IGRpc2NvcmQgZG9jdW1lbnRlZCB0eXBlLCBob3dldmVyIHRoZXJlIGlzIHNvbWUgZG9jcyB0aGF0IHJlZmVyIHRvIGFuIG9iamVjdCBsaWtlIHRoaXM6XG4gKiBodHRwczovL2Rpc2NvcmQuY29tL2RldmVsb3BlcnMvZG9jcy9yZWZlcmVuY2UjdXBsb2FkaW5nLWZpbGVzLCB0aGUgc2Vjb25kIHBhcmFncmFwaFxuICpcbiAqID4gQWxsIGZpbGVzW25dIHBhcmFtZXRlcnMgbXVzdCBpbmNsdWRlIGEgdmFsaWQgYENvbnRlbnQtRGlzcG9zaXRpb25gIHN1YnBhcnQgaGVhZGVyIHdpdGggYSBmaWxlbmFtZSBhbmQgdW5pcXVlIG5hbWUgcGFyYW1ldGVyLlxuICpcbiAqIFRoZSBibG9iIG1hcHMgdG8gdGhlIEZvcm1EYXRhIGRhdGEgc2VudCBhbmQgdGhlIG5hbWUgbWFwcyB0byB0aGUgRm9ybURhdGEgZmlsZSBuYW1lLlxuICpcbiAqIEBzZWUge0BsaW5rIGh0dHBzOi8vZGV2ZWxvcGVyLm1vemlsbGEub3JnL2VuLVVTL2RvY3MvV2ViL0FQSS9Gb3JtRGF0YS9zZXR9XG4gKi9cbmV4cG9ydCBpbnRlcmZhY2UgRmlsZUNvbnRlbnQge1xuICAvKiogVGhlIGZpbGUgYmxvYiAqL1xuICBibG9iOiBCbG9iXG4gIC8qKiBUaGUgbmFtZSBvZiB0aGUgZmlsZSAqL1xuICBuYW1lOiBzdHJpbmdcbn1cbiJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSw2REFBNkQsR0FFN0Q7Ozs7Ozs7OztDQVNDLEdBQ0QsV0FLQyJ9

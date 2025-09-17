@@ -1,0 +1,20 @@
+const validTokenPrefixes = [
+    'Bot',
+    'Bearer'
+];
+/** Removes the Bot/Bearer before the token. */ export function removeTokenPrefix(token, type = 'REST') {
+    // If no token is provided, throw an error
+    if (token === undefined) {
+        throw new Error(`The ${type} was not given a token. Please provide a token and try again.`);
+    }
+    const splittedToken = token.split(' ');
+    // If the token does not have a prefix just return token
+    if (splittedToken.length < 2 || !validTokenPrefixes.includes(splittedToken[0])) return token;
+    // Remove the prefix and return only the token.
+    return splittedToken.splice(1).join(' ');
+}
+/** Get the bot id from the bot token. WARNING: Discord staff has mentioned this may not be stable forever. Use at your own risk. However, note for over 5 years this has never broken. */ export function getBotIdFromToken(token) {
+    return BigInt(atob(token.split('.')[0]));
+}
+
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL3NyYy90b2tlbi50cyJdLCJzb3VyY2VzQ29udGVudCI6WyJjb25zdCB2YWxpZFRva2VuUHJlZml4ZXMgPSBbJ0JvdCcsICdCZWFyZXInXVxuXG4vKiogUmVtb3ZlcyB0aGUgQm90L0JlYXJlciBiZWZvcmUgdGhlIHRva2VuLiAqL1xuZXhwb3J0IGZ1bmN0aW9uIHJlbW92ZVRva2VuUHJlZml4KHRva2VuPzogc3RyaW5nLCB0eXBlOiAnR0FURVdBWScgfCAnUkVTVCcgPSAnUkVTVCcpOiBzdHJpbmcge1xuICAvLyBJZiBubyB0b2tlbiBpcyBwcm92aWRlZCwgdGhyb3cgYW4gZXJyb3JcbiAgaWYgKHRva2VuID09PSB1bmRlZmluZWQpIHtcbiAgICB0aHJvdyBuZXcgRXJyb3IoYFRoZSAke3R5cGV9IHdhcyBub3QgZ2l2ZW4gYSB0b2tlbi4gUGxlYXNlIHByb3ZpZGUgYSB0b2tlbiBhbmQgdHJ5IGFnYWluLmApXG4gIH1cblxuICBjb25zdCBzcGxpdHRlZFRva2VuID0gdG9rZW4uc3BsaXQoJyAnKVxuXG4gIC8vIElmIHRoZSB0b2tlbiBkb2VzIG5vdCBoYXZlIGEgcHJlZml4IGp1c3QgcmV0dXJuIHRva2VuXG4gIGlmIChzcGxpdHRlZFRva2VuLmxlbmd0aCA8IDIgfHwgIXZhbGlkVG9rZW5QcmVmaXhlcy5pbmNsdWRlcyhzcGxpdHRlZFRva2VuWzBdKSkgcmV0dXJuIHRva2VuXG4gIC8vIFJlbW92ZSB0aGUgcHJlZml4IGFuZCByZXR1cm4gb25seSB0aGUgdG9rZW4uXG4gIHJldHVybiBzcGxpdHRlZFRva2VuLnNwbGljZSgxKS5qb2luKCcgJylcbn1cblxuLyoqIEdldCB0aGUgYm90IGlkIGZyb20gdGhlIGJvdCB0b2tlbi4gV0FSTklORzogRGlzY29yZCBzdGFmZiBoYXMgbWVudGlvbmVkIHRoaXMgbWF5IG5vdCBiZSBzdGFibGUgZm9yZXZlci4gVXNlIGF0IHlvdXIgb3duIHJpc2suIEhvd2V2ZXIsIG5vdGUgZm9yIG92ZXIgNSB5ZWFycyB0aGlzIGhhcyBuZXZlciBicm9rZW4uICovXG5leHBvcnQgZnVuY3Rpb24gZ2V0Qm90SWRGcm9tVG9rZW4odG9rZW46IHN0cmluZyk6IGJpZ2ludCB7XG4gIHJldHVybiBCaWdJbnQoYXRvYih0b2tlbi5zcGxpdCgnLicpWzBdKSlcbn1cbiJdLCJuYW1lcyI6WyJ2YWxpZFRva2VuUHJlZml4ZXMiLCJyZW1vdmVUb2tlblByZWZpeCIsInRva2VuIiwidHlwZSIsInVuZGVmaW5lZCIsIkVycm9yIiwic3BsaXR0ZWRUb2tlbiIsInNwbGl0IiwibGVuZ3RoIiwiaW5jbHVkZXMiLCJzcGxpY2UiLCJqb2luIiwiZ2V0Qm90SWRGcm9tVG9rZW4iLCJCaWdJbnQiLCJhdG9iIl0sIm1hcHBpbmdzIjoiQUFBQSxNQUFNQSxxQkFBcUI7SUFBQztJQUFPO0NBQVM7QUFFNUMsNkNBQTZDLEdBQzdDLE9BQU8sU0FBU0Msa0JBQWtCQyxLQUFjLEVBQUVDLE9BQTJCLE1BQU07SUFDakYsMENBQTBDO0lBQzFDLElBQUlELFVBQVVFLFdBQVc7UUFDdkIsTUFBTSxJQUFJQyxNQUFNLENBQUMsSUFBSSxFQUFFRixLQUFLLDZEQUE2RCxDQUFDO0lBQzVGO0lBRUEsTUFBTUcsZ0JBQWdCSixNQUFNSyxLQUFLLENBQUM7SUFFbEMsd0RBQXdEO0lBQ3hELElBQUlELGNBQWNFLE1BQU0sR0FBRyxLQUFLLENBQUNSLG1CQUFtQlMsUUFBUSxDQUFDSCxhQUFhLENBQUMsRUFBRSxHQUFHLE9BQU9KO0lBQ3ZGLCtDQUErQztJQUMvQyxPQUFPSSxjQUFjSSxNQUFNLENBQUMsR0FBR0MsSUFBSSxDQUFDO0FBQ3RDO0FBRUEsd0xBQXdMLEdBQ3hMLE9BQU8sU0FBU0Msa0JBQWtCVixLQUFhO0lBQzdDLE9BQU9XLE9BQU9DLEtBQUtaLE1BQU1LLEtBQUssQ0FBQyxJQUFJLENBQUMsRUFBRTtBQUN4QyJ9

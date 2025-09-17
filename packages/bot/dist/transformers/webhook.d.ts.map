@@ -1,0 +1,1 @@
+{"version":3,"file":"webhook.d.ts","sourceRoot":"","sources":["../../src/transformers/webhook.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,cAAc,EAAE,MAAM,mBAAmB,CAAA;AAEvD,OAAO,KAAK,EAAE,GAAG,EAAE,MAAM,WAAW,CAAA;AAIpC,wBAAgB,gBAAgB,CAAC,GAAG,EAAE,GAAG,EAAE,OAAO,EAAE,cAAc,GAAG,OAAO,GAAG,CAAC,YAAY,CAAC,cAAc,CAAC,OAAO,CA2BlH"}

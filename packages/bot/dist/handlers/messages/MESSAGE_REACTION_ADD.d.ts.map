@@ -1,0 +1,1 @@
+{"version":3,"file":"MESSAGE_REACTION_ADD.d.ts","sourceRoot":"","sources":["../../../src/handlers/messages/MESSAGE_REACTION_ADD.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,qBAAqB,EAA6B,MAAM,mBAAmB,CAAA;AACzF,OAAO,KAAK,EAAE,GAAG,EAAE,MAAM,cAAc,CAAA;AAEvC,wBAAsB,wBAAwB,CAAC,GAAG,EAAE,GAAG,EAAE,IAAI,EAAE,qBAAqB,GAAG,OAAO,CAAC,IAAI,CAAC,CAoBnG"}
