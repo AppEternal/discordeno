@@ -1,72 +1,69 @@
-import { iconHashToBigInt } from '@discordeno/utils'
-import { Permissions } from './toggles/Permissions.js'
-import { RoleToggles } from './toggles/role.js'
+import { iconHashToBigInt } from '@discordeno/utils';
+import { Permissions } from './toggles/Permissions.js';
+import { RoleToggles } from './toggles/role.js';
 export const baseRole = {
-  // This allows typescript to still check for type errors on functions below
-  ...undefined,
-  get tags() {
-    return {
-      botId: this.internalTags?.botId,
-      integrationId: this.internalTags?.integrationId,
-      subscriptionListingId: this.internalTags?.subscriptionListingId,
-      availableForPurchase: this.toggles?.availableForPurchase,
-      guildConnections: this.toggles?.guildConnections,
-      premiumSubscriber: this.toggles?.premiumSubscriber,
+    // This allows typescript to still check for type errors on functions below
+    ...undefined,
+    get tags () {
+        return {
+            botId: this.internalTags?.botId,
+            integrationId: this.internalTags?.integrationId,
+            subscriptionListingId: this.internalTags?.subscriptionListingId,
+            availableForPurchase: this.toggles?.availableForPurchase,
+            guildConnections: this.toggles?.guildConnections,
+            premiumSubscriber: this.toggles?.premiumSubscriber
+        };
+    },
+    /** If this role is showed separately in the user listing */ get hoist () {
+        return !!this.toggles?.has('hoist');
+    },
+    /** Whether this role is managed by an integration */ get managed () {
+        return !!this.toggles?.has('managed');
+    },
+    /** Whether this role is mentionable */ get mentionable () {
+        return !!this.toggles?.has('mentionable');
+    },
+    /** Whether this is the guilds premium subscriber role */ get premiumSubscriber () {
+        return !!this.toggles?.has('premiumSubscriber');
+    },
+    /** Whether this role is available for purchase. */ get availableForPurchase () {
+        return !!this.toggles?.has('availableForPurchase');
+    },
+    /** Whether this is a guild's linked role. */ get guildConnections () {
+        return !!this.toggles?.has('guildConnections');
     }
-  },
-  /** If this role is showed separately in the user listing */ get hoist() {
-    return !!this.toggles?.has('hoist')
-  },
-  /** Whether this role is managed by an integration */ get managed() {
-    return !!this.toggles?.has('managed')
-  },
-  /** Whether this role is mentionable */ get mentionable() {
-    return !!this.toggles?.has('mentionable')
-  },
-  /** Whether this is the guilds premium subscriber role */ get premiumSubscriber() {
-    return !!this.toggles?.has('premiumSubscriber')
-  },
-  /** Whether this role is available for purchase. */ get availableForPurchase() {
-    return !!this.toggles?.has('availableForPurchase')
-  },
-  /** Whether this is a guild's linked role. */ get guildConnections() {
-    return !!this.toggles?.has('guildConnections')
-  },
-}
+};
 export function transformRole(bot, payload, extra) {
-  const role = Object.create(baseRole)
-  const props = bot.transformers.desiredProperties.role
-  if (props.id && payload.id) role.id = bot.transformers.snowflake(payload.id)
-  // Role name can be an empty string
-  if (props.name && payload.name !== undefined) role.name = payload.name
-  if (props.position) role.position = payload.position
-  if (props.guildId && extra?.guildId) role.guildId = bot.transformers.snowflake(extra?.guildId)
-  if (props.color && payload.color !== undefined) role.color = payload.color
-  if (props.permissions && payload.permissions) role.permissions = new Permissions(payload.permissions)
-  if (props.icon && payload.icon) role.icon = iconHashToBigInt(payload.icon)
-  if (props.unicodeEmoji && payload.unicode_emoji) role.unicodeEmoji = payload.unicode_emoji
-  if (props.flags) role.flags = payload.flags
-  if (props.tags && payload.tags) {
-    role.internalTags = {}
-    if (payload.tags.bot_id) role.internalTags.botId = bot.transformers.snowflake(payload.tags.bot_id)
-    if (payload.tags.integration_id) role.internalTags.integrationId = bot.transformers.snowflake(payload.tags.integration_id)
-    if (payload.tags.subscription_listing_id)
-      role.internalTags.subscriptionListingId = bot.transformers.snowflake(payload.tags.subscription_listing_id)
-  }
-  if (props.toggles) role.toggles = new RoleToggles(payload)
-  return bot.transformers.customizers.role(bot, payload, role, {
-    guildId: extra?.guildId ? bot.transformers.snowflake(extra.guildId) : undefined,
-  })
+    const role = Object.create(baseRole);
+    const props = bot.transformers.desiredProperties.role;
+    if (props.id && payload.id) role.id = bot.transformers.snowflake(payload.id);
+    // Role name can be an empty string
+    if (props.name && payload.name !== undefined) role.name = payload.name;
+    if (props.position) role.position = payload.position;
+    if (props.guildId && extra?.guildId) role.guildId = bot.transformers.snowflake(extra?.guildId);
+    if (props.color && payload.color !== undefined) role.color = payload.color;
+    if (props.permissions && payload.permissions) role.permissions = new Permissions(payload.permissions);
+    if (props.icon && payload.icon) role.icon = iconHashToBigInt(payload.icon);
+    if (props.unicodeEmoji && payload.unicode_emoji) role.unicodeEmoji = payload.unicode_emoji;
+    if (props.flags) role.flags = payload.flags;
+    if (props.tags && payload.tags) {
+        role.internalTags = {};
+        if (payload.tags.bot_id) role.internalTags.botId = bot.transformers.snowflake(payload.tags.bot_id);
+        if (payload.tags.integration_id) role.internalTags.integrationId = bot.transformers.snowflake(payload.tags.integration_id);
+        if (payload.tags.subscription_listing_id) role.internalTags.subscriptionListingId = bot.transformers.snowflake(payload.tags.subscription_listing_id);
+    }
+    if (props.toggles) role.toggles = new RoleToggles(payload);
+    return bot.transformers.customizers.role(bot, payload, role, {
+        guildId: extra?.guildId ? bot.transformers.snowflake(extra.guildId) : undefined
+    });
 }
 export function transformRoleColors(bot, payload) {
-  const roleColors = {}
-  const props = bot.transformers.desiredProperties.roleColors
-  if (props.primaryColor && payload.primary_color !== undefined) roleColors.primaryColor = payload.primary_color
-  if (props.secondaryColor && payload.secondary_color !== undefined && payload.secondary_color !== null)
-    roleColors.secondaryColor = payload.secondary_color
-  if (props.tertiaryColor && payload.tertiary_color !== undefined && payload.tertiary_color !== null)
-    roleColors.tertiaryColor = payload.tertiary_color
-  return bot.transformers.customizers.roleColors(bot, payload, roleColors)
+    const roleColors = {};
+    const props = bot.transformers.desiredProperties.roleColors;
+    if (props.primaryColor && payload.primary_color !== undefined) roleColors.primaryColor = payload.primary_color;
+    if (props.secondaryColor && payload.secondary_color !== undefined && payload.secondary_color !== null) roleColors.secondaryColor = payload.secondary_color;
+    if (props.tertiaryColor && payload.tertiary_color !== undefined && payload.tertiary_color !== null) roleColors.tertiaryColor = payload.tertiary_color;
+    return bot.transformers.customizers.roleColors(bot, payload, roleColors);
 }
 
 //# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uL3NyYy90cmFuc2Zvcm1lcnMvcm9sZS50cyJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgdHlwZSB7IEJpZ1N0cmluZywgRGlzY29yZFJvbGUsIERpc2NvcmRSb2xlQ29sb3JzIH0gZnJvbSAnQGRpc2NvcmRlbm8vdHlwZXMnXG5pbXBvcnQgeyBpY29uSGFzaFRvQmlnSW50IH0gZnJvbSAnQGRpc2NvcmRlbm8vdXRpbHMnXG5pbXBvcnQgdHlwZSB7IEJvdCB9IGZyb20gJy4uL2JvdC5qcydcbmltcG9ydCB0eXBlIHsgRGVzaXJlZFByb3BlcnRpZXNCZWhhdmlvciwgU2V0dXBEZXNpcmVkUHJvcHMsIFRyYW5zZm9ybWVyc0Rlc2lyZWRQcm9wZXJ0aWVzIH0gZnJvbSAnLi4vZGVzaXJlZFByb3BlcnRpZXMuanMnXG5pbXBvcnQgeyBQZXJtaXNzaW9ucyB9IGZyb20gJy4vdG9nZ2xlcy9QZXJtaXNzaW9ucy5qcydcbmltcG9ydCB7IFJvbGVUb2dnbGVzIH0gZnJvbSAnLi90b2dnbGVzL3JvbGUuanMnXG5pbXBvcnQgdHlwZSB7IFJvbGUsIFJvbGVDb2xvcnMgfSBmcm9tICcuL3R5cGVzLmpzJ1xuXG5leHBvcnQgY29uc3QgYmFzZVJvbGU6IFJvbGUgPSB7XG4gIC8vIFRoaXMgYWxsb3dzIHR5cGVzY3JpcHQgdG8gc3RpbGwgY2hlY2sgZm9yIHR5cGUgZXJyb3JzIG9uIGZ1bmN0aW9ucyBiZWxvd1xuICAuLi4odW5kZWZpbmVkIGFzIHVua25vd24gYXMgUm9sZSksXG5cbiAgZ2V0IHRhZ3MoKSB7XG4gICAgcmV0dXJuIHtcbiAgICAgIGJvdElkOiB0aGlzLmludGVybmFsVGFncz8uYm90SWQsXG4gICAgICBpbnRlZ3JhdGlvbklkOiB0aGlzLmludGVybmFsVGFncz8uaW50ZWdyYXRpb25JZCxcbiAgICAgIHN1YnNjcmlwdGlvbkxpc3RpbmdJZDogdGhpcy5pbnRlcm5hbFRhZ3M/LnN1YnNjcmlwdGlvbkxpc3RpbmdJZCxcbiAgICAgIGF2YWlsYWJsZUZvclB1cmNoYXNlOiB0aGlzLnRvZ2dsZXM/LmF2YWlsYWJsZUZvclB1cmNoYXNlLFxuICAgICAgZ3VpbGRDb25uZWN0aW9uczogdGhpcy50b2dnbGVzPy5ndWlsZENvbm5lY3Rpb25zLFxuICAgICAgcHJlbWl1bVN1YnNjcmliZXI6IHRoaXMudG9nZ2xlcz8ucHJlbWl1bVN1YnNjcmliZXIsXG4gICAgfVxuICB9LFxuICAvKiogSWYgdGhpcyByb2xlIGlzIHNob3dlZCBzZXBhcmF0ZWx5IGluIHRoZSB1c2VyIGxpc3RpbmcgKi9cbiAgZ2V0IGhvaXN0KCkge1xuICAgIHJldHVybiAhIXRoaXMudG9nZ2xlcz8uaGFzKCdob2lzdCcpXG4gIH0sXG4gIC8qKiBXaGV0aGVyIHRoaXMgcm9sZSBpcyBtYW5hZ2VkIGJ5IGFuIGludGVncmF0aW9uICovXG4gIGdldCBtYW5hZ2VkKCkge1xuICAgIHJldHVybiAhIXRoaXMudG9nZ2xlcz8uaGFzKCdtYW5hZ2VkJylcbiAgfSxcbiAgLyoqIFdoZXRoZXIgdGhpcyByb2xlIGlzIG1lbnRpb25hYmxlICovXG4gIGdldCBtZW50aW9uYWJsZSgpIHtcbiAgICByZXR1cm4gISF0aGlzLnRvZ2dsZXM/LmhhcygnbWVudGlvbmFibGUnKVxuICB9LFxuICAvKiogV2hldGhlciB0aGlzIGlzIHRoZSBndWlsZHMgcHJlbWl1bSBzdWJzY3JpYmVyIHJvbGUgKi9cbiAgZ2V0IHByZW1pdW1TdWJzY3JpYmVyKCkge1xuICAgIHJldHVybiAhIXRoaXMudG9nZ2xlcz8uaGFzKCdwcmVtaXVtU3Vic2NyaWJlcicpXG4gIH0sXG4gIC8qKiBXaGV0aGVyIHRoaXMgcm9sZSBpcyBhdmFpbGFibGUgZm9yIHB1cmNoYXNlLiAqL1xuICBnZXQgYXZhaWxhYmxlRm9yUHVyY2hhc2UoKSB7XG4gICAgcmV0dXJuICEhdGhpcy50b2dnbGVzPy5oYXMoJ2F2YWlsYWJsZUZvclB1cmNoYXNlJylcbiAgfSxcbiAgLyoqIFdoZXRoZXIgdGhpcyBpcyBhIGd1aWxkJ3MgbGlua2VkIHJvbGUuICovXG4gIGdldCBndWlsZENvbm5lY3Rpb25zKCkge1xuICAgIHJldHVybiAhIXRoaXMudG9nZ2xlcz8uaGFzKCdndWlsZENvbm5lY3Rpb25zJylcbiAgfSxcbn1cblxuZXhwb3J0IGZ1bmN0aW9uIHRyYW5zZm9ybVJvbGUoYm90OiBCb3QsIHBheWxvYWQ6IERpc2NvcmRSb2xlLCBleHRyYT86IHsgZ3VpbGRJZD86IEJpZ1N0cmluZyB9KTogUm9sZSB7XG4gIGNvbnN0IHJvbGU6IFNldHVwRGVzaXJlZFByb3BzPFJvbGUsIFRyYW5zZm9ybWVyc0Rlc2lyZWRQcm9wZXJ0aWVzLCBEZXNpcmVkUHJvcGVydGllc0JlaGF2aW9yPiA9IE9iamVjdC5jcmVhdGUoYmFzZVJvbGUpXG4gIGNvbnN0IHByb3BzID0gYm90LnRyYW5zZm9ybWVycy5kZXNpcmVkUHJvcGVydGllcy5yb2xlXG4gIGlmIChwcm9wcy5pZCAmJiBwYXlsb2FkLmlkKSByb2xlLmlkID0gYm90LnRyYW5zZm9ybWVycy5zbm93Zmxha2UocGF5bG9hZC5pZClcbiAgLy8gUm9sZSBuYW1lIGNhbiBiZSBhbiBlbXB0eSBzdHJpbmdcbiAgaWYgKHByb3BzLm5hbWUgJiYgcGF5bG9hZC5uYW1lICE9PSB1bmRlZmluZWQpIHJvbGUubmFtZSA9IHBheWxvYWQubmFtZVxuICBpZiAocHJvcHMucG9zaXRpb24pIHJvbGUucG9zaXRpb24gPSBwYXlsb2FkLnBvc2l0aW9uXG4gIGlmIChwcm9wcy5ndWlsZElkICYmIGV4dHJhPy5ndWlsZElkKSByb2xlLmd1aWxkSWQgPSBib3QudHJhbnNmb3JtZXJzLnNub3dmbGFrZShleHRyYT8uZ3VpbGRJZClcbiAgaWYgKHByb3BzLmNvbG9yICYmIHBheWxvYWQuY29sb3IgIT09IHVuZGVmaW5lZCkgcm9sZS5jb2xvciA9IHBheWxvYWQuY29sb3JcbiAgaWYgKHByb3BzLnBlcm1pc3Npb25zICYmIHBheWxvYWQucGVybWlzc2lvbnMpIHJvbGUucGVybWlzc2lvbnMgPSBuZXcgUGVybWlzc2lvbnMocGF5bG9hZC5wZXJtaXNzaW9ucylcbiAgaWYgKHByb3BzLmljb24gJiYgcGF5bG9hZC5pY29uKSByb2xlLmljb24gPSBpY29uSGFzaFRvQmlnSW50KHBheWxvYWQuaWNvbilcbiAgaWYgKHByb3BzLnVuaWNvZGVFbW9qaSAmJiBwYXlsb2FkLnVuaWNvZGVfZW1vamkpIHJvbGUudW5pY29kZUVtb2ppID0gcGF5bG9hZC51bmljb2RlX2Vtb2ppXG4gIGlmIChwcm9wcy5mbGFncykgcm9sZS5mbGFncyA9IHBheWxvYWQuZmxhZ3NcbiAgaWYgKHByb3BzLnRhZ3MgJiYgcGF5bG9hZC50YWdzKSB7XG4gICAgcm9sZS5pbnRlcm5hbFRhZ3MgPSB7fVxuICAgIGlmIChwYXlsb2FkLnRhZ3MuYm90X2lkKSByb2xlLmludGVybmFsVGFncy5ib3RJZCA9IGJvdC50cmFuc2Zvcm1lcnMuc25vd2ZsYWtlKHBheWxvYWQudGFncy5ib3RfaWQpXG4gICAgaWYgKHBheWxvYWQudGFncy5pbnRlZ3JhdGlvbl9pZCkgcm9sZS5pbnRlcm5hbFRhZ3MuaW50ZWdyYXRpb25JZCA9IGJvdC50cmFuc2Zvcm1lcnMuc25vd2ZsYWtlKHBheWxvYWQudGFncy5pbnRlZ3JhdGlvbl9pZClcbiAgICBpZiAocGF5bG9hZC50YWdzLnN1YnNjcmlwdGlvbl9saXN0aW5nX2lkKVxuICAgICAgcm9sZS5pbnRlcm5hbFRhZ3Muc3Vic2NyaXB0aW9uTGlzdGluZ0lkID0gYm90LnRyYW5zZm9ybWVycy5zbm93Zmxha2UocGF5bG9hZC50YWdzLnN1YnNjcmlwdGlvbl9saXN0aW5nX2lkKVxuICB9XG4gIGlmIChwcm9wcy50b2dnbGVzKSByb2xlLnRvZ2dsZXMgPSBuZXcgUm9sZVRvZ2dsZXMocGF5bG9hZClcblxuICByZXR1cm4gYm90LnRyYW5zZm9ybWVycy5jdXN0b21pemVycy5yb2xlKGJvdCwgcGF5bG9hZCwgcm9sZSwge1xuICAgIGd1aWxkSWQ6IGV4dHJhPy5ndWlsZElkID8gYm90LnRyYW5zZm9ybWVycy5zbm93Zmxha2UoZXh0cmEuZ3VpbGRJZCkgOiB1bmRlZmluZWQsXG4gIH0pXG59XG5cbmV4cG9ydCBmdW5jdGlvbiB0cmFuc2Zvcm1Sb2xlQ29sb3JzKGJvdDogQm90LCBwYXlsb2FkOiBEaXNjb3JkUm9sZUNvbG9ycyk6IFJvbGVDb2xvcnMge1xuICBjb25zdCByb2xlQ29sb3JzID0ge30gYXMgU2V0dXBEZXNpcmVkUHJvcHM8Um9sZUNvbG9ycywgVHJhbnNmb3JtZXJzRGVzaXJlZFByb3BlcnRpZXMsIERlc2lyZWRQcm9wZXJ0aWVzQmVoYXZpb3I+XG4gIGNvbnN0IHByb3BzID0gYm90LnRyYW5zZm9ybWVycy5kZXNpcmVkUHJvcGVydGllcy5yb2xlQ29sb3JzXG5cbiAgaWYgKHByb3BzLnByaW1hcnlDb2xvciAmJiBwYXlsb2FkLnByaW1hcnlfY29sb3IgIT09IHVuZGVmaW5lZCkgcm9sZUNvbG9ycy5wcmltYXJ5Q29sb3IgPSBwYXlsb2FkLnByaW1hcnlfY29sb3JcbiAgaWYgKHByb3BzLnNlY29uZGFyeUNvbG9yICYmIHBheWxvYWQuc2Vjb25kYXJ5X2NvbG9yICE9PSB1bmRlZmluZWQgJiYgcGF5bG9hZC5zZWNvbmRhcnlfY29sb3IgIT09IG51bGwpXG4gICAgcm9sZUNvbG9ycy5zZWNvbmRhcnlDb2xvciA9IHBheWxvYWQuc2Vjb25kYXJ5X2NvbG9yXG4gIGlmIChwcm9wcy50ZXJ0aWFyeUNvbG9yICYmIHBheWxvYWQudGVydGlhcnlfY29sb3IgIT09IHVuZGVmaW5lZCAmJiBwYXlsb2FkLnRlcnRpYXJ5X2NvbG9yICE9PSBudWxsKVxuICAgIHJvbGVDb2xvcnMudGVydGlhcnlDb2xvciA9IHBheWxvYWQudGVydGlhcnlfY29sb3JcblxuICByZXR1cm4gYm90LnRyYW5zZm9ybWVycy5jdXN0b21pemVycy5yb2xlQ29sb3JzKGJvdCwgcGF5bG9hZCwgcm9sZUNvbG9ycylcbn1cbiJdLCJuYW1lcyI6WyJpY29uSGFzaFRvQmlnSW50IiwiUGVybWlzc2lvbnMiLCJSb2xlVG9nZ2xlcyIsImJhc2VSb2xlIiwidW5kZWZpbmVkIiwidGFncyIsImJvdElkIiwiaW50ZXJuYWxUYWdzIiwiaW50ZWdyYXRpb25JZCIsInN1YnNjcmlwdGlvbkxpc3RpbmdJZCIsImF2YWlsYWJsZUZvclB1cmNoYXNlIiwidG9nZ2xlcyIsImd1aWxkQ29ubmVjdGlvbnMiLCJwcmVtaXVtU3Vic2NyaWJlciIsImhvaXN0IiwiaGFzIiwibWFuYWdlZCIsIm1lbnRpb25hYmxlIiwidHJhbnNmb3JtUm9sZSIsImJvdCIsInBheWxvYWQiLCJleHRyYSIsInJvbGUiLCJPYmplY3QiLCJjcmVhdGUiLCJwcm9wcyIsInRyYW5zZm9ybWVycyIsImRlc2lyZWRQcm9wZXJ0aWVzIiwiaWQiLCJzbm93Zmxha2UiLCJuYW1lIiwicG9zaXRpb24iLCJndWlsZElkIiwiY29sb3IiLCJwZXJtaXNzaW9ucyIsImljb24iLCJ1bmljb2RlRW1vamkiLCJ1bmljb2RlX2Vtb2ppIiwiZmxhZ3MiLCJib3RfaWQiLCJpbnRlZ3JhdGlvbl9pZCIsInN1YnNjcmlwdGlvbl9saXN0aW5nX2lkIiwiY3VzdG9taXplcnMiLCJ0cmFuc2Zvcm1Sb2xlQ29sb3JzIiwicm9sZUNvbG9ycyIsInByaW1hcnlDb2xvciIsInByaW1hcnlfY29sb3IiLCJzZWNvbmRhcnlDb2xvciIsInNlY29uZGFyeV9jb2xvciIsInRlcnRpYXJ5Q29sb3IiLCJ0ZXJ0aWFyeV9jb2xvciJdLCJtYXBwaW5ncyI6IkFBQ0EsU0FBU0EsZ0JBQWdCLFFBQVEsb0JBQW1CO0FBR3BELFNBQVNDLFdBQVcsUUFBUSwyQkFBMEI7QUFDdEQsU0FBU0MsV0FBVyxRQUFRLG9CQUFtQjtBQUcvQyxPQUFPLE1BQU1DLFdBQWlCO0lBQzVCLDJFQUEyRTtJQUMzRSxHQUFJQyxTQUFTO0lBRWIsSUFBSUMsUUFBTztRQUNULE9BQU87WUFDTEMsT0FBTyxJQUFJLENBQUNDLFlBQVksRUFBRUQ7WUFDMUJFLGVBQWUsSUFBSSxDQUFDRCxZQUFZLEVBQUVDO1lBQ2xDQyx1QkFBdUIsSUFBSSxDQUFDRixZQUFZLEVBQUVFO1lBQzFDQyxzQkFBc0IsSUFBSSxDQUFDQyxPQUFPLEVBQUVE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

@@ -1,32 +1,25 @@
-/** Types for: https://discord.com/developers/docs/topics/teams */ /* https://discord.com/developers/docs/topics/teams#team-member-roles-team-member-role-types */ export var DiscordTeamMemberRole =
-  /*#__PURE__*/ (function (DiscordTeamMemberRole) {
+/** Types for: https://discord.com/developers/docs/topics/teams */ /* https://discord.com/developers/docs/topics/teams#team-member-roles-team-member-role-types */ export var DiscordTeamMemberRole = /*#__PURE__*/ function(DiscordTeamMemberRole) {
     /**
-     * Owners are the most permissiable role, and can take destructive, irreversible actions like deleting the team itself.
-     *
-     * Teams are limited to 1 owner.
-     *
-     * @remarks
-     * The owner role is not represented in the role field on the team member object. Instead, the owner_user_id field on the team object should be used to identify which user has the owner role for the team.
-     */ DiscordTeamMemberRole['Owner'] = ''
-    /** Admins have similar access as owners, except they cannot take destructive actions on the team or team-owned apps. */ DiscordTeamMemberRole[
-      'Admin'
-    ] = 'admin'
+   * Owners are the most permissiable role, and can take destructive, irreversible actions like deleting the team itself.
+   *
+   * Teams are limited to 1 owner.
+   *
+   * @remarks
+   * The owner role is not represented in the role field on the team member object. Instead, the owner_user_id field on the team object should be used to identify which user has the owner role for the team.
+   */ DiscordTeamMemberRole["Owner"] = "";
+    /** Admins have similar access as owners, except they cannot take destructive actions on the team or team-owned apps. */ DiscordTeamMemberRole["Admin"] = "admin";
     /**
-     * Developers can access information about team-owned apps, like the client secret or public key.
-     * They can also take limited actions on team-owned apps, like configuring interaction endpoints or resetting the bot token.
-     * Members with the Developer role *cannot* manage the team or its members, or take destructive actions on team-owned apps.
-     */ DiscordTeamMemberRole['Developer'] = 'developer'
-    /** Read-only members can access information about a team and any team-owned apps. Some examples include getting the IDs of applications and exporting payout records. */ DiscordTeamMemberRole[
-      'ReadOnly'
-    ] = 'read_only'
-    return DiscordTeamMemberRole
-  })({})
-/** https://discord.com/developers/docs/topics/teams#data-models-membership-state-enum */ export var TeamMembershipStates = /*#__PURE__*/ (function (
-  TeamMembershipStates,
-) {
-  TeamMembershipStates[(TeamMembershipStates['Invited'] = 1)] = 'Invited'
-  TeamMembershipStates[(TeamMembershipStates['Accepted'] = 2)] = 'Accepted'
-  return TeamMembershipStates
-})({})
+   * Developers can access information about team-owned apps, like the client secret or public key.
+   * They can also take limited actions on team-owned apps, like configuring interaction endpoints or resetting the bot token.
+   * Members with the Developer role *cannot* manage the team or its members, or take destructive actions on team-owned apps.
+   */ DiscordTeamMemberRole["Developer"] = "developer";
+    /** Read-only members can access information about a team and any team-owned apps. Some examples include getting the IDs of applications and exporting payout records. */ DiscordTeamMemberRole["ReadOnly"] = "read_only";
+    return DiscordTeamMemberRole;
+}({});
+/** https://discord.com/developers/docs/topics/teams#data-models-membership-state-enum */ export var TeamMembershipStates = /*#__PURE__*/ function(TeamMembershipStates) {
+    TeamMembershipStates[TeamMembershipStates["Invited"] = 1] = "Invited";
+    TeamMembershipStates[TeamMembershipStates["Accepted"] = 2] = "Accepted";
+    return TeamMembershipStates;
+}({});
 
 //# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uL3NyYy9kaXNjb3JkL3RlYW1zLnRzIl0sInNvdXJjZXNDb250ZW50IjpbIi8qKiBUeXBlcyBmb3I6IGh0dHBzOi8vZGlzY29yZC5jb20vZGV2ZWxvcGVycy9kb2NzL3RvcGljcy90ZWFtcyAqL1xuXG5pbXBvcnQgdHlwZSB7IERpc2NvcmRVc2VyIH0gZnJvbSAnLi91c2VyLmpzJ1xuXG4vKiBodHRwczovL2Rpc2NvcmQuY29tL2RldmVsb3BlcnMvZG9jcy90b3BpY3MvdGVhbXMjdGVhbS1tZW1iZXItcm9sZXMtdGVhbS1tZW1iZXItcm9sZS10eXBlcyAqL1xuZXhwb3J0IGVudW0gRGlzY29yZFRlYW1NZW1iZXJSb2xlIHtcbiAgLyoqXG4gICAqIE93bmVycyBhcmUgdGhlIG1vc3QgcGVybWlzc2lhYmxlIHJvbGUsIGFuZCBjYW4gdGFrZSBkZXN0cnVjdGl2ZSwgaXJyZXZlcnNpYmxlIGFjdGlvbnMgbGlrZSBkZWxldGluZyB0aGUgdGVhbSBpdHNlbGYuXG4gICAqXG4gICAqIFRlYW1zIGFyZSBsaW1pdGVkIHRvIDEgb3duZXIuXG4gICAqXG4gICAqIEByZW1hcmtzXG4gICAqIFRoZSBvd25lciByb2xlIGlzIG5vdCByZXByZXNlbnRlZCBpbiB0aGUgcm9sZSBmaWVsZCBvbiB0aGUgdGVhbSBtZW1iZXIgb2JqZWN0LiBJbnN0ZWFkLCB0aGUgb3duZXJfdXNlcl9pZCBmaWVsZCBvbiB0aGUgdGVhbSBvYmplY3Qgc2hvdWxkIGJlIHVzZWQgdG8gaWRlbnRpZnkgd2hpY2ggdXNlciBoYXMgdGhlIG93bmVyIHJvbGUgZm9yIHRoZSB0ZWFtLlxuICAgKi9cbiAgT3duZXIgPSAnJyxcbiAgLyoqIEFkbWlucyBoYXZlIHNpbWlsYXIgYWNjZXNzIGFzIG93bmVycywgZXhjZXB0IHRoZXkgY2Fubm90IHRha2UgZGVzdHJ1Y3RpdmUgYWN0aW9ucyBvbiB0aGUgdGVhbSBvciB0ZWFtLW93bmVkIGFwcHMuICovXG4gIEFkbWluID0gJ2FkbWluJyxcbiAgLyoqXG4gICAqIERldmVsb3BlcnMgY2FuIGFjY2VzcyBpbmZvcm1hdGlvbiBhYm91dCB0ZWFtLW93bmVkIGFwcHMsIGxpa2UgdGhlIGNsaWVudCBzZWNyZXQgb3IgcHVibGljIGtleS5cbiAgICogVGhleSBjYW4gYWxzbyB0YWtlIGxpbWl0ZWQgYWN0aW9ucyBvbiB0ZWFtLW93bmVkIGFwcHMsIGxpa2UgY29uZmlndXJpbmcgaW50ZXJhY3Rpb24gZW5kcG9pbnRzIG9yIHJlc2V0dGluZyB0aGUgYm90IHRva2VuLlxuICAgKiBNZW1iZXJzIHdpdGggdGhlIERldmVsb3BlciByb2xlICpjYW5ub3QqIG1hbmFnZSB0aGUgdGVhbSBvciBpdHMgbWVtYmVycywgb3IgdGFrZSBkZXN0cnVjdGl2ZSBhY3Rpb25zIG9uIHRlYW0tb3duZWQgYXBwcy5cbiAgICovXG4gIERldmVsb3BlciA9ICdkZXZlbG9wZXInLFxuICAvKiogUmVhZC1vbmx5IG1lbWJlcnMgY2FuIGFjY2VzcyBpbmZvcm1hdGlvbiBhYm91dCBhIHRlYW0gYW5kIGFueSB0ZWFtLW93bmVkIGFwcHMuIFNvbWUgZXhhbXBsZXMgaW5jbHVkZSBnZXR0aW5nIHRoZSBJRHMgb2YgYXBwbGljYXRpb25zIGFuZCBleHBvcnRpbmcgcGF5b3V0IHJlY29yZHMuICovXG4gIFJlYWRPbmx5ID0gJ3JlYWRfb25seScsXG59XG5cbi8qKiBodHRwczovL2Rpc2NvcmQuY29tL2RldmVsb3BlcnMvZG9jcy90b3BpY3MvdGVhbXMjZGF0YS1tb2RlbHMtdGVhbS1vYmplY3QgKi9cbmV4cG9ydCBpbnRlcmZhY2UgRGlzY29yZFRlYW0ge1xuICAvKiogSGFzaCBvZiB0aGUgaW1hZ2Ugb2YgdGhlIHRlYW0ncyBpY29uICovXG4gIGljb246IHN0cmluZyB8IG51bGxcbiAgLyoqIFVuaXF1ZSBJRCBvZiB0aGUgdGVhbSAqL1xuICBpZDogc3RyaW5nXG4gIC8qKiBNZW1iZXJzIG9mIHRoZSB0ZWFtICovXG4gIG1lbWJlcnM6IERpc2NvcmRUZWFtTWVtYmVyW11cbiAgLyoqIE5hbWUgb2YgdGhlIHRlYW0gKi9cbiAgbmFtZTogc3RyaW5nXG4gIC8qKiBVc2VyIElEIG9mIHRoZSBjdXJyZW50IHRlYW0gb3duZXIgKi9cbiAgb3duZXJfdXNlcl9pZDogc3RyaW5nXG59XG5cbi8qKiBodHRwczovL2Rpc2NvcmQuY29tL2RldmVsb3BlcnMvZG9jcy90b3BpY3MvdGVhbXMjZGF0YS1tb2RlbHMtdGVhbS1tZW1iZXItb2JqZWN0ICovXG5leHBvcnQgaW50ZXJmYWNlIERpc2NvcmRUZWFtTWVtYmVyIHtcbiAgLyoqIFRoZSB1c2VyJ3MgbWVtYmVyc2hpcCBzdGF0ZSBvbiB0aGUgdGVhbSAqL1xuICBtZW1iZXJzaGlwX3N0YXRlOiBUZWFtTWVtYmVyc2hpcFN0YXRlc1xuICAvKiogVGhlIGlkIG9mIHRoZSBwYXJlbnQgdGVhbSBvZiB3aGljaCB0aGV5IGFyZSBhIG1lbWJlciAqL1xuICB0ZWFtX2lkOiBzdHJpbmdcbiAgLyoqIFRoZSBhdmF0YXIsIGRpc2NyaW1pbmF0b3IsIGlkLCB1c2VybmFtZSwgYW5kIGdsb2JhbF9uYW1lIG9mIHRoZSB1c2VyICovXG4gIHVzZXI6IFBhcnRpYWw8RGlzY29yZFVzZXI+ICYgUGljazxEaXNjb3JkVXNlciwgJ2F2YXRhcicgfCAnZGlzY3JpbWluYXRvcicgfCAnaWQnIHwgJ3VzZXJuYW1lJyB8ICdnbG9iYWxfbmFtZSc+XG4gIC8qKiBSb2xlIG9mIHRoZSB0ZWFtIG1lbWJlciAqL1xuICByb2xlOiBEaXNjb3JkVGVhbU1lbWJlclJvbGVcbn1cblxuLyoqIGh0dHBzOi8vZGlzY29yZC5jb20vZGV2ZWxvcGVycy9kb2NzL3RvcGljcy90ZWFtcyNkYXRhLW1vZGVscy1tZW1iZXJzaGlwLXN0YXRlLWVudW0gKi9cbmV4cG9ydCBlbnVtIFRlYW1NZW1iZXJzaGlwU3RhdGVzIHtcbiAgSW52aXRlZCA9IDEsXG4gIEFjY2VwdGVkLFxufVxuIl0sIm5hbWVzIjpbIkRpc2NvcmRUZWFtTWVtYmVyUm9sZSIsIlRlYW1NZW1iZXJzaGlwU3RhdGVzIl0sIm1hcHBpbmdzIjoiQUFBQSxnRUFBZ0UsR0FJaEUsNkZBQTZGLEdBQzdGLE9BQU8sSUFBQSxBQUFLQSwrQ0FBQUE7SUFDVjs7Ozs7OztHQU9DO0lBRUQsc0hBQXNIO0lBRXRIOzs7O0dBSUM7SUFFRCx1S0FBdUs7V0FsQjdKQTtNQW9CWDtBQTRCRCx1RkFBdUYsR0FDdkYsT0FBTyxJQUFBLEFBQUtDLDhDQUFBQTs7O1dBQUFBO01BR1gifQ==

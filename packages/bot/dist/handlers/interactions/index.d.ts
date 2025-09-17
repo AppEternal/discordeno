@@ -1,3 +1,3 @@
-export * from './APPLICATION_COMMAND_PERMISSIONS_UPDATE.js'
-export * from './INTERACTION_CREATE.js'
+export * from './APPLICATION_COMMAND_PERMISSIONS_UPDATE.js';
+export * from './INTERACTION_CREATE.js';
 //# sourceMappingURL=index.d.ts.map

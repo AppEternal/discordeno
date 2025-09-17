@@ -1,6 +1,5 @@
-import { EmbedsBuilder } from './builders/embeds.js'
-
-export * from './builders/embeds.js'
-export const createEmbeds = () => new EmbedsBuilder()
+import { EmbedsBuilder } from './builders/embeds.js';
+export * from './builders/embeds.js';
+export const createEmbeds = ()=>new EmbedsBuilder();
 
 //# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL3NyYy9idWlsZGVycy50cyJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBFbWJlZHNCdWlsZGVyIH0gZnJvbSAnLi9idWlsZGVycy9lbWJlZHMuanMnXG5cbmV4cG9ydCAqIGZyb20gJy4vYnVpbGRlcnMvZW1iZWRzLmpzJ1xuXG5leHBvcnQgY29uc3QgY3JlYXRlRW1iZWRzID0gKCk6IEVtYmVkc0J1aWxkZXIgPT4gbmV3IEVtYmVkc0J1aWxkZXIoKVxuIl0sIm5hbWVzIjpbIkVtYmVkc0J1aWxkZXIiLCJjcmVhdGVFbWJlZHMiXSwibWFwcGluZ3MiOiJBQUFBLFNBQVNBLGFBQWEsUUFBUSx1QkFBc0I7QUFFcEQsY0FBYyx1QkFBc0I7QUFFcEMsT0FBTyxNQUFNQyxlQUFlLElBQXFCLElBQUlELGdCQUFlIn0=

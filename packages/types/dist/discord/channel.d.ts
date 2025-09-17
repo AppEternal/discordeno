@@ -1,287 +1,288 @@
 /** Types for: https://discord.com/developers/docs/resources/channel */
-import type { DiscordThreadCreateExtra } from './gateway.js'
-import type { DiscordMember } from './guild.js'
-import type { DiscordUser } from './user.js'
+import type { DiscordThreadCreateExtra } from './gateway.js';
+import type { DiscordMember } from './guild.js';
+import type { DiscordUser } from './user.js';
 /** https://discord.com/developers/docs/resources/channel#channel-object-channel-structure */
 export interface DiscordChannel extends Partial<DiscordThreadCreateExtra> {
-  /** The id of the channel */
-  id: string
-  /** The type of channel */
-  type: ChannelTypes
-  /**
-   * The id of the guild
-   *
-   * @remarks
-   * May be missing for some channel object received over gateway guild dispatches
-   */
-  guild_id?: string
-  /**
-   * Sorting position of the channel
-   *
-   * @remarks
-   * Channels with the same position are sorted by id
-   */
-  position?: number
-  /** Explicit permission overwrites for members and roles */
-  permission_overwrites?: DiscordOverwrite[]
-  /** The name of the channel (1-100 characters) */
-  name?: string
-  /**
-   * The channel topic
-   *
-   * @remarks
-   * The limit is max of 4096 characters for GUILD_FORUM channels and a max of 1024 characters for all others channel types
-   */
-  topic?: string | null
-  /** Whether the channel is nsfw */
-  nsfw?: boolean
-  /** The id of the last message sent in this channel (may not point to an existing or valid message or thread) */
-  last_message_id?: string | null
-  /** The bitrate (in bits) of the voice or stage channel */
-  bitrate?: number
-  /** The user limit of the voice or stage channel */
-  user_limit?: number
-  /**
-   * Amount of seconds a user has to wait before sending another message (0-21600)
-   *
-   * @remarks
-   * Bots, as well as users with the permission `manage_messages` or `manage_channel`, are unaffected
-   * `rate_limit_per_user` also applies to thread creation. Users can send one message and create one thread during each `rate_limit_per_user` interval.
-   */
-  rate_limit_per_user?: number
-  /** the recipients of the DM */
-  recipients?: DiscordUser[]
-  /** icon hash of the group DM */
-  icon?: string
-  /** Id of the creator of the group DM or the thread */
-  owner_id?: string
-  /** Application id of the group DM creator if it is bot-created */
-  application_id?: string
-  /** For group DM channels: whether the channel is managed by an application via the `gdm.join` OAuth2 scope. */
-  managed?: boolean
-  /**
-   * Id of the parent channel.
-   *
-   * @remarks
-   * For a guild channel this will reference a category ID, each category can contain up to 50 channels.
-   *
-   * For threads this will reference the text channel the thread was created in.
-   */
-  parent_id?: string | null
-  /**
-   * When the last pinned message was pinned.
-   *
-   * @remarks
-   * This may be null in events such as GUILD_CREATE when a message is not pinned.
-   */
-  last_pin_timestamp?: string | null
-  /** Voice region id for the voice or stage channel, automatic when set to null */
-  rtc_region?: string | null
-  /** The camera video quality mode of the voice channel, 1 when not present */
-  video_quality_mode?: VideoQualityModes
-  /**
+    /** The id of the channel */
+    id: string;
+    /** The type of channel */
+    type: ChannelTypes;
+    /**
+     * The id of the guild
+     *
+     * @remarks
+     * May be missing for some channel object received over gateway guild dispatches
+     */
+    guild_id?: string;
+    /**
+     * Sorting position of the channel
+     *
+     * @remarks
+     * Channels with the same position are sorted by id
+     */
+    position?: number;
+    /** Explicit permission overwrites for members and roles */
+    permission_overwrites?: DiscordOverwrite[];
+    /** The name of the channel (1-100 characters) */
+    name?: string;
+    /**
+     * The channel topic
+     *
+     * @remarks
+     * The limit is max of 4096 characters for GUILD_FORUM channels and a max of 1024 characters for all others channel types
+     */
+    topic?: string | null;
+    /** Whether the channel is nsfw */
+    nsfw?: boolean;
+    /** The id of the last message sent in this channel (may not point to an existing or valid message or thread) */
+    last_message_id?: string | null;
+    /** The bitrate (in bits) of the voice or stage channel */
+    bitrate?: number;
+    /** The user limit of the voice or stage channel */
+    user_limit?: number;
+    /**
+     * Amount of seconds a user has to wait before sending another message (0-21600)
+     *
+     * @remarks
+     * Bots, as well as users with the permission `manage_messages` or `manage_channel`, are unaffected
+     * `rate_limit_per_user` also applies to thread creation. Users can send one message and create one thread during each `rate_limit_per_user` interval.
+     */
+    rate_limit_per_user?: number;
+    /** the recipients of the DM */
+    recipients?: DiscordUser[];
+    /** icon hash of the group DM */
+    icon?: string;
+    /** Id of the creator of the group DM or the thread */
+    owner_id?: string;
+    /** Application id of the group DM creator if it is bot-created */
+    application_id?: string;
+    /** For group DM channels: whether the channel is managed by an application via the `gdm.join` OAuth2 scope. */
+    managed?: boolean;
+    /**
+     * Id of the parent channel.
+     *
+     * @remarks
+     * For a guild channel this will reference a category ID, each category can contain up to 50 channels.
+     *
+     * For threads this will reference the text channel the thread was created in.
+     */
+    parent_id?: string | null;
+    /**
+     * When the last pinned message was pinned.
+     *
+     * @remarks
+     * This may be null in events such as GUILD_CREATE when a message is not pinned.
+     */
+    last_pin_timestamp?: string | null;
+    /** Voice region id for the voice or stage channel, automatic when set to null */
+    rtc_region?: string | null;
+    /** The camera video quality mode of the voice channel, 1 when not present */
+    video_quality_mode?: VideoQualityModes;
+    /**
   
      * An approximate count of messages in a thread, does not include deleted messages or the initial message
      *
      * @remarks
      * For threads created before July 1, 2022, the message count is inaccurate when it's greater than 50.
      */
-  message_count?: number
-  /** An approximate count of users in a thread, stops counting at 50 */
-  member_count?: number
-  /** Thread-specific fields not needed by other channels */
-  thread_metadata?: DiscordThreadMetadata
-  /** Thread member object for the current user, if they have joined the thread, only included on certain API endpoints */
-  member?: DiscordThreadMember
-  /**
-   * Default duration for newly created threads, in minutes, to automatically archive the thread after recent activity.
-   *
-   * @remarks
-   * Can be set to: 60, 1440, 4320, 10080
-   */
-  default_auto_archive_duration?: number
-  /**
-   * Computed permissions for the invoking user in the channel.
-   *
-   * @remarks
-   * The computed permissions include channel overwrites but does not include implicit permissions, those need to be checked separatly.
-   *
-   * Only presented when part of `resolved` data received from a slash command interaction.
-   */
-  permissions?: string
-  /** The flags of the channel */
-  flags?: ChannelFlags
-  /** number of messages ever sent in a thread, it's similar to `message_count` on message creation, but will not decrement the number when a message is deleted */
-  total_message_sent?: number
-  /** The set of tags that can be used in a GUILD_FORUM or GUILD_MEDIA channel */
-  available_tags?: DiscordForumTag[]
-  /** The IDs of the set of tags that have been applied to a thread in a GUILD_FORUM or GUILD_MEDIA channel */
-  applied_tags?: string[]
-  /** the emoji to show in the add reaction button on a thread in a GUILD_FORUM or GUILD_MEDIA channel */
-  default_reaction_emoji?: DiscordDefaultReactionEmoji | null
-  /**
-   * The initial `rate_limit_per_user` to set on newly created threads in a channel.
-   *
-   * @remarks
-   * This field is copied to the thread at creation time and does not live update.
-   */
-  default_thread_rate_limit_per_user?: number
-  /** the default sort order type used to order posts in GUILD_FORUM channels. Defaults to null, which indicates a preferred sort order hasn't been set by a channel admin */
-  default_sort_order?: SortOrderTypes | null
-  /** the default forum layout view used to display posts in `GUILD_FORUM` channels. Defaults to `0`, which indicates a layout view has not been set by a channel admin */
-  default_forum_layout?: ForumLayout
+    message_count?: number;
+    /** An approximate count of users in a thread, stops counting at 50 */
+    member_count?: number;
+    /** Thread-specific fields not needed by other channels */
+    thread_metadata?: DiscordThreadMetadata;
+    /** Thread member object for the current user, if they have joined the thread, only included on certain API endpoints */
+    member?: DiscordThreadMember;
+    /**
+     * Default duration for newly created threads, in minutes, to automatically archive the thread after recent activity.
+     *
+     * @remarks
+     * Can be set to: 60, 1440, 4320, 10080
+     */
+    default_auto_archive_duration?: number;
+    /**
+     * Computed permissions for the invoking user in the channel.
+     *
+     * @remarks
+     * The computed permissions include channel overwrites but does not include implicit permissions, those need to be checked separatly.
+     *
+     * Only presented when part of `resolved` data received from a slash command interaction.
+     */
+    permissions?: string;
+    /** The flags of the channel */
+    flags?: ChannelFlags;
+    /** number of messages ever sent in a thread, it's similar to `message_count` on message creation, but will not decrement the number when a message is deleted */
+    total_message_sent?: number;
+    /** The set of tags that can be used in a GUILD_FORUM or GUILD_MEDIA channel */
+    available_tags?: DiscordForumTag[];
+    /** The IDs of the set of tags that have been applied to a thread in a GUILD_FORUM or GUILD_MEDIA channel */
+    applied_tags?: string[];
+    /** the emoji to show in the add reaction button on a thread in a GUILD_FORUM or GUILD_MEDIA channel */
+    default_reaction_emoji?: DiscordDefaultReactionEmoji | null;
+    /**
+     * The initial `rate_limit_per_user` to set on newly created threads in a channel.
+     *
+     * @remarks
+     * This field is copied to the thread at creation time and does not live update.
+     */
+    default_thread_rate_limit_per_user?: number;
+    /** the default sort order type used to order posts in GUILD_FORUM channels. Defaults to null, which indicates a preferred sort order hasn't been set by a channel admin */
+    default_sort_order?: SortOrderTypes | null;
+    /** the default forum layout view used to display posts in `GUILD_FORUM` channels. Defaults to `0`, which indicates a layout view has not been set by a channel admin */
+    default_forum_layout?: ForumLayout;
 }
 /** https://discord.com/developers/docs/resources/channel#channel-object-channel-types */
 export declare enum ChannelTypes {
-  /** A text channel within a server */
-  GuildText = 0,
-  /** A direct message between users */
-  DM = 1,
-  /** A voice channel within a server */
-  GuildVoice = 2,
-  /** A direct message between multiple users */
-  GroupDm = 3,
-  /** An organizational category that contains up to 50 channels */
-  GuildCategory = 4,
-  /** A channel that users can follow and crosspost into their own server */
-  GuildAnnouncement = 5,
-  /** A temporary sub-channel within a GUILD_ANNOUNCEMENT channel */
-  AnnouncementThread = 10,
-  /** A temporary sub-channel within a GUILD_TEXT or GUILD_FORUM channel */
-  PublicThread = 11,
-  /** A temporary sub-channel within a GUILD_TEXT channel that is only viewable by those invited and those with the MANAGE_THREADS permission */
-  PrivateThread = 12,
-  /** A voice channel for hosting events with an audience */
-  GuildStageVoice = 13,
-  /** A channel in a hub containing the listed servers */
-  GuildDirectory = 14,
-  /** A channel which can only contains threads */
-  GuildForum = 15,
-  /** Channel that can only contain threads, similar to GUILD_FORUM channels */
-  GuildMedia = 16,
+    /** A text channel within a server */
+    GuildText = 0,
+    /** A direct message between users */
+    DM = 1,
+    /** A voice channel within a server */
+    GuildVoice = 2,
+    /** A direct message between multiple users */
+    GroupDm = 3,
+    /** An organizational category that contains up to 50 channels */
+    GuildCategory = 4,
+    /** A channel that users can follow and crosspost into their own server */
+    GuildAnnouncement = 5,
+    /** A temporary sub-channel within a GUILD_ANNOUNCEMENT channel */
+    AnnouncementThread = 10,
+    /** A temporary sub-channel within a GUILD_TEXT or GUILD_FORUM channel */
+    PublicThread = 11,
+    /** A temporary sub-channel within a GUILD_TEXT channel that is only viewable by those invited and those with the MANAGE_THREADS permission */
+    PrivateThread = 12,
+    /** A voice channel for hosting events with an audience */
+    GuildStageVoice = 13,
+    /** A channel in a hub containing the listed servers */
+    GuildDirectory = 14,
+    /** A channel which can only contains threads */
+    GuildForum = 15,
+    /** Channel that can only contain threads, similar to GUILD_FORUM channels */
+    GuildMedia = 16
 }
 /** https://discord.com/developers/docs/resources/channel#channel-object-video-quality-modes */
 export declare enum VideoQualityModes {
-  /** Discord chooses the quality for optimal performance */
-  Auto = 1,
-  /** 720p */
-  Full = 2,
+    /** Discord chooses the quality for optimal performance */
+    Auto = 1,
+    /** 720p */
+    Full = 2
 }
 /** https://discord.com/developers/docs/resources/channel#channel-object-channel-flags */
 export declare enum ChannelFlags {
-  None = 0,
-  /** this thread is pinned to the top of its parent `GUILD_FORUM` channel */
-  Pinned = 2,
-  /** Whether a tag is required to be specified when creating a thread in a `GUILD_FORUM` or a GUILD_MEDIA channel. Tags are specified in the `applied_tags` field. */
-  RequireTag = 16,
-  /** When set hides the embedded media download options. Available only for media channels. */
-  HideMediaDownloadOptions = 32768,
+    None = 0,
+    /** this thread is pinned to the top of its parent `GUILD_FORUM` channel */
+    Pinned = 2,
+    /** Whether a tag is required to be specified when creating a thread in a `GUILD_FORUM` or a GUILD_MEDIA channel. Tags are specified in the `applied_tags` field. */
+    RequireTag = 16,
+    /** When set hides the embedded media download options. Available only for media channels. */
+    HideMediaDownloadOptions = 32768
 }
 /** https://discord.com/developers/docs/resources/channel#channel-object-sort-order-types */
 export declare enum SortOrderTypes {
-  /** Sort forum posts by activity */
-  LatestActivity = 0,
-  /** Sort forum posts by creation time (from most recent to oldest) */
-  CreationDate = 1,
+    /** Sort forum posts by activity */
+    LatestActivity = 0,
+    /** Sort forum posts by creation time (from most recent to oldest) */
+    CreationDate = 1
 }
 /** https://discord.com/developers/docs/resources/channel#channel-object-forum-layout-types */
 export declare enum ForumLayout {
-  /** No default has been set for forum channel. */
-  NotSet = 0,
-  /** Display posts as a list. */
-  ListView = 1,
-  /** Display posts as a collection of tiles. */
-  GalleryView = 2,
+    /** No default has been set for forum channel. */
+    NotSet = 0,
+    /** Display posts as a list. */
+    ListView = 1,
+    /** Display posts as a collection of tiles. */
+    GalleryView = 2
 }
 /** https://discord.com/developers/docs/resources/channel#followed-channel-object-followed-channel-structure */
 export interface DiscordFollowedChannel {
-  /** Source message id */
-  channel_id: string
-  /** Created target webhook id */
-  webhook_id: string
+    /** Source message id */
+    channel_id: string;
+    /** Created target webhook id */
+    webhook_id: string;
 }
 /** https://discord.com/developers/docs/resources/channel#overwrite-object-overwrite-structure */
 export declare enum OverwriteTypes {
-  Role = 0,
-  Member = 1,
+    Role = 0,
+    Member = 1
 }
 /** https://discord.com/developers/docs/resources/channel#overwrite-object-overwrite-structure */
 export interface DiscordOverwrite {
-  /** Either 0 (role) or 1 (member) */
-  type: OverwriteTypes
-  /** Role or user id */
-  id: string
-  /** Permission bit set */
-  allow?: string
-  /** Permission bit set */
-  deny?: string
+    /** Either 0 (role) or 1 (member) */
+    type: OverwriteTypes;
+    /** Role or user id */
+    id: string;
+    /** Permission bit set */
+    allow?: string;
+    /** Permission bit set */
+    deny?: string;
 }
 /** https://discord.com/developers/docs/resources/channel#thread-metadata-object-thread-metadata-structure */
 export interface DiscordThreadMetadata {
-  /** Whether the thread is archived */
-  archived: boolean
-  /** Duration in minutes to automatically archive the thread after recent activity */
-  auto_archive_duration: 60 | 1440 | 4320 | 10080
-  /** Timestamp when the thread's archive status was last changed, used for calculating recent activity */
-  archive_timestamp: string
-  /** When a thread is locked, only users with `MANAGE_THREADS` can unarchive it */
-  locked: boolean
-  /** whether non-moderators can add other non-moderators to a thread; only available on private threads */
-  invitable?: boolean
-  /** Timestamp when the thread was created; only populated for threads created after 2022-01-09 */
-  create_timestamp?: string | null
+    /** Whether the thread is archived */
+    archived: boolean;
+    /** Duration in minutes to automatically archive the thread after recent activity */
+    auto_archive_duration: 60 | 1440 | 4320 | 10080;
+    /** Timestamp when the thread's archive status was last changed, used for calculating recent activity */
+    archive_timestamp: string;
+    /** When a thread is locked, only users with `MANAGE_THREADS` can unarchive it */
+    locked: boolean;
+    /** whether non-moderators can add other non-moderators to a thread; only available on private threads */
+    invitable?: boolean;
+    /** Timestamp when the thread was created; only populated for threads created after 2022-01-09 */
+    create_timestamp?: string | null;
 }
 /** https://discord.com/developers/docs/resources/channel#thread-member-object-thread-member-structure */
 export interface DiscordThreadMember {
-  /**
-   * The id of the thread
-   *
-   * @remarks
-   * This value is omtted when sent from a `GUILD_CREATE` event
-   */
-  id: string
-  /**
-   * The id of the user
-   *
-   * @remarks
-   * This value is omtted when sent from a `GUILD_CREATE` event
-   */
-  user_id: string
-  /** The time the current user last joined the thread */
-  join_timestamp: string
-  /** Any user-thread settings, currently only used for notifications */
-  flags: number
-  /**
-   * The member object of the user
-   *
-   * @remarks
-   * This value is omtted when sent from a `GUILD_CREATE` event
-   *
-   * Only present when `with_member` is true when calling the List Thread Members and Get Thread Member endpoints,
-   */
-  member?: DiscordMember
+    /**
+     * The id of the thread
+     *
+     * @remarks
+     * This value is omtted when sent from a `GUILD_CREATE` event
+     */
+    id: string;
+    /**
+     * The id of the user
+     *
+     * @remarks
+     * This value is omtted when sent from a `GUILD_CREATE` event
+     */
+    user_id: string;
+    /** The time the current user last joined the thread */
+    join_timestamp: string;
+    /** Any user-thread settings, currently only used for notifications */
+    flags: number;
+    /**
+     * The member object of the user
+     *
+     * @remarks
+     * This value is omtted when sent from a `GUILD_CREATE` event
+     *
+     * Only present when `with_member` is true when calling the List Thread Members and Get Thread Member endpoints,
+     */
+    member?: DiscordMember;
 }
 /** https://discord.com/developers/docs/resources/channel#thread-member-object-thread-member-structure, the first asterisk */
-export interface DiscordThreadMemberGuildCreate extends Omit<DiscordThreadMember, 'id' | 'user_id' | 'member'> {}
+export interface DiscordThreadMemberGuildCreate extends Omit<DiscordThreadMember, 'id' | 'user_id' | 'member'> {
+}
 /** https://discord.com/developers/docs/resources/channel#default-reaction-object-default-reaction-structure */
 export interface DiscordDefaultReactionEmoji {
-  /** The id of a guild's custom emoji */
-  emoji_id: string | null
-  /** The unicode character of the emoji */
-  emoji_name: string | null
+    /** The id of a guild's custom emoji */
+    emoji_id: string | null;
+    /** The unicode character of the emoji */
+    emoji_name: string | null;
 }
 /** https://discord.com/developers/docs/resources/channel#forum-tag-object-forum-tag-structure */
 export interface DiscordForumTag {
-  /** The id of the tag */
-  id: string
-  /** The name of the tag (0-20 characters) */
-  name: string
-  /** Whether this tag can only be added to or removed from threads by a member with the MANAGE_THREADS permission */
-  moderated: boolean
-  /** The id of a guild's custom emoji. At most one of emoji_id and emoji_name may be set. */
-  emoji_id: string | null
-  /** The unicode character of the emoji. At most one of emoji_id and emoji_name may be set. */
-  emoji_name: string | null
+    /** The id of the tag */
+    id: string;
+    /** The name of the tag (0-20 characters) */
+    name: string;
+    /** Whether this tag can only be added to or removed from threads by a member with the MANAGE_THREADS permission */
+    moderated: boolean;
+    /** The id of a guild's custom emoji. At most one of emoji_id and emoji_name may be set. */
+    emoji_id: string | null;
+    /** The unicode character of the emoji. At most one of emoji_id and emoji_name may be set. */
+    emoji_name: string | null;
 }
 /**
  * https://discord.com/developers/docs/resources/channel#list-public-archived-threads
@@ -289,11 +290,11 @@ export interface DiscordForumTag {
  * https://discord.com/developers/docs/resources/channel#list-joined-private-archived-threads
  */
 export interface DiscordListArchivedThreads {
-  /** The archived threads */
-  threads: DiscordChannel[]
-  /** A thread member object for each returned thread the current user */
-  members: DiscordThreadMember[]
-  /** Whether there are potentially additional threads that could be returned on a subsequent call */
-  has_more: boolean
+    /** The archived threads */
+    threads: DiscordChannel[];
+    /** A thread member object for each returned thread the current user */
+    members: DiscordThreadMember[];
+    /** Whether there are potentially additional threads that could be returned on a subsequent call */
+    has_more: boolean;
 }
 //# sourceMappingURL=channel.d.ts.map

@@ -1,10 +1,10 @@
 export function transformAllowedMentionsToDiscordAllowedMentions(_bot, mentions) {
-  return {
-    parse: mentions.parse,
-    replied_user: mentions.repliedUser,
-    users: mentions.users?.map((id) => id.toString()),
-    roles: mentions.roles?.map((id) => id.toString()),
-  }
+    return {
+        parse: mentions.parse,
+        replied_user: mentions.repliedUser,
+        users: mentions.users?.map((id)=>id.toString()),
+        roles: mentions.roles?.map((id)=>id.toString())
+    };
 }
 
 //# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy4uL3NyYy90cmFuc2Zvcm1lcnMvcmV2ZXJzZS9hbGxvd2VkTWVudGlvbnMudHMiXSwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHR5cGUgeyBBbGxvd2VkTWVudGlvbnMsIERpc2NvcmRBbGxvd2VkTWVudGlvbnMgfSBmcm9tICdAZGlzY29yZGVuby90eXBlcydcbmltcG9ydCB0eXBlIHsgQm90IH0gZnJvbSAnLi4vLi4vYm90LmpzJ1xuXG5leHBvcnQgZnVuY3Rpb24gdHJhbnNmb3JtQWxsb3dlZE1lbnRpb25zVG9EaXNjb3JkQWxsb3dlZE1lbnRpb25zKF9ib3Q6IEJvdCwgbWVudGlvbnM6IEFsbG93ZWRNZW50aW9ucyk6IERpc2NvcmRBbGxvd2VkTWVudGlvbnMge1xuICByZXR1cm4ge1xuICAgIHBhcnNlOiBtZW50aW9ucy5wYXJzZSxcbiAgICByZXBsaWVkX3VzZXI6IG1lbnRpb25zLnJlcGxpZWRVc2VyLFxuICAgIHVzZXJzOiBtZW50aW9ucy51c2Vycz8ubWFwKChpZCkgPT4gaWQudG9TdHJpbmcoKSksXG4gICAgcm9sZXM6IG1lbnRpb25zLnJvbGVzPy5tYXAoKGlkKSA9PiBpZC50b1N0cmluZygpKSxcbiAgfVxufVxuIl0sIm5hbWVzIjpbInRyYW5zZm9ybUFsbG93ZWRNZW50aW9uc1RvRGlzY29yZEFsbG93ZWRNZW50aW9ucyIsIl9ib3QiLCJtZW50aW9ucyIsInBhcnNlIiwicmVwbGllZF91c2VyIiwicmVwbGllZFVzZXIiLCJ1c2VycyIsIm1hcCIsImlkIiwidG9TdHJpbmciLCJyb2xlcyJdLCJtYXBwaW5ncyI6IkFBR0EsT0FBTyxTQUFTQSxpREFBaURDLElBQVMsRUFBRUMsUUFBeUI7SUFDbkcsT0FBTztRQUNMQyxPQUFPRCxTQUFTQyxLQUFLO1FBQ3JCQyxjQUFjRixTQUFTRyxXQUFXO1FBQ2xDQyxPQUFPSixTQUFTSSxLQUFLLEVBQUVDLElBQUksQ0FBQ0MsS0FBT0EsR0FBR0MsUUFBUTtRQUM5Q0MsT0FBT1IsU0FBU1EsS0FBSyxFQUFFSCxJQUFJLENBQUNDLEtBQU9BLEdBQUdDLFFBQVE7SUFDaEQ7QUFDRiJ9

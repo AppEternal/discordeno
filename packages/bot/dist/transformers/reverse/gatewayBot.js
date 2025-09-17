@@ -1,14 +1,14 @@
 export function transformGatewayBotToDiscordGatewayBot(payload) {
-  return {
-    url: payload.url,
-    shards: payload.shards,
-    session_start_limit: {
-      total: payload.sessionStartLimit.total,
-      remaining: payload.sessionStartLimit.remaining,
-      reset_after: payload.sessionStartLimit.resetAfter,
-      max_concurrency: payload.sessionStartLimit.maxConcurrency,
-    },
-  }
+    return {
+        url: payload.url,
+        shards: payload.shards,
+        session_start_limit: {
+            total: payload.sessionStartLimit.total,
+            remaining: payload.sessionStartLimit.remaining,
+            reset_after: payload.sessionStartLimit.resetAfter,
+            max_concurrency: payload.sessionStartLimit.maxConcurrency
+        }
+    };
 }
 
 //# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy4uL3NyYy90cmFuc2Zvcm1lcnMvcmV2ZXJzZS9nYXRld2F5Qm90LnRzIl0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB0eXBlIHsgRGlzY29yZEdldEdhdGV3YXlCb3QgfSBmcm9tICdAZGlzY29yZGVuby90eXBlcydcbmltcG9ydCB0eXBlIHsgR2V0R2F0ZXdheUJvdCB9IGZyb20gJy4uL3R5cGVzLmpzJ1xuXG5leHBvcnQgZnVuY3Rpb24gdHJhbnNmb3JtR2F0ZXdheUJvdFRvRGlzY29yZEdhdGV3YXlCb3QocGF5bG9hZDogR2V0R2F0ZXdheUJvdCk6IERpc2NvcmRHZXRHYXRld2F5Qm90IHtcbiAgcmV0dXJuIHtcbiAgICB1cmw6IHBheWxvYWQudXJsLFxuICAgIHNoYXJkczogcGF5bG9hZC5zaGFyZHMsXG4gICAgc2Vzc2lvbl9zdGFydF9saW1pdDoge1xuICAgICAgdG90YWw6IHBheWxvYWQuc2Vzc2lvblN0YXJ0TGltaXQudG90YWwsXG4gICAgICByZW1haW5pbmc6IHBheWxvYWQuc2Vzc2lvblN0YXJ0TGltaXQucmVtYWluaW5nLFxuICAgICAgcmVzZXRfYWZ0ZXI6IHBheWxvYWQuc2Vzc2lvblN0YXJ0TGltaXQucmVzZXRBZnRlcixcbiAgICAgIG1heF9jb25jdXJyZW5jeTogcGF5bG9hZC5zZXNzaW9uU3RhcnRMaW1pdC5tYXhDb25jdXJyZW5jeSxcbiAgICB9LFxuICB9XG59XG4iXSwibmFtZXMiOlsidHJhbnNmb3JtR2F0ZXdheUJvdFRvRGlzY29yZEdhdGV3YXlCb3QiLCJwYXlsb2FkIiwidXJsIiwic2hhcmRzIiwic2Vzc2lvbl9zdGFydF9saW1pdCIsInRvdGFsIiwic2Vzc2lvblN0YXJ0TGltaXQiLCJyZW1haW5pbmciLCJyZXNldF9hZnRlciIsInJlc2V0QWZ0ZXIiLCJtYXhfY29uY3VycmVuY3kiLCJtYXhDb25jdXJyZW5jeSJdLCJtYXBwaW5ncyI6IkFBR0EsT0FBTyxTQUFTQSx1Q0FBdUNDLE9BQXNCO0lBQzNFLE9BQU87UUFDTEMsS0FBS0QsUUFBUUMsR0FBRztRQUNoQkMsUUFBUUYsUUFBUUUsTUFBTTtRQUN0QkMscUJBQXFCO1lBQ25CQyxPQUFPSixRQUFRSyxpQkFBaUIsQ0FBQ0QsS0FBSztZQUN0Q0UsV0FBV04sUUFBUUssaUJBQWlCLENBQUNDLFNBQVM7WUFDOUNDLGFBQWFQLFFBQVFLLGlCQUFpQixDQUFDRyxVQUFVO1lBQ2pEQyxpQkFBaUJULFFBQVFLLGlCQUFpQixDQUFDSyxjQUFjO1FBQzNEO0lBQ0Y7QUFDRiJ9

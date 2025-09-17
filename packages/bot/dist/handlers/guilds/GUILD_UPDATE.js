@@ -1,11 +1,9 @@
 export async function handleGuildUpdate(bot, data, shardId) {
-  if (!bot.events.guildUpdate) return
-  const payload = data.d
-  bot.events.guildUpdate(
-    bot.transformers.guild(bot, payload, {
-      shardId,
-    }),
-  )
+    if (!bot.events.guildUpdate) return;
+    const payload = data.d;
+    bot.events.guildUpdate(bot.transformers.guild(bot, payload, {
+        shardId
+    }));
 }
 
 //# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy4uL3NyYy9oYW5kbGVycy9ndWlsZHMvR1VJTERfVVBEQVRFLnRzIl0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB0eXBlIHsgRGlzY29yZEdhdGV3YXlQYXlsb2FkLCBEaXNjb3JkR3VpbGQgfSBmcm9tICdAZGlzY29yZGVuby90eXBlcydcbmltcG9ydCB0eXBlIHsgQm90IH0gZnJvbSAnLi4vLi4vYm90LmpzJ1xuXG5leHBvcnQgYXN5bmMgZnVuY3Rpb24gaGFuZGxlR3VpbGRVcGRhdGUoYm90OiBCb3QsIGRhdGE6IERpc2NvcmRHYXRld2F5UGF5bG9hZCwgc2hhcmRJZDogbnVtYmVyKTogUHJvbWlzZTx2b2lkPiB7XG4gIGlmICghYm90LmV2ZW50cy5ndWlsZFVwZGF0ZSkgcmV0dXJuXG5cbiAgY29uc3QgcGF5bG9hZCA9IGRhdGEuZCBhcyBEaXNjb3JkR3VpbGRcblxuICBib3QuZXZlbnRzLmd1aWxkVXBkYXRlKGJvdC50cmFuc2Zvcm1lcnMuZ3VpbGQoYm90LCBwYXlsb2FkLCB7IHNoYXJkSWQgfSkpXG59XG4iXSwibmFtZXMiOlsiaGFuZGxlR3VpbGRVcGRhdGUiLCJib3QiLCJkYXRhIiwic2hhcmRJZCIsImV2ZW50cyIsImd1aWxkVXBkYXRlIiwicGF5bG9hZCIsImQiLCJ0cmFuc2Zvcm1lcnMiLCJndWlsZCJdLCJtYXBwaW5ncyI6IkFBR0EsT0FBTyxlQUFlQSxrQkFBa0JDLEdBQVEsRUFBRUMsSUFBMkIsRUFBRUMsT0FBZTtJQUM1RixJQUFJLENBQUNGLElBQUlHLE1BQU0sQ0FBQ0MsV0FBVyxFQUFFO0lBRTdCLE1BQU1DLFVBQVVKLEtBQUtLLENBQUM7SUFFdEJOLElBQUlHLE1BQU0sQ0FBQ0MsV0FBVyxDQUFDSixJQUFJTyxZQUFZLENBQUNDLEtBQUssQ0FBQ1IsS0FBS0ssU0FBUztRQUFFSDtJQUFRO0FBQ3hFIn0=

@@ -1,15 +1,12 @@
 export async function handleGuildMemberUpdate(bot, data) {
-  if (!bot.events.guildMemberUpdate) return
-  const payload = data.d
-  const user = bot.transformers.user(bot, payload.user)
-  bot.events.guildMemberUpdate(
-    // @ts-expect-error Flags in the update are nullable, while on the member they are be always present
+    if (!bot.events.guildMemberUpdate) return;
+    const payload = data.d;
+    const user = bot.transformers.user(bot, payload.user);
+    bot.events.guildMemberUpdate(// @ts-expect-error Flags in the update are nullable, while on the member they are be always present
     bot.transformers.member(bot, payload, {
-      guildId: payload.guild_id,
-      userId: payload.user.id,
-    }),
-    user,
-  )
+        guildId: payload.guild_id,
+        userId: payload.user.id
+    }), user);
 }
 
 //# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy4uL3NyYy9oYW5kbGVycy9tZW1iZXJzL0dVSUxEX01FTUJFUl9VUERBVEUudHMiXSwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHR5cGUgeyBEaXNjb3JkR2F0ZXdheVBheWxvYWQsIERpc2NvcmRHdWlsZE1lbWJlclVwZGF0ZSB9IGZyb20gJ0BkaXNjb3JkZW5vL3R5cGVzJ1xuaW1wb3J0IHR5cGUgeyBCb3QgfSBmcm9tICcuLi8uLi9ib3QuanMnXG5cbmV4cG9ydCBhc3luYyBmdW5jdGlvbiBoYW5kbGVHdWlsZE1lbWJlclVwZGF0ZShib3Q6IEJvdCwgZGF0YTogRGlzY29yZEdhdGV3YXlQYXlsb2FkKTogUHJvbWlzZTx2b2lkPiB7XG4gIGlmICghYm90LmV2ZW50cy5ndWlsZE1lbWJlclVwZGF0ZSkgcmV0dXJuXG5cbiAgY29uc3QgcGF5bG9hZCA9IGRhdGEuZCBhcyBEaXNjb3JkR3VpbGRNZW1iZXJVcGRhdGVcblxuICBjb25zdCB1c2VyID0gYm90LnRyYW5zZm9ybWVycy51c2VyKGJvdCwgcGF5bG9hZC51c2VyKVxuICBib3QuZXZlbnRzLmd1aWxkTWVtYmVyVXBkYXRlKFxuICAgIC8vIEB0cy1leHBlY3QtZXJyb3IgRmxhZ3MgaW4gdGhlIHVwZGF0ZSBhcmUgbnVsbGFibGUsIHdoaWxlIG9uIHRoZSBtZW1iZXIgdGhleSBhcmUgYmUgYWx3YXlzIHByZXNlbnRcbiAgICBib3QudHJhbnNmb3JtZXJzLm1lbWJlcihib3QsIHBheWxvYWQsIHsgZ3VpbGRJZDogcGF5bG9hZC5ndWlsZF9pZCwgdXNlcklkOiBwYXlsb2FkLnVzZXIuaWQgfSksXG4gICAgdXNlcixcbiAgKVxufVxuIl0sIm5hbWVzIjpbImhhbmRsZUd1aWxkTWVtYmVyVXBkYXRlIiwiYm90IiwiZGF0YSIsImV2ZW50cyIsImd1aWxkTWVtYmVyVXBkYXRlIiwicGF5bG9hZCIsImQiLCJ1c2VyIiwidHJhbnNmb3JtZXJzIiwibWVtYmVyIiwiZ3VpbGRJZCIsImd1aWxkX2lkIiwidXNlcklkIiwiaWQiXSwibWFwcGluZ3MiOiJBQUdBLE9BQU8sZUFBZUEsd0JBQXdCQyxHQUFRLEVBQUVDLElBQTJCO0lBQ2pGLElBQUksQ0FBQ0QsSUFBSUUsTUFBTSxDQUFDQyxpQkFBaUIsRUFBRTtJQUVuQyxNQUFNQyxVQUFVSCxLQUFLSSxDQUFDO0lBRXRCLE1BQU1DLE9BQU9OLElBQUlPLFlBQVksQ0FBQ0QsSUFBSSxDQUFDTixLQUFLSSxRQUFRRSxJQUFJO0lBQ3BETixJQUFJRSxNQUFNLENBQUNDLGlCQUFpQixDQUMxQixvR0FBb0c7SUFDcEdILElBQUlPLFlBQVksQ0FBQ0MsTUFBTSxDQUFDUixLQUFLSSxTQUFTO1FBQUVLLFNBQVNMLFFBQVFNLFFBQVE7UUFBRUMsUUFBUVAsUUFBUUUsSUFBSSxDQUFDTSxFQUFFO0lBQUMsSUFDM0ZOO0FBRUoifQ==

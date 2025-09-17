@@ -1,14 +1,14 @@
 export function transformEmojiToDiscordEmoji(bot, payload) {
-  return {
-    id: payload.id ? bot.transformers.reverse.snowflake(payload.id) : null,
-    name: payload.name ?? null,
-    roles: payload.roles?.map((id) => bot.transformers.reverse.snowflake(id)),
-    user: payload.user ? bot.transformers.reverse.user(bot, payload.user) : undefined,
-    require_colons: payload.toggles.requireColons,
-    managed: payload.toggles.managed,
-    animated: payload.toggles.animated,
-    available: payload.toggles.available,
-  }
+    return {
+        id: payload.id ? bot.transformers.reverse.snowflake(payload.id) : null,
+        name: payload.name ?? null,
+        roles: payload.roles?.map((id)=>bot.transformers.reverse.snowflake(id)),
+        user: payload.user ? bot.transformers.reverse.user(bot, payload.user) : undefined,
+        require_colons: payload.toggles.requireColons,
+        managed: payload.toggles.managed,
+        animated: payload.toggles.animated,
+        available: payload.toggles.available
+    };
 }
 
 //# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy4uL3NyYy90cmFuc2Zvcm1lcnMvcmV2ZXJzZS9lbW9qaS50cyJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgdHlwZSB7IERpc2NvcmRFbW9qaSB9IGZyb20gJ0BkaXNjb3JkZW5vL3R5cGVzJ1xuaW1wb3J0IHR5cGUgeyBCb3QgfSBmcm9tICcuLi8uLi9ib3QuanMnXG5pbXBvcnQgdHlwZSB7IEVtb2ppIH0gZnJvbSAnLi4vdHlwZXMuanMnXG5cbmV4cG9ydCBmdW5jdGlvbiB0cmFuc2Zvcm1FbW9qaVRvRGlzY29yZEVtb2ppKGJvdDogQm90LCBwYXlsb2FkOiBFbW9qaSk6IERpc2NvcmRFbW9qaSB7XG4gIHJldHVybiB7XG4gICAgaWQ6IHBheWxvYWQuaWQgPyBib3QudHJhbnNmb3JtZXJzLnJldmVyc2Uuc25vd2ZsYWtlKHBheWxvYWQuaWQpIDogbnVsbCxcbiAgICBuYW1lOiBwYXlsb2FkLm5hbWUgPz8gbnVsbCxcbiAgICByb2xlczogcGF5bG9hZC5yb2xlcz8ubWFwKChpZCkgPT4gYm90LnRyYW5zZm9ybWVycy5yZXZlcnNlLnNub3dmbGFrZShpZCkpLFxuICAgIHVzZXI6IHBheWxvYWQudXNlciA/IGJvdC50cmFuc2Zvcm1lcnMucmV2ZXJzZS51c2VyKGJvdCwgcGF5bG9hZC51c2VyKSA6IHVuZGVmaW5lZCxcbiAgICByZXF1aXJlX2NvbG9uczogcGF5bG9hZC50b2dnbGVzLnJlcXVpcmVDb2xvbnMsXG4gICAgbWFuYWdlZDogcGF5bG9hZC50b2dnbGVzLm1hbmFnZWQsXG4gICAgYW5pbWF0ZWQ6IHBheWxvYWQudG9nZ2xlcy5hbmltYXRlZCxcbiAgICBhdmFpbGFibGU6IHBheWxvYWQudG9nZ2xlcy5hdmFpbGFibGUsXG4gIH1cbn1cbiJdLCJuYW1lcyI6WyJ0cmFuc2Zvcm1FbW9qaVRvRGlzY29yZEVtb2ppIiwiYm90IiwicGF5bG9hZCIsImlkIiwidHJhbnNmb3JtZXJzIiwicmV2ZXJzZSIsInNub3dmbGFrZSIsIm5hbWUiLCJyb2xlcyIsIm1hcCIsInVzZXIiLCJ1bmRlZmluZWQiLCJyZXF1aXJlX2NvbG9ucyIsInRvZ2dsZXMiLCJyZXF1aXJlQ29sb25zIiwibWFuYWdlZCIsImFuaW1hdGVkIiwiYXZhaWxhYmxlIl0sIm1hcHBpbmdzIjoiQUFJQSxPQUFPLFNBQVNBLDZCQUE2QkMsR0FBUSxFQUFFQyxPQUFjO0lBQ25FLE9BQU87UUFDTEMsSUFBSUQsUUFBUUMsRUFBRSxHQUFHRixJQUFJRyxZQUFZLENBQUNDLE9BQU8sQ0FBQ0MsU0FBUyxDQUFDSixRQUFRQyxFQUFFLElBQUk7UUFDbEVJLE1BQU1MLFFBQVFLLElBQUksSUFBSTtRQUN0QkMsT0FBT04sUUFBUU0sS0FBSyxFQUFFQyxJQUFJLENBQUNOLEtBQU9GLElBQUlHLFlBQVksQ0FBQ0MsT0FBTyxDQUFDQyxTQUFTLENBQUNIO1FBQ3JFTyxNQUFNUixRQUFRUSxJQUFJLEdBQUdULElBQUlHLFlBQVksQ0FBQ0MsT0FBTyxDQUFDSyxJQUFJLENBQUNULEtBQUtDLFFBQVFRLElBQUksSUFBSUM7UUFDeEVDLGdCQUFnQlYsUUFBUVcsT0FBTyxDQUFDQyxhQUFhO1FBQzdDQyxTQUFTYixRQUFRVyxPQUFPLENBQUNFLE9BQU87UUFDaENDLFVBQVVkLFFBQVFXLE9BQU8sQ0FBQ0csUUFBUTtRQUNsQ0MsV0FBV2YsUUFBUVcsT0FBTyxDQUFDSSxTQUFTO0lBQ3RDO0FBQ0YifQ==

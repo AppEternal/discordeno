@@ -1,18 +1,18 @@
-import { BitwisePermissionFlags } from '@discordeno/types'
-import { ToggleBitfieldBigint } from './ToggleBitfield.js'
+import { BitwisePermissionFlags } from '@discordeno/types';
+import { ToggleBitfieldBigint } from './ToggleBitfield.js';
 export class Permissions extends ToggleBitfieldBigint {
-  constructor(bits) {
-    super(BigInt(bits))
-  }
-  has(permission) {
-    return this.contains(BitwisePermissionFlags[permission])
-  }
-  hasAll(permissions) {
-    return permissions.every((key) => this.has(key))
-  }
-  missing(permissions) {
-    return permissions.filter((key) => !this.has(key))
-  }
+    constructor(bits){
+        super(BigInt(bits));
+    }
+    has(permission) {
+        return this.contains(BitwisePermissionFlags[permission]);
+    }
+    hasAll(permissions) {
+        return permissions.every((key)=>this.has(key));
+    }
+    missing(permissions) {
+        return permissions.filter((key)=>!this.has(key));
+    }
 }
 
 //# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy4uL3NyYy90cmFuc2Zvcm1lcnMvdG9nZ2xlcy9QZXJtaXNzaW9ucy50cyJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBCaXR3aXNlUGVybWlzc2lvbkZsYWdzLCB0eXBlIFBlcm1pc3Npb25TdHJpbmdzIH0gZnJvbSAnQGRpc2NvcmRlbm8vdHlwZXMnXG5pbXBvcnQgeyBUb2dnbGVCaXRmaWVsZEJpZ2ludCB9IGZyb20gJy4vVG9nZ2xlQml0ZmllbGQuanMnXG5cbmV4cG9ydCBjbGFzcyBQZXJtaXNzaW9ucyBleHRlbmRzIFRvZ2dsZUJpdGZpZWxkQmlnaW50IHtcbiAgY29uc3RydWN0b3IoYml0czogc3RyaW5nIHwgYmlnaW50KSB7XG4gICAgc3VwZXIoQmlnSW50KGJpdHMpKVxuICB9XG5cbiAgaGFzKHBlcm1pc3Npb246IFBlcm1pc3Npb25TdHJpbmdzKTogYm9vbGVhbiB7XG4gICAgcmV0dXJuIHRoaXMuY29udGFpbnMoQml0d2lzZVBlcm1pc3Npb25GbGFnc1twZXJtaXNzaW9uXSlcbiAgfVxuXG4gIGhhc0FsbChwZXJtaXNzaW9uczogUGVybWlzc2lvblN0cmluZ3NbXSk6IGJvb2xlYW4ge1xuICAgIHJldHVybiBwZXJtaXNzaW9ucy5ldmVyeSgoa2V5KSA9PiB0aGlzLmhhcyhrZXkpKVxuICB9XG5cbiAgbWlzc2luZyhwZXJtaXNzaW9uczogUGVybWlzc2lvblN0cmluZ3NbXSk6IFBlcm1pc3Npb25TdHJpbmdzW10ge1xuICAgIHJldHVybiBwZXJtaXNzaW9ucy5maWx0ZXIoKGtleSkgPT4gIXRoaXMuaGFzKGtleSkpXG4gIH1cbn1cbiJdLCJuYW1lcyI6WyJCaXR3aXNlUGVybWlzc2lvbkZsYWdzIiwiVG9nZ2xlQml0ZmllbGRCaWdpbnQiLCJQZXJtaXNzaW9ucyIsImJpdHMiLCJCaWdJbnQiLCJoYXMiLCJwZXJtaXNzaW9uIiwiY29udGFpbnMiLCJoYXNBbGwiLCJwZXJtaXNzaW9ucyIsImV2ZXJ5Iiwia2V5IiwibWlzc2luZyIsImZpbHRlciJdLCJtYXBwaW5ncyI6IkFBQUEsU0FBU0Esc0JBQXNCLFFBQWdDLG9CQUFtQjtBQUNsRixTQUFTQyxvQkFBb0IsUUFBUSxzQkFBcUI7QUFFMUQsT0FBTyxNQUFNQyxvQkFBb0JEO0lBQy9CLFlBQVlFLElBQXFCLENBQUU7UUFDakMsS0FBSyxDQUFDQyxPQUFPRDtJQUNmO0lBRUFFLElBQUlDLFVBQTZCLEVBQVc7UUFDMUMsT0FBTyxJQUFJLENBQUNDLFFBQVEsQ0FBQ1Asc0JBQXNCLENBQUNNLFdBQVc7SUFDekQ7SUFFQUUsT0FBT0MsV0FBZ0MsRUFBVztRQUNoRCxPQUFPQSxZQUFZQyxLQUFLLENBQUMsQ0FBQ0MsTUFBUSxJQUFJLENBQUNOLEdBQUcsQ0FBQ007SUFDN0M7SUFFQUMsUUFBUUgsV0FBZ0MsRUFBdUI7UUFDN0QsT0FBT0EsWUFBWUksTUFBTSxDQUFDLENBQUNGLE1BQVEsQ0FBQyxJQUFJLENBQUNOLEdBQUcsQ0FBQ007SUFDL0M7QUFDRiJ9

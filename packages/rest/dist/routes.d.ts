@@ -1,3 +1,3 @@
-import type { RestRoutes } from './typings/routes.js'
-export declare function createRoutes(): RestRoutes
+import type { RestRoutes } from './typings/routes.js';
+export declare function createRoutes(): RestRoutes;
 //# sourceMappingURL=routes.d.ts.map

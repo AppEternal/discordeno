@@ -1,6 +1,6 @@
-import { type BigString, type GetGuildWidgetImageQuery, type ImageFormat, type ImageSize, StickerFormatTypes } from '@discordeno/types'
+import { type BigString, type GetGuildWidgetImageQuery, type ImageFormat, type ImageSize, StickerFormatTypes } from '@discordeno/types';
 /** Help format an image url. */
-export declare function formatImageUrl(url: string, size?: ImageSize, format?: ImageFormat): string
+export declare function formatImageUrl(url: string, size?: ImageSize, format?: ImageFormat): string;
 /**
  * Get the url for an emoji.
  *
@@ -12,7 +12,7 @@ export declare function formatImageUrl(url: string, size?: ImageSize, format?: I
  * @remarks
  * The animated parameter is used to specify the animated query parameter valid for webp images or to force the gif if the format is not set to webp.
  */
-export declare function emojiUrl(emojiId: BigString, animated?: boolean, format?: ImageFormat): string
+export declare function emojiUrl(emojiId: BigString, animated?: boolean, format?: ImageFormat): string;
 /**
  * Builds a URL to a user's avatar stored in the Discord CDN.
  *
@@ -21,16 +21,12 @@ export declare function emojiUrl(emojiId: BigString, animated?: boolean, format?
  * @param options - The parameters for the building of the URL.
  * @returns The link to the resource.
  */
-export declare function avatarUrl(
-  userId: BigString,
-  discriminator: string,
-  options?: {
-    avatar: BigString | undefined
-    size?: ImageSize
-    format?: ImageFormat
-  },
-): string
-export declare function avatarDecorationUrl(avatarDecoration: BigString): string
+export declare function avatarUrl(userId: BigString, discriminator: string, options?: {
+    avatar: BigString | undefined;
+    size?: ImageSize;
+    format?: ImageFormat;
+}): string;
+export declare function avatarDecorationUrl(avatarDecoration: BigString): string;
 /**
  * Builds a URL to a user's banner stored in the Discord CDN.
  *
@@ -38,14 +34,11 @@ export declare function avatarDecorationUrl(avatarDecoration: BigString): string
  * @param options - The parameters for the building of the URL.
  * @returns The link to the resource or `undefined` if no banner has not been set.
  */
-export declare function bannerUrl(
-  userId: BigString,
-  options?: {
-    banner?: BigString
-    size?: ImageSize
-    format?: ImageFormat
-  },
-): string | undefined
+export declare function bannerUrl(userId: BigString, options?: {
+    banner?: BigString;
+    size?: ImageSize;
+    format?: ImageFormat;
+}): string | undefined;
 /**
  * Builds a URL to the guild banner stored in the Discord CDN.
  *
@@ -53,14 +46,11 @@ export declare function bannerUrl(
  * @param options - The parameters for the building of the URL.
  * @returns The link to the resource or `undefined` if no banner has been set.
  */
-export declare function guildBannerUrl(
-  guildId: BigString,
-  options: {
-    banner?: BigString
-    size?: ImageSize
-    format?: ImageFormat
-  },
-): string | undefined
+export declare function guildBannerUrl(guildId: BigString, options: {
+    banner?: BigString;
+    size?: ImageSize;
+    format?: ImageFormat;
+}): string | undefined;
 /**
  * Builds a URL to the guild icon stored in the Discord CDN.
  *
@@ -69,14 +59,10 @@ export declare function guildBannerUrl(
  * @param options - The parameters for the building of the URL.
  * @returns The link to the resource or `undefined` if no banner has been set.
  */
-export declare function guildIconUrl(
-  guildId: BigString,
-  imageHash: BigString | undefined,
-  options?: {
-    size?: ImageSize
-    format?: ImageFormat
-  },
-): string | undefined
+export declare function guildIconUrl(guildId: BigString, imageHash: BigString | undefined, options?: {
+    size?: ImageSize;
+    format?: ImageFormat;
+}): string | undefined;
 /**
  * Builds the URL to a guild splash stored in the Discord CDN.
  *
@@ -85,14 +71,10 @@ export declare function guildIconUrl(
  * @param options - The parameters for the building of the URL.
  * @returns The link to the resource or `undefined` if the guild does not have a splash image set.
  */
-export declare function guildSplashUrl(
-  guildId: BigString,
-  imageHash: BigString | undefined,
-  options?: {
-    size?: ImageSize
-    format?: ImageFormat
-  },
-): string | undefined
+export declare function guildSplashUrl(guildId: BigString, imageHash: BigString | undefined, options?: {
+    size?: ImageSize;
+    format?: ImageFormat;
+}): string | undefined;
 /**
  * Builds the URL to a guild discovery splash stored in the Discord CDN.
  *
@@ -101,14 +83,10 @@ export declare function guildSplashUrl(
  * @param options - The parameters for the building of the URL.
  * @returns The link to the resource or `undefined` if the guild does not have a splash image set.
  */
-export declare function guildDiscoverySplashUrl(
-  guildId: BigString,
-  imageHash: BigString | undefined,
-  options?: {
-    size?: ImageSize
-    format?: ImageFormat
-  },
-): string | undefined
+export declare function guildDiscoverySplashUrl(guildId: BigString, imageHash: BigString | undefined, options?: {
+    size?: ImageSize;
+    format?: ImageFormat;
+}): string | undefined;
 /**
  * Builds the URL to a guild scheduled event cover stored in the Discord CDN.
  *
@@ -116,14 +94,11 @@ export declare function guildDiscoverySplashUrl(
  * @param options - The parameters for the building of the URL.
  * @returns The link to the resource or `undefined`.
  */
-export declare function guildScheduledEventCoverUrl(
-  eventId: BigString,
-  options: {
-    cover?: BigString
-    size?: ImageSize
-    format?: ImageFormat
-  },
-): string | undefined
+export declare function guildScheduledEventCoverUrl(eventId: BigString, options: {
+    cover?: BigString;
+    size?: ImageSize;
+    format?: ImageFormat;
+}): string | undefined;
 /**
  * Builds a URL to the guild widget image stored in the Discord CDN.
  *
@@ -131,7 +106,7 @@ export declare function guildScheduledEventCoverUrl(
  * @param options - The parameters for the building of the URL.
  * @returns The link to the resource.
  */
-export declare function getWidgetImageUrl(guildId: BigString, options?: GetGuildWidgetImageQuery): string
+export declare function getWidgetImageUrl(guildId: BigString, options?: GetGuildWidgetImageQuery): string;
 /**
  * Builds a URL to a member's avatar stored in the Discord CDN.
  *
@@ -140,15 +115,11 @@ export declare function getWidgetImageUrl(guildId: BigString, options?: GetGuild
  * @param options - The parameters for the building of the URL.
  * @returns The link to the resource or `undefined` if no banner has been set.
  */
-export declare function memberAvatarUrl(
-  guildId: BigString,
-  userId: BigString,
-  options?: {
-    avatar?: BigString
-    size?: ImageSize
-    format?: ImageFormat
-  },
-): string | undefined
+export declare function memberAvatarUrl(guildId: BigString, userId: BigString, options?: {
+    avatar?: BigString;
+    size?: ImageSize;
+    format?: ImageFormat;
+}): string | undefined;
 /**
  * Builds a URL to a member's banner stored in the Discord CDN.
  *
@@ -157,15 +128,11 @@ export declare function memberAvatarUrl(
  * @param options - The parameters for the building of the URL.
  * @returns The link to the resource or `undefined` if no banner has been set.
  */
-export declare function memberBannerUrl(
-  guildId: BigString,
-  userId: BigString,
-  options?: {
-    banner?: BigString
-    size?: ImageSize
-    format?: ImageFormat
-  },
-): string | undefined
+export declare function memberBannerUrl(guildId: BigString, userId: BigString, options?: {
+    banner?: BigString;
+    size?: ImageSize;
+    format?: ImageFormat;
+}): string | undefined;
 /**
  * Builds the URL to an application icon stored in the Discord CDN.
  *
@@ -174,14 +141,10 @@ export declare function memberBannerUrl(
  * @param options - The parameters for the building of the URL.
  * @returns The link to the resource or `undefined`
  */
-export declare function applicationIconUrl(
-  applicationId: BigString,
-  iconHash: BigString | undefined,
-  options?: {
-    size?: ImageSize
-    format?: ImageFormat
-  },
-): string | undefined
+export declare function applicationIconUrl(applicationId: BigString, iconHash: BigString | undefined, options?: {
+    size?: ImageSize;
+    format?: ImageFormat;
+}): string | undefined;
 /**
  * Builds the URL to an application cover stored in the Discord CDN.
  *
@@ -190,14 +153,10 @@ export declare function applicationIconUrl(
  * @param options - The parameters for the building of the URL.
  * @returns The link to the resource or `undefined`.
  */
-export declare function applicationCoverUrl(
-  applicationId: BigString,
-  coverHash: BigString | undefined,
-  options?: {
-    size?: ImageSize
-    format?: ImageFormat
-  },
-): string | undefined
+export declare function applicationCoverUrl(applicationId: BigString, coverHash: BigString | undefined, options?: {
+    size?: ImageSize;
+    format?: ImageFormat;
+}): string | undefined;
 /**
  * Builds the URL to an application asset stored in the Discord CDN.
  *
@@ -206,14 +165,10 @@ export declare function applicationCoverUrl(
  * @param options - The parameters for the building of the URL.
  * @returns The link to the resource or `undefined`.
  */
-export declare function applicationAssetUrl(
-  applicationId: BigString,
-  assetId: BigString | undefined,
-  options?: {
-    size?: ImageSize
-    format?: ImageFormat
-  },
-): string | undefined
+export declare function applicationAssetUrl(applicationId: BigString, assetId: BigString | undefined, options?: {
+    size?: ImageSize;
+    format?: ImageFormat;
+}): string | undefined;
 /**
  * Builds the URL to a sticker pack banner stored in the Discord CDN.
  *
@@ -221,13 +176,10 @@ export declare function applicationAssetUrl(
  * @param options - The parameters for the building of the URL.
  * @returns The link to the resource or `undefined`.
  */
-export declare function stickerPackBannerUrl(
-  bannerAssetId: BigString | undefined,
-  options?: {
-    size?: ImageSize
-    format?: ImageFormat
-  },
-): string | undefined
+export declare function stickerPackBannerUrl(bannerAssetId: BigString | undefined, options?: {
+    size?: ImageSize;
+    format?: ImageFormat;
+}): string | undefined;
 /**
  * Builds the URL to a sticker stored in the Discord CDN.
  *
@@ -235,14 +187,11 @@ export declare function stickerPackBannerUrl(
  * @param options - The parameters for the building of the URL.
  * @returns The link to the resource or `undefined`.
  */
-export declare function stickerUrl(
-  stickerId: BigString | number,
-  options?: {
-    size?: ImageSize
-    format?: ImageFormat
-    type?: StickerFormatTypes
-  },
-): string | undefined
+export declare function stickerUrl(stickerId: BigString | number, options?: {
+    size?: ImageSize;
+    format?: ImageFormat;
+    type?: StickerFormatTypes;
+}): string | undefined;
 /**
  * Builds the URL to a team icon stored in the Discord CDN.
  *
@@ -251,14 +200,10 @@ export declare function stickerUrl(
  * @param options - The parameters for the building of the URL.
  * @returns The link to the resource or `undefined`.
  */
-export declare function teamIconUrl(
-  teamId: BigString,
-  iconHash: BigString | undefined,
-  options?: {
-    size?: ImageSize
-    format?: ImageFormat
-  },
-): string | undefined
+export declare function teamIconUrl(teamId: BigString, iconHash: BigString | undefined, options?: {
+    size?: ImageSize;
+    format?: ImageFormat;
+}): string | undefined;
 /**
  * Builds the URL to a role icon stored in the Discord CDN.
  *
@@ -267,14 +212,10 @@ export declare function teamIconUrl(
  * @param options - The parameters for the building of the URL.
  * @returns The link to the resource or `undefined`.
  */
-export declare function roleIconUrl(
-  roleId: BigString,
-  iconHash: BigString | undefined,
-  options?: {
-    size?: ImageSize
-    format?: ImageFormat
-  },
-): string | undefined
+export declare function roleIconUrl(roleId: BigString, iconHash: BigString | undefined, options?: {
+    size?: ImageSize;
+    format?: ImageFormat;
+}): string | undefined;
 /**
  * Builds the URL to a guild tag badge stored in the Discord CDN.
  *
@@ -283,12 +224,8 @@ export declare function roleIconUrl(
  * @param options - The parameters for the building of the URL.
  * @returns The link to the resource or `undefined` if no badge has been set.
  */
-export declare function guildTagBadgeUrl(
-  guildId: BigString,
-  badgeHash: BigString | undefined,
-  options?: {
-    size?: ImageSize
-    format?: ImageFormat
-  },
-): string | undefined
+export declare function guildTagBadgeUrl(guildId: BigString, badgeHash: BigString | undefined, options?: {
+    size?: ImageSize;
+    format?: ImageFormat;
+}): string | undefined;
 //# sourceMappingURL=images.d.ts.map

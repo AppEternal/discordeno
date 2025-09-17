@@ -1,11 +1,9 @@
 export async function handleChannelDelete(bot, data) {
-  if (!bot.events.channelDelete) return
-  const payload = data.d
-  bot.events.channelDelete(
-    bot.transformers.channel(bot, payload, {
-      guildId: payload.guild_id,
-    }),
-  )
+    if (!bot.events.channelDelete) return;
+    const payload = data.d;
+    bot.events.channelDelete(bot.transformers.channel(bot, payload, {
+        guildId: payload.guild_id
+    }));
 }
 
 //# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy4uL3NyYy9oYW5kbGVycy9jaGFubmVscy9DSEFOTkVMX0RFTEVURS50cyJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgdHlwZSB7IERpc2NvcmRDaGFubmVsLCBEaXNjb3JkR2F0ZXdheVBheWxvYWQgfSBmcm9tICdAZGlzY29yZGVuby90eXBlcydcbmltcG9ydCB0eXBlIHsgQm90IH0gZnJvbSAnLi4vLi4vYm90LmpzJ1xuXG5leHBvcnQgYXN5bmMgZnVuY3Rpb24gaGFuZGxlQ2hhbm5lbERlbGV0ZShib3Q6IEJvdCwgZGF0YTogRGlzY29yZEdhdGV3YXlQYXlsb2FkKTogUHJvbWlzZTx2b2lkPiB7XG4gIGlmICghYm90LmV2ZW50cy5jaGFubmVsRGVsZXRlKSByZXR1cm5cblxuICBjb25zdCBwYXlsb2FkID0gZGF0YS5kIGFzIERpc2NvcmRDaGFubmVsXG5cbiAgYm90LmV2ZW50cy5jaGFubmVsRGVsZXRlKGJvdC50cmFuc2Zvcm1lcnMuY2hhbm5lbChib3QsIHBheWxvYWQsIHsgZ3VpbGRJZDogcGF5bG9hZC5ndWlsZF9pZCB9KSlcbn1cbiJdLCJuYW1lcyI6WyJoYW5kbGVDaGFubmVsRGVsZXRlIiwiYm90IiwiZGF0YSIsImV2ZW50cyIsImNoYW5uZWxEZWxldGUiLCJwYXlsb2FkIiwiZCIsInRyYW5zZm9ybWVycyIsImNoYW5uZWwiLCJndWlsZElkIiwiZ3VpbGRfaWQiXSwibWFwcGluZ3MiOiJBQUdBLE9BQU8sZUFBZUEsb0JBQW9CQyxHQUFRLEVBQUVDLElBQTJCO0lBQzdFLElBQUksQ0FBQ0QsSUFBSUUsTUFBTSxDQUFDQyxhQUFhLEVBQUU7SUFFL0IsTUFBTUMsVUFBVUgsS0FBS0ksQ0FBQztJQUV0QkwsSUFBSUUsTUFBTSxDQUFDQyxhQUFhLENBQUNILElBQUlNLFlBQVksQ0FBQ0MsT0FBTyxDQUFDUCxLQUFLSSxTQUFTO1FBQUVJLFNBQVNKLFFBQVFLLFFBQVE7SUFBQztBQUM5RiJ9

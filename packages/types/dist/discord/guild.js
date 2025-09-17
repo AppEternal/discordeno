@@ -1,215 +1,177 @@
-/** Types for: https://discord.com/developers/docs/resources/guild */ /** https://discord.com/developers/docs/resources/guild#guild-object-default-message-notification-level */ export var DefaultMessageNotificationLevels =
-  /*#__PURE__*/ (function (DefaultMessageNotificationLevels) {
-    /** Members will receive notifications for all messages by default */ DefaultMessageNotificationLevels[
-      (DefaultMessageNotificationLevels['AllMessages'] = 0)
-    ] = 'AllMessages'
-    /** Members will receive notifications only for messages that \@mention them by default */ DefaultMessageNotificationLevels[
-      (DefaultMessageNotificationLevels['OnlyMentions'] = 1)
-    ] = 'OnlyMentions'
-    return DefaultMessageNotificationLevels
-  })({})
-/** https://discord.com/developers/docs/resources/guild#guild-object-explicit-content-filter-level */ export var ExplicitContentFilterLevels =
-  /*#__PURE__*/ (function (ExplicitContentFilterLevels) {
-    /** Media content will not be scanned */ ExplicitContentFilterLevels[(ExplicitContentFilterLevels['Disabled'] = 0)] = 'Disabled'
-    /** Media content sent by members without roles will be scanned */ ExplicitContentFilterLevels[
-      (ExplicitContentFilterLevels['MembersWithoutRoles'] = 1)
-    ] = 'MembersWithoutRoles'
-    /** Media content sent by all members will be scanned */ ExplicitContentFilterLevels[(ExplicitContentFilterLevels['AllMembers'] = 2)] =
-      'AllMembers'
-    return ExplicitContentFilterLevels
-  })({})
-/** https://discord.com/developers/docs/resources/guild#guild-object-mfa-level */ export var MfaLevels = /*#__PURE__*/ (function (MfaLevels) {
-  /** Guild has no MFA/2FA requirement for moderation actions */ MfaLevels[(MfaLevels['None'] = 0)] = 'None'
-  /** Guild has a 2FA requirement for moderation actions */ MfaLevels[(MfaLevels['Elevated'] = 1)] = 'Elevated'
-  return MfaLevels
-})({})
-/** https://discord.com/developers/docs/resources/guild#guild-object-verification-level */ export var VerificationLevels = /*#__PURE__*/ (function (
-  VerificationLevels,
-) {
-  /** Unrestricted */ VerificationLevels[(VerificationLevels['None'] = 0)] = 'None'
-  /** Must have verified email on account */ VerificationLevels[(VerificationLevels['Low'] = 1)] = 'Low'
-  /** Must be registered on Discord for longer than 5 minutes */ VerificationLevels[(VerificationLevels['Medium'] = 2)] = 'Medium'
-  /** Must be a member of the server for longer than 10 minutes */ VerificationLevels[(VerificationLevels['High'] = 3)] = 'High'
-  /** Must have a verified phone number */ VerificationLevels[(VerificationLevels['VeryHigh'] = 4)] = 'VeryHigh'
-  return VerificationLevels
-})({})
-/** https://discord.com/developers/docs/resources/guild#guild-object-guild-nsfw-level */ export var GuildNsfwLevel = /*#__PURE__*/ (function (
-  GuildNsfwLevel,
-) {
-  GuildNsfwLevel[(GuildNsfwLevel['Default'] = 0)] = 'Default'
-  GuildNsfwLevel[(GuildNsfwLevel['Explicit'] = 1)] = 'Explicit'
-  GuildNsfwLevel[(GuildNsfwLevel['Safe'] = 2)] = 'Safe'
-  GuildNsfwLevel[(GuildNsfwLevel['AgeRestricted'] = 3)] = 'AgeRestricted'
-  return GuildNsfwLevel
-})({})
-/** https://discord.com/developers/docs/resources/guild#guild-object-premium-tier */ export var PremiumTiers = /*#__PURE__*/ (function (
-  PremiumTiers,
-) {
-  /** Guild has not unlocked any Server Boost perks */ PremiumTiers[(PremiumTiers['None'] = 0)] = 'None'
-  /** Guild has unlocked Server Boost level 1 perks */ PremiumTiers[(PremiumTiers['Tier1'] = 1)] = 'Tier1'
-  /** Guild has unlocked Server Boost level 2 perks */ PremiumTiers[(PremiumTiers['Tier2'] = 2)] = 'Tier2'
-  /** Guild has unlocked Server Boost level 3 perks */ PremiumTiers[(PremiumTiers['Tier3'] = 3)] = 'Tier3'
-  return PremiumTiers
-})({})
-/** https://discord.com/developers/docs/resources/guild#guild-object-system-channel-flags */ export var SystemChannelFlags = /*#__PURE__*/ (function (
-  SystemChannelFlags,
-) {
-  /** Suppress member join notifications */ SystemChannelFlags[(SystemChannelFlags['SuppressJoinNotifications'] = 1)] = 'SuppressJoinNotifications'
-  /** Suppress server boost notifications */ SystemChannelFlags[(SystemChannelFlags['SuppressPremiumSubscriptions'] = 2)] =
-    'SuppressPremiumSubscriptions'
-  /** Suppress server setup tips */ SystemChannelFlags[(SystemChannelFlags['SuppressGuildReminderNotifications'] = 4)] =
-    'SuppressGuildReminderNotifications'
-  /** Hide member join sticker reply buttons */ SystemChannelFlags[(SystemChannelFlags['SuppressJoinNotificationReplies'] = 8)] =
-    'SuppressJoinNotificationReplies'
-  /** Suppress role subscription purchase and renewal notifications */ SystemChannelFlags[
-    (SystemChannelFlags['SuppressRoleSubscriptionPurchaseNotifications'] = 16)
-  ] = 'SuppressRoleSubscriptionPurchaseNotifications'
-  /** Hide role subscription sticker reply buttons */ SystemChannelFlags[
-    (SystemChannelFlags['SuppressRoleSubscriptionPurchaseNotificationReplies'] = 32)
-  ] = 'SuppressRoleSubscriptionPurchaseNotificationReplies'
-  return SystemChannelFlags
-})({})
-/** https://discord.com/developers/docs/resources/guild#guild-object-guild-features */ export var GuildFeatures = /*#__PURE__*/ (function (
-  GuildFeatures,
-) {
-  /** Guild has access to set an animated guild banner image */ GuildFeatures['AnimatedBanner'] = 'ANIMATED_BANNER'
-  /** Guild has access to set an animated guild icon */ GuildFeatures['AnimatedIcon'] = 'ANIMATED_ICON'
-  /** Guild is using the old permissions configuration behavior */ GuildFeatures['ApplicationCommandPermissionsV2'] =
-    'APPLICATION_COMMAND_PERMISSIONS_V2'
-  /** Guild has set up auto moderation rules */ GuildFeatures['AutoModeration'] = 'AUTO_MODERATION'
-  /** Guild has access to set a guild banner image */ GuildFeatures['Banner'] = 'BANNER'
-  /**
+/** Types for: https://discord.com/developers/docs/resources/guild */ /** https://discord.com/developers/docs/resources/guild#guild-object-default-message-notification-level */ export var DefaultMessageNotificationLevels = /*#__PURE__*/ function(DefaultMessageNotificationLevels) {
+    /** Members will receive notifications for all messages by default */ DefaultMessageNotificationLevels[DefaultMessageNotificationLevels["AllMessages"] = 0] = "AllMessages";
+    /** Members will receive notifications only for messages that \@mention them by default */ DefaultMessageNotificationLevels[DefaultMessageNotificationLevels["OnlyMentions"] = 1] = "OnlyMentions";
+    return DefaultMessageNotificationLevels;
+}({});
+/** https://discord.com/developers/docs/resources/guild#guild-object-explicit-content-filter-level */ export var ExplicitContentFilterLevels = /*#__PURE__*/ function(ExplicitContentFilterLevels) {
+    /** Media content will not be scanned */ ExplicitContentFilterLevels[ExplicitContentFilterLevels["Disabled"] = 0] = "Disabled";
+    /** Media content sent by members without roles will be scanned */ ExplicitContentFilterLevels[ExplicitContentFilterLevels["MembersWithoutRoles"] = 1] = "MembersWithoutRoles";
+    /** Media content sent by all members will be scanned */ ExplicitContentFilterLevels[ExplicitContentFilterLevels["AllMembers"] = 2] = "AllMembers";
+    return ExplicitContentFilterLevels;
+}({});
+/** https://discord.com/developers/docs/resources/guild#guild-object-mfa-level */ export var MfaLevels = /*#__PURE__*/ function(MfaLevels) {
+    /** Guild has no MFA/2FA requirement for moderation actions */ MfaLevels[MfaLevels["None"] = 0] = "None";
+    /** Guild has a 2FA requirement for moderation actions */ MfaLevels[MfaLevels["Elevated"] = 1] = "Elevated";
+    return MfaLevels;
+}({});
+/** https://discord.com/developers/docs/resources/guild#guild-object-verification-level */ export var VerificationLevels = /*#__PURE__*/ function(VerificationLevels) {
+    /** Unrestricted */ VerificationLevels[VerificationLevels["None"] = 0] = "None";
+    /** Must have verified email on account */ VerificationLevels[VerificationLevels["Low"] = 1] = "Low";
+    /** Must be registered on Discord for longer than 5 minutes */ VerificationLevels[VerificationLevels["Medium"] = 2] = "Medium";
+    /** Must be a member of the server for longer than 10 minutes */ VerificationLevels[VerificationLevels["High"] = 3] = "High";
+    /** Must have a verified phone number */ VerificationLevels[VerificationLevels["VeryHigh"] = 4] = "VeryHigh";
+    return VerificationLevels;
+}({});
+/** https://discord.com/developers/docs/resources/guild#guild-object-guild-nsfw-level */ export var GuildNsfwLevel = /*#__PURE__*/ function(GuildNsfwLevel) {
+    GuildNsfwLevel[GuildNsfwLevel["Default"] = 0] = "Default";
+    GuildNsfwLevel[GuildNsfwLevel["Explicit"] = 1] = "Explicit";
+    GuildNsfwLevel[GuildNsfwLevel["Safe"] = 2] = "Safe";
+    GuildNsfwLevel[GuildNsfwLevel["AgeRestricted"] = 3] = "AgeRestricted";
+    return GuildNsfwLevel;
+}({});
+/** https://discord.com/developers/docs/resources/guild#guild-object-premium-tier */ export var PremiumTiers = /*#__PURE__*/ function(PremiumTiers) {
+    /** Guild has not unlocked any Server Boost perks */ PremiumTiers[PremiumTiers["None"] = 0] = "None";
+    /** Guild has unlocked Server Boost level 1 perks */ PremiumTiers[PremiumTiers["Tier1"] = 1] = "Tier1";
+    /** Guild has unlocked Server Boost level 2 perks */ PremiumTiers[PremiumTiers["Tier2"] = 2] = "Tier2";
+    /** Guild has unlocked Server Boost level 3 perks */ PremiumTiers[PremiumTiers["Tier3"] = 3] = "Tier3";
+    return PremiumTiers;
+}({});
+/** https://discord.com/developers/docs/resources/guild#guild-object-system-channel-flags */ export var SystemChannelFlags = /*#__PURE__*/ function(SystemChannelFlags) {
+    /** Suppress member join notifications */ SystemChannelFlags[SystemChannelFlags["SuppressJoinNotifications"] = 1] = "SuppressJoinNotifications";
+    /** Suppress server boost notifications */ SystemChannelFlags[SystemChannelFlags["SuppressPremiumSubscriptions"] = 2] = "SuppressPremiumSubscriptions";
+    /** Suppress server setup tips */ SystemChannelFlags[SystemChannelFlags["SuppressGuildReminderNotifications"] = 4] = "SuppressGuildReminderNotifications";
+    /** Hide member join sticker reply buttons */ SystemChannelFlags[SystemChannelFlags["SuppressJoinNotificationReplies"] = 8] = "SuppressJoinNotificationReplies";
+    /** Suppress role subscription purchase and renewal notifications */ SystemChannelFlags[SystemChannelFlags["SuppressRoleSubscriptionPurchaseNotifications"] = 16] = "SuppressRoleSubscriptionPurchaseNotifications";
+    /** Hide role subscription sticker reply buttons */ SystemChannelFlags[SystemChannelFlags["SuppressRoleSubscriptionPurchaseNotificationReplies"] = 32] = "SuppressRoleSubscriptionPurchaseNotificationReplies";
+    return SystemChannelFlags;
+}({});
+/** https://discord.com/developers/docs/resources/guild#guild-object-guild-features */ export var GuildFeatures = /*#__PURE__*/ function(GuildFeatures) {
+    /** Guild has access to set an animated guild banner image */ GuildFeatures["AnimatedBanner"] = "ANIMATED_BANNER";
+    /** Guild has access to set an animated guild icon */ GuildFeatures["AnimatedIcon"] = "ANIMATED_ICON";
+    /** Guild is using the old permissions configuration behavior */ GuildFeatures["ApplicationCommandPermissionsV2"] = "APPLICATION_COMMAND_PERMISSIONS_V2";
+    /** Guild has set up auto moderation rules */ GuildFeatures["AutoModeration"] = "AUTO_MODERATION";
+    /** Guild has access to set a guild banner image */ GuildFeatures["Banner"] = "BANNER";
+    /**
    * Guild can enable welcome screen, Membership Screening, stage channels and discovery, and receives community updates
    *
    * @remarks
    * This value is mutable
-   * */ GuildFeatures['Community'] = 'COMMUNITY'
-  /** Guild has enabled monetization. */ GuildFeatures['CreatorMonetizableProvisional'] = 'CREATOR_MONETIZABLE_PROVISIONAL'
-  /** Guild has enabled the role subscription promo page. */ GuildFeatures['CreatorStorePage'] = 'CREATOR_STORE_PAGE'
-  /** Guild has been set as a support server on the App Directory */ GuildFeatures['DeveloperSupportServer'] = 'DEVELOPER_SUPPORT_SERVER'
-  /**
+   * */ GuildFeatures["Community"] = "COMMUNITY";
+    /** Guild has enabled monetization. */ GuildFeatures["CreatorMonetizableProvisional"] = "CREATOR_MONETIZABLE_PROVISIONAL";
+    /** Guild has enabled the role subscription promo page. */ GuildFeatures["CreatorStorePage"] = "CREATOR_STORE_PAGE";
+    /** Guild has been set as a support server on the App Directory */ GuildFeatures["DeveloperSupportServer"] = "DEVELOPER_SUPPORT_SERVER";
+    /**
    * Guild is able to be discovered in the directory
    *
    * @remarks
    * This value is mutable
-   */ GuildFeatures['Discoverable'] = 'DISCOVERABLE'
-  /** Guild is able to be featured in the directory */ GuildFeatures['Featurable'] = 'FEATURABLE'
-  /**
+   */ GuildFeatures["Discoverable"] = "DISCOVERABLE";
+    /** Guild is able to be featured in the directory */ GuildFeatures["Featurable"] = "FEATURABLE";
+    /**
    * Guild has paused invites, preventing new users from joining
    *
    * @remarks
    * This value is mutable
-   */ GuildFeatures['InvitesDisabled'] = 'INVITES_DISABLED'
-  /** Guild has access to set an invite splash background */ GuildFeatures['InviteSplash'] = 'INVITE_SPLASH'
-  /** Guild has enabled [Membership Screening](https://discord.com/developers/docs/resources/guild#membership-screening-object) */ GuildFeatures[
-    'MemberVerificationGateEnabled'
-  ] = 'MEMBER_VERIFICATION_GATE_ENABLED'
-  /** Guild has increased custom soundboard sound slots. */ GuildFeatures['MoreSoundboard'] = 'MORE_SOUNDBOARD'
-  /** Guild has increased custom sticker slots */ GuildFeatures['MoreStickers'] = 'MORE_STICKERS'
-  /** Guild has access to create news channels */ GuildFeatures['News'] = 'NEWS'
-  /** Guild is partnered */ GuildFeatures['Partnered'] = 'PARTNERED'
-  /** Guild can be previewed before joining via Membership Screening or the directory */ GuildFeatures['PreviewEnabled'] = 'PREVIEW_ENABLED'
-  /**
+   */ GuildFeatures["InvitesDisabled"] = "INVITES_DISABLED";
+    /** Guild has access to set an invite splash background */ GuildFeatures["InviteSplash"] = "INVITE_SPLASH";
+    /** Guild has enabled [Membership Screening](https://discord.com/developers/docs/resources/guild#membership-screening-object) */ GuildFeatures["MemberVerificationGateEnabled"] = "MEMBER_VERIFICATION_GATE_ENABLED";
+    /** Guild has increased custom soundboard sound slots. */ GuildFeatures["MoreSoundboard"] = "MORE_SOUNDBOARD";
+    /** Guild has increased custom sticker slots */ GuildFeatures["MoreStickers"] = "MORE_STICKERS";
+    /** Guild has access to create news channels */ GuildFeatures["News"] = "NEWS";
+    /** Guild is partnered */ GuildFeatures["Partnered"] = "PARTNERED";
+    /** Guild can be previewed before joining via Membership Screening or the directory */ GuildFeatures["PreviewEnabled"] = "PREVIEW_ENABLED";
+    /**
    * Guild has disabled alerts for join raids in the configured safety alerts channel
    *
    * @remarks
    * This value is mutable
-   */ GuildFeatures['RaidAlertsDisabled'] = 'RAID_ALERTS_DISABLED'
-  /** Guild is able to set role icons */ GuildFeatures['RoleIcons'] = 'ROLE_ICONS'
-  /** Guild has role subscriptions that can be purchased. */ GuildFeatures['RoleSubscriptionsAvailableForPurchase'] =
-    'ROLE_SUBSCRIPTIONS_AVAILABLE_FOR_PURCHASE'
-  /** Guild has enabled role subscriptions. */ GuildFeatures['RoleSubscriptionsEnabled'] = 'ROLE_SUBSCRIPTIONS_ENABLED'
-  /** Guild has created soundboard sounds. */ GuildFeatures['Soundboard'] = 'SOUNDBOARD'
-  /** Guild has enabled ticketed events */ GuildFeatures['TicketedEventsEnabled'] = 'TICKETED_EVENTS_ENABLED'
-  /** Guild has access to set a vanity URL */ GuildFeatures['VanityUrl'] = 'VANITY_URL'
-  /** Guild is verified */ GuildFeatures['Verified'] = 'VERIFIED'
-  /** Guild has access to set 384 kbps bitrate in voice (previously VIP voice servers) */ GuildFeatures['VipRegions'] = 'VIP_REGIONS'
-  /** Guild has enabled the welcome screen */ GuildFeatures['WelcomeScreenEnabled'] = 'WELCOME_SCREEN_ENABLED'
-  /** Guild has access to guest invites */ GuildFeatures['GuestsEnabled'] = 'GUESTS_ENABLED'
-  /** Guild has access to set guild tags */ GuildFeatures['GuildTags'] = 'GUILD_TAGS'
-  /** Guild is able to set gradient colors to roles */ GuildFeatures['EnhancedRoleColors'] = 'ENHANCED_ROLE_COLORS'
-  return GuildFeatures
-})({})
-/** https://discord.com/developers/docs/resources/guild#guild-member-object-guild-member-flags */ export var MemberFlags = /*#__PURE__*/ (function (
-  MemberFlags,
-) {
-  /**
+   */ GuildFeatures["RaidAlertsDisabled"] = "RAID_ALERTS_DISABLED";
+    /** Guild is able to set role icons */ GuildFeatures["RoleIcons"] = "ROLE_ICONS";
+    /** Guild has role subscriptions that can be purchased. */ GuildFeatures["RoleSubscriptionsAvailableForPurchase"] = "ROLE_SUBSCRIPTIONS_AVAILABLE_FOR_PURCHASE";
+    /** Guild has enabled role subscriptions. */ GuildFeatures["RoleSubscriptionsEnabled"] = "ROLE_SUBSCRIPTIONS_ENABLED";
+    /** Guild has created soundboard sounds. */ GuildFeatures["Soundboard"] = "SOUNDBOARD";
+    /** Guild has enabled ticketed events */ GuildFeatures["TicketedEventsEnabled"] = "TICKETED_EVENTS_ENABLED";
+    /** Guild has access to set a vanity URL */ GuildFeatures["VanityUrl"] = "VANITY_URL";
+    /** Guild is verified */ GuildFeatures["Verified"] = "VERIFIED";
+    /** Guild has access to set 384 kbps bitrate in voice (previously VIP voice servers) */ GuildFeatures["VipRegions"] = "VIP_REGIONS";
+    /** Guild has enabled the welcome screen */ GuildFeatures["WelcomeScreenEnabled"] = "WELCOME_SCREEN_ENABLED";
+    /** Guild has access to guest invites */ GuildFeatures["GuestsEnabled"] = "GUESTS_ENABLED";
+    /** Guild has access to set guild tags */ GuildFeatures["GuildTags"] = "GUILD_TAGS";
+    /** Guild is able to set gradient colors to roles */ GuildFeatures["EnhancedRoleColors"] = "ENHANCED_ROLE_COLORS";
+    return GuildFeatures;
+}({});
+/** https://discord.com/developers/docs/resources/guild#guild-member-object-guild-member-flags */ export var MemberFlags = /*#__PURE__*/ function(MemberFlags) {
+    /**
    * Member has left and rejoined the guild
    *
    * @remarks
    * This value is not editable
-   */ MemberFlags[(MemberFlags['DidRejoin'] = 1)] = 'DidRejoin'
-  /**
+   */ MemberFlags[MemberFlags["DidRejoin"] = 1] = "DidRejoin";
+    /**
    * Member has completed onboarding
    *
    * @remarks
    * This value is not editable
-   */ MemberFlags[(MemberFlags['CompletedOnboarding'] = 2)] = 'CompletedOnboarding'
-  /** Member is exempt from guild verification requirements */ MemberFlags[(MemberFlags['BypassesVerification'] = 4)] = 'BypassesVerification'
-  /**
+   */ MemberFlags[MemberFlags["CompletedOnboarding"] = 2] = "CompletedOnboarding";
+    /** Member is exempt from guild verification requirements */ MemberFlags[MemberFlags["BypassesVerification"] = 4] = "BypassesVerification";
+    /**
    * Member has started onboarding
    *
    * @remarks
    * This value is not editable
-   */ MemberFlags[(MemberFlags['StartedOnboarding'] = 8)] = 'StartedOnboarding'
-  /**
+   */ MemberFlags[MemberFlags["StartedOnboarding"] = 8] = "StartedOnboarding";
+    /**
    * Member is a guest and can only access the voice channel they were invited to
    *
    * @remarks
    * This value is not editable
-   */ MemberFlags[(MemberFlags['IsGuest'] = 16)] = 'IsGuest'
-  /**
+   */ MemberFlags[MemberFlags["IsGuest"] = 16] = "IsGuest";
+    /**
    * Member has started Server Guide new member actions
    *
    * @remarks
    * This value is not editable
-   */ MemberFlags[(MemberFlags['StartedHomeActions'] = 32)] = 'StartedHomeActions'
-  /**
+   */ MemberFlags[MemberFlags["StartedHomeActions"] = 32] = "StartedHomeActions";
+    /**
    * Member has completed Server Guide new member actions
    *
    * @remarks
    * This value is not editable
-   */ MemberFlags[(MemberFlags['CompletedHomeActions'] = 64)] = 'CompletedHomeActions'
-  /**
+   */ MemberFlags[MemberFlags["CompletedHomeActions"] = 64] = "CompletedHomeActions";
+    /**
    * Member's username, display name, or nickname is blocked by AutoMod
    *
    * @remarks
    * This value is not editable
-   */ MemberFlags[(MemberFlags['AutomodQuarantinedUsername'] = 128)] = 'AutomodQuarantinedUsername'
-  /**
+   */ MemberFlags[MemberFlags["AutomodQuarantinedUsername"] = 128] = "AutomodQuarantinedUsername";
+    /**
    * Member has dismissed the DM settings upsell
    *
    * @remarks
    * This value is not editable
-   */ MemberFlags[(MemberFlags['DmSettingsUpsellAcknowledged'] = 512)] = 'DmSettingsUpsellAcknowledged'
-  /**
+   */ MemberFlags[MemberFlags["DmSettingsUpsellAcknowledged"] = 512] = "DmSettingsUpsellAcknowledged";
+    /**
    * Member's guild tag is blocked by AutoMod
    *
    * @remarks
    * This value is not editable
-   */ MemberFlags[(MemberFlags['AutomodQuarantinedGuildTag'] = 1024)] = 'AutomodQuarantinedGuildTag'
-  return MemberFlags
-})({})
-/** https://discord.com/developers/docs/resources/guild#integration-object-integration-expire-behaviors */ export var IntegrationExpireBehaviors =
-  /*#__PURE__*/ (function (IntegrationExpireBehaviors) {
-    IntegrationExpireBehaviors[(IntegrationExpireBehaviors['RemoveRole'] = 0)] = 'RemoveRole'
-    IntegrationExpireBehaviors[(IntegrationExpireBehaviors['Kick'] = 1)] = 'Kick'
-    return IntegrationExpireBehaviors
-  })({})
-/** https://discord.com/developers/docs/resources/guild#guild-onboarding-object-onboarding-mode */ export var DiscordGuildOnboardingMode =
-  /*#__PURE__*/ (function (DiscordGuildOnboardingMode) {
-    /** Counts only Default Channels towards constraints */ DiscordGuildOnboardingMode[(DiscordGuildOnboardingMode['OnboardingDefault'] = 0)] =
-      'OnboardingDefault'
-    /** Counts Default Channels and Questions towards constraints */ DiscordGuildOnboardingMode[
-      (DiscordGuildOnboardingMode['OnboardingAdvanced'] = 1)
-    ] = 'OnboardingAdvanced'
-    return DiscordGuildOnboardingMode
-  })({})
-/** https://discord.com/developers/docs/resources/guild#guild-onboarding-object-prompt-types */ export var DiscordGuildOnboardingPromptType =
-  /*#__PURE__*/ (function (DiscordGuildOnboardingPromptType) {
-    DiscordGuildOnboardingPromptType[(DiscordGuildOnboardingPromptType['MultipleChoice'] = 0)] = 'MultipleChoice'
-    DiscordGuildOnboardingPromptType[(DiscordGuildOnboardingPromptType['DropDown'] = 1)] = 'DropDown'
-    return DiscordGuildOnboardingPromptType
-  })({})
+   */ MemberFlags[MemberFlags["AutomodQuarantinedGuildTag"] = 1024] = "AutomodQuarantinedGuildTag";
+    return MemberFlags;
+}({});
+/** https://discord.com/developers/docs/resources/guild#integration-object-integration-expire-behaviors */ export var IntegrationExpireBehaviors = /*#__PURE__*/ function(IntegrationExpireBehaviors) {
+    IntegrationExpireBehaviors[IntegrationExpireBehaviors["RemoveRole"] = 0] = "RemoveRole";
+    IntegrationExpireBehaviors[IntegrationExpireBehaviors["Kick"] = 1] = "Kick";
+    return IntegrationExpireBehaviors;
+}({});
+/** https://discord.com/developers/docs/resources/guild#guild-onboarding-object-onboarding-mode */ export var DiscordGuildOnboardingMode = /*#__PURE__*/ function(DiscordGuildOnboardingMode) {
+    /** Counts only Default Channels towards constraints */ DiscordGuildOnboardingMode[DiscordGuildOnboardingMode["OnboardingDefault"] = 0] = "OnboardingDefault";
+    /** Counts Default Channels and Questions towards constraints */ DiscordGuildOnboardingMode[DiscordGuildOnboardingMode["OnboardingAdvanced"] = 1] = "OnboardingAdvanced";
+    return DiscordGuildOnboardingMode;
+}({});
+/** https://discord.com/developers/docs/resources/guild#guild-onboarding-object-prompt-types */ export var DiscordGuildOnboardingPromptType = /*#__PURE__*/ function(DiscordGuildOnboardingPromptType) {
+    DiscordGuildOnboardingPromptType[DiscordGuildOnboardingPromptType["MultipleChoice"] = 0] = "MultipleChoice";
+    DiscordGuildOnboardingPromptType[DiscordGuildOnboardingPromptType["DropDown"] = 1] = "DropDown";
+    return DiscordGuildOnboardingPromptType;
+}({});
 
 //# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uL3NyYy9kaXNjb3JkL2d1aWxkLnRzIl0sInNvdXJjZXNDb250ZW50IjpbIi8qKiBUeXBlcyBmb3I6IGh0dHBzOi8vZGlzY29yZC5jb20vZGV2ZWxvcGVycy9kb2NzL3Jlc291cmNlcy9ndWlsZCAqL1xuXG5pbXBvcnQgdHlwZSB7IERpc2NvcmRDaGFubmVsLCBEaXNjb3JkVGhyZWFkTWVtYmVyIH0gZnJvbSAnLi9jaGFubmVsLmpzJ1xuaW1wb3J0IHR5cGUgeyBEaXNjb3JkRW1vamkgfSBmcm9tICcuL2Vtb2ppLmpzJ1xuaW1wb3J0IHR5cGUgeyBEaXNjb3JkR3VpbGRDcmVhdGVFeHRyYSB9IGZyb20gJy4vZ2F0ZXdheS5qcydcbmltcG9ydCB0eXBlIHsgRGlzY29yZEludml0ZSB9IGZyb20gJy4vaW52aXRlLmpzJ1xuaW1wb3J0IHR5cGUgeyBPQXV0aDJTY29wZSB9IGZyb20gJy4vb2F1dGgyLmpzJ1xuaW1wb3J0IHR5cGUgeyBEaXNjb3JkUm9sZSB9IGZyb20gJy4vcGVybWlzc2lvbnMuanMnXG5pbXBvcnQgdHlwZSB7IERpc2NvcmRTdGlja2VyIH0gZnJvbSAnLi9zdGlja2VyLmpzJ1xuaW1wb3J0IHR5cGUgeyBEaXNjb3JkQXZhdGFyRGVjb3JhdGlvbkRhdGEsIERpc2NvcmRVc2VyIH0gZnJvbSAnLi91c2VyLmpzJ1xuXG4vKiogaHR0cHM6Ly9kaXNjb3JkLmNvbS9kZXZlbG9wZXJzL2RvY3MvcmVzb3VyY2VzL2d1aWxkI2d1aWxkLW9iamVjdC1ndWlsZC1zdHJ1Y3R1cmUgKi9cbmV4cG9ydCBpbnRlcmZhY2UgRGlzY29yZEd1aWxkIGV4dGVuZHMgUGFydGlhbDxEaXNjb3JkR3VpbGRDcmVhdGVFeHRyYT4ge1xuICAvKiogR3VpbGQgaWQgKi9cbiAgaWQ6IHN0cmluZ1xuICAvKiogR3VpbGQgbmFtZSAoMi0xMDAgY2hhcmFjdGVycywgZXhjbHVkaW5nIHRyYWlsaW5nIGFuZCBsZWFkaW5nIHdoaXRlc3BhY2UpICovXG4gIG5hbWU6IHN0cmluZ1xuICAvKiogSWNvbiBoYXNoICovXG4gIGljb246IHN0cmluZyB8IG51bGxcbiAgLyoqIEljb24gaGFzaCwgcmV0dXJuZWQgd2hlbiBpbiB0aGUgdGVtcGxhdGUgb2JqZWN0ICovXG4gIGljb25faGFzaD86IHN0cmluZyB8IG51bGxcbiAgLyoqIFNwbGFzaCBoYXNoICovXG4gIHNwbGFzaDogc3RyaW5nIHwgbnVsbFxuICAvKiogRGlzY292ZXJ5IHNwbGFzaCBoYXNoOyBvbmx5IHByZXNlbnQgZm9yIGd1aWxkcyB3aXRoIHRoZSBcIkRJU0NPVkVSQUJMRVwiIGZlYXR1cmUgKi9cbiAgZGlzY292ZXJ5X3NwbGFzaDogc3RyaW5nIHwgbnVsbFxuICAvKipcbiAgICogVHJ1ZSBpZiB0aGUgdXNlciBpcyB0aGUgb3duZXIgb2YgdGhlIGd1aWxkXG4gICAqXG4gICAqIEByZW1hcmtzXG4gICAqIFRoaXMgZmllbGQgaXMgb25seSBzZW50IHdoZW4gdXNpbmcgdGhlIGBHZXQgR3VpbGRzYCBlbmRwb2ludFxuICAgKi9cbiAgb3duZXI/OiBib29sZWFuXG4gIC8qKiBJZCBvZiB0aGUgb3duZXIgKi9cbiAgb3duZXJfaWQ6IHN0cmluZ1xuICAvKipcbiAgICogVG90YWwgcGVybWlzc2lvbnMgZm9yIHRoZSB1c2VyIGluIHRoZSBndWlsZCAoZXhjbHVkZXMgb3ZlcndyaXRlcyBhbmQgaW1wbGljaXQgcGVybWlzc2lvbnMpXG4gICAqXG4gICAqIEByZW1hcmtzXG4gICAqIFRoaXMgZmllbGQgaXMgb25seSBzZW50IHdoZW4gdXNpbmcgdGhlIGBHZXQgR3VpbGRzYCBlbmRwb2ludFxuICAgKi9cbiAgcGVybWlzc2lvbnM/OiBzdHJpbmdcbiAgLyoqXG4gICAqIFZvaWNlIHJlZ2lvbiBpZCBmb3IgdGhlIGd1aWxkXG4gICAqXG4gICAqIEBkZXByZWNhdGVkXG4gICAqIFRoaXMgZmllbGQgaXMgZGVwcmVjYXRlZCBhbmQgaXMgcmVwbGFjZWQgYnkge0BsaW5rIERpc2NvcmRDaGFubmVsLnJ0Y19yZWdpb24gfCBDaGFubmVsLnJ0Y19yZWdpb259XG4gICAqL1xuICByZWdpb24/OiBzdHJpbmcgfCBudWxsXG4gIC8qKiBJZCBvZiBhZmsgY2hhbm5lbCAqL1xuICBhZmtfY2hhbm5lbF9pZDogc3RyaW5nIHwgbnVsbFxuICAvKiogQWZrIHRpbWVvdXQgaW4gc2Vjb25kcyAqL1xuICBhZmtfdGltZW91dDogbnVtYmVyXG4gIC8qKiBUcnVlIGlmIHRoZSBzZXJ2ZXIgd2lkZ2V0IGlzIGVuYWJsZWQgKi9cbiAgd2lkZ2V0X2VuYWJsZWQ/OiBib29sZWFuXG4gIC8qKiBUaGUgY2hhbm5lbCBpZCB0aGF0IHRoZSB3aWRnZXQgd2lsbCBnZW5lcmF0ZSBhbiBpbnZpdGUgdG8sIG9yIG51bGwgaWYgc2V0IHRvIG5vIGludml0ZSAqL1xuICB3aWRnZXRfY2hhbm5lbF9pZD86IHN0cmluZyB8IG51bGxcbiAgLyoqIFZlcmlmaWNhdGlvbiBsZXZlbCByZXF1aXJlZCBmb3IgdGhlIGd1aWxkICovXG4gIHZlcmlmaWNhdGlvbl9sZXZlbDogVmVyaWZpY2F0aW9uTGV2ZWxzXG4gIC8qKiBEZWZhdWx0IG1lc3NhZ2Ugbm90aWZpY2F0aW9ucyBsZXZlbCAqL1xuICBkZWZhdWx0X21lc3NhZ2Vfbm90aWZpY2F0aW9uczogRGVmYXVsdE1lc3NhZ2VOb3RpZmljYXRpb25MZXZlbHNcbiAgLyoqIEV4cGxpY2l0IGNvbnRlbnQgZmlsdGVyIGxldmVsICovXG4gIGV4cGxpY2l0X2NvbnRlbnRfZmlsdGVyOiBFeHBsaWNpdENvbnRlbnRGaWx0ZXJMZXZlbHNcbiAgLyoqIFJvbGVzIGluIHRoZSBndWlsZCAqL1xuICByb2xlczogRGlzY29yZFJvbGVbXVxuICAvKiogQ3VzdG9tIGd1aWxkIGVtb2ppcyAqL1xuICBlbW9qaXM6IERpc2NvcmRFbW9qaVtdXG4gIC8qKiBFbmFibGVkIGd1aWxkIGZlYXR1cmVzICovXG4gIGZlYXR1cmVzOiBHdWlsZEZlYXR1cmVzW11cbiAgLyoqIFJlcXVpcmVkIE1GQSBsZXZlbCBmb3IgdGhlIGd1aWxkICovXG4gIG1mYV9sZXZlbDogTWZhTGV2ZWxzXG4gIC8qKiBBcHBsaWNhdGlvbiBpZCBvZiB0aGUgZ3VpbGQgY3JlYXRvciBpZiBpdCBpcyBib3QtY3JlYXRlZCAqL1xuICBhcHBsaWNhdGlvbl9pZDogc3RyaW5nIHwgbnVsbFxuICAvKiogVGhlIGlkIG9mIHRoZSBjaGFubmVsIHdoZXJlIGd1aWxkIG5vdGljZXMgc3VjaCBhcyB3ZWxjb21lIG1lc3NhZ2VzIGFuZCBib29zdCBldmVudHMgYXJlIHBvc3RlZCAqL1xuICBzeXN0ZW1fY2hhbm5lbF9pZDogc3RyaW5nIHwgbnVsbFxuICAvKiogU3lzdGVtIGNoYW5uZWwgZmxhZ3MgKi9cbiAgc3lzdGVtX2NoYW5uZWxfZmxhZ3M6IFN5c3RlbUNoYW5uZWxGbGFnc1xuICAvKiogVGhlIGlkIG9mIHRoZSBjaGFubmVsIHdoZXJlIGNvbW11bml0eSBndWlsZHMgY2FuIGRpc3BsYXkgcnVsZXMgYW5kL29yIGd1aWRlbGluZXMgKi9cbiAgcnVsZXNfY2hhbm5lbF9pZDogc3RyaW5nIHwgbnVsbFxuICAvKiogVGhlIG1heGltdW0gbnVtYmVyIG9mIHByZXNlbmNlcyBmb3IgdGhlIGd1aWxkICh0aGUgZGVmYXVsdCB2YWx1ZSwgY3VycmVudGx5IDI1MDAwLCBpcyBpbiBlZmZlY3Qgd2hlbiBudWxsIGlzIHJldHVybmVkKSAqL1xuICBtYXhfcHJlc2VuY2VzPzogbnVtYmVyIHwgbnVsbFxuICAvKiogVGhlIG1heGltdW0gbnVtYmVyIG9mIG1lbWJlcnMgZm9yIHRoZSBndWlsZCAqL1xuICBtYXhfbWVtYmVycz86IG51bWJlclxuICAvKiogVGhlIHZhbml0eSB1cmwgY29kZSBmb3IgdGhlIGd1aWxkICovXG4gIHZhbml0eV91cmxfY29kZTogc3RyaW5nIHwgbnVsbFxuICAvKiogVGhlIGRlc2NyaXB0aW9uIG9mIGEgZ3VpbGQgKi9cbiAgZGVzY3JpcHRpb246IHN0cmluZyB8IG51bGxcbiAgLyoqIEJhbm5lciBoYXNoICovXG4gIGJhbm5lcjogc3RyaW5nIHwgbnVsbFxuICAvKiogUHJlbWl1bSB0aWVyIChTZXJ2ZXIgQm9vc3QgbGV2ZWwpICovXG4gIHByZW1pdW1fdGllcjogUHJlbWl1bVRpZXJzXG4gIC8qKiBUaGUgbnVtYmVyIG9mIGJvb3N0cyB0aGlzIGd1aWxkIGN1cnJlbnRseSBoYXMgKi9cbiAgcHJlbWl1bV9zdWJzY3JpcHRpb25fY291bnQ/OiBudW1iZXJcbiAgLyoqIFRoZSBwcmVmZXJyZWQgbG9jYWxlIG9mIGEgQ29tbXVuaXR5IGd1aWxkOyB1c2VkIGluIHNlcnZlciBkaXNjb3ZlcnkgYW5kIG5vdGljZXMgZnJvbSBEaXNjb3JkOyBkZWZhdWx0cyB0byBcImVuLVVTXCIgKi9cbiAgcHJlZmVycmVkX2xvY2FsZTogc3RyaW5nXG4gIC8qKiBUaGUgaWQgb2YgdGhlIGNoYW5uZWwgd2hlcmUgYWRtaW5zIGFuZCBtb2RlcmF0b3JzIG9mIENvbW11bml0eSBndWlsZHMgcmVjZWl2ZSBub3RpY2VzIGZyb20gRGlzY29yZCAqL1xuICBwdWJsaWNfdXBkYXRlc19jaGFubmVsX2lkOiBzdHJpbmcgfCBudWxsXG4gIC8qKiBUaGUgbWF4aW11bSBhbW91bnQgb2YgdXNlcnMgaW4gYSB2aWRlbyBjaGFubmVsICovXG4gIG1heF92aWRlb19jaGFubmVsX3VzZXJzPzogbnVtYmVyXG4gIC8qKiBNYXhpbXVtIGFtb3VudCBvZiB1c2VycyBpbiBhIHN0YWdlIHZpZGVvIGNoYW5uZWwgKi9cbiAgbWF4X3N0YWdlX3ZpZGVvX2NoYW5uZWxfdXNlcnM/OiBudW1iZXJcbiAgLyoqIEFwcHJveGltYXRlIG51bWJlciBvZiBtZW1iZXJzIGluIHRoaXMgZ3VpbGQsIHJldHVybmVkIGZyb20gdGhlIEdFVCAvZ3VpbGRzL2lkIGVuZHBvaW50IHdoZW4gd2l0aF9jb3VudHMgaXMgdHJ1ZSAqL1xuICBhcHByb3hpbWF0ZV9tZW1iZXJfY291bnQ/OiBudW1iZXJcbiAgLyoqIEFwcHJveGltYXRlIG51bWJlciBvZiBub24tb2ZmbGluZSBtZW1iZXJzIGluIHRoaXMgZ3VpbGQsIHJldHVybmVkIGZyb20gdGhlIEdFVCAvZ3VpbGRzL2lkIGVuZHBvaW50IHdoZW4gd2l0aF9jb3VudHMgaXMgdHJ1ZSAqL1xuICBhcHByb3hpbWF0ZV9wcmVzZW5jZV9jb3VudD86IG51bWJlclxuICAvKiogVGhlIHdlbGNvbWUgc2NyZWVuIG9mIGEgQ29tbXVuaXR5IGd1aWxkLCBzaG93biB0byBuZXcgbWVtYmVycywgcmV0dXJuZWQgaW4gYW4gSW52aXRlJ3MgZ3VpbGQgb2JqZWN0ICovXG4gIHdlbGNvbWVfc2NyZWVuPzogRGlzY29yZFdlbGNvbWVTY3JlZW5cbiAgLyoqIEd1aWxkIE5TRlcgbGV2ZWwgKi9cbiAgbnNmd19sZXZlbDogR3VpbGROc2Z3TGV2ZWxcbiAgLyoqIEN1c3RvbSBndWlsZCBzdGlja2VycyAqL1xuICBzdGlja2Vycz86IERpc2NvcmRTdGlja2VyW11cbiAgLyoqIFdoZXRoZXIgdGhlIGd1aWxkIGhhcyB0aGUgYm9vc3QgcHJvZ3Jlc3MgYmFyIGVuYWJsZWQgKi9cbiAgcHJlbWl1bV9wcm9ncmVzc19iYXJfZW5hYmxlZDogYm9vbGVhblxuICAvKiogVGhlIGlkIG9mIHRoZSBjaGFubmVsIHdoZXJlIGFkbWlucyBhbmQgbW9kZXJhdG9ycyBvZiBDb21tdW5pdHkgZ3VpbGRzIHJlY2VpdmUgc2FmZXR5IGFsZXJ0cyBmcm9tIERpc2NvcmQgKi9cbiAgc2FmZXR5X2FsZXJ0c19jaGFubmVsX2lkOiBzdHJpbmcgfCBudWxsXG4gIC8qKiBUaGUgaW5jaWRlbnRzIGRhdGEgZm9yIHRoaXMgZ3VpbGQgKi9cbiAgaW5jaWRlbnRzX2RhdGE6IERpc2NvcmRJbmNpZGVudHNEYXRhIHwgbnVsbFxufVxuXG4vKiogaHR0cHM6Ly9kaXNjb3JkLmNvbS9kZXZlbG9wZXJzL2RvY3MvcmVzb3VyY2VzL2d1aWxkI2d1aWxkLW9iamVjdC1kZWZhdWx0LW1lc3NhZ2Utbm90aWZpY2F0aW9uLWxldmVsICovXG5leHBvcnQgZW51bSBEZWZhdWx0TWVzc2FnZU5vdGlmaWNhdGlvbkxldmVscyB7XG4gIC8qKiBNZW1iZXJzIHdpbGwgcmVjZWl2ZSBub3RpZmljYXRpb25zIGZvciBhbGwgbWVzc2FnZXMgYnkgZGVmYXVsdCAqL1xuICBBbGxNZXNzYWdlcyxcbiAgLyoqIE1lbWJlcnMgd2lsbCByZWNlaXZlIG5vdGlmaWNhdGlvbnMgb25seSBmb3IgbWVzc2FnZXMgdGhhdCBcXEBtZW50aW9uIHRoZW0gYnkgZGVmYXVsdCAqL1xuICBPbmx5TWVudGlvbnMsXG59XG5cbi8qKiBodHRwczovL2Rpc2NvcmQuY29tL2RldmVsb3BlcnMvZG9jcy9yZXNvdXJjZXMvZ3VpbGQjZ3VpbGQtb2JqZWN0LWV4cGxpY2l0LWNvbnRlbnQtZmlsdGVyLWxldmVsICovXG5leHBvcnQgZW51bSBFeHBsaWNpdENvbnRlbnRGaWx0ZXJMZXZlbHMge1xuICAvKiogTWVkaWEgY29udGVudCB3aWxsIG5vdCBiZSBzY2FubmVkICovXG4gIERpc2FibGVkLFxuICAvKiogTWVkaWEgY29udGVudCBzZW50IGJ5IG1lbWJlcnMgd2l0aG91dCByb2xlcyB3aWxsIGJlIHNjYW5uZWQgKi9cbiAgTWVtYmVyc1dpdGhvdXRSb2xlcyxcbiAgLyoqIE1lZGlhIGNvbnRlbnQgc2VudCBieSBhbGwgbWVtYmVycyB3aWxsIGJlIHNjYW5uZWQgKi9cbiAgQWxsTWVtYmVycyxcbn1cblxuLyoqIGh0dHBzOi8vZGlzY29yZC5jb20vZGV2ZWxvcGVycy9kb2NzL3Jlc291cmNlcy9ndWlsZCNndWlsZC1vYmplY3QtbWZhLWxldmVsICovXG5leHBvcnQgZW51bSBNZmFMZXZlbHMge1xuICAvKiogR3VpbGQgaGFzIG5vIE1GQS8yRkEgcmVxdWlyZW1lbnQgZm9yIG1vZGVyYXRpb24gYWN0aW9ucyAqL1xuICBOb25lLFxuICAvKiogR3VpbGQgaGFzIGEgMkZBIHJlcXVpcmVtZW50IGZvciBtb2RlcmF0aW9uIGFjdGlvbnMgKi9cbiAgRWxldmF0ZWQsXG59XG5cbi8qKiBodHRwczovL2Rpc2NvcmQuY29tL2RldmVsb3BlcnMvZG9jcy9yZXNvdXJjZXMvZ3VpbGQjZ3VpbGQtb2JqZWN0LXZlcmlmaWNhdGlvbi1sZXZlbCAqL1xuZXhwb3J0IGVudW0gVmVyaWZpY2F0aW9uTGV2ZWxzIHtcbiAgLyoqIFVucmVzdHJpY3RlZCAqL1xuICBOb25lLFxuICAvKiogTXVzdCBoYXZlIHZlcmlmaWVkIGVtYWlsIG9uIGFjY291bnQgKi9cbiAgTG93LFxuICAvKiogTXVzdCBiZSByZWdpc3RlcmVkIG9uIERpc2NvcmQgZm9yIGxvbmdlciB0aGFuIDUgbWludXRlcyAqL1xuICBNZWRpdW0sXG4gIC8qKiBNdXN0IGJlIGEgbWVtYmVyIG9mIHRoZSBzZXJ2ZXIgZm9yIGxvbmdlciB0aGFuIDEwIG1pbnV0ZXMgKi9cbiAgSGlnaCxcbiAgLyoqIE11c3QgaGF2ZSBhIHZlcmlmaWVkIHBob25lIG51bWJlciAqL1xuICBWZXJ5SGlnaCxcbn1cblxuLyoqIGh0dHBzOi8vZGlzY29yZC5jb20vZGV2ZWxvcGVycy9kb2NzL3Jlc291cmNlcy9ndWlsZCNndWlsZC1vYmplY3QtZ3VpbGQtbnNmdy1sZXZlbCAqL1xuZXhwb3J0IGVudW0gR3VpbGROc2Z3TGV2ZWwge1xuICBEZWZhdWx0LFxuICBFeHBsaWNpdCxcbiAgU2FmZSxcbiAgQWdlUmVzdHJpY3RlZCxcbn1cblxuLyoqIGh0dHBzOi8vZGlzY29yZC5jb20vZGV2ZWxvcGVycy9kb2NzL3Jlc291cmNlcy9ndWlsZCNndWlsZC1vYmplY3QtcHJlbWl1bS10aWVyICovXG5leHBvcnQgZW51bSBQcmVtaXVtVGllcnMge1xuICAvKiogR3VpbGQgaGFzIG5vdCB1bmxvY2tlZCBhbnkgU2VydmVyIEJvb3N0IHBlcmtzICovXG4gIE5vbmUsXG4gIC8qKiBHdWlsZCBoYXMgdW5sb2NrZWQgU2VydmVyIEJvb3N0IGxldmVsIDEgcGVya3MgKi9cbiAgVGllcjEsXG4gIC8qKiBHdWlsZCBoYXMgdW5sb2NrZWQgU2VydmVyIEJvb3N0IGxldmVsIDIgcGVya3MgKi9cbiAgVGllcjIsXG4gIC8qKiBHdWlsZCBoYXMgdW5sb2NrZWQgU2VydmVyIEJvb3N0IGxldmVsIDMgcGVya3MgKi9cbiAgVGllcjMsXG59XG5cbi8qKiBodHRwczovL2Rpc2NvcmQuY29tL2RldmVsb3BlcnMvZG9jcy9yZXNvdXJjZXMvZ3VpbGQjZ3VpbGQtb2JqZWN0LXN5c3RlbS1jaGFubmVsLWZsYWdzICovXG5leHBvcnQgZW51bSBTeXN0ZW1DaGFubmVsRmxhZ3Mge1xuICAvKiogU3VwcHJlc3MgbWVtYmVyIGpvaW4gbm90aWZpY2F0aW9ucyAqL1xuICBTdXBwcmVzc0pvaW5Ob3RpZmljYXRpb25zID0gMSA8PCAwLFxuICAvKiogU3VwcHJlc3Mgc2VydmVyIGJvb3N0IG5vdGlmaWNhdGlvbnMgKi9cbiAgU3VwcHJlc3NQcmVtaXVtU3Vic2NyaXB0aW9ucyA9IDEgPDwgMSxcbiAgLyoqIFN1cHByZXNzIHNlcnZlciBzZXR1cCB0aXBzICovXG4gIFN1cHByZXNzR3VpbGRSZW1pbmRlck5vdGlmaWNhdGlvbnMgPSAxIDw8IDIsXG4gIC8qKiBIaWRlIG1lbWJlciBqb2luIHN0aWNrZXIgcmVwbHkgYnV0dG9ucyAqL1xuICBTdXBwcmVzc0pvaW5Ob3RpZmljYXRpb25SZXBsaWVzID0gMSA8PCAzLFxuICAvKiogU3VwcHJlc3Mgcm9sZSBzdWJzY3JpcHRpb24gcHVyY2hhc2UgYW5kIHJlbmV3YWwgbm90aWZpY2F0aW9ucyAqL1xuICBTdXBwcmVzc1JvbGVTdWJzY3JpcHRpb25QdXJjaGFzZU5vdGlmaWNhdGlvbnMgPSAxIDw8IDQsXG4gIC8qKiBIaWRlIHJvbGUgc3Vic2NyaXB0aW9uIHN0aWNrZXIgcmVwbHkgYnV0dG9ucyAqL1xuICBTdXBwcmVzc1JvbGVTdWJzY3JpcHRpb25QdXJjaGFzZU5vdGlmaWNhdGlvblJlcGxpZXMgPSAxIDw8IDUsXG59XG5cbi8qKiBodHRwczovL2Rpc2NvcmQuY29tL2RldmVsb3BlcnMvZG9jcy9yZXNvdXJjZXMvZ3VpbGQjZ3VpbGQtb2JqZWN0LWd1aWxkLWZlYXR1cmVzICovXG5leHBvcnQgZW51bSBHdWlsZEZlYXR1cmVzIHtcbiAgLyoqIEd1aWxkIGhhcyBhY2Nlc3MgdG8gc2V0IGFuIGFuaW1hdGVkIGd1aWxkIGJhbm5lciBpbWFnZSAqL1xuICBBbmltYXRlZEJhbm5lciA9ICdBTklNQVRFRF9CQU5ORVInLFxuICAvKiogR3VpbGQgaGFzIGFjY2VzcyB0byBzZXQgYW4gYW5pbWF0ZWQgZ3VpbGQgaWNvbiAqL1xuICBBbmltYXRlZEljb24gPSAnQU5JTUFURURfSUNPTicsXG4gIC8qKiBHdWlsZCBpcyB1c2luZyB0aGUgb2xkIHBlcm1pc3Npb25zIGNvbmZpZ3VyYXRpb24gYmVoYXZpb3IgKi9cbiAgQXBwbGljYXRpb25Db21tYW5kUGVybWlzc2lvbnNWMiA9ICdBUFBMSUNBVElPTl9DT01NQU5EX1BFUk1JU1NJT05TX1YyJyxcbiAgLyoqIEd1aWxkIGhhcyBzZXQgdXAgYXV0byBtb2RlcmF0aW9uIHJ1bGVzICovXG4gIEF1dG9Nb2RlcmF0aW9uID0gJ0FVVE9fTU9ERVJBVElPTicsXG4gIC8qKiBHdWlsZCBoYXMgYWNjZXNzIHRvIHNldCBhIGd1aWxkIGJhbm5lciBpbWFnZSAqL1xuICBCYW5uZXIgPSAnQkFOTkVSJyxcbiAgLyoqXG4gICAqIEd1aWxkIGNhbiBlbmFibGUgd2VsY29tZSBzY3JlZW4sIE1lbWJlcnNoaXAgU2NyZWVuaW5nLCBzdGFnZSBjaGFubmVscyBhbmQgZGlzY292ZXJ5LCBhbmQgcmVjZWl2ZXMgY29tbXVuaXR5IHVwZGF0ZXNcbiAgICpcbiAgICogQHJlbWFya3NcbiAgICogVGhpcyB2YWx1ZSBpcyBtdXRhYmxlXG4gICAqICovXG4gIENvbW11bml0eSA9ICdDT01NVU5JVFknLFxuICAvKiogR3VpbGQgaGFzIGVuYWJsZWQgbW9uZXRpemF0aW9uLiAqL1xuICBDcmVhdG9yTW9uZXRpemFibGVQcm92aXNpb25hbCA9ICdDUkVBVE9SX01PTkVUSVpBQkxFX1BST1ZJU0lPTkFMJyxcbiAgLyoqIEd1aWxkIGhhcyBlbmFibGVkIHRoZSByb2xlIHN1YnNjcmlwdGlvbiBwcm9tbyBwYWdlLiAqL1xuICBDcmVhdG9yU3RvcmVQYWdlID0gJ0NSRUFUT1JfU1RPUkVfUEFHRScsXG4gIC8qKiBHdWlsZCBoYXMgYmVlbiBzZXQgYXMgYSBzdXBwb3J0IHNlcnZlciBvbiB0aGUgQXBwIERpcmVjdG9yeSAqL1xuICBEZXZlbG9wZXJTdXBwb3J0U2VydmVyID0gJ0RFVkVMT1BFUl9TVVBQT1JUX1NFUlZFUicsXG4gIC8qKlxuICAgKiBHdWlsZCBpcyBhYmxlIHRvIGJlIGRpc2NvdmVyZWQgaW4gdGhlIGRpcmVjdG9yeVxuICAgKlxuICAgKiBAcmVtYXJrc1xuICAgKiBUaGlzIHZhbHVlIGlzIG11dGFibGVcbiAgICovXG4gIERpc2NvdmVyYWJsZSA9ICdESVNDT1ZFUkFCTEUnLFxuICAvKiogR3VpbGQgaXMgYWJsZSB0byBiZSBmZWF0dXJlZCBpbiB0aGUgZGlyZWN0b3J5ICovXG4gIEZlYXR1cmFibGUgPSAnRkVBVFVSQUJMRScsXG4gIC8qKlxuICAgKiBHdWlsZCBoYXMgcGF1c2VkIGludml0ZXMsIHByZXZlbnRpbmcgbmV3IHVzZXJzIGZyb20gam9pbmluZ1xuICAgKlxuICAgKiBAcmVtYXJrc1xuICAgKiBUaGlzIHZhbHVlIGlzIG11dGFibGVcbiAgICovXG4gIEludml0ZXNEaXNhYmxlZCA9ICdJTlZJVEVTX0RJU0FCTEVEJyxcbiAgLyoqIEd1aWxkIGhhcyBhY2Nlc3MgdG8gc2V0IGFuIGludml0ZSBzcGxhc2ggYmFja2dyb3VuZCAqL1xuICBJbnZpdGVTcGxhc2ggPSAnSU5WSVRFX1NQTEFTSCcsXG4gIC8qKiBHdWlsZCBoYXMgZW5hYmxlZCBbTWVtYmVyc2hpcCBTY3JlZW5pbmddKGh0dHBzOi8vZGlzY29yZC5jb20vZGV2ZWxvcGVycy9kb2NzL3Jlc291cmNlcy9ndWlsZCNtZW1iZXJzaGlwLXNjcmVlbmluZy1vYmplY3QpICovXG4gIE1lbWJlclZlcmlmaWNhdGlvbkdhdGVFbmFibGVkID0gJ01FTUJFUl9WRVJJRklDQVRJT05fR0FURV9FTkFCTEVEJyxcbiAgLyoqIEd1aWxkIGhhcyBpbmNyZWFzZWQgY3VzdG9tIHNvdW5kYm9hcmQgc291bmQgc2xvdHMuICovXG4gIE1vcmVTb3VuZGJvYXJkID0gJ01PUkVfU09VTkRCT0FSRCcsXG4gIC8qKiBHdWlsZCBoYXMgaW5jcmVhc2VkIGN1c3RvbSBzdGlja2VyIHNsb3RzICovXG4gIE1vcmVTdGlja2VycyA9ICdNT1JFX1NUSUNLRVJTJyxcbiAgLyoqIEd1aWxkIGhhcyBhY2Nlc3MgdG8gY3JlYXRlIG5ld3MgY2hhbm5lbHMgKi9cbiAgTmV3cyA9ICdORVdTJyxcbiAgLyoqIEd1aWxkIGlzIHBhcnRuZXJlZCAqL1xuICBQYXJ0bmVyZWQgPSAnUEFSVE5FUkVEJyxcbiAgLyoqIEd1aWxkIGNhbiBiZSBwcmV2aWV3ZWQgYmVmb3JlIGpvaW5pbmcgdmlhIE1lbWJlcnNoaXAgU2NyZWVuaW5nIG9yIHRoZSBkaXJlY3RvcnkgKi9cbiAgUHJldmlld0VuYWJsZWQgPSAnUFJFVklFV19FTkFCTEVEJyxcbiAgLyoqXG4gICAqIEd1aWxkIGhhcyBkaXNhYmxlZCBhbGVydHMgZm9yIGpvaW4gcmFpZHMgaW4gdGhlIGNvbmZpZ3VyZWQgc2FmZXR5IGFsZXJ0cyBjaGFubmVsXG4gICAqXG4gICAqIEByZW1hcmtzXG4gICAqIFRoaXMgdmFsdWUgaXMgbXV0YWJsZVxuICAgKi9cbiAgUmFpZEFsZXJ0c0Rpc2FibGVkID0gJ1JBSURfQUxFUlRTX0RJU0FCTEVEJyxcbiAgLyoqIEd1aWxkIGlzIGFibGUgdG8gc2V0IHJvbGUgaWNvbnMgKi9cbiAgUm9sZUljb25zID0gJ1JPTEVfSUNPTlMnLFxuICAvKiogR3VpbGQgaGFzIHJvbGUgc3Vic2NyaXB0aW9ucyB0aGF0IGNhbiBiZSBwdXJjaGFzZWQuICovXG4gIFJvbGVTdWJzY3JpcHRpb25zQXZhaWxhYmxlRm9yUHVyY2hhc2UgPSAnUk9MRV9TVUJTQ1JJUFRJT05TX0FWQUlMQUJMRV9GT1JfUFVSQ0hBU0UnLFxuICAvKiogR3VpbGQgaGFzIGVuYWJsZWQgcm9sZSBzdWJzY3JpcHRpb25zLiAqL1xuICBSb2xlU3Vic2NyaXB0aW9uc0VuYWJsZWQgPSAnUk9MRV9TVUJTQ1JJUFRJT05TX0VOQUJMRUQnLFxuICAvKiogR3VpbGQgaGFzIGNyZWF0ZWQgc291bmRib2FyZCBzb3VuZHMuICovXG4gIFNvdW5kYm9hcmQgPSAnU09VTkRCT0FSRCcsXG4gIC8qKiBHdWlsZCBoYXMgZW5hYmxlZCB0aWNrZXRlZCBldmVudHMgKi9cbiAgVGlja2V0ZWRFdmVudHNFbmFibGVkID0gJ1RJQ0tFVEVEX0VWRU5UU19FTkFCTEVEJyxcbiAgLyoqIEd1aWxkIGhhcyBhY2Nlc3MgdG8gc2V0IGEgdmFuaXR5IFVSTCAqL1xuICBWYW5pdHlVcmwgPSAnVkFOSVRZX1VSTCcsXG4gIC8qKiBHdWlsZCBpcyB2ZXJpZmllZCAqL1xuICBWZXJpZmllZCA9ICdWRVJJRklFRCcsXG4gIC8qKiBHdWlsZCBoYXMgYWNjZXNzIHRvIHNldCAzODQga2JwcyBiaXRyYXRlIGluIHZvaWNlIChwcmV2aW91c2x5IFZJUCB2b2ljZSBzZXJ2ZXJzKSAqL1xuICBWaXBSZWdpb25zID0gJ1ZJUF9SRUdJT05TJyxcbiAgLyoqIEd1aWxkIGhhcyBlbmFibGVkIHRoZSB3ZWxjb21lIHNjcmVlbiAqL1xuICBXZWxjb21lU2NyZWVuRW5hYmxlZCA9ICdXRUxDT01FX1NDUkVFTl9FTkFCTEVEJyxcbiAgLyoqIEd1aWxkIGhhcyBhY2Nlc3MgdG8gZ3Vlc3QgaW52aXRlcyAqL1xuICBHdWVzdHNFbmFibGVkID0gJ0dVRVNUU19FTkFCTEVEJyxcbiAgLyoqIEd1aWxkIGhhcyBhY2Nlc3MgdG8gc2V0IGd1aWxkIHRhZ3MgKi9cbiAgR3VpbGRUYWdzID0gJ0dVSUxEX1RBR1MnLFxuICAvKiogR3VpbGQgaXMgYWJsZSB0byBzZXQgZ3JhZGllbnQgY29sb3JzIHRvIHJvbGVzICovXG4gIEVuaGFuY2VkUm9sZUNvbG9ycyA9ICdFTkhBTkNFRF9ST0xFX0NPTE9SUycsXG59XG5cbi8qKiBodHRwczovL2Rpc2NvcmQuY29tL2RldmVsb3BlcnMvZG9jcy9yZXNvdXJjZXMvZ3VpbGQjdW5hdmFpbGFibGUtZ3VpbGQtb2JqZWN0ICovXG5leHBvcnQgaW50ZXJmYWNlIERpc2NvcmRVbmF2YWlsYWJsZUd1aWxkIGV4dGVuZHMgUGljazxEaXNjb3JkR3VpbGQsICdpZCcgfCAndW5hdmFpbGFibGUnPiB7fVxuXG4vKiogaHR0cHM6Ly9kaXNjb3JkLmNvbS9kZXZlbG9wZXJzL2RvY3MvcmVzb3VyY2VzL2d1aWxkI2d1aWxkLXByZXZpZXctb2JqZWN0LWd1aWxkLXByZXZpZXctc3RydWN0dXJlICovXG5leHBvcnQgaW50ZXJmYWNlIERpc2NvcmRHdWlsZFByZXZpZXcge1xuICAvKiogR3VpbGQgaWQgKi9cbiAgaWQ6IHN0cmluZ1xuICAvKiogR3VpbGQgbmFtZSAoMi0xMDAgY2hhcmFjdGVycykgKi9cbiAgbmFtZTogc3RyaW5nXG4gIC8qKiBJY29uIGhhc2ggKi9cbiAgaWNvbjogc3RyaW5nIHwgbnVsbFxuICAvKiogU3BsYXNoIGhhc2ggKi9cbiAgc3BsYXNoOiBzdHJpbmcgfCBudWxsXG4gIC8qKiBEaXNjb3Zlcnkgc3BsYXNoIGhhc2ggKi9cbiAgZGlzY292ZXJ5X3NwbGFzaDogc3RyaW5nIHwgbnVsbFxuICAvKiogQ3VzdG9tIGd1aWxkIGVtb2ppcyAqL1xuICBlbW9qaXM6IERpc2NvcmRFbW9qaVtdXG4gIC8qKiBFbmFibGVkIGd1aWxkIGZlYXR1cmVzICovXG4gIGZlYXR1cmVzOiBHdWlsZEZlYXR1cmVzW11cbiAgLyoqIEFwcHJveGltYXRlIG51bWJlciBvZiBtZW1iZXJzIGluIHRoaXMgZ3VpbGQgKi9cbiAgYXBwcm94aW1hdGVfbWVtYmVyX2NvdW50OiBudW1iZXJcbiAgLyoqIEFwcHJveGltYXRlIG51bWJlciBvZiBvbmxpbmUgbWVtYmVycyBpbiB0aGlzIGd1aWxkICovXG4gIGFwcHJveGltYXRlX3ByZXNlbmNlX2NvdW50OiBudW1iZXJcbiAgLyoqIFRoZSBkZXNjcmlwdGlvbiBmb3IgdGhlIGd1aWxkLCBpZiB0aGUgZ3VpbGQgaXMgZGlzY292ZXJhYmxlICovXG4gIGRlc2NyaXB0aW9uOiBzdHJpbmcgfCBudWxsXG4gIC8qKiBDdXN0b20gZ3VpbGQgc3RpY2tlcnMgKi9cbiAgc3RpY2tlcnM6IERpc2NvcmRTdGlja2VyW11cbn1cblxuLyoqIGh0dHBzOi8vZGlzY29yZC5jb20vZGV2ZWxvcGVycy9kb2NzL3Jlc291cmNlcy9ndWlsZCNndWlsZC13aWRnZXQtc2V0dGluZ3Mtb2JqZWN0LWd1aWxkLXdpZGdldC1zZXR0aW5ncy1zdHJ1Y3R1cmUgKi9cbmV4cG9ydCBpbnRlcmZhY2UgRGlzY29yZEd1aWxkV2lkZ2V0U2V0dGluZ3Mge1xuICAvKiogd2hldGhlciB0aGUgd2lkZ2V0IGlzIGVuYWJsZWQgKi9cbiAgZW5hYmxlZDogYm9vbGVhblxuICAvKiogdGhlIHdpZGdldCBjaGFubmVsIGlkICovXG4gIGNoYW5uZWxfaWQ6IHN0cmluZyB8IG51bGxcbn1cblxuLyoqIGh0dHBzOi8vZGlzY29yZC5jb20vZGV2ZWxvcGVycy9kb2NzL3Jlc291cmNlcy9ndWlsZCNndWlsZC13aWRnZXQtb2JqZWN0LWd1aWxkLXdpZGdldC1zdHJ1Y3R1cmUgKi9cbmV4cG9ydCBpbnRlcmZhY2UgRGlzY29yZEd1aWxkV2lkZ2V0IHtcbiAgaWQ6IHN0cmluZ1xuICBuYW1lOiBzdHJpbmdcbiAgaW5zdGFudF9pbnZpdGU6IHN0cmluZyB8IG51bGxcbiAgY2hhbm5lbHM6IFBhcnRpYWw8RGlzY29yZENoYW5uZWw+W11cbiAgbWVtYmVyczogUGFydGlhbDxEaXNjb3JkVXNlcj5bXVxuICBwcmVzZW5jZV9jb3VudDogbnVtYmVyXG59XG5cbi8qKiBodHRwczovL2Rpc2NvcmQuY29tL2RldmVsb3BlcnMvZG9jcy9yZXNvdXJjZXMvZ3VpbGQjZ3VpbGQtbWVtYmVyLW9iamVjdC1ndWlsZC1tZW1iZXItc3RydWN0dXJlICovXG5leHBvcnQgaW50ZXJmYWNlIERpc2NvcmRNZW1iZXIge1xuICAvKiogVGhlIHVzZXIgdGhpcyBndWlsZCBtZW1iZXIgcmVwcmVzZW50cyAqL1xuICB1c2VyPzogRGlzY29yZFVzZXJcbiAgLyoqIFRoaXMgdXNlcidzIGd1aWxkIG5pY2tuYW1lICovXG4gIG5pY2s/OiBzdHJpbmcgfCBudWxsXG4gIC8qKiBUaGUgbWVtYmVyJ3MgY3VzdG9tIGF2YXRhciBmb3IgdGhpcyBzZXJ2ZXIuICovXG4gIGF2YXRhcj86IHN0cmluZyB8IG51bGxcbiAgLyoqIFRoZSBtZW1iZXIncyBndWlsZCBiYW5uZXIgKi9cbiAgYmFubmVyPzogc3RyaW5nIHwgbnVsbFxuICAvKiogQXJyYXkgb2Ygcm9sZSBvYmplY3QgaWRzICovXG4gIHJvbGVzOiBzdHJpbmdbXVxuICAvKipcbiAgICogV2hlbiB0aGUgdXNlciBqb2luZWQgdGhlIGd1aWxkXG4gICAqXG4gICAqIEByZW1hcmtzIE1lbWJlciBvYmplY3RzIHJldHJpZXZlZCBmcm9tIGBWT0lDRV9TVEFURV9VUERBVEVgIGV2ZW50cyB3aWxsIGhhdmUgYGpvaW5lZF9hdGAgc2V0IGFzIGBudWxsYCBpZiB0aGUgbWVtYmVyIHdhcyBpbnZpdGVkIGFzIGEgZ3Vlc3QuXG4gICAqL1xuICBqb2luZWRfYXQ6IHN0cmluZyB8IG51bGxcbiAgLyoqIFdoZW4gdGhlIHVzZXIgc3RhcnRlZCBib29zdGluZyB0aGUgZ3VpbGQgKi9cbiAgcHJlbWl1bV9zaW5jZT86IHN0cmluZyB8IG51bGxcbiAgLyoqIFdoZXRoZXIgdGhlIHVzZXIgaXMgZGVhZmVuZWQgaW4gdm9pY2UgY2hhbm5lbHMgKi9cbiAgZGVhZjogYm9vbGVhblxuICAvKiogV2hldGhlciB0aGUgdXNlciBpcyBtdXRlZCBpbiB2b2ljZSBjaGFubmVscyAqL1xuICBtdXRlOiBib29sZWFuXG4gIC8qKiBHdWlsZCBtZW1iZXIgZmxhZ3MgKi9cbiAgZmxhZ3M6IG51bWJlclxuICAvKiogV2hldGhlciB0aGUgdXNlciBoYXMgbm90IHlldCBwYXNzZWQgdGhlIGd1aWxkJ3MgTWVtYmVyc2hpcCBTY3JlZW5pbmcgcmVxdWlyZW1lbnRzICovXG4gIHBlbmRpbmc/OiBib29sZWFuXG4gIC8qKiBUaGUgcGVybWlzc2lvbnMgdGhpcyBtZW1iZXIgaGFzIGluIHRoZSBndWlsZC4gT25seSBwcmVzZW50IG9uIGludGVyYWN0aW9uIGV2ZW50cyBhbmQgT0F1dGgyIGN1cnJlbnQgbWVtYmVyIGZldGNoLiAqL1xuICBwZXJtaXNzaW9ucz86IHN0cmluZ1xuICAvKiogd2hlbiB0aGUgdXNlcidzIHRpbWVvdXQgd2lsbCBleHBpcmUgYW5kIHRoZSB1c2VyIHdpbGwgYmUgYWJsZSB0byBjb21tdW5pY2F0ZSBpbiB0aGUgZ3VpbGQgYWdhaW4gKHNldCBudWxsIHRvIHJlbW92ZSB0aW1lb3V0KSwgbnVsbCBvciBhIHRpbWUgaW4gdGhlIHBhc3QgaWYgdGhlIHVzZXIgaXMgbm90IHRpbWVkIG91dCAqL1xuICBjb21tdW5pY2F0aW9uX2Rpc2FibGVkX3VudGlsPzogc3RyaW5nIHwgbnVsbFxuICAvKiogZGF0YSBmb3IgdGhlIG1lbWJlcidzIGd1aWxkIGF2YXRhciBkZWNvcmF0aW9uICovXG4gIGF2YXRhcl9kZWNvcmF0aW9uX2RhdGE/OiBEaXNjb3JkQXZhdGFyRGVjb3JhdGlvbkRhdGEgfCBudWxsXG59XG5cbi8qKiBodHRwczovL2Rpc2NvcmQuY29tL2RldmVsb3BlcnMvZG9jcy9yZXNvdXJjZXMvZ3VpbGQjZ3VpbGQtbWVtYmVyLW9iamVjdC1ndWlsZC1tZW1iZXItc3RydWN0dXJlICovXG5leHBvcnQgaW50ZXJmYWNlIERpc2NvcmRNZW1iZXJXaXRoVXNlciBleHRlbmRzIERpc2NvcmRNZW1iZXIge1xuICAvKiogVGhlIHVzZXIgb2JqZWN0IGZvciB0aGlzIG1lbWJlciAqL1xuICB1c2VyOiBEaXNjb3JkVXNlclxufVxuXG4vKiogaHR0cHM6Ly9kaXNjb3JkLmNvbS9kZXZlbG9wZXJzL2RvY3MvcmVzb3VyY2VzL2d1aWxkI2d1aWxkLW1lbWJlci1vYmplY3QtZ3VpbGQtbWVtYmVyLWZsYWdzICovXG5leHBvcnQgZW51bSBNZW1iZXJGbGFncyB7XG4gIC8qKlxuICAgKiBNZW1iZXIgaGFzIGxlZnQgYW5kIHJlam9pbmVkIHRoZSBndWlsZFxuICAgKlxuICAgKiBAcmVtYXJrc1xuICAgKiBUaGlzIHZhbHVlIGlzIG5vdCBlZGl0YWJsZVxuICAgKi9cbiAgRGlkUmVqb2luID0gMSA8PCAwLFxuICAvKipcbiAgICogTWVtYmVyIGhhcyBjb21wbGV0ZWQgb25ib2FyZGluZ1xuICAgKlxuICAgKiBAcmVtYXJrc1xuICAgKiBUaGlzIHZhbHVlIGlzIG5vdCBlZGl0YWJsZVxuICAgKi9cbiAgQ29tcGxldGVkT25ib2FyZGluZyA9IDEgPDwgMSxcbiAgLyoqIE1lbWJlciBpcyBleGVtcHQgZnJvbSBndWlsZCB2ZXJpZmljYXRpb24gcmVxdWlyZW1lbnRzICovXG4gIEJ5cGFzc2VzVmVyaWZpY2F0aW9uID0gMSA8PCAyLFxuICAvKipcbiAgICogTWVtYmVyIGhhcyBzdGFydGVkIG9uYm9hcmRpbmdcbiAgICpcbiAgICogQHJlbWFya3NcbiAgICogVGhpcyB2YWx1ZSBpcyBub3QgZWRpdGFibGVcbiAgICovXG4gIFN0YXJ0ZWRPbmJvYXJkaW5nID0gMSA8PCAzLFxuICAvKipcbiAgICogTWVtYmVyIGlzIGEgZ3Vlc3QgYW5kIGNhbiBvbmx5IGFjY2VzcyB0aGUgdm9pY2UgY2hhbm5lbCB0aGV5IHdlcmUgaW52aXRlZCB0b1xuICAgKlxuICAgKiBAcmVtYXJrc1xuICAgKiBUaGlzIHZhbHVlIGlzIG5vdCBlZGl0YWJsZVxuICAgKi9cbiAgSXNHdWVzdCA9IDEgPDwgNCxcbiAgLyoqXG4gICAqIE1lbWJlciBoYXMgc3RhcnRlZCBTZXJ2ZXIgR3VpZGUgbmV3IG1lbWJlciBhY3Rpb25zXG4gICAqXG4gICAqIEByZW1hcmtzXG4gICAqIFRoaXMgdmFsdWUgaXMgbm90IGVkaXRhYmxlXG4gICAqL1xuICBTdGFydGVkSG9tZUFjdGlvbnMgPSAxIDw8IDUsXG4gIC8qKlxuICAgKiBNZW1iZXIgaGFzIGNvbXBsZXRlZCBTZXJ2ZXIgR3VpZGUgbmV3IG1lbWJlciBhY3Rpb25zXG4gICAqXG4gICAqIEByZW1hcmtzXG4gICAqIFRoaXMgdmFsdWUgaXMgbm90IGVkaXRhYmxlXG4gICAqL1xuICBDb21wbGV0ZWRIb21lQWN0aW9ucyA9IDEgPDwgNixcbiAgLyoqXG4gICAqIE1lbWJlcidzIHVzZXJuYW1lLCBkaXNwbGF5IG5hbWUsIG9yIG5pY2tuYW1lIGlzIGJsb2NrZWQgYnkgQXV0b01vZFxuICAgKlxuICAgKiBAcmVtYXJrc1xuICAgKiBUaGlzIHZhbHVlIGlzIG5vdCBlZGl0YWJsZVxuICAgKi9cbiAgQXV0b21vZFF1YXJhbnRpbmVkVXNlcm5hbWUgPSAxIDw8IDcsXG4gIC8qKlxuICAgKiBNZW1iZXIgaGFzIGRpc21pc3NlZCB0aGUgRE0gc2V0dGluZ3MgdXBzZWxsXG4gICAqXG4gICAqIEByZW1hcmtzXG4gICAqIFRoaXMgdmFsdWUgaXMgbm90IGVkaXRhYmxlXG4gICAqL1xuICBEbVNldHRpbmdzVXBzZWxsQWNrbm93bGVkZ2VkID0gMSA8PCA5LFxuICAvKipcbiAgICogTWVtYmVyJ3MgZ3VpbGQgdGFnIGlzIGJsb2NrZWQgYnkgQXV0b01vZFxuICAgKlxuICAgKiBAcmVtYXJrc1xuICAgKiBUaGlzIHZhbHVlIGlzIG5vdCBlZGl0YWJsZVxuICAgKi9cbiAgQXV0b21vZFF1YXJhbnRpbmVkR3VpbGRUYWcgPSAxIDw8IDEwLFxufVxuXG4vKiogaHR0cHM6Ly9kaXNjb3JkLmNvbS9kZXZlbG9wZXJzL2RvY3MvcmVzb3VyY2VzL2d1aWxkI2ludGVncmF0aW9uLW9iamVjdC1pbnRlZ3JhdGlvbi1zdHJ1Y3R1cmUgKi9cbmV4cG9ydCBpbnRlcmZhY2UgRGlzY29yZEludGVncmF0aW9uIHtcbiAgLyoqIEludGVncmF0aW9uIElkICovXG4gIGlkOiBzdHJpbmdcbiAgLyoqIEludGVncmF0aW9uIG5hbWUgKi9cbiAgbmFtZTogc3RyaW5nXG4gIC8qKiBJbnRlZ3JhdGlvbiB0eXBlICh0d2l0Y2gsIHlvdXR1YmUsIGRpc2NvcmQsIG9yIGd1aWxkX3N1YnNjcmlwdGlvbikuICovXG4gIHR5cGU6ICd0d2l0Y2gnIHwgJ3lvdXR1YmUnIHwgJ2Rpc2NvcmQnIHwgJ2d1aWxkX3N1YnNjcmlwdGlvbidcbiAgLyoqIElzIHRoaXMgaW50ZWdyYXRpb24gZW5hYmxlZCAqL1xuICBlbmFibGVkOiBib29sZWFuXG4gIC8qKiBJcyB0aGlzIGludGVncmF0aW9uIHN5bmNpbmcgKi9cbiAgc3luY2luZz86IGJvb2xlYW5cbiAgLyoqIFJvbGUgSWQgdGhhdCB0aGlzIGludGVncmF0aW9uIHVzZXMgZm9yIFwic3Vic2NyaWJlcnNcIiAqL1xuICByb2xlX2lkPzogc3RyaW5nXG4gIC8qKiBXaGV0aGVyIGVtb3RpY29ucyBzaG91bGQgYmUgc3luY2VkIGZvciB0aGlzIGludGVncmF0aW9uICh0d2l0Y2ggb25seSBjdXJyZW50bHkpICovXG4gIGVuYWJsZV9lbW90aWNvbnM/OiBib29sZWFuXG4gIC8qKiBUaGUgYmVoYXZpb3Igb2YgZXhwaXJpbmcgc3Vic2NyaWJlcnMgKi9cbiAgZXhwaXJlX2JlaGF2aW9yPzogSW50ZWdyYXRpb25FeHBpcmVCZWhhdmlvcnNcbiAgLyoqIFRoZSBncmFjZSBwZXJpb2QgKGluIGRheXMpIGJlZm9yZSBleHBpcmluZyBzdWJzY3JpYmVycyAqL1xuICBleHBpcmVfZ3JhY2VfcGVyaW9kPzogbnVtYmVyXG4gIC8qKiBVc2VyIGZvciB0aGlzIGludGVncmF0aW9uICovXG4gIHVzZXI/OiBEaXNjb3JkVXNlclxuICAvKiogSW50ZWdyYXRpb24gYWNjb3VudCBpbmZvcm1hdGlvbiAqL1xuICBhY2NvdW50OiBEaXNjb3JkSW50ZWdyYXRpb25BY2NvdW50XG4gIC8qKiBXaGVuIHRoaXMgaW50ZWdyYXRpb24gd2FzIGxhc3Qgc3luY2VkICovXG4gIHN5bmNlZF9hdD86IHN0cmluZ1xuICAvKiogSG93IG1hbnkgc3Vic2NyaWJlcnMgdGhpcyBpbnRlZ3JhdGlvbiBoYXMgKi9cbiAgc3Vic2NyaWJlcl9jb3VudD86IG51bWJlclxuICAvKiogSGFzIHRoaXMgaW50ZWdyYXRpb24gYmVlbiByZXZva2VkICovXG4gIHJldm9rZWQ/OiBib29sZWFuXG4gIC8qKiBUaGUgYm90L09BdXRoMiBhcHBsaWNhdGlvbiBmb3IgZGlzY29yZCBpbnRlZ3JhdGlvbnMgKi9cbiAgYXBwbGljYXRpb24/OiBEaXNjb3JkSW50ZWdyYXRpb25BcHBsaWNhdGlvblxuICAvKiogdGhlIHNjb3BlcyB0aGUgYXBwbGljYXRpb24gaGFzIGJlZW4gYXV0aG9yaXplZCBmb3IgKi9cbiAgc2NvcGVzOiBPQXV0aDJTY29wZVtdXG59XG5cbi8qKiBodHRwczovL2Rpc2NvcmQuY29tL2RldmVsb3BlcnMvZG9jcy9yZXNvdXJjZXMvZ3VpbGQjaW50ZWdyYXRpb24tb2JqZWN0LWludGVncmF0aW9uLWV4cGlyZS1iZWhhdmlvcnMgKi9cbmV4cG9ydCBlbnVtIEludGVncmF0aW9uRXhwaXJlQmVoYXZpb3JzIHtcbiAgUmVtb3ZlUm9sZSxcbiAgS2ljayxcbn1cblxuLyoqIGh0dHBzOi8vZGlzY29yZC5jb20vZGV2ZWxvcGVycy9kb2NzL3Jlc291cmNlcy9ndWlsZCNpbnRlZ3JhdGlvbi1hY2NvdW50LW9iamVjdC1pbnRlZ3JhdGlvbi1hY2NvdW50LXN0cnVjdHVyZSAqL1xuZXhwb3J0IGludGVyZmFjZSBEaXNjb3JkSW50ZWdyYXRpb25BY2NvdW50IHtcbiAgLyoqIElkIG9mIHRoZSBhY2NvdW50ICovXG4gIGlkOiBzdHJpbmdcbiAgLyoqIE5hbWUgb2YgdGhlIGFjY291bnQgKi9cbiAgbmFtZTogc3RyaW5nXG59XG5cbi8qKiBodHRwczovL2Rpc2NvcmQuY29tL2RldmVsb3BlcnMvZG9jcy9yZXNvdXJjZXMvZ3VpbGQjaW50ZWdyYXRpb24tYXBwbGljYXRpb24tb2JqZWN0LWludGVncmF0aW9uLWFwcGxpY2F0aW9uLXN0cnVjdHVyZSAqL1xuZXhwb3J0IGludGVyZmFjZSBEaXNjb3JkSW50ZWdyYXRpb25BcHBsaWNhdGlvbiB7XG4gIC8qKiBUaGUgaWQgb2YgdGhlIGFwcCAqL1xuICBpZDogc3RyaW5nXG4gIC8qKiBUaGUgbmFtZSBvZiB0aGUgYXBwICovXG4gIG5hbWU6IHN0cmluZ1xuICAvKiogdGhlIGljb24gaGFzaCBvZiB0aGUgYXBwICovXG4gIGljb246IHN0cmluZyB8IG51bGxcbiAgLyoqIFRoZSBkZXNjcmlwdGlvbiBvZiB0aGUgYXBwICovXG4gIGRlc2NyaXB0aW9uOiBzdHJpbmdcbiAgLyoqIFRoZSBib3QgYXNzb2NpYXRlZCB3aXRoIHRoaXMgYXBwbGljYXRpb24gKi9cbiAgYm90PzogRGlzY29yZFVzZXJcbn1cblxuLyoqIGh0dHBzOi8vZGlzY29yZC5jb20vZGV2ZWxvcGVycy9kb2NzL3Jlc291cmNlcy9ndWlsZCNiYW4tb2JqZWN0LWJhbi1zdHJ1Y3R1cmUgKi9cbmV4cG9ydCBpbnRlcmZhY2UgRGlzY29yZEJhbiB7XG4gIC8qKiBUaGUgcmVhc29uIGZvciB0aGUgYmFuICovXG4gIHJlYXNvbjogc3RyaW5nIHwgbnVsbFxuICAvKiogVGhlIGJhbm5lZCB1c2VyICovXG4gIHVzZXI6IERpc2NvcmRVc2VyXG59XG5cbi8qKiBodHRwczovL2Rpc2NvcmQuY29tL2RldmVsb3BlcnMvZG9jcy9yZXNvdXJjZXMvZ3VpbGQjd2VsY29tZS1zY3JlZW4tb2JqZWN0LXdlbGNvbWUtc2NyZWVuLXN0cnVjdHVyZSAqL1xuZXhwb3J0IGludGVyZmFjZSBEaXNjb3JkV2VsY29tZVNjcmVlbiB7XG4gIC8qKiBUaGUgc2VydmVyIGRlc2NyaXB0aW9uIHNob3duIGluIHRoZSB3ZWxjb21lIHNjcmVlbiAqL1xuICBkZXNjcmlwdGlvbjogc3RyaW5nIHwgbnVsbFxuICAvKiogVGhlIGNoYW5uZWxzIHNob3duIGluIHRoZSB3ZWxjb21lIHNjcmVlbiwgdXAgdG8gNSAqL1xuICB3ZWxjb21lX2NoYW5uZWxzOiBEaXNjb3JkV2VsY29tZVNjcmVlbkNoYW5uZWxbXVxufVxuXG4vKiogaHR0cHM6Ly9kaXNjb3JkLmNvbS9kZXZlbG9wZXJzL2RvY3MvcmVzb3VyY2VzL2d1aWxkI3dlbGNvbWUtc2NyZWVuLW9iamVjdC13ZWxjb21lLXNjcmVlbi1jaGFubmVsLXN0cnVjdHVyZSAqL1xuZXhwb3J0IGludGVyZmFjZSBEaXNjb3JkV2VsY29tZVNjcmVlbkNoYW5uZWwge1xuICAvKiogVGhlIGNoYW5uZWwncyBpZCAqL1xuICBjaGFubmVsX2lkOiBzdHJpbmdcbiAgLyoqIFRoZSBkZXNjcmlwdGlvbiBzaG93biBmb3IgdGhlIGNoYW5uZWwgKi9cbiAgZGVzY3JpcHRpb246IHN0cmluZ1xuICAvKiogVGhlIGVtb2ppIGlkLCBpZiB0aGUgZW1vamkgaXMgY3VzdG9tICovXG4gIGVtb2ppX2lkOiBzdHJpbmcgfCBudWxsXG4gIC8qKiBUaGUgZW1vamkgbmFtZSBpZiBjdXN0b20sIHRoZSB1bmljb2RlIGNoYXJhY3RlciBpZiBzdGFuZGFyZCwgb3IgYG51bGxgIGlmIG5vIGVtb2ppIGlzIHNldCAqL1xuICBlbW9qaV9uYW1lOiBzdHJpbmcgfCBudWxsXG59XG5cbi8qKiBodHRwczovL2Rpc2NvcmQuY29tL2RldmVsb3BlcnMvZG9jcy9yZXNvdXJjZXMvZ3VpbGQjZ3VpbGQtb25ib2FyZGluZy1vYmplY3QtZ3VpbGQtb25ib2FyZGluZy1zdHJ1Y3R1cmUgKi9cbmV4cG9ydCBpbnRlcmZhY2UgRGlzY29yZEd1aWxkT25ib2FyZGluZyB7XG4gIC8qKiBJRCBvZiB0aGUgZ3VpbGQgdGhpcyBvbmJvYXJkaW5nIGlzIHBhcnQgb2YgKi9cbiAgZ3VpbGRfaWQ6IHN0cmluZ1xuICAvKiogUHJvbXB0cyBzaG93biBkdXJpbmcgb25ib2FyZGluZyBhbmQgaW4gY3VzdG9taXplIGNvbW11bml0eSAqL1xuICBwcm9tcHRzOiBEaXNjb3JkR3VpbGRPbmJvYXJkaW5nUHJvbXB0W11cbiAgLyoqIENoYW5uZWwgSURzIHRoYXQgbWVtYmVycyBnZXQgb3B0ZWQgaW50byBhdXRvbWF0aWNhbGx5ICovXG4gIGRlZmF1bHRfY2hhbm5lbF9pZHM6IHN0cmluZ1tdXG4gIC8qKiBXaGV0aGVyIG9uYm9hcmRpbmcgaXMgZW5hYmxlZCBpbiB0aGUgZ3VpbGQgKi9cbiAgZW5hYmxlZDogYm9vbGVhblxuICAvKiogQ3VycmVudCBtb2RlIG9mIG9uYm9hcmRpbmcgKi9cbiAgbW9kZTogRGlzY29yZEd1aWxkT25ib2FyZGluZ01vZGVcbn1cblxuLyoqIGh0dHBzOi8vZGlzY29yZC5jb20vZGV2ZWxvcGVycy9kb2NzL3Jlc291cmNlcy9ndWlsZCNndWlsZC1vbmJvYXJkaW5nLW9iamVjdC1vbmJvYXJkaW5nLXByb21wdC1zdHJ1Y3R1cmUgKi9cbmV4cG9ydCBpbnRlcmZhY2UgRGlzY29yZEd1aWxkT25ib2FyZGluZ1Byb21wdCB7XG4gIC8qKiBJRCBvZiB0aGUgcHJvbXB0ICovXG4gIGlkOiBzdHJpbmdcbiAgLyoqIFR5cGUgb2YgcHJvbXB0ICovXG4gIHR5cGU6IERpc2NvcmRHdWlsZE9uYm9hcmRpbmdQcm9tcHRUeXBlXG4gIC8qKiBPcHRpb25zIGF2YWlsYWJsZSB3aXRoaW4gdGhlIHByb21wdCAqL1xuICBvcHRpb25zOiBEaXNjb3JkR3VpbGRPbmJvYXJkaW5nUHJvbXB0T3B0aW9uW11cbiAgLyoqIFRpdGxlIG9mIHRoZSBwcm9tcHQgKi9cbiAgdGl0bGU6IHN0cmluZ1xuICAvKiogSW5kaWNhdGVzIHdoZXRoZXIgdXNlcnMgYXJlIGxpbWl0ZWQgdG8gc2VsZWN0aW5nIG9uZSBvcHRpb24gZm9yIHRoZSBwcm9tcHQgKi9cbiAgc2luZ2xlX3NlbGVjdDogYm9vbGVhblxuICAvKiogSW5kaWNhdGVzIHdoZXRoZXIgdGhlIHByb21wdCBpcyByZXF1aXJlZCBiZWZvcmUgYSB1c2VyIGNvbXBsZXRlcyB0aGUgb25ib2FyZGluZyBmbG93ICovXG4gIHJlcXVpcmVkOiBib29sZWFuXG4gIC8qKiBJbmRpY2F0ZXMgd2hldGhlciB0aGUgcHJvbXB0IGlzIHByZXNlbnQgaW4gdGhlIG9uYm9hcmRpbmcgZmxvdy4gSWYgYGZhbHNlYCwgdGhlIHByb21wdCB3aWxsIG9ubHkgYXBwZWFyIGluIHRoZSBDaGFubmVscyAmIFJvbGVzIHRhYiAqL1xuICBpbl9vbmJvYXJkaW5nOiBib29sZWFuXG59XG5cbi8qKiBodHRwczovL2Rpc2NvcmQuY29tL2RldmVsb3BlcnMvZG9jcy9yZXNvdXJjZXMvZ3VpbGQjZ3VpbGQtb25ib2FyZGluZy1vYmplY3QtcHJvbXB0LW9wdGlvbi1zdHJ1Y3R1cmUgKi9cbmV4cG9ydCBpbnRlcmZhY2UgRGlzY29yZEd1aWxkT25ib2FyZGluZ1Byb21wdE9wdGlvbiB7XG4gIC8qKiBJRCBvZiB0aGUgcHJvbXB0IG9wdGlvbiAqL1xuICBpZDogc3RyaW5nXG4gIC8qKiBJRHMgZm9yIGNoYW5uZWxzIGEgbWVtYmVyIGlzIGFkZGVkIHRvIHdoZW4gdGhlIG9wdGlvbiBpcyBzZWxlY3RlZCAqL1xuICBjaGFubmVsX2lkczogc3RyaW5nW11cbiAgLyoqIElEcyBmb3Igcm9sZXMgYXNzaWduZWQgdG8gYSBtZW1iZXIgd2hlbiB0aGUgb3B0aW9uIGlzIHNlbGVjdGVkICovXG4gIHJvbGVfaWRzOiBzdHJpbmdbXVxuICAvKipcbiAgICogRW1vamkgb2YgdGhlIG9wdGlvblxuICAgKlxuICAgKiBAcmVtYXJrc1xuICAgKiBXaGVuIGNyZWF0aW5nIG9yIHVwZGF0aW5nIGEgcHJvbXB0IG9wdGlvbiwgdGhlIGBlbW9qaV9pZGAsIGBlbW9qaV9uYW1lYCwgYW5kIGBlbW9qaV9hbmltYXRlZGAgZmllbGRzIG11c3QgYmUgdXNlZCBpbnN0ZWFkIG9mIHRoZSBlbW9qaSBvYmplY3QuXG4gICAqL1xuICBlbW9qaT86IERpc2NvcmRFbW9qaVxuICAvKipcbiAgICogRW1vamkgSUQgb2YgdGhlIG9wdGlvblxuICAgKlxuICAgKiBAcmVtYXJrc1xuICAgKiBXaGVuIGNyZWF0aW5nIG9yIHVwZGF0aW5nIGEgcHJvbXB0IG9wdGlvbiwgdGhlIGBlbW9qaV9pZGAsIGBlbW9qaV9uYW1lYCwgYW5kIGBlbW9qaV9hbmltYXRlZGAgZmllbGRzIG11c3QgYmUgdXNlZCBpbnN0ZWFkIG9mIHRoZSBlbW9qaSBvYmplY3QuXG4gICAqL1xuICBlbW9qaV9pZD86IHN0cmluZ1xuICAvKipcbiAgICogRW1vamkgbmFtZSBvZiB0aGUgb3B0aW9uXG4gICAqXG4gICAqIEByZW1hcmtzXG4gICAqIFdoZW4gY3JlYXRpbmcgb3IgdXBkYXRpbmcgYSBwcm9tcHQgb3B0aW9uLCB0aGUgYGVtb2ppX2lkYCwgYGVtb2ppX25hbWVgLCBhbmQgYGVtb2ppX2FuaW1hdGVkYCBmaWVsZHMgbXVzdCBiZSB1c2VkIGluc3RlYWQgb2YgdGhlIGVtb2ppIG9iamVjdC5cbiAgICovXG4gIGVtb2ppX25hbWU/OiBzdHJpbmdcbiAgLyoqXG4gICAqIFdoZXRoZXIgdGhlIGVtb2ppIGlzIGFuaW1hdGVkXG4gICAqXG4gICAqIEByZW1hcmtzXG4gICAqIFdoZW4gY3JlYXRpbmcgb3IgdXBkYXRpbmcgYSBwcm9tcHQgb3B0aW9uLCB0aGUgYGVtb2ppX2lkYCwgYGVtb2ppX25hbWVgLCBhbmQgYGVtb2ppX2FuaW1hdGVkYCBmaWVsZHMgbXVzdCBiZSB1c2VkIGluc3RlYWQgb2YgdGhlIGVtb2ppIG9iamVjdC5cbiAgICovXG4gIGVtb2ppX2FuaW1hdGVkPzogYm9vbGVhblxuICAvKiogVGl0bGUgb2YgdGhlIG9wdGlvbiAqL1xuICB0aXRsZTogc3RyaW5nXG4gIC8qKiBEZXNjcmlwdGlvbiBvZiB0aGUgb3B0aW9uICovXG4gIGRlc2NyaXB0aW9uOiBzdHJpbmcgfCBudWxsXG59XG5cbi8qKiBodHRwczovL2Rpc2NvcmQuY29tL2RldmVsb3BlcnMvZG9jcy9yZXNvdXJjZXMvZ3VpbGQjZ3VpbGQtb25ib2FyZGluZy1vYmplY3Qtb25ib2FyZGluZy1tb2RlICovXG5leHBvcnQgZW51bSBEaXNjb3JkR3VpbGRPbmJvYXJkaW5nTW9kZSB7XG4gIC8qKiBDb3VudHMgb25seSBEZWZhdWx0IENoYW5uZWxzIHRvd2FyZHMgY29uc3RyYWludHMgKi9cbiAgT25ib2FyZGluZ0RlZmF1bHQsXG4gIC8qKiBDb3VudHMgRGVmYXVsdCBDaGFubmVscyBhbmQgUXVlc3Rpb25zIHRvd2FyZHMgY29uc3RyYWludHMgKi9cbiAgT25ib2FyZGluZ0FkdmFuY2VkLFxufVxuXG4vKiogaHR0cHM6Ly9kaXNjb3JkLmNvbS9kZXZlbG9wZXJzL2RvY3MvcmVzb3VyY2VzL2d1aWxkI2d1aWxkLW9uYm9hcmRpbmctb2JqZWN0LXByb21wdC10eXBlcyAqL1xuZXhwb3J0IGVudW0gRGlzY29yZEd1aWxkT25ib2FyZGluZ1Byb21wdFR5cGUge1xuICBNdWx0aXBsZUNob2ljZSxcbiAgRHJvcERvd24sXG59XG5cbi8qKiBodHRwczovL2Rpc2NvcmQuY29tL2RldmVsb3BlcnMvZG9jcy9yZXNvdXJjZXMvZ3VpbGQjaW5jaWRlbnRzLWRhdGEtb2JqZWN0LWluY2lkZW50cy1kYXRhLXN0cnVjdHVyZSAqL1xuZXhwb3J0IGludGVyZmFjZSBEaXNjb3JkSW5jaWRlbnRzRGF0YSB7XG4gIC8qKiBXaGVuIGludml0ZXMgZ2V0IGVuYWJsZWQgYWdhaW4gKi9cbiAgaW52aXRlc19kaXNhYmxlZF91bnRpbDogc3RyaW5nIHwgbnVsbFxuICAvKiogV2hlbiBkaXJlY3QgbWVzc2FnZXMgZ2V0IGVuYWJsZWQgYWdhaW4gKi9cbiAgZG1zX2Rpc2FibGVkX3VudGlsOiBzdHJpbmcgfCBudWxsXG4gIC8qKiBXaGVuIHRoZSBkbSBzcGFtIHdhcyBkZXRlY3RlZCAqL1xuICBkbV9zcGFtX2RldGVjdGVkX2F0Pzogc3RyaW5nIHwgbnVsbFxuICAvKiogV2hlbiB0aGUgcmFpZCB3YXMgZGV0ZWN0ZWQgKi9cbiAgcmFpZF9kZXRlY3RlZF9hdD86IHN0cmluZyB8IG51bGxcbn1cblxuLyoqIGh0dHBzOi8vZGlzY29yZC5jb20vZGV2ZWxvcGVycy9kb2NzL3Jlc291cmNlcy9ndWlsZCNsaXN0LWFjdGl2ZS1ndWlsZC10aHJlYWRzLXJlc3BvbnNlLWJvZHkgKi9cbmV4cG9ydCBpbnRlcmZhY2UgRGlzY29yZExpc3RBY3RpdmVUaHJlYWRzIHtcbiAgLyoqIFRoZSBhY3RpdmUgdGhyZWFkcyAqL1xuICB0aHJlYWRzOiBEaXNjb3JkQ2hhbm5lbFtdXG4gIC8qKiBBIHRocmVhZCBtZW1iZXIgb2JqZWN0IGZvciBlYWNoIHJldHVybmVkIHRocmVhZCB0aGUgY3VycmVudCB1c2VyIGhhcyBqb2luZWQgKi9cbiAgbWVtYmVyczogRGlzY29yZFRocmVhZE1lbWJlcltdXG59XG5cbi8qKiBodHRwczovL2Rpc2NvcmQuY29tL2RldmVsb3BlcnMvZG9jcy9yZXNvdXJjZXMvZ3VpbGQjYnVsay1ndWlsZC1iYW4tYnVsay1iYW4tcmVzcG9uc2UgKi9cbmV4cG9ydCBpbnRlcmZhY2UgRGlzY29yZEJ1bGtCYW4ge1xuICAvKiogbGlzdCBvZiB1c2VyIGlkcywgdGhhdCB3ZXJlIHN1Y2Nlc3NmdWxseSBiYW5uZWQgKi9cbiAgYmFubmVkX3VzZXJzOiBzdHJpbmdbXVxuICAvKiogbGlzdCBvZiB1c2VyIGlkcywgdGhhdCB3ZXJlIG5vdCBiYW5uZWQgKi9cbiAgZmFpbGVkX3VzZXJzOiBzdHJpbmdbXVxufVxuXG4vKiogaHR0cHM6Ly9kaXNjb3JkLmNvbS9kZXZlbG9wZXJzL2RvY3MvcmVzb3VyY2VzL2d1aWxkI2dldC1ndWlsZC1wcnVuZS1jb3VudCAqL1xuZXhwb3J0IGludGVyZmFjZSBEaXNjb3JkUHJ1bmVkQ291bnQge1xuICBwcnVuZWQ6IG51bWJlclxufVxuXG4vKiogaHR0cHM6Ly9kaXNjb3JkLmNvbS9kZXZlbG9wZXJzL2RvY3MvcmVzb3VyY2VzL2d1aWxkI2dldC1ndWlsZC12YW5pdHktdXJsICovXG4vLyBUT0RPOiBUaGlzIHNob3VsZCBwcm92YWJseSBoYXZlIGFub3RoZXIgbmFtZSBmb3IgY2xhcml0eSB0byB3aGF0IGl0IHJlYWxseSByYXBwcmVzZW50XG5leHBvcnQgaW50ZXJmYWNlIERpc2NvcmRWYW5pdHlVcmwgZXh0ZW5kcyBQYXJ0aWFsPE9taXQ8RGlzY29yZEludml0ZSwgJ2NvZGUnPj4ge1xuICBjb2RlOiBzdHJpbmcgfCBudWxsXG4gIHVzZXM6IG51bWJlclxufVxuIl0sIm5hbWVzIjpbIkRlZmF1bHRNZXNzYWdlTm90aWZpY2F0aW9uTGV2ZWxzIiwiRXhwbGljaXRDb250ZW50RmlsdGVyTGV2ZWxzIiwiTWZhTGV2ZWxzIiwiVmVyaWZpY2F0aW9uTGV2ZWxzIiwiR3VpbGROc2Z3TGV2ZWwiLCJQcmVtaXVtVGllcnMiLCJTeXN0ZW1DaGFubmVsRmxhZ3MiLCJHdWlsZEZlYXR1cmVzIiwiTWVtYmVyRmxhZ3MiLCJJbnRlZ3JhdGlvbkV4cGlyZUJlaGF2aW9ycyIsIkRpc2NvcmRHdWlsZE9uYm9hcmRpbmdNb2RlIiwiRGlzY29yZEd1aWxkT25ib2FyZGluZ1Byb21wdFR5cGUiXSwibWFwcGluZ3MiOiJBQUFBLG1FQUFtRSxHQXNIbkUsd0dBQXdHLEdBQ3hHLE9BQU8sSUFBQSxBQUFLQSwwREFBQUE7SUFDVixtRUFBbUU7SUFFbkUsd0ZBQXdGO1dBSDlFQTtNQUtYO0FBRUQsbUdBQW1HLEdBQ25HLE9BQU8sSUFBQSxBQUFLQyxxREFBQUE7SUFDVixzQ0FBc0M7SUFFdEMsZ0VBQWdFO0lBRWhFLHNEQUFzRDtXQUw1Q0E7TUFPWDtBQUVELCtFQUErRSxHQUMvRSxPQUFPLElBQUEsQUFBS0MsbUNBQUFBO0lBQ1YsNERBQTREO0lBRTVELHVEQUF1RDtXQUg3Q0E7TUFLWDtBQUVELHdGQUF3RixHQUN4RixPQUFPLElBQUEsQUFBS0MsNENBQUFBO0lBQ1YsaUJBQWlCO0lBRWpCLHdDQUF3QztJQUV4Qyw0REFBNEQ7SUFFNUQsOERBQThEO0lBRTlELHNDQUFzQztXQVQ1QkE7TUFXWDtBQUVELHNGQUFzRixHQUN0RixPQUFPLElBQUEsQUFBS0Msd0NBQUFBOzs7OztXQUFBQTtNQUtYO0FBRUQsa0ZBQWtGLEdBQ2xGLE9BQU8sSUFBQSxBQUFLQyxzQ0FBQUE7SUFDVixrREFBa0Q7SUFFbEQsa0RBQWtEO0lBRWxELGtEQUFrRDtJQUVsRCxrREFBa0Q7V0FQeENBO01BU1g7QUFFRCwwRkFBMEYsR0FDMUYsT0FBTyxJQUFBLEFBQUtDLDRDQUFBQTtJQUNWLHVDQUF1QztJQUV2Qyx3Q0FBd0M7SUFFeEMsK0JBQStCO0lBRS9CLDJDQUEyQztJQUUzQyxrRUFBa0U7SUFFbEUsaURBQWlEO1dBWHZDQTtNQWFYO0FBRUQsb0ZBQW9GLEdBQ3BGLE9BQU8sSUFBQSxBQUFLQyx1Q0FBQUE7SUFDViwyREFBMkQ7SUFFM0QsbURBQW1EO0lBRW5ELDhEQUE4RDtJQUU5RCwyQ0FBMkM7SUFFM0MsaURBQWlEO0lBRWpEOzs7OztLQUtHO0lBRUgsb0NBQW9DO0lBRXBDLHdEQUF3RDtJQUV4RCxnRUFBZ0U7SUFFaEU7Ozs7O0dBS0M7SUFFRCxrREFBa0Q7SUFFbEQ7Ozs7O0dBS0M7SUFFRCx3REFBd0Q7SUFFeEQsOEhBQThIO0lBRTlILHVEQUF1RDtJQUV2RCw2Q0FBNkM7SUFFN0MsNkNBQTZDO0lBRTdDLHVCQUF1QjtJQUV2QixvRkFBb0Y7SUFFcEY7Ozs7O0dBS0M7SUFFRCxvQ0FBb0M7SUFFcEMsd0RBQXdEO0lBRXhELDBDQUEwQztJQUUxQyx5Q0FBeUM7SUFFekMsc0NBQXNDO0lBRXRDLHlDQUF5QztJQUV6QyxzQkFBc0I7SUFFdEIscUZBQXFGO0lBRXJGLHlDQUF5QztJQUV6QyxzQ0FBc0M7SUFFdEMsdUNBQXVDO0lBRXZDLGtEQUFrRDtXQW5GeENBO01BcUZYO0FBMkZELCtGQUErRixHQUMvRixPQUFPLElBQUEsQUFBS0MscUNBQUFBO0lBQ1Y7Ozs7O0dBS0M7SUFFRDs7Ozs7R0FLQztJQUVELDBEQUEwRDtJQUUxRDs7Ozs7R0FLQztJQUVEOzs7OztHQUtDO0lBRUQ7Ozs7O0dBS0M7SUFFRDs7Ozs7R0FLQztJQUVEOzs7OztHQUtDO0lBRUQ7Ozs7O0dBS0M7SUFFRDs7Ozs7R0FLQztXQWhFU0E7TUFrRVg7QUFzQ0Qsd0dBQXdHLEdBQ3hHLE9BQU8sSUFBQSxBQUFLQyxvREFBQUE7OztXQUFBQTtNQUdYO0FBOEhELGdHQUFnRyxHQUNoRyxPQUFPLElBQUEsQUFBS0Msb0RBQUFBO0lBQ1YscURBQXFEO0lBRXJELDhEQUE4RDtXQUhwREE7TUFLWDtBQUVELDZGQUE2RixHQUM3RixPQUFPLElBQUEsQUFBS0MsMERBQUFBOzs7V0FBQUE7TUFHWCJ9

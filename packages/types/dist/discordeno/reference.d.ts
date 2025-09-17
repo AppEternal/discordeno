@@ -10,9 +10,9 @@
  * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/FormData/set}
  */
 export interface FileContent {
-  /** The file blob */
-  blob: Blob
-  /** The name of the file */
-  name: string
+    /** The file blob */
+    blob: Blob;
+    /** The name of the file */
+    name: string;
 }
 //# sourceMappingURL=reference.d.ts.map

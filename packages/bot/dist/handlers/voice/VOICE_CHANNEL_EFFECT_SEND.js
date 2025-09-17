@@ -1,16 +1,16 @@
 export async function handleVoiceChannelEffectSend(bot, data) {
-  if (!bot.events.voiceChannelEffectSend) return
-  const payload = data.d
-  bot.events.voiceChannelEffectSend({
-    guildId: bot.transformers.snowflake(payload.guild_id),
-    channelId: bot.transformers.snowflake(payload.channel_id),
-    userId: bot.transformers.snowflake(payload.user_id),
-    animationType: payload.animation_type ?? undefined,
-    animationId: payload.animation_id ?? undefined,
-    emoji: payload.emoji ? bot.transformers.emoji(bot, payload.emoji) : undefined,
-    soundId: typeof payload.sound_id === 'string' ? bot.transformers.snowflake(payload.sound_id) : payload.sound_id,
-    soundVolume: payload.sound_volume,
-  })
+    if (!bot.events.voiceChannelEffectSend) return;
+    const payload = data.d;
+    bot.events.voiceChannelEffectSend({
+        guildId: bot.transformers.snowflake(payload.guild_id),
+        channelId: bot.transformers.snowflake(payload.channel_id),
+        userId: bot.transformers.snowflake(payload.user_id),
+        animationType: payload.animation_type ?? undefined,
+        animationId: payload.animation_id ?? undefined,
+        emoji: payload.emoji ? bot.transformers.emoji(bot, payload.emoji) : undefined,
+        soundId: typeof payload.sound_id === 'string' ? bot.transformers.snowflake(payload.sound_id) : payload.sound_id,
+        soundVolume: payload.sound_volume
+    });
 }
 
 //# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy4uL3NyYy9oYW5kbGVycy92b2ljZS9WT0lDRV9DSEFOTkVMX0VGRkVDVF9TRU5ELnRzIl0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB0eXBlIHsgRGlzY29yZEdhdGV3YXlQYXlsb2FkLCBEaXNjb3JkVm9pY2VDaGFubmVsRWZmZWN0U2VuZCB9IGZyb20gJ0BkaXNjb3JkZW5vL3R5cGVzJ1xuaW1wb3J0IHR5cGUgeyBCb3QgfSBmcm9tICcuLi8uLi9ib3QuanMnXG5cbmV4cG9ydCBhc3luYyBmdW5jdGlvbiBoYW5kbGVWb2ljZUNoYW5uZWxFZmZlY3RTZW5kKGJvdDogQm90LCBkYXRhOiBEaXNjb3JkR2F0ZXdheVBheWxvYWQpOiBQcm9taXNlPHZvaWQ+IHtcbiAgaWYgKCFib3QuZXZlbnRzLnZvaWNlQ2hhbm5lbEVmZmVjdFNlbmQpIHJldHVyblxuXG4gIGNvbnN0IHBheWxvYWQgPSBkYXRhLmQgYXMgRGlzY29yZFZvaWNlQ2hhbm5lbEVmZmVjdFNlbmRcblxuICBib3QuZXZlbnRzLnZvaWNlQ2hhbm5lbEVmZmVjdFNlbmQoe1xuICAgIGd1aWxkSWQ6IGJvdC50cmFuc2Zvcm1lcnMuc25vd2ZsYWtlKHBheWxvYWQuZ3VpbGRfaWQpLFxuICAgIGNoYW5uZWxJZDogYm90LnRyYW5zZm9ybWVycy5zbm93Zmxha2UocGF5bG9hZC5jaGFubmVsX2lkKSxcbiAgICB1c2VySWQ6IGJvdC50cmFuc2Zvcm1lcnMuc25vd2ZsYWtlKHBheWxvYWQudXNlcl9pZCksXG4gICAgYW5pbWF0aW9uVHlwZTogcGF5bG9hZC5hbmltYXRpb25fdHlwZSA/PyB1bmRlZmluZWQsXG4gICAgYW5pbWF0aW9uSWQ6IHBheWxvYWQuYW5pbWF0aW9uX2lkID8/IHVuZGVmaW5lZCxcbiAgICBlbW9qaTogcGF5bG9hZC5lbW9qaSA/IGJvdC50cmFuc2Zvcm1lcnMuZW1vamkoYm90LCBwYXlsb2FkLmVtb2ppKSA6IHVuZGVmaW5lZCxcbiAgICBzb3VuZElkOiB0eXBlb2YgcGF5bG9hZC5zb3VuZF9pZCA9PT0gJ3N0cmluZycgPyBib3QudHJhbnNmb3JtZXJzLnNub3dmbGFrZShwYXlsb2FkLnNvdW5kX2lkKSA6IHBheWxvYWQuc291bmRfaWQsXG4gICAgc291bmRWb2x1bWU6IHBheWxvYWQuc291bmRfdm9sdW1lLFxuICB9KVxufVxuIl0sIm5hbWVzIjpbImhhbmRsZVZvaWNlQ2hhbm5lbEVmZmVjdFNlbmQiLCJib3QiLCJkYXRhIiwiZXZlbnRzIiwidm9pY2VDaGFubmVsRWZmZWN0U2VuZCIsInBheWxvYWQiLCJkIiwiZ3VpbGRJZCIsInRyYW5zZm9ybWVycyIsInNub3dmbGFrZSIsImd1aWxkX2lkIiwiY2hhbm5lbElkIiwiY2hhbm5lbF9pZCIsInVzZXJJZCIsInVzZXJfaWQiLCJhbmltYXRpb25UeXBlIiwiYW5pbWF0aW9uX3R5cGUiLCJ1bmRlZmluZWQiLCJhbmltYXRpb25JZCIsImFuaW1hdGlvbl9pZCIsImVtb2ppIiwic291bmRJZCIsInNvdW5kX2lkIiwic291bmRWb2x1bWUiLCJzb3VuZF92b2x1bWUiXSwibWFwcGluZ3MiOiJBQUdBLE9BQU8sZUFBZUEsNkJBQTZCQyxHQUFRLEVBQUVDLElBQTJCO0lBQ3RGLElBQUksQ0FBQ0QsSUFBSUUsTUFBTSxDQUFDQyxzQkFBc0IsRUFBRTtJQUV4QyxNQUFNQyxVQUFVSCxLQUFLSSxDQUFDO0lBRXRCTCxJQUFJRSxNQUFNLENBQUNDLHNCQUFzQixDQUFDO1FBQ2hDRyxTQUFTTixJQUFJTyxZQUFZLENBQUNDLFNBQVMsQ0FBQ0osUUFBUUssUUFBUTtRQUNwREMsV0FBV1YsSUFBSU8sWUFBWSxDQUFDQyxTQUFTLENBQUNKLFFBQVFPLFVBQVU7UUFDeERDLFFBQVFaLElBQUlPLFlBQVksQ0FBQ0MsU0FBUyxDQUFDSixRQUFRUyxPQUFPO1FBQ2xEQyxlQUFlVixRQUFRVyxjQUFjLElBQUlDO1FBQ3pDQyxhQUFhYixRQUFRYyxZQUFZLElBQUlGO1FBQ3JDRyxPQUFPZixRQUFRZSxLQUFLLEdBQUduQixJQUFJTyxZQUFZLENBQUNZLEtBQUssQ0FBQ25CLEtBQUtJLFFBQVFlLEtBQUssSUFBSUg7UUFDcEVJLFNBQVMsT0FBT2hCLFFBQVFpQixRQUFRLEtBQUssV0FBV3JCLElBQUlPLFlBQVksQ0FBQ0MsU0FBUyxDQUFDSixRQUFRaUIsUUFBUSxJQUFJakIsUUFBUWlCLFFBQVE7UUFDL0dDLGFBQWFsQixRQUFRbUIsWUFBWTtJQUNuQztBQUNGIn0=

@@ -1,64 +1,61 @@
-/** Types for: https://discord.com/developers/docs/resources/user */ /** https://discord.com/developers/docs/resources/user#user-object-user-flags */ export var UserFlags =
-  /*#__PURE__*/ (function (UserFlags) {
-    UserFlags[(UserFlags['DiscordEmployee'] = 1)] = 'DiscordEmployee'
-    UserFlags[(UserFlags['PartneredServerOwner'] = 2)] = 'PartneredServerOwner'
-    UserFlags[(UserFlags['HypeSquadEventsMember'] = 4)] = 'HypeSquadEventsMember'
-    UserFlags[(UserFlags['BugHunterLevel1'] = 8)] = 'BugHunterLevel1'
-    UserFlags[(UserFlags['HouseBravery'] = 64)] = 'HouseBravery'
-    UserFlags[(UserFlags['HouseBrilliance'] = 128)] = 'HouseBrilliance'
-    UserFlags[(UserFlags['HouseBalance'] = 256)] = 'HouseBalance'
-    UserFlags[(UserFlags['EarlySupporter'] = 512)] = 'EarlySupporter'
-    UserFlags[(UserFlags['TeamUser'] = 1024)] = 'TeamUser'
-    UserFlags[(UserFlags['BugHunterLevel2'] = 16384)] = 'BugHunterLevel2'
-    UserFlags[(UserFlags['VerifiedBot'] = 65536)] = 'VerifiedBot'
-    UserFlags[(UserFlags['EarlyVerifiedBotDeveloper'] = 131072)] = 'EarlyVerifiedBotDeveloper'
-    UserFlags[(UserFlags['DiscordCertifiedModerator'] = 262144)] = 'DiscordCertifiedModerator'
-    UserFlags[(UserFlags['BotHttpInteractions'] = 524288)] = 'BotHttpInteractions'
-    UserFlags[(UserFlags['ActiveDeveloper'] = 4194304)] = 'ActiveDeveloper'
-    return UserFlags
-  })({})
-/** https://discord.com/developers/docs/resources/user#user-object-premium-types */ export var PremiumTypes = /*#__PURE__*/ (function (PremiumTypes) {
-  PremiumTypes[(PremiumTypes['None'] = 0)] = 'None'
-  PremiumTypes[(PremiumTypes['NitroClassic'] = 1)] = 'NitroClassic'
-  PremiumTypes[(PremiumTypes['Nitro'] = 2)] = 'Nitro'
-  PremiumTypes[(PremiumTypes['NitroBasic'] = 3)] = 'NitroBasic'
-  return PremiumTypes
-})({})
-/** https://discord.com/developers/docs/resources/user#connection-object-services */ export var DiscordConnectionServiceType =
-  /*#__PURE__*/ (function (DiscordConnectionServiceType) {
-    DiscordConnectionServiceType['AmazonMusic'] = 'amazon-music'
-    DiscordConnectionServiceType['BattleNet'] = 'battlenet'
-    DiscordConnectionServiceType['Bungie'] = 'bungie'
-    DiscordConnectionServiceType['Bluesky'] = 'bluesky'
-    DiscordConnectionServiceType['Crunchyroll'] = 'crunchyroll'
-    DiscordConnectionServiceType['Domain'] = 'domain'
-    DiscordConnectionServiceType['eBay'] = 'ebay'
-    DiscordConnectionServiceType['EpicGames'] = 'epicgames'
-    DiscordConnectionServiceType['Facebook'] = 'facebook'
-    DiscordConnectionServiceType['GitHub'] = 'github'
-    DiscordConnectionServiceType['Instagram'] = 'instagram'
-    DiscordConnectionServiceType['LeagueOfLegends'] = 'leagueoflegends'
-    DiscordConnectionServiceType['Mastodon'] = 'mastodon'
-    DiscordConnectionServiceType['PayPal'] = 'paypal'
-    DiscordConnectionServiceType['PlayStationNetwork'] = 'playstation'
-    DiscordConnectionServiceType['Reddit'] = 'reddit'
-    DiscordConnectionServiceType['RiotGames'] = 'riotgames'
-    DiscordConnectionServiceType['Roblox'] = 'roblox'
-    DiscordConnectionServiceType['Spotify'] = 'spotify'
-    DiscordConnectionServiceType['Skype'] = 'skype'
-    DiscordConnectionServiceType['Steam'] = 'steam'
-    DiscordConnectionServiceType['TikTok'] = 'tiktok'
-    DiscordConnectionServiceType['Twitch'] = 'twitch'
-    DiscordConnectionServiceType['Twitter'] = 'twitter'
-    DiscordConnectionServiceType['Xbox'] = 'xbox'
-    DiscordConnectionServiceType['YouTube'] = 'youtube'
-    return DiscordConnectionServiceType
-  })({})
-/** https://discord.com/developers/docs/resources/user#connection-object-visibility-types */ export var DiscordConnectionVisibility =
-  /*#__PURE__*/ (function (DiscordConnectionVisibility) {
-    /** invisible to everyone except the user themselves */ DiscordConnectionVisibility[(DiscordConnectionVisibility['None'] = 0)] = 'None'
-    /** visible to everyone */ DiscordConnectionVisibility[(DiscordConnectionVisibility['Everyone'] = 1)] = 'Everyone'
-    return DiscordConnectionVisibility
-  })({})
+/** Types for: https://discord.com/developers/docs/resources/user */ /** https://discord.com/developers/docs/resources/user#user-object-user-flags */ export var UserFlags = /*#__PURE__*/ function(UserFlags) {
+    UserFlags[UserFlags["DiscordEmployee"] = 1] = "DiscordEmployee";
+    UserFlags[UserFlags["PartneredServerOwner"] = 2] = "PartneredServerOwner";
+    UserFlags[UserFlags["HypeSquadEventsMember"] = 4] = "HypeSquadEventsMember";
+    UserFlags[UserFlags["BugHunterLevel1"] = 8] = "BugHunterLevel1";
+    UserFlags[UserFlags["HouseBravery"] = 64] = "HouseBravery";
+    UserFlags[UserFlags["HouseBrilliance"] = 128] = "HouseBrilliance";
+    UserFlags[UserFlags["HouseBalance"] = 256] = "HouseBalance";
+    UserFlags[UserFlags["EarlySupporter"] = 512] = "EarlySupporter";
+    UserFlags[UserFlags["TeamUser"] = 1024] = "TeamUser";
+    UserFlags[UserFlags["BugHunterLevel2"] = 16384] = "BugHunterLevel2";
+    UserFlags[UserFlags["VerifiedBot"] = 65536] = "VerifiedBot";
+    UserFlags[UserFlags["EarlyVerifiedBotDeveloper"] = 131072] = "EarlyVerifiedBotDeveloper";
+    UserFlags[UserFlags["DiscordCertifiedModerator"] = 262144] = "DiscordCertifiedModerator";
+    UserFlags[UserFlags["BotHttpInteractions"] = 524288] = "BotHttpInteractions";
+    UserFlags[UserFlags["ActiveDeveloper"] = 4194304] = "ActiveDeveloper";
+    return UserFlags;
+}({});
+/** https://discord.com/developers/docs/resources/user#user-object-premium-types */ export var PremiumTypes = /*#__PURE__*/ function(PremiumTypes) {
+    PremiumTypes[PremiumTypes["None"] = 0] = "None";
+    PremiumTypes[PremiumTypes["NitroClassic"] = 1] = "NitroClassic";
+    PremiumTypes[PremiumTypes["Nitro"] = 2] = "Nitro";
+    PremiumTypes[PremiumTypes["NitroBasic"] = 3] = "NitroBasic";
+    return PremiumTypes;
+}({});
+/** https://discord.com/developers/docs/resources/user#connection-object-services */ export var DiscordConnectionServiceType = /*#__PURE__*/ function(DiscordConnectionServiceType) {
+    DiscordConnectionServiceType["AmazonMusic"] = "amazon-music";
+    DiscordConnectionServiceType["BattleNet"] = "battlenet";
+    DiscordConnectionServiceType["Bungie"] = "bungie";
+    DiscordConnectionServiceType["Bluesky"] = "bluesky";
+    DiscordConnectionServiceType["Crunchyroll"] = "crunchyroll";
+    DiscordConnectionServiceType["Domain"] = "domain";
+    DiscordConnectionServiceType["eBay"] = "ebay";
+    DiscordConnectionServiceType["EpicGames"] = "epicgames";
+    DiscordConnectionServiceType["Facebook"] = "facebook";
+    DiscordConnectionServiceType["GitHub"] = "github";
+    DiscordConnectionServiceType["Instagram"] = "instagram";
+    DiscordConnectionServiceType["LeagueOfLegends"] = "leagueoflegends";
+    DiscordConnectionServiceType["Mastodon"] = "mastodon";
+    DiscordConnectionServiceType["PayPal"] = "paypal";
+    DiscordConnectionServiceType["PlayStationNetwork"] = "playstation";
+    DiscordConnectionServiceType["Reddit"] = "reddit";
+    DiscordConnectionServiceType["RiotGames"] = "riotgames";
+    DiscordConnectionServiceType["Roblox"] = "roblox";
+    DiscordConnectionServiceType["Spotify"] = "spotify";
+    DiscordConnectionServiceType["Skype"] = "skype";
+    DiscordConnectionServiceType["Steam"] = "steam";
+    DiscordConnectionServiceType["TikTok"] = "tiktok";
+    DiscordConnectionServiceType["Twitch"] = "twitch";
+    DiscordConnectionServiceType["Twitter"] = "twitter";
+    DiscordConnectionServiceType["Xbox"] = "xbox";
+    DiscordConnectionServiceType["YouTube"] = "youtube";
+    return DiscordConnectionServiceType;
+}({});
+/** https://discord.com/developers/docs/resources/user#connection-object-visibility-types */ export var DiscordConnectionVisibility = /*#__PURE__*/ function(DiscordConnectionVisibility) {
+    /** invisible to everyone except the user themselves */ DiscordConnectionVisibility[DiscordConnectionVisibility["None"] = 0] = "None";
+    /** visible to everyone */ DiscordConnectionVisibility[DiscordConnectionVisibility["Everyone"] = 1] = "Everyone";
+    return DiscordConnectionVisibility;
+}({});
 
 //# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uL3NyYy9kaXNjb3JkL3VzZXIudHMiXSwic291cmNlc0NvbnRlbnQiOlsiLyoqIFR5cGVzIGZvcjogaHR0cHM6Ly9kaXNjb3JkLmNvbS9kZXZlbG9wZXJzL2RvY3MvcmVzb3VyY2VzL3VzZXIgKi9cblxuaW1wb3J0IHR5cGUgeyBEaXNjb3JkSW50ZWdyYXRpb24gfSBmcm9tICcuL2d1aWxkLmpzJ1xuXG4vKiogaHR0cHM6Ly9kaXNjb3JkLmNvbS9kZXZlbG9wZXJzL2RvY3MvcmVzb3VyY2VzL3VzZXIjdXNlci1vYmplY3QtdXNlci1zdHJ1Y3R1cmUgKi9cbmV4cG9ydCBpbnRlcmZhY2UgRGlzY29yZFVzZXIge1xuICAvKiogVGhlIHVzZXIncyBpZCAqL1xuICBpZDogc3RyaW5nXG4gIC8qKiBUaGUgdXNlcidzIHVzZXJuYW1lLCBub3QgdW5pcXVlIGFjcm9zcyB0aGUgcGxhdGZvcm0gKi9cbiAgdXNlcm5hbWU6IHN0cmluZ1xuICAvKiogVGhlIHVzZXIncyBkaXNjb3JkLXRhZyAqL1xuICBkaXNjcmltaW5hdG9yOiBzdHJpbmdcbiAgLyoqIFRoZSB1c2VyJ3MgZGlzcGxheSBuYW1lLCBpZiBpdCBpcyBzZXQuIEZvciBib3RzLCB0aGlzIGlzIHRoZSBhcHBsaWNhdGlvbiBuYW1lICovXG4gIGdsb2JhbF9uYW1lOiBzdHJpbmcgfCBudWxsXG4gIC8qKiBUaGUgdXNlcidzIGF2YXRhciBoYXNoICovXG4gIGF2YXRhcjogc3RyaW5nIHwgbnVsbFxuICAvKiogV2hldGhlciB0aGUgdXNlciBiZWxvbmdzIHRvIGFuIE9BdXRoMiBhcHBsaWNhdGlvbiAqL1xuICBib3Q/OiBib29sZWFuXG4gIC8qKiBXaGV0aGVyIHRoZSB1c2VyIGlzIGFuIE9mZmljaWFsIERpc2NvcmQgU3lzdGVtIHVzZXIgKHBhcnQgb2YgdGhlIHVyZ2VudCBtZXNzYWdlIHN5c3RlbSkgKi9cbiAgc3lzdGVtPzogYm9vbGVhblxuICAvKiogV2hldGhlciB0aGUgdXNlciBoYXMgdHdvIGZhY3RvciBlbmFibGVkIG9uIHRoZWlyIGFjY291bnQgKi9cbiAgbWZhX2VuYWJsZWQ/OiBib29sZWFuXG4gIC8qKiB0aGUgdXNlcidzIGJhbm5lciwgb3IgbnVsbCBpZiB1bnNldCAqL1xuICBiYW5uZXI/OiBzdHJpbmcgfCBudWxsXG4gIC8qKiB0aGUgdXNlcidzIGJhbm5lciBjb2xvciBlbmNvZGVkIGFzIGFuIGludGVnZXIgcmVwcmVzZW50YXRpb24gb2YgaGV4YWRlY2ltYWwgY29sb3IgY29kZSAqL1xuICBhY2NlbnRfY29sb3I/OiBudW1iZXIgfCBudWxsXG4gIC8qKiBUaGUgdXNlcidzIGNob3NlbiBsYW5ndWFnZSBvcHRpb24gKi9cbiAgbG9jYWxlPzogc3RyaW5nXG4gIC8qKiBXaGV0aGVyIHRoZSBlbWFpbCBvbiB0aGlzIGFjY291bnQgaGFzIGJlZW4gdmVyaWZpZWQgKi9cbiAgdmVyaWZpZWQ/OiBib29sZWFuXG4gIC8qKiBUaGUgdXNlcidzIGVtYWlsICovXG4gIGVtYWlsPzogc3RyaW5nIHwgbnVsbFxuICAvKiogVGhlIGZsYWdzIG9uIGEgdXNlcidzIGFjY291bnQgKi9cbiAgZmxhZ3M/OiBudW1iZXJcbiAgLyoqIFRoZSB0eXBlIG9mIE5pdHJvIHN1YnNjcmlwdGlvbiBvbiBhIHVzZXIncyBhY2NvdW50ICovXG4gIHByZW1pdW1fdHlwZT86IFByZW1pdW1UeXBlc1xuICAvKiogVGhlIHB1YmxpYyBmbGFncyBvbiBhIHVzZXIncyBhY2NvdW50ICovXG4gIHB1YmxpY19mbGFncz86IG51bWJlclxuICAvKiogZGF0YSBmb3IgdGhlIHVzZXIncyBhdmF0YXIgZGVjb3JhdGlvbiAqL1xuICBhdmF0YXJfZGVjb3JhdGlvbl9kYXRhPzogRGlzY29yZEF2YXRhckRlY29yYXRpb25EYXRhIHwgbnVsbFxuICAvKiogZGF0YSBmb3IgdGhlIHVzZXIncyBjb2xsZWN0aWJsZXMgKi9cbiAgY29sbGVjdGlibGVzPzogRGlzY29yZENvbGxlY3RpYmxlcyB8IG51bGxcbiAgLyoqIFRoZSB1c2VyJ3MgcHJpbWFyeSBndWlsZCAqL1xuICBwcmltYXJ5X2d1aWxkPzogRGlzY29yZFVzZXJQcmltYXJ5R3VpbGQgfCBudWxsXG59XG5cbi8qKiBodHRwczovL2Rpc2NvcmQuY29tL2RldmVsb3BlcnMvZG9jcy9yZXNvdXJjZXMvdXNlciN1c2VyLW9iamVjdC11c2VyLWZsYWdzICovXG5leHBvcnQgZW51bSBVc2VyRmxhZ3Mge1xuICBEaXNjb3JkRW1wbG95ZWUgPSAxIDw8IDAsXG4gIFBhcnRuZXJlZFNlcnZlck93bmVyID0gMSA8PCAxLFxuICBIeXBlU3F1YWRFdmVudHNNZW1iZXIgPSAxIDw8IDIsXG4gIEJ1Z0h1bnRlckxldmVsMSA9IDEgPDwgMyxcbiAgSG91c2VCcmF2ZXJ5ID0gMSA8PCA2LFxuICBIb3VzZUJyaWxsaWFuY2UgPSAxIDw8IDcsXG4gIEhvdXNlQmFsYW5jZSA9IDEgPDwgOCxcbiAgRWFybHlTdXBwb3J0ZXIgPSAxIDw8IDksXG4gIFRlYW1Vc2VyID0gMSA8PCAxMCxcbiAgQnVnSHVudGVyTGV2ZWwyID0gMSA8PCAxNCxcbiAgVmVyaWZpZWRCb3QgPSAxIDw8IDE2LFxuICBFYXJseVZlcmlmaWVkQm90RGV2ZWxvcGVyID0gMSA8PCAxNyxcbiAgRGlzY29yZENlcnRpZmllZE1vZGVyYXRvciA9IDEgPDwgMTgsXG4gIEJvdEh0dHBJbnRlcmFjdGlvbnMgPSAxIDw8IDE5LFxuICBBY3RpdmVEZXZlbG9wZXIgPSAxIDw8IDIyLFxufVxuXG4vKiogaHR0cHM6Ly9kaXNjb3JkLmNvbS9kZXZlbG9wZXJzL2RvY3MvcmVzb3VyY2VzL3VzZXIjdXNlci1vYmplY3QtcHJlbWl1bS10eXBlcyAqL1xuZXhwb3J0IGVudW0gUHJlbWl1bVR5cGVzIHtcbiAgTm9uZSxcbiAgTml0cm9DbGFzc2ljLFxuICBOaXRybyxcbiAgTml0cm9CYXNpYyxcbn1cblxuLyoqIGh0dHBzOi8vZGlzY29yZC5jb20vZGV2ZWxvcGVycy9kb2NzL3Jlc291cmNlcy91c2VyI3VzZXItb2JqZWN0LXVzZXItcHJpbWFyeS1ndWlsZCAqL1xuZXhwb3J0IGludGVyZmFjZSBEaXNjb3JkVXNlclByaW1hcnlHdWlsZCB7XG4gIC8qKiBUaGUgaWQgb2YgdGhlIHByaW1hcnkgZ3VpbGQgKi9cbiAgaWRlbnRpdHlfZ3VpbGRfaWQ6IHN0cmluZyB8IG51bGxcbiAgLyoqXG4gICAqIFdoZXRoZXIgdGhlIHVzZXIgaXMgZGlzcGxheWluZyB0aGUgcHJpbWFyeSBndWlsZCdzIHNlcnZlciB0YWcuXG4gICAqXG4gICAqIEByZW1hcmtzXG4gICAqIFRoaXMgY2FuIGJlIGBudWxsYCBpZiB0aGUgc3lzdGVtIGNsZWFycyB0aGUgaWRlbnRpdHksIGUuZy4gYmVjYXVzZSB0aGUgc2VydmVyIG5vIGxvbmdlciBzdXBwb3J0cyB0YWdzLlxuICAgKiBUaGlzIHdpbGwgYmUgYGZhbHNlYCBpZiB0aGUgdXNlciBtYW51YWxseSByZW1vdmVzIHRoZWlyIHRhZy5cbiAgICovXG4gIGlkZW50aXR5X2VuYWJsZWQ6IGJvb2xlYW4gfCBudWxsXG4gIC8qKiBUaGUgdGV4dCBvZiB0aGUgdXNlcidzIHNlcnZlciB0YWcuIExpbWl0ZWQgdG8gNCBjaGFyYWN0ZXJzICovXG4gIHRhZzogc3RyaW5nIHwgbnVsbFxuICAvKiogVGhlIHNlcnZlciB0YWcgYmFkZ2UgaGFzaCAqL1xuICBiYWRnZTogc3RyaW5nIHwgbnVsbFxufVxuXG4vKiogaHR0cHM6Ly9kaXNjb3JkLmNvbS9kZXZlbG9wZXJzL2RvY3MvcmVzb3VyY2VzL3VzZXIjYXZhdGFyLWRlY29yYXRpb24tZGF0YS1vYmplY3QtYXZhdGFyLWRlY29yYXRpb24tZGF0YS1zdHJ1Y3R1cmUgKi9cbmV4cG9ydCBpbnRlcmZhY2UgRGlzY29yZEF2YXRhckRlY29yYXRpb25EYXRhIHtcbiAgLyoqIHRoZSBhdmF0YXIgZGVjb3JhdGlvbiBoYXNoICovXG4gIGFzc2V0OiBzdHJpbmdcbiAgLyoqIGlkIG9mIHRoZSBhdmF0YXIgZGVjb3JhdGlvbidzIFNLVSAqL1xuICBza3VfaWQ6IHN0cmluZ1xufVxuXG4vKiogaHR0cHM6Ly9kaXNjb3JkLmNvbS9kZXZlbG9wZXJzL2RvY3MvcmVzb3VyY2VzL3VzZXIjY29sbGVjdGlibGVzLWNvbGxlY3RpYmxlLXN0cnVjdHVyZSAqL1xuZXhwb3J0IGludGVyZmFjZSBEaXNjb3JkQ29sbGVjdGlibGVzIHtcbiAgLyoqIG9iamVjdCBtYXBwaW5nIG9mIG5hbWVwbGF0ZSBkYXRhICovXG4gIG5hbWVwbGF0ZT86IERpc2NvcmROYW1lcGxhdGVcbn1cblxuLyoqIGh0dHBzOi8vZGlzY29yZC5jb20vZGV2ZWxvcGVycy9kb2NzL3Jlc291cmNlcy91c2VyI25hbWVwbGF0ZS1uYW1lcGxhdGUtc3RydWN0dXJlICovXG5leHBvcnQgaW50ZXJmYWNlIERpc2NvcmROYW1lcGxhdGUge1xuICAvKiogdGhlIG5hbWVwbGF0ZSdzIGlkICovXG4gIHNrdV9pZDogc3RyaW5nXG4gIC8qKiBwYXRoIHRvIHRoZSBuYW1lcGxhdGUgYXNzZXQgKi9cbiAgYXNzZXQ6IHN0cmluZ1xuICAvKiogdGhlIGxhYmVsIG9mIHRoaXMgbmFtZXBsYXRlLiBDdXJyZW50bHkgdW51c2VkICovXG4gIGxhYmVsOiBzdHJpbmdcbiAgLyoqIGJhY2tncm91bmQgY29sb3Igb2YgdGhlIG5hbWVwbGF0ZSwgb25lIG9mOiBgY3JpbXNvbmAsIGBiZXJyeWAsIGBza3lgLCBgdGVhbGAsIGBmb3Jlc3RgLCBgYnViYmxlX2d1bWAsIGB2aW9sZXRgLCBgY29iYWx0YCwgYGNsb3ZlcmAsIGBsZW1vbmAsIGB3aGl0ZWAgKi9cbiAgcGFsZXR0ZTogc3RyaW5nXG59XG5cbi8qKiBodHRwczovL2Rpc2NvcmQuY29tL2RldmVsb3BlcnMvZG9jcy9yZXNvdXJjZXMvdXNlciNjb25uZWN0aW9uLW9iamVjdC1jb25uZWN0aW9uLXN0cnVjdHVyZSAqL1xuZXhwb3J0IGludGVyZmFjZSBEaXNjb3JkQ29ubmVjdGlvbiB7XG4gIC8qKiBpZCBvZiB0aGUgY29ubmVjdGlvbiBhY2NvdW50ICovXG4gIGlkOiBzdHJpbmdcbiAgLyoqIHRoZSB1c2VybmFtZSBvZiB0aGUgY29ubmVjdGlvbiBhY2NvdW50ICovXG4gIG5hbWU6IHN0cmluZ1xuICAvKiogdGhlIHNlcnZpY2Ugb2YgdGhpcyBjb25uZWN0aW9uICovXG4gIHR5cGU6IERpc2NvcmRDb25uZWN0aW9uU2VydmljZVR5cGVcbiAgLyoqIHdoZXRoZXIgdGhlIGNvbm5lY3Rpb24gaXMgcmV2b2tlZCAqL1xuICByZXZva2VkPzogYm9vbGVhblxuICAvKiogYW4gYXJyYXkgb2YgcGFydGlhbCBzZXJ2ZXIgaW50ZWdyYXRpb25zICovXG4gIGludGVncmF0aW9ucz86IFBhcnRpYWw8RGlzY29yZEludGVncmF0aW9uPltdXG4gIC8qKiB3aGV0aGVyIHRoZSBjb25uZWN0aW9uIGlzIHZlcmlmaWVkICovXG4gIHZlcmlmaWVkOiBib29sZWFuXG4gIC8qKiB3aGV0aGVyIGZyaWVuZCBzeW5jIGlzIGVuYWJsZWQgZm9yIHRoaXMgY29ubmVjdGlvbiAqL1xuICBmcmllbmRfc3luYzogYm9vbGVhblxuICAvKiogd2hldGhlciBhY3Rpdml0aWVzIHJlbGF0ZWQgdG8gdGhpcyBjb25uZWN0aW9uIHdpbGwgYmUgc2hvd24gaW4gcHJlc2VuY2UgdXBkYXRlcyAqL1xuICBzaG93X2FjdGl2aXR5OiBib29sZWFuXG4gIC8qKiB3aGV0aGVyIHRoaXMgY29ubmVjdGlvbiBoYXMgYSBjb3JyZXNwb25kaW5nIHRoaXJkIHBhcnR5IE9BdXRoMiB0b2tlbiAqL1xuICB0d29fd2F5X2xpbms6IGJvb2xlYW5cbiAgLyoqIHZpc2liaWxpdHkgb2YgdGhpcyBjb25uZWN0aW9uICovXG4gIHZpc2liaWxpdHk6IERpc2NvcmRDb25uZWN0aW9uVmlzaWJpbGl0eVxufVxuXG4vKiogaHR0cHM6Ly9kaXNjb3JkLmNvbS9kZXZlbG9wZXJzL2RvY3MvcmVzb3VyY2VzL3VzZXIjY29ubmVjdGlvbi1vYmplY3Qtc2VydmljZXMgKi9cbmV4cG9ydCBlbnVtIERpc2NvcmRDb25uZWN0aW9uU2VydmljZVR5cGUge1xuICBBbWF6b25NdXNpYyA9ICdhbWF6b24tbXVzaWMnLFxuICBCYXR0bGVOZXQgPSAnYmF0dGxlbmV0JyxcbiAgQnVuZ2llID0gJ2J1bmdpZScsXG4gIEJsdWVza3kgPSAnYmx1ZXNreScsXG4gIENydW5jaHlyb2xsID0gJ2NydW5jaHlyb2xsJyxcbiAgRG9tYWluID0gJ2RvbWFpbicsXG4gIGVCYXkgPSAnZWJheScsXG4gIEVwaWNHYW1lcyA9ICdlcGljZ2FtZXMnLFxuICBGYWNlYm9vayA9ICdmYWNlYm9vaycsXG4gIEdpdEh1YiA9ICdnaXRodWInLFxuICBJbnN0YWdyYW0gPSAnaW5zdGFncmFtJyxcbiAgTGVhZ3VlT2ZMZWdlbmRzID0gJ2xlYWd1ZW9mbGVnZW5kcycsXG4gIE1hc3RvZG9uID0gJ21hc3RvZG9uJyxcbiAgUGF5UGFsID0gJ3BheXBhbCcsXG4gIFBsYXlTdGF0aW9uTmV0d29yayA9ICdwbGF5c3RhdGlvbicsXG4gIFJlZGRpdCA9ICdyZWRkaXQnLFxuICBSaW90R2FtZXMgPSAncmlvdGdhbWVzJyxcbiAgUm9ibG94ID0gJ3JvYmxveCcsXG4gIFNwb3RpZnkgPSAnc3BvdGlmeScsXG4gIFNreXBlID0gJ3NreXBlJyxcbiAgU3RlYW0gPSAnc3RlYW0nLFxuICBUaWtUb2sgPSAndGlrdG9rJyxcbiAgVHdpdGNoID0gJ3R3aXRjaCcsXG4gIFR3aXR0ZXIgPSAndHdpdHRlcicsXG4gIFhib3ggPSAneGJveCcsXG4gIFlvdVR1YmUgPSAneW91dHViZScsXG59XG5cbi8qKiBodHRwczovL2Rpc2NvcmQuY29tL2RldmVsb3BlcnMvZG9jcy9yZXNvdXJjZXMvdXNlciNjb25uZWN0aW9uLW9iamVjdC12aXNpYmlsaXR5LXR5cGVzICovXG5leHBvcnQgZW51bSBEaXNjb3JkQ29ubmVjdGlvblZpc2liaWxpdHkge1xuICAvKiogaW52aXNpYmxlIHRvIGV2ZXJ5b25lIGV4Y2VwdCB0aGUgdXNlciB0aGVtc2VsdmVzICovXG4gIE5vbmUgPSAwLFxuICAvKiogdmlzaWJsZSB0byBldmVyeW9uZSAqL1xuICBFdmVyeW9uZSA9IDEsXG59XG5cbi8qKiBodHRwczovL2Rpc2NvcmQuY29tL2RldmVsb3BlcnMvZG9jcy9yZXNvdXJjZXMvdXNlciNhcHBsaWNhdGlvbi1yb2xlLWNvbm5lY3Rpb24tb2JqZWN0LWFwcGxpY2F0aW9uLXJvbGUtY29ubmVjdGlvbi1zdHJ1Y3R1cmUgKi9cbmV4cG9ydCBpbnRlcmZhY2UgRGlzY29yZEFwcGxpY2F0aW9uUm9sZUNvbm5lY3Rpb24ge1xuICAvKiogdGhlIHZhbml0eSBuYW1lIG9mIHRoZSBwbGF0Zm9ybSBhIGJvdCBoYXMgY29ubmVjdGVkIChtYXggNTAgY2hhcmFjdGVycykgKi9cbiAgcGxhdGZvcm1fbmFtZTogc3RyaW5nIHwgbnVsbFxuICAvKiogdGhlIHVzZXJuYW1lIG9uIHRoZSBwbGF0Zm9ybSBhIGJvdCBoYXMgY29ubmVjdGVkIChtYXggMTAwIGNoYXJhY3RlcnMpICovXG4gIHBsYXRmb3JtX3VzZXJuYW1lOiBzdHJpbmcgfCBudWxsXG4gIC8qKiBvYmplY3QgbWFwcGluZyBhcHBsaWNhdGlvbiByb2xlIGNvbm5lY3Rpb24gbWV0YWRhdGEga2V5cyB0byB0aGVpciBzdHJpbmdpZmllZCB2YWx1ZSAobWF4IDEwMCBjaGFyYWN0ZXJzKSBmb3IgdGhlIHVzZXIgb24gdGhlIHBsYXRmb3JtIGEgYm90IGhhcyBjb25uZWN0ZWQgKi9cbiAgbWV0YWRhdGE6IFJlY29yZDxzdHJpbmcsIHN0cmluZz5cbn1cbiJdLCJuYW1lcyI6WyJVc2VyRmxhZ3MiLCJQcmVtaXVtVHlwZXMiLCJEaXNjb3JkQ29ubmVjdGlvblNlcnZpY2VUeXBlIiwiRGlzY29yZENvbm5lY3Rpb25WaXNpYmlsaXR5Il0sIm1hcHBpbmdzIjoiQUFBQSxrRUFBa0UsR0E4Q2xFLDhFQUE4RSxHQUM5RSxPQUFPLElBQUEsQUFBS0EsbUNBQUFBOzs7Ozs7Ozs7Ozs7Ozs7O1dBQUFBO01BZ0JYO0FBRUQsaUZBQWlGLEdBQ2pGLE9BQU8sSUFBQSxBQUFLQyxzQ0FBQUE7Ozs7O1dBQUFBO01BS1g7QUFzRUQsa0ZBQWtGLEdBQ2xGLE9BQU8sSUFBQSxBQUFLQyxzREFBQUE7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztXQUFBQTtNQTJCWDtBQUVELDBGQUEwRixHQUMxRixPQUFPLElBQUEsQUFBS0MscURBQUFBO0lBQ1YscURBQXFEO0lBRXJELHdCQUF3QjtXQUhkQTtNQUtYIn0=
