@@ -1,0 +1,1 @@
+{"version":3,"file":"invite.d.ts","sourceRoot":"","sources":["../../src/discordeno/invite.ts"],"names":[],"mappings":"AAAA,sEAAsE;AAEtE,OAAO,KAAK,EAAE,SAAS,EAAE,MAAM,cAAc,CAAA;AAE7C,sEAAsE;AACtE,MAAM,WAAW,SAAS;IACxB,kEAAkE;IAClE,UAAU,CAAC,EAAE,OAAO,CAAA;IACpB,2DAA2D;IAC3D,gBAAgB,CAAC,EAAE,SAAS,CAAA;CAC7B"}

@@ -1,0 +1,1 @@
+{"version":3,"file":"auditLogEntry.d.ts","sourceRoot":"","sources":["../../../src/transformers/reverse/auditLogEntry.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,oBAAoB,EAAE,MAAM,mBAAmB,CAAA;AAE7D,OAAO,KAAK,EAAE,GAAG,EAAE,MAAM,cAAc,CAAA;AACvC,OAAO,KAAK,EAAE,aAAa,EAAE,MAAM,aAAa,CAAA;AAEhD,wBAAgB,4CAA4C,CAAC,GAAG,EAAE,GAAG,EAAE,OAAO,EAAE,aAAa,GAAG,oBAAoB,CA2BnH"}

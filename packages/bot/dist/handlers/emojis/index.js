@@ -1,0 +1,3 @@
+export * from './GUILD_EMOJIS_UPDATE.js';
+
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy4uL3NyYy9oYW5kbGVycy9lbW9qaXMvaW5kZXgudHMiXSwic291cmNlc0NvbnRlbnQiOlsiZXhwb3J0ICogZnJvbSAnLi9HVUlMRF9FTU9KSVNfVVBEQVRFLmpzJ1xuIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLGNBQWMsMkJBQTBCIn0=

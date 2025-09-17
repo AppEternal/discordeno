@@ -1,0 +1,1 @@
+{"version":3,"file":"allowedMentions.d.ts","sourceRoot":"","sources":["../../../src/transformers/reverse/allowedMentions.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,eAAe,EAAE,sBAAsB,EAAE,MAAM,mBAAmB,CAAA;AAChF,OAAO,KAAK,EAAE,GAAG,EAAE,MAAM,cAAc,CAAA;AAEvC,wBAAgB,gDAAgD,CAAC,IAAI,EAAE,GAAG,EAAE,QAAQ,EAAE,eAAe,GAAG,sBAAsB,CAO7H"}

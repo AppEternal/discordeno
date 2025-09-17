@@ -1,0 +1,1 @@
+{"version":3,"file":"widgetSettings.d.ts","sourceRoot":"","sources":["../../../src/transformers/reverse/widgetSettings.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,0BAA0B,EAAE,MAAM,mBAAmB,CAAA;AACnE,OAAO,KAAK,EAAE,GAAG,EAAE,MAAM,cAAc,CAAA;AACvC,OAAO,KAAK,EAAE,mBAAmB,EAAE,MAAM,aAAa,CAAA;AAEtD,wBAAgB,8CAA8C,CAAC,IAAI,EAAE,GAAG,EAAE,OAAO,EAAE,mBAAmB,GAAG,0BAA0B,CAKlI"}

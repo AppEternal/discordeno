@@ -1,0 +1,1 @@
+{"version":3,"file":"activity.d.ts","sourceRoot":"","sources":["../../../src/transformers/reverse/activity.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,eAAe,EAAE,MAAM,mBAAmB,CAAA;AACxD,OAAO,KAAK,EAAE,GAAG,EAAE,MAAM,cAAc,CAAA;AACvC,OAAO,KAAK,EAAE,QAAQ,EAAE,MAAM,aAAa,CAAA;AAE3C,wBAAgB,kCAAkC,CAAC,IAAI,EAAE,GAAG,EAAE,OAAO,EAAE,QAAQ,GAAG,eAAe,CAuChG"}
