@@ -1,12 +1,12 @@
 export function transformVoiceRegion(bot, payload) {
-    const voiceRegion = {
-        id: payload.id,
-        name: payload.name,
-        optimal: payload.optimal,
-        deprecated: payload.deprecated,
-        custom: payload.custom
-    };
-    return bot.transformers.customizers.voiceRegion(bot, payload, voiceRegion);
+  const voiceRegion = {
+    id: payload.id,
+    name: payload.name,
+    optimal: payload.optimal,
+    deprecated: payload.deprecated,
+    custom: payload.custom,
+  }
+  return bot.transformers.customizers.voiceRegion(bot, payload, voiceRegion)
 }
 
 //# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uL3NyYy90cmFuc2Zvcm1lcnMvdm9pY2VSZWdpb24udHMiXSwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHR5cGUgeyBEaXNjb3JkVm9pY2VSZWdpb24gfSBmcm9tICdAZGlzY29yZGVuby90eXBlcydcbmltcG9ydCB0eXBlIHsgQm90IH0gZnJvbSAnLi4vYm90LmpzJ1xuaW1wb3J0IHR5cGUgeyBWb2ljZVJlZ2lvbiB9IGZyb20gJy4vdHlwZXMuanMnXG5cbmV4cG9ydCBmdW5jdGlvbiB0cmFuc2Zvcm1Wb2ljZVJlZ2lvbihib3Q6IEJvdCwgcGF5bG9hZDogRGlzY29yZFZvaWNlUmVnaW9uKTogVm9pY2VSZWdpb24ge1xuICBjb25zdCB2b2ljZVJlZ2lvbiA9IHtcbiAgICBpZDogcGF5bG9hZC5pZCxcbiAgICBuYW1lOiBwYXlsb2FkLm5hbWUsXG4gICAgb3B0aW1hbDogcGF5bG9hZC5vcHRpbWFsLFxuICAgIGRlcHJlY2F0ZWQ6IHBheWxvYWQuZGVwcmVjYXRlZCxcbiAgICBjdXN0b206IHBheWxvYWQuY3VzdG9tLFxuICB9IGFzIFZvaWNlUmVnaW9uXG5cbiAgcmV0dXJuIGJvdC50cmFuc2Zvcm1lcnMuY3VzdG9taXplcnMudm9pY2VSZWdpb24oYm90LCBwYXlsb2FkLCB2b2ljZVJlZ2lvbilcbn1cbiJdLCJuYW1lcyI6WyJ0cmFuc2Zvcm1Wb2ljZVJlZ2lvbiIsImJvdCIsInBheWxvYWQiLCJ2b2ljZVJlZ2lvbiIsImlkIiwibmFtZSIsIm9wdGltYWwiLCJkZXByZWNhdGVkIiwiY3VzdG9tIiwidHJhbnNmb3JtZXJzIiwiY3VzdG9taXplcnMiXSwibWFwcGluZ3MiOiJBQUlBLE9BQU8sU0FBU0EscUJBQXFCQyxHQUFRLEVBQUVDLE9BQTJCO0lBQ3hFLE1BQU1DLGNBQWM7UUFDbEJDLElBQUlGLFFBQVFFLEVBQUU7UUFDZEMsTUFBTUgsUUFBUUcsSUFBSTtRQUNsQkMsU0FBU0osUUFBUUksT0FBTztRQUN4QkMsWUFBWUwsUUFBUUssVUFBVTtRQUM5QkMsUUFBUU4sUUFBUU0sTUFBTTtJQUN4QjtJQUVBLE9BQU9QLElBQUlRLFlBQVksQ0FBQ0MsV0FBVyxDQUFDUCxXQUFXLENBQUNGLEtBQUtDLFNBQVNDO0FBQ2hFIn0=

@@ -1,19 +1,19 @@
-import { iconHashToBigInt } from '@discordeno/utils';
+import { iconHashToBigInt } from '@discordeno/utils'
 export function transformTeam(bot, payload) {
-    const id = bot.transformers.snowflake(payload.id);
-    const team = {
-        name: payload.name,
-        id,
-        icon: payload.icon ? iconHashToBigInt(payload.icon) : undefined,
-        ownerUserId: bot.transformers.snowflake(payload.owner_user_id),
-        members: payload.members.map((member)=>({
-                membershipState: member.membership_state,
-                teamId: id,
-                user: bot.transformers.user(bot, member.user),
-                role: member.role
-            }))
-    };
-    return bot.transformers.customizers.team(bot, payload, team);
+  const id = bot.transformers.snowflake(payload.id)
+  const team = {
+    name: payload.name,
+    id,
+    icon: payload.icon ? iconHashToBigInt(payload.icon) : undefined,
+    ownerUserId: bot.transformers.snowflake(payload.owner_user_id),
+    members: payload.members.map((member) => ({
+      membershipState: member.membership_state,
+      teamId: id,
+      user: bot.transformers.user(bot, member.user),
+      role: member.role,
+    })),
+  }
+  return bot.transformers.customizers.team(bot, payload, team)
 }
 
 //# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uL3NyYy90cmFuc2Zvcm1lcnMvdGVhbS50cyJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgdHlwZSB7IERpc2NvcmRUZWFtIH0gZnJvbSAnQGRpc2NvcmRlbm8vdHlwZXMnXG5pbXBvcnQgeyBpY29uSGFzaFRvQmlnSW50IH0gZnJvbSAnQGRpc2NvcmRlbm8vdXRpbHMnXG5pbXBvcnQgdHlwZSB7IEJvdCB9IGZyb20gJy4uL2JvdC5qcydcbmltcG9ydCB0eXBlIHsgVGVhbSB9IGZyb20gJy4vdHlwZXMuanMnXG5cbmV4cG9ydCBmdW5jdGlvbiB0cmFuc2Zvcm1UZWFtKGJvdDogQm90LCBwYXlsb2FkOiBEaXNjb3JkVGVhbSk6IFRlYW0ge1xuICBjb25zdCBpZCA9IGJvdC50cmFuc2Zvcm1lcnMuc25vd2ZsYWtlKHBheWxvYWQuaWQpXG5cbiAgY29uc3QgdGVhbSA9IHtcbiAgICBuYW1lOiBwYXlsb2FkLm5hbWUsXG4gICAgaWQsXG4gICAgaWNvbjogcGF5bG9hZC5pY29uID8gaWNvbkhhc2hUb0JpZ0ludChwYXlsb2FkLmljb24pIDogdW5kZWZpbmVkLFxuICAgIG93bmVyVXNlcklkOiBib3QudHJhbnNmb3JtZXJzLnNub3dmbGFrZShwYXlsb2FkLm93bmVyX3VzZXJfaWQpLFxuICAgIG1lbWJlcnM6IHBheWxvYWQubWVtYmVycy5tYXAoKG1lbWJlcikgPT4gKHtcbiAgICAgIG1lbWJlcnNoaXBTdGF0ZTogbWVtYmVyLm1lbWJlcnNoaXBfc3RhdGUsXG4gICAgICB0ZWFtSWQ6IGlkLFxuICAgICAgdXNlcjogYm90LnRyYW5zZm9ybWVycy51c2VyKGJvdCwgbWVtYmVyLnVzZXIpLFxuICAgICAgcm9sZTogbWVtYmVyLnJvbGUsXG4gICAgfSkpLFxuICB9IGFzIFRlYW1cblxuICByZXR1cm4gYm90LnRyYW5zZm9ybWVycy5jdXN0b21pemVycy50ZWFtKGJvdCwgcGF5bG9hZCwgdGVhbSlcbn1cbiJdLCJuYW1lcyI6WyJpY29uSGFzaFRvQmlnSW50IiwidHJhbnNmb3JtVGVhbSIsImJvdCIsInBheWxvYWQiLCJpZCIsInRyYW5zZm9ybWVycyIsInNub3dmbGFrZSIsInRlYW0iLCJuYW1lIiwiaWNvbiIsInVuZGVmaW5lZCIsIm93bmVyVXNlcklkIiwib3duZXJfdXNlcl9pZCIsIm1lbWJlcnMiLCJtYXAiLCJtZW1iZXIiLCJtZW1iZXJzaGlwU3RhdGUiLCJtZW1iZXJzaGlwX3N0YXRlIiwidGVhbUlkIiwidXNlciIsInJvbGUiLCJjdXN0b21pemVycyJdLCJtYXBwaW5ncyI6IkFBQ0EsU0FBU0EsZ0JBQWdCLFFBQVEsb0JBQW1CO0FBSXBELE9BQU8sU0FBU0MsY0FBY0MsR0FBUSxFQUFFQyxPQUFvQjtJQUMxRCxNQUFNQyxLQUFLRixJQUFJRyxZQUFZLENBQUNDLFNBQVMsQ0FBQ0gsUUFBUUMsRUFBRTtJQUVoRCxNQUFNRyxPQUFPO1FBQ1hDLE1BQU1MLFFBQVFLLElBQUk7UUFDbEJKO1FBQ0FLLE1BQU1OLFFBQVFNLElBQUksR0FBR1QsaUJBQWlCRyxRQUFRTSxJQUFJLElBQUlDO1FBQ3REQyxhQUFhVCxJQUFJRyxZQUFZLENBQUNDLFNBQVMsQ0FBQ0gsUUFBUVMsYUFBYTtRQUM3REMsU0FBU1YsUUFBUVUsT0FBTyxDQUFDQyxHQUFHLENBQUMsQ0FBQ0MsU0FBWSxDQUFBO2dCQUN4Q0MsaUJBQWlCRCxPQUFPRSxnQkFBZ0I7Z0JBQ3hDQyxRQUFRZDtnQkFDUmUsTUFBTWpCLElBQUlHLFlBQVksQ0FBQ2MsSUFBSSxDQUFDakIsS0FBS2EsT0FBT0ksSUFBSTtnQkFDNUNDLE1BQU1MLE9BQU9LLElBQUk7WUFDbkIsQ0FBQTtJQUNGO0lBRUEsT0FBT2xCLElBQUlHLFlBQVksQ0FBQ2dCLFdBQVcsQ0FBQ2QsSUFBSSxDQUFDTCxLQUFLQyxTQUFTSTtBQUN6RCJ9

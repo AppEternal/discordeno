@@ -1,17 +1,19 @@
-import { BitwisePermissionFlags } from '@discordeno/types';
+import { BitwisePermissionFlags } from '@discordeno/types'
 /** This function converts a bitwise string to permission strings */ export function calculatePermissions(permissionBits) {
-    return Object.keys(BitwisePermissionFlags).filter((permission)=>{
-        // Since Object.keys() not only returns the permission names but also the bit values we need to return false if it is a Number
-        if (Number(permission)) return false;
-        // Check if permissionBits has this permission
-        return permissionBits & BitwisePermissionFlags[permission];
-    });
+  return Object.keys(BitwisePermissionFlags).filter((permission) => {
+    // Since Object.keys() not only returns the permission names but also the bit values we need to return false if it is a Number
+    if (Number(permission)) return false
+    // Check if permissionBits has this permission
+    return permissionBits & BitwisePermissionFlags[permission]
+  })
 }
 /** This function converts an array of permissions into the bitwise string. */ export function calculateBits(permissions) {
-    return permissions.reduce((bits, perm)=>{
-        bits |= BitwisePermissionFlags[perm];
-        return bits;
-    }, 0n).toString();
+  return permissions
+    .reduce((bits, perm) => {
+      bits |= BitwisePermissionFlags[perm]
+      return bits
+    }, 0n)
+    .toString()
 }
 
 //# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL3NyYy9wZXJtaXNzaW9ucy50cyJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgdHlwZSB7IFBlcm1pc3Npb25TdHJpbmdzIH0gZnJvbSAnQGRpc2NvcmRlbm8vdHlwZXMnXG5pbXBvcnQgeyBCaXR3aXNlUGVybWlzc2lvbkZsYWdzIH0gZnJvbSAnQGRpc2NvcmRlbm8vdHlwZXMnXG5cbi8qKiBUaGlzIGZ1bmN0aW9uIGNvbnZlcnRzIGEgYml0d2lzZSBzdHJpbmcgdG8gcGVybWlzc2lvbiBzdHJpbmdzICovXG5leHBvcnQgZnVuY3Rpb24gY2FsY3VsYXRlUGVybWlzc2lvbnMocGVybWlzc2lvbkJpdHM6IGJpZ2ludCk6IFBlcm1pc3Npb25TdHJpbmdzW10ge1xuICByZXR1cm4gT2JqZWN0LmtleXMoQml0d2lzZVBlcm1pc3Npb25GbGFncykuZmlsdGVyKChwZXJtaXNzaW9uKSA9PiB7XG4gICAgLy8gU2luY2UgT2JqZWN0LmtleXMoKSBub3Qgb25seSByZXR1cm5zIHRoZSBwZXJtaXNzaW9uIG5hbWVzIGJ1dCBhbHNvIHRoZSBiaXQgdmFsdWVzIHdlIG5lZWQgdG8gcmV0dXJuIGZhbHNlIGlmIGl0IGlzIGEgTnVtYmVyXG4gICAgaWYgKE51bWJlcihwZXJtaXNzaW9uKSkgcmV0dXJuIGZhbHNlXG4gICAgLy8gQ2hlY2sgaWYgcGVybWlzc2lvbkJpdHMgaGFzIHRoaXMgcGVybWlzc2lvblxuICAgIHJldHVybiBwZXJtaXNzaW9uQml0cyAmIEJpdHdpc2VQZXJtaXNzaW9uRmxhZ3NbcGVybWlzc2lvbiBhcyBQZXJtaXNzaW9uU3RyaW5nc11cbiAgfSkgYXMgUGVybWlzc2lvblN0cmluZ3NbXVxufVxuXG4vKiogVGhpcyBmdW5jdGlvbiBjb252ZXJ0cyBhbiBhcnJheSBvZiBwZXJtaXNzaW9ucyBpbnRvIHRoZSBiaXR3aXNlIHN0cmluZy4gKi9cbmV4cG9ydCBmdW5jdGlvbiBjYWxjdWxhdGVCaXRzKHBlcm1pc3Npb25zOiBQZXJtaXNzaW9uU3RyaW5nc1tdKTogc3RyaW5nIHtcbiAgcmV0dXJuIHBlcm1pc3Npb25zXG4gICAgLnJlZHVjZSgoYml0cywgcGVybSkgPT4ge1xuICAgICAgYml0cyB8PSBCaXR3aXNlUGVybWlzc2lvbkZsYWdzW3Blcm1dXG4gICAgICByZXR1cm4gYml0c1xuICAgIH0sIDBuKVxuICAgIC50b1N0cmluZygpXG59XG4iXSwibmFtZXMiOlsiQml0d2lzZVBlcm1pc3Npb25GbGFncyIsImNhbGN1bGF0ZVBlcm1pc3Npb25zIiwicGVybWlzc2lvbkJpdHMiLCJPYmplY3QiLCJrZXlzIiwiZmlsdGVyIiwicGVybWlzc2lvbiIsIk51bWJlciIsImNhbGN1bGF0ZUJpdHMiLCJwZXJtaXNzaW9ucyIsInJlZHVjZSIsImJpdHMiLCJwZXJtIiwidG9TdHJpbmciXSwibWFwcGluZ3MiOiJBQUNBLFNBQVNBLHNCQUFzQixRQUFRLG9CQUFtQjtBQUUxRCxrRUFBa0UsR0FDbEUsT0FBTyxTQUFTQyxxQkFBcUJDLGNBQXNCO0lBQ3pELE9BQU9DLE9BQU9DLElBQUksQ0FBQ0osd0JBQXdCSyxNQUFNLENBQUMsQ0FBQ0M7UUFDakQsOEhBQThIO1FBQzlILElBQUlDLE9BQU9ELGFBQWEsT0FBTztRQUMvQiw4Q0FBOEM7UUFDOUMsT0FBT0osaUJBQWlCRixzQkFBc0IsQ0FBQ00sV0FBZ0M7SUFDakY7QUFDRjtBQUVBLDRFQUE0RSxHQUM1RSxPQUFPLFNBQVNFLGNBQWNDLFdBQWdDO0lBQzVELE9BQU9BLFlBQ0pDLE1BQU0sQ0FBQyxDQUFDQyxNQUFNQztRQUNiRCxRQUFRWCxzQkFBc0IsQ0FBQ1ksS0FBSztRQUNwQyxPQUFPRDtJQUNULEdBQUcsRUFBRSxFQUNKRSxRQUFRO0FBQ2IifQ==

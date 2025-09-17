@@ -1,53 +1,55 @@
 export function transformActivity(bot, payload) {
-    const activity = {
-        name: payload.name,
-        type: payload.type,
-        url: payload.url ?? undefined,
-        createdAt: payload.created_at,
-        startedAt: payload.timestamps?.start,
-        endedAt: payload.timestamps?.end,
-        applicationId: payload.application_id ? bot.transformers.snowflake(payload.application_id) : undefined,
-        details: payload.details ?? undefined,
-        state: payload.state ?? undefined,
-        emoji: payload.emoji ? {
-            name: payload.emoji.name,
-            animated: payload.emoji.animated,
-            id: payload.emoji.id ? bot.transformers.snowflake(payload.emoji.id) : undefined
-        } : undefined,
-        partyId: payload.party?.id,
-        partyCurrentSize: payload.party?.size?.[0],
-        partyMaxSize: payload.party?.size?.[1],
-        largeImage: payload.assets?.large_image,
-        largeText: payload.assets?.large_text,
-        smallImage: payload.assets?.small_image,
-        smallText: payload.assets?.small_text,
-        join: payload.secrets?.join,
-        spectate: payload.secrets?.spectate,
-        match: payload.secrets?.match,
-        instance: payload.instance,
-        flags: payload.flags,
-        buttons: payload.buttons
-    };
-    return bot.transformers.customizers.activity(bot, payload, activity);
+  const activity = {
+    name: payload.name,
+    type: payload.type,
+    url: payload.url ?? undefined,
+    createdAt: payload.created_at,
+    startedAt: payload.timestamps?.start,
+    endedAt: payload.timestamps?.end,
+    applicationId: payload.application_id ? bot.transformers.snowflake(payload.application_id) : undefined,
+    details: payload.details ?? undefined,
+    state: payload.state ?? undefined,
+    emoji: payload.emoji
+      ? {
+          name: payload.emoji.name,
+          animated: payload.emoji.animated,
+          id: payload.emoji.id ? bot.transformers.snowflake(payload.emoji.id) : undefined,
+        }
+      : undefined,
+    partyId: payload.party?.id,
+    partyCurrentSize: payload.party?.size?.[0],
+    partyMaxSize: payload.party?.size?.[1],
+    largeImage: payload.assets?.large_image,
+    largeText: payload.assets?.large_text,
+    smallImage: payload.assets?.small_image,
+    smallText: payload.assets?.small_text,
+    join: payload.secrets?.join,
+    spectate: payload.secrets?.spectate,
+    match: payload.secrets?.match,
+    instance: payload.instance,
+    flags: payload.flags,
+    buttons: payload.buttons,
+  }
+  return bot.transformers.customizers.activity(bot, payload, activity)
 }
 export function transformActivityInstance(bot, payload) {
-    const props = bot.transformers.desiredProperties.activityInstance;
-    const activityInstance = {};
-    if (props.applicationId && payload.application_id) activityInstance.applicationId = bot.transformers.snowflake(payload.application_id);
-    if (props.instanceId && payload.instance_id) activityInstance.instanceId = payload.instance_id;
-    if (props.launchId && payload.launch_id) activityInstance.launchId = bot.transformers.snowflake(payload.launch_id);
-    if (props.location && payload.location) activityInstance.location = bot.transformers.activityLocation(bot, payload.location);
-    if (props.users && payload.users) activityInstance.users = payload.users.map((x)=>bot.transformers.snowflake(x));
-    return bot.transformers.customizers.activityInstance(bot, payload, activityInstance);
+  const props = bot.transformers.desiredProperties.activityInstance
+  const activityInstance = {}
+  if (props.applicationId && payload.application_id) activityInstance.applicationId = bot.transformers.snowflake(payload.application_id)
+  if (props.instanceId && payload.instance_id) activityInstance.instanceId = payload.instance_id
+  if (props.launchId && payload.launch_id) activityInstance.launchId = bot.transformers.snowflake(payload.launch_id)
+  if (props.location && payload.location) activityInstance.location = bot.transformers.activityLocation(bot, payload.location)
+  if (props.users && payload.users) activityInstance.users = payload.users.map((x) => bot.transformers.snowflake(x))
+  return bot.transformers.customizers.activityInstance(bot, payload, activityInstance)
 }
 export function transformActivityLocation(bot, payload) {
-    const props = bot.transformers.desiredProperties.activityLocation;
-    const activityLocation = {};
-    if (props.id && payload.id) activityLocation.id = payload.id;
-    if (props.kind && payload.kind) activityLocation.kind = payload.kind;
-    if (props.channelId && payload.channel_id) activityLocation.channelId = bot.transformers.snowflake(payload.channel_id);
-    if (props.guildId && payload.guild_id) activityLocation.guildId = bot.transformers.snowflake(payload.guild_id);
-    return bot.transformers.customizers.activityLocation(bot, payload, activityLocation);
+  const props = bot.transformers.desiredProperties.activityLocation
+  const activityLocation = {}
+  if (props.id && payload.id) activityLocation.id = payload.id
+  if (props.kind && payload.kind) activityLocation.kind = payload.kind
+  if (props.channelId && payload.channel_id) activityLocation.channelId = bot.transformers.snowflake(payload.channel_id)
+  if (props.guildId && payload.guild_id) activityLocation.guildId = bot.transformers.snowflake(payload.guild_id)
+  return bot.transformers.customizers.activityLocation(bot, payload, activityLocation)
 }
 
 //# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uL3NyYy90cmFuc2Zvcm1lcnMvYWN0aXZpdHkudHMiXSwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHR5cGUgeyBEaXNjb3JkQWN0aXZpdHksIERpc2NvcmRBY3Rpdml0eUluc3RhbmNlLCBEaXNjb3JkQWN0aXZpdHlMb2NhdGlvbiB9IGZyb20gJ0BkaXNjb3JkZW5vL3R5cGVzJ1xuaW1wb3J0IHR5cGUgeyBCb3QgfSBmcm9tICcuLi9ib3QuanMnXG5pbXBvcnQgdHlwZSB7IERlc2lyZWRQcm9wZXJ0aWVzQmVoYXZpb3IsIFNldHVwRGVzaXJlZFByb3BzLCBUcmFuc2Zvcm1lcnNEZXNpcmVkUHJvcGVydGllcyB9IGZyb20gJy4uL2Rlc2lyZWRQcm9wZXJ0aWVzLmpzJ1xuaW1wb3J0IHR5cGUgeyBBY3Rpdml0eSwgQWN0aXZpdHlJbnN0YW5jZSwgQWN0aXZpdHlMb2NhdGlvbiB9IGZyb20gJy4vdHlwZXMuanMnXG5cbmV4cG9ydCBmdW5jdGlvbiB0cmFuc2Zvcm1BY3Rpdml0eShib3Q6IEJvdCwgcGF5bG9hZDogRGlzY29yZEFjdGl2aXR5KTogQWN0aXZpdHkge1xuICBjb25zdCBhY3Rpdml0eSA9IHtcbiAgICBuYW1lOiBwYXlsb2FkLm5hbWUsXG4gICAgdHlwZTogcGF5bG9hZC50eXBlLFxuICAgIHVybDogcGF5bG9hZC51cmwgPz8gdW5kZWZpbmVkLFxuICAgIGNyZWF0ZWRBdDogcGF5bG9hZC5jcmVhdGVkX2F0LFxuICAgIHN0YXJ0ZWRBdDogcGF5bG9hZC50aW1lc3RhbXBzPy5zdGFydCxcbiAgICBlbmRlZEF0OiBwYXlsb2FkLnRpbWVzdGFtcHM/LmVuZCxcbiAgICBhcHBsaWNhdGlvbklkOiBwYXlsb2FkLmFwcGxpY2F0aW9uX2lkID8gYm90LnRyYW5zZm9ybWVycy5zbm93Zmxha2UocGF5bG9hZC5hcHBsaWNhdGlvbl9pZCkgOiB1bmRlZmluZWQsXG4gICAgZGV0YWlsczogcGF5bG9hZC5kZXRhaWxzID8/IHVuZGVmaW5lZCxcbiAgICBzdGF0ZTogcGF5bG9hZC5zdGF0ZSA/PyB1bmRlZmluZWQsXG4gICAgZW1vamk6IHBheWxvYWQuZW1vamlcbiAgICAgID8ge1xuICAgICAgICAgIG5hbWU6IHBheWxvYWQuZW1vamkubmFtZSxcbiAgICAgICAgICBhbmltYXRlZDogcGF5bG9hZC5lbW9qaS5hbmltYXRlZCxcbiAgICAgICAgICBpZDogcGF5bG9hZC5lbW9qaS5pZCA/IGJvdC50cmFuc2Zvcm1lcnMuc25vd2ZsYWtlKHBheWxvYWQuZW1vamkuaWQpIDogdW5kZWZpbmVkLFxuICAgICAgICB9XG4gICAgICA6IHVuZGVmaW5lZCxcbiAgICBwYXJ0eUlkOiBwYXlsb2FkLnBhcnR5Py5pZCxcbiAgICBwYXJ0eUN1cnJlbnRTaXplOiBwYXlsb2FkLnBhcnR5Py5zaXplPy5bMF0sXG4gICAgcGFydHlNYXhTaXplOiBwYXlsb2FkLnBhcnR5Py5zaXplPy5bMV0sXG4gICAgbGFyZ2VJbWFnZTogcGF5bG9hZC5hc3NldHM/LmxhcmdlX2ltYWdlLFxuICAgIGxhcmdlVGV4dDogcGF5bG9hZC5hc3NldHM/LmxhcmdlX3RleHQsXG4gICAgc21hbGxJbWFnZTogcGF5bG9hZC5hc3NldHM/LnNtYWxsX2ltYWdlLFxuICAgIHNtYWxsVGV4dDogcGF5bG9hZC5hc3NldHM/LnNtYWxsX3RleHQsXG4gICAgam9pbjogcGF5bG9hZC5zZWNyZXRzPy5qb2luLFxuICAgIHNwZWN0YXRlOiBwYXlsb2FkLnNlY3JldHM/LnNwZWN0YXRlLFxuICAgIG1hdGNoOiBwYXlsb2FkLnNlY3JldHM/Lm1hdGNoLFxuICAgIGluc3RhbmNlOiBwYXlsb2FkLmluc3RhbmNlLFxuICAgIGZsYWdzOiBwYXlsb2FkLmZsYWdzLFxuICAgIGJ1dHRvbnM6IHBheWxvYWQuYnV0dG9ucyxcbiAgfSBhcyBBY3Rpdml0eVxuXG4gIHJldHVybiBib3QudHJhbnNmb3JtZXJzLmN1c3RvbWl6ZXJzLmFjdGl2aXR5KGJvdCwgcGF5bG9hZCwgYWN0aXZpdHkpXG59XG5cbmV4cG9ydCBmdW5jdGlvbiB0cmFuc2Zvcm1BY3Rpdml0eUluc3RhbmNlKGJvdDogQm90LCBwYXlsb2FkOiBEaXNjb3JkQWN0aXZpdHlJbnN0YW5jZSk6IEFjdGl2aXR5SW5zdGFuY2Uge1xuICBjb25zdCBwcm9wcyA9IGJvdC50cmFuc2Zvcm1lcnMuZGVzaXJlZFByb3BlcnRpZXMuYWN0aXZpdHlJbnN0YW5jZVxuICBjb25zdCBhY3Rpdml0eUluc3RhbmNlID0ge30gYXMgU2V0dXBEZXNpcmVkUHJvcHM8QWN0aXZpdHlJbnN0YW5jZSwgVHJhbnNmb3JtZXJzRGVzaXJlZFByb3BlcnRpZXMsIERlc2lyZWRQcm9wZXJ0aWVzQmVoYXZpb3I+XG5cbiAgaWYgKHByb3BzLmFwcGxpY2F0aW9uSWQgJiYgcGF5bG9hZC5hcHBsaWNhdGlvbl9pZCkgYWN0aXZpdHlJbnN0YW5jZS5hcHBsaWNhdGlvbklkID0gYm90LnRyYW5zZm9ybWVycy5zbm93Zmxha2UocGF5bG9hZC5hcHBsaWNhdGlvbl9pZClcbiAgaWYgKHByb3BzLmluc3RhbmNlSWQgJiYgcGF5bG9hZC5pbnN0YW5jZV9pZCkgYWN0aXZpdHlJbnN0YW5jZS5pbnN0YW5jZUlkID0gcGF5bG9hZC5pbnN0YW5jZV9pZFxuICBpZiAocHJvcHMubGF1bmNoSWQgJiYgcGF5bG9hZC5sYXVuY2hfaWQpIGFjdGl2aXR5SW5zdGFuY2UubGF1bmNoSWQgPSBib3QudHJhbnNmb3JtZXJzLnNub3dmbGFrZShwYXlsb2FkLmxhdW5jaF9pZClcbiAgaWYgKHByb3BzLmxvY2F0aW9uICYmIHBheWxvYWQubG9jYXRpb24pIGFjdGl2aXR5SW5zdGFuY2UubG9jYXRpb24gPSBib3QudHJhbnNmb3JtZXJzLmFjdGl2aXR5TG9jYXRpb24oYm90LCBwYXlsb2FkLmxvY2F0aW9uKVxuICBpZiAocHJvcHMudXNlcnMgJiYgcGF5bG9hZC51c2VycykgYWN0aXZpdHlJbnN0YW5jZS51c2VycyA9IHBheWxvYWQudXNlcnMubWFwKCh4KSA9PiBib3QudHJhbnNmb3JtZXJzLnNub3dmbGFrZSh4KSlcblxuICByZXR1cm4gYm90LnRyYW5zZm9ybWVycy5jdXN0b21pemVycy5hY3Rpdml0eUluc3RhbmNlKGJvdCwgcGF5bG9hZCwgYWN0aXZpdHlJbnN0YW5jZSlcbn1cblxuZXhwb3J0IGZ1bmN0aW9uIHRyYW5zZm9ybUFjdGl2aXR5TG9jYXRpb24oYm90OiBCb3QsIHBheWxvYWQ6IERpc2NvcmRBY3Rpdml0eUxvY2F0aW9uKTogQWN0aXZpdHlMb2NhdGlvbiB7XG4gIGNvbnN0IHByb3BzID0gYm90LnRyYW5zZm9ybWVycy5kZXNpcmVkUHJvcGVydGllcy5hY3Rpdml0eUxvY2F0aW9uXG4gIGNvbnN0IGFjdGl2aXR5TG9jYXRpb24gPSB7fSBhcyBTZXR1cERlc2lyZWRQcm9wczxBY3Rpdml0eUxvY2F0aW9uLCBUcmFuc2Zvcm1lcnNEZXNpcmVkUHJvcGVydGllcywgRGVzaXJlZFByb3BlcnRpZXNCZWhhdmlvcj5cblxuICBpZiAocHJvcHMuaWQgJiYgcGF5bG9hZC5pZCkgYWN0aXZpdHlMb2NhdGlvbi5pZCA9IHBheWxvYWQuaWRcbiAgaWYgKHByb3BzLmtpbmQgJiYgcGF5bG9hZC5raW5kKSBhY3Rpdml0eUxvY2F0aW9uLmtpbmQgPSBwYXlsb2FkLmtpbmRcbiAgaWYgKHByb3BzLmNoYW5uZWxJZCAmJiBwYXlsb2FkLmNoYW5uZWxfaWQpIGFjdGl2aXR5TG9jYXRpb24uY2hhbm5lbElkID0gYm90LnRyYW5zZm9ybWVycy5zbm93Zmxha2UocGF5bG9hZC5jaGFubmVsX2lkKVxuICBpZiAocHJvcHMuZ3VpbGRJZCAmJiBwYXlsb2FkLmd1aWxkX2lkKSBhY3Rpdml0eUxvY2F0aW9uLmd1aWxkSWQgPSBib3QudHJhbnNmb3JtZXJzLnNub3dmbGFrZShwYXlsb2FkLmd1aWxkX2lkKVxuXG4gIHJldHVybiBib3QudHJhbnNmb3JtZXJzLmN1c3RvbWl6ZXJzLmFjdGl2aXR5TG9jYXRpb24oYm90LCBwYXlsb2FkLCBhY3Rpdml0eUxvY2F0aW9uKVxufVxuIl0sIm5hbWVzIjpbInRyYW5zZm9ybUFjdGl2aXR5IiwiYm90IiwicGF5bG9hZCIsImFjdGl2aXR5IiwibmFtZSIsInR5cGUiLCJ1cmwiLCJ1bmRlZmluZWQiLCJjcmVhdGVkQXQiLCJjcmVhdGVkX2F0Iiwic3RhcnRlZEF0IiwidGltZXN0YW1wcyIsInN0YXJ0IiwiZW5kZWRBdCIsImVuZCIsImFwcGxpY2F0aW9uSWQiLCJhcHBsaWNhdGlvbl9pZCIsInRyYW5zZm9ybWVycyIsInNub3dmbGFrZSIsImRldGFpbHMiLCJzdGF0ZSIsImVtb2ppIiwiYW5pbWF0ZWQiLCJpZCIsInBhcnR5SWQiLCJwYXJ0eSIsInBhcnR5Q3VycmVudFNpemUiLCJzaXplIiwicGFydHlNYXhTaXplIiwibGFyZ2VJbWFnZSIsImFzc2V0cyIsImxhcmdlX2ltYWdlIiwibGFyZ2VUZXh0IiwibGFyZ2VfdGV4dCIsInNtYWxsSW1hZ2UiLCJzbWFsbF9pbWFnZSIsInNtYWxsVGV4dCIsInNtYWxsX3RleHQiLCJqb2luIiwic2VjcmV0cyIsInNwZWN0YXRlIiwibWF0Y2giLCJpbnN0YW5jZSIsImZsYWdzIiwiYnV0dG9ucyIsImN1c3RvbWl6ZXJzIiwidHJhbnNmb3JtQWN0aXZpdHlJbnN0YW5jZSIsInByb3BzIiwiZGVzaXJlZFByb3BlcnRpZXMiLCJhY3Rpdml0eUluc3RhbmNlIiwiaW5zdGFuY2VJZCIsImluc3RhbmNlX2lkIiwibGF1bmNoSWQiLCJsYXVuY2hfaWQiLCJsb2NhdGlvbiIsImFjdGl2aXR5TG9jYXRpb24iLCJ1c2VycyIsIm1hcCIsIngiLCJ0cmFuc2Zvcm1BY3Rpdml0eUxvY2F0aW9uIiwia2luZCIsImNoYW5uZWxJZCIsImNoYW5uZWxfaWQiLCJndWlsZElkIiwiZ3VpbGRfaWQiXSwibWFwcGluZ3MiOiJBQUtBLE9BQU8sU0FBU0Esa0JBQWtCQyxHQUFRLEVBQUVDLE9BQXdCO0lBQ2xFLE1BQU1DLFdBQVc7UUFDZkMsTUFBTUYsUUFBUUUsSUFBSTtRQUNsQkMsTUFBTUgsUUFBUUcsSUFBSTtRQUNsQkMsS0FBS0osUUFBUUksR0FBRyxJQUFJQztRQUNwQkMsV0FBV04sUUFBUU8sVUFBVTtR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

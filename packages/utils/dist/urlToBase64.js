@@ -1,9 +1,9 @@
-import { encode } from './base64.js';
+import { encode } from './base64.js'
 /** Converts a url to base 64. Useful for example, uploading/creating server emojis. */ export async function urlToBase64(url) {
-    const buffer = await fetch(url).then(async (res)=>await res.arrayBuffer());
-    const imageStr = encode(buffer);
-    const type = url.substring(url.lastIndexOf('.') + 1);
-    return `data:image/${type};base64,${imageStr}`;
+  const buffer = await fetch(url).then(async (res) => await res.arrayBuffer())
+  const imageStr = encode(buffer)
+  const type = url.substring(url.lastIndexOf('.') + 1)
+  return `data:image/${type};base64,${imageStr}`
 }
 
 //# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL3NyYy91cmxUb0Jhc2U2NC50cyJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBlbmNvZGUgfSBmcm9tICcuL2Jhc2U2NC5qcydcblxuLyoqIENvbnZlcnRzIGEgdXJsIHRvIGJhc2UgNjQuIFVzZWZ1bCBmb3IgZXhhbXBsZSwgdXBsb2FkaW5nL2NyZWF0aW5nIHNlcnZlciBlbW9qaXMuICovXG5leHBvcnQgYXN5bmMgZnVuY3Rpb24gdXJsVG9CYXNlNjQodXJsOiBzdHJpbmcpOiBQcm9taXNlPHN0cmluZz4ge1xuICBjb25zdCBidWZmZXIgPSBhd2FpdCBmZXRjaCh1cmwpLnRoZW4oYXN5bmMgKHJlcykgPT4gYXdhaXQgcmVzLmFycmF5QnVmZmVyKCkpXG4gIGNvbnN0IGltYWdlU3RyID0gZW5jb2RlKGJ1ZmZlcilcbiAgY29uc3QgdHlwZSA9IHVybC5zdWJzdHJpbmcodXJsLmxhc3RJbmRleE9mKCcuJykgKyAxKVxuICByZXR1cm4gYGRhdGE6aW1hZ2UvJHt0eXBlfTtiYXNlNjQsJHtpbWFnZVN0cn1gXG59XG4iXSwibmFtZXMiOlsiZW5jb2RlIiwidXJsVG9CYXNlNjQiLCJ1cmwiLCJidWZmZXIiLCJmZXRjaCIsInRoZW4iLCJyZXMiLCJhcnJheUJ1ZmZlciIsImltYWdlU3RyIiwidHlwZSIsInN1YnN0cmluZyIsImxhc3RJbmRleE9mIl0sIm1hcHBpbmdzIjoiQUFBQSxTQUFTQSxNQUFNLFFBQVEsY0FBYTtBQUVwQyxxRkFBcUYsR0FDckYsT0FBTyxlQUFlQyxZQUFZQyxHQUFXO0lBQzNDLE1BQU1DLFNBQVMsTUFBTUMsTUFBTUYsS0FBS0csSUFBSSxDQUFDLE9BQU9DLE1BQVEsTUFBTUEsSUFBSUMsV0FBVztJQUN6RSxNQUFNQyxXQUFXUixPQUFPRztJQUN4QixNQUFNTSxPQUFPUCxJQUFJUSxTQUFTLENBQUNSLElBQUlTLFdBQVcsQ0FBQyxPQUFPO0lBQ2xELE9BQU8sQ0FBQyxXQUFXLEVBQUVGLEtBQUssUUFBUSxFQUFFRCxVQUFVO0FBQ2hEIn0=

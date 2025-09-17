@@ -1,3 +1,3 @@
-export * from '@discordeno/bot';
+export * from '@discordeno/bot'
 
 //# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL3NyYy9pbmRleC50cyJdLCJzb3VyY2VzQ29udGVudCI6WyJleHBvcnQgKiBmcm9tICdAZGlzY29yZGVuby9ib3QnXG4iXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsY0FBYyxrQkFBaUIifQ==

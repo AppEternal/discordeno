@@ -1,55 +1,55 @@
-import { ToggleBitfield } from './ToggleBitfield.js';
+import { ToggleBitfield } from './ToggleBitfield.js'
 export const ChannelToggle = {
-    /** Whether the channel is nsfw */ nsfw: 1 << 0,
-    /** When a thread is locked, only users with `MANAGE_THREADS` can unarchive it */ locked: 1 << 1,
-    /** whether non-moderators can add other non-moderators to a thread; only available on private threads */ invitable: 1 << 2,
-    /** Whether the thread is archived */ archived: 1 << 3,
-    /** When a thread is created this will be true on that channel payload for the thread. */ newlyCreated: 1 << 4,
-    /** for group DM channels: whether the channel is managed by an application via the `gdm.join` OAuth2 scope */ managed: 1 << 5
-};
+  /** Whether the channel is nsfw */ nsfw: 1 << 0,
+  /** When a thread is locked, only users with `MANAGE_THREADS` can unarchive it */ locked: 1 << 1,
+  /** whether non-moderators can add other non-moderators to a thread; only available on private threads */ invitable: 1 << 2,
+  /** Whether the thread is archived */ archived: 1 << 3,
+  /** When a thread is created this will be true on that channel payload for the thread. */ newlyCreated: 1 << 4,
+  /** for group DM channels: whether the channel is managed by an application via the `gdm.join` OAuth2 scope */ managed: 1 << 5,
+}
 export class ChannelToggles extends ToggleBitfield {
-    constructor(channelOrBitfield){
-        super();
-        if (typeof channelOrBitfield === 'number') this.bitfield = channelOrBitfield;
-        else {
-            const channel = channelOrBitfield;
-            if (channel.nsfw) this.add(ChannelToggle.nsfw);
-            if (channel.thread_metadata?.locked) this.add(ChannelToggle.locked);
-            if (channel.thread_metadata?.invitable) this.add(ChannelToggle.invitable);
-            if (channel.thread_metadata?.archived) this.add(ChannelToggle.archived);
-            if (channel.newly_created) this.add(ChannelToggle.newlyCreated);
-            if (channel.managed) this.add(ChannelToggle.managed);
-        }
+  constructor(channelOrBitfield) {
+    super()
+    if (typeof channelOrBitfield === 'number') this.bitfield = channelOrBitfield
+    else {
+      const channel = channelOrBitfield
+      if (channel.nsfw) this.add(ChannelToggle.nsfw)
+      if (channel.thread_metadata?.locked) this.add(ChannelToggle.locked)
+      if (channel.thread_metadata?.invitable) this.add(ChannelToggle.invitable)
+      if (channel.thread_metadata?.archived) this.add(ChannelToggle.archived)
+      if (channel.newly_created) this.add(ChannelToggle.newlyCreated)
+      if (channel.managed) this.add(ChannelToggle.managed)
     }
-    /** Whether or not this channel is an nsfw channel. */ get nsfw() {
-        return this.has('nsfw');
+  }
+  /** Whether or not this channel is an nsfw channel. */ get nsfw() {
+    return this.has('nsfw')
+  }
+  /** Whether or not this thread channel is locked. */ get locked() {
+    return this.has('locked')
+  }
+  /** Whether or not this thread channel is invitable. */ get invitable() {
+    return this.has('invitable')
+  }
+  /** Whether or not this thread channel is archived. */ get archived() {
+    return this.has('archived')
+  }
+  /** Whether or not this thread channel is newly created. */ get newlyCreated() {
+    return this.has('newlyCreated')
+  }
+  get managed() {
+    return this.has('managed')
+  }
+  /** Checks whether or not the permissions exist in this */ has(permissions) {
+    if (!Array.isArray(permissions)) return super.contains(ChannelToggle[permissions])
+    return super.contains(permissions.reduce((a, b) => (a |= ChannelToggle[b]), 0))
+  }
+  /** Lists all the toggles for the role and whether or not each is true or false. */ list() {
+    const json = {}
+    for (const [key, value] of Object.entries(ChannelToggle)) {
+      json[key] = super.contains(value)
     }
-    /** Whether or not this thread channel is locked. */ get locked() {
-        return this.has('locked');
-    }
-    /** Whether or not this thread channel is invitable. */ get invitable() {
-        return this.has('invitable');
-    }
-    /** Whether or not this thread channel is archived. */ get archived() {
-        return this.has('archived');
-    }
-    /** Whether or not this thread channel is newly created. */ get newlyCreated() {
-        return this.has('newlyCreated');
-    }
-    get managed() {
-        return this.has('managed');
-    }
-    /** Checks whether or not the permissions exist in this */ has(permissions) {
-        if (!Array.isArray(permissions)) return super.contains(ChannelToggle[permissions]);
-        return super.contains(permissions.reduce((a, b)=>a |= ChannelToggle[b], 0));
-    }
-    /** Lists all the toggles for the role and whether or not each is true or false. */ list() {
-        const json = {};
-        for (const [key, value] of Object.entries(ChannelToggle)){
-            json[key] = super.contains(value);
-        }
-        return json;
-    }
+    return json
+  }
 }
 
 //# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy4uL3NyYy90cmFuc2Zvcm1lcnMvdG9nZ2xlcy9jaGFubmVsLnRzIl0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB0eXBlIHsgRGlzY29yZENoYW5uZWwgfSBmcm9tICdAZGlzY29yZGVuby90eXBlcydcbmltcG9ydCB7IFRvZ2dsZUJpdGZpZWxkIH0gZnJvbSAnLi9Ub2dnbGVCaXRmaWVsZC5qcydcblxuZXhwb3J0IGNvbnN0IENoYW5uZWxUb2dnbGUgPSB7XG4gIC8qKiBXaGV0aGVyIHRoZSBjaGFubmVsIGlzIG5zZncgKi9cbiAgbnNmdzogMSA8PCAwLFxuICAvKiogV2hlbiBhIHRocmVhZCBpcyBsb2NrZWQsIG9ubHkgdXNlcnMgd2l0aCBgTUFOQUdFX1RIUkVBRFNgIGNhbiB1bmFyY2hpdmUgaXQgKi9cbiAgbG9ja2VkOiAxIDw8IDEsXG4gIC8qKiB3aGV0aGVyIG5vbi1tb2RlcmF0b3JzIGNhbiBhZGQgb3RoZXIgbm9uLW1vZGVyYXRvcnMgdG8gYSB0aHJlYWQ7IG9ubHkgYXZhaWxhYmxlIG9uIHByaXZhdGUgdGhyZWFkcyAqL1xuICBpbnZpdGFibGU6IDEgPDwgMixcbiAgLyoqIFdoZXRoZXIgdGhlIHRocmVhZCBpcyBhcmNoaXZlZCAqL1xuICBhcmNoaXZlZDogMSA8PCAzLFxuICAvKiogV2hlbiBhIHRocmVhZCBpcyBjcmVhdGVkIHRoaXMgd2lsbCBiZSB0cnVlIG9uIHRoYXQgY2hhbm5lbCBwYXlsb2FkIGZvciB0aGUgdGhyZWFkLiAqL1xuICBuZXdseUNyZWF0ZWQ6IDEgPDwgNCxcbiAgLyoqIGZvciBncm91cCBETSBjaGFubmVsczogd2hldGhlciB0aGUgY2hhbm5lbCBpcyBtYW5hZ2VkIGJ5IGFuIGFwcGxpY2F0aW9uIHZpYSB0aGUgYGdkbS5qb2luYCBPQXV0aDIgc2NvcGUgKi9cbiAgbWFuYWdlZDogMSA8PCA1LFxufVxuXG5leHBvcnQgY2xhc3MgQ2hhbm5lbFRvZ2dsZXMgZXh0ZW5kcyBUb2dnbGVCaXRmaWVsZCB7XG4gIGNvbnN0cnVjdG9yKGNoYW5uZWxPckJpdGZpZWxkOiBEaXNjb3JkQ2hhbm5lbCB8IG51bWJlcikge1xuICAgIHN1cGVyKClcblxuICAgIGlmICh0eXBlb2YgY2hhbm5lbE9yQml0ZmllbGQgPT09ICdudW1iZXInKSB0aGlzLmJpdGZpZWxkID0gY2hhbm5lbE9yQml0ZmllbGRcbiAgICBlbHNlIHtcbiAgICAgIGNvbnN0IGNoYW5uZWwgPSBjaGFubmVsT3JCaXRmaWVsZFxuICAgICAgaWYgKGNoYW5uZWwubnNmdykgdGhpcy5hZGQoQ2hhbm5lbFRvZ2dsZS5uc2Z3KVxuICAgICAgaWYgKGNoYW5uZWwudGhyZWFkX21ldGFkYXRhPy5sb2NrZWQpIHRoaXMuYWRkKENoYW5uZWxUb2dnbGUubG9ja2VkKVxuICAgICAgaWYgKGNoYW5uZWwudGhyZWFkX21ldGFkYXRhPy5pbnZpdGFibGUpIHRoaXMuYWRkKENoYW5uZWxUb2dnbGUuaW52aXRhYmxlKVxuICAgICAgaWYgKGNoYW5uZWwudGhyZWFkX21ldGFkYXRhPy5hcmNoaXZlZCkgdGhpcy5hZGQoQ2hhbm5lbFRvZ2dsZS5hcmNoaXZlZClcbiAgICAgIGlmIChjaGFubmVsLm5ld2x5X2NyZWF0ZWQpIHRoaXMuYWRkKENoYW5uZWxUb2dnbGUubmV3bHlDcmVhdGVkKVxuICAgICAgaWYgKGNoYW5uZWwubWFuYWdlZCkgdGhpcy5hZGQoQ2hhbm5lbFRvZ2dsZS5tYW5hZ2VkKVxuICAgIH1cbiAgfVxuXG4gIC8qKiBXaGV0aGVyIG9yIG5vdCB0aGlzIGNoYW5uZWwgaXMgYW4gbnNmdyBjaGFubmVsLiAqL1xuICBnZXQgbnNmdygpOiBib29sZWFuIHtcbiAgICByZXR1cm4gdGhpcy5oYXMoJ25zZncnKVxuICB9XG5cbiAgLyoqIFdoZXRoZXIgb3Igbm90IHRoaXMgdGhyZWFkIGNoYW5uZWwgaXMgbG9ja2VkLiAqL1xuICBnZXQgbG9ja2VkKCk6IGJvb2xlYW4ge1xuICAgIHJldHVybiB0aGlzLmhhcygnbG9ja2VkJylcbiAgfVxuXG4gIC8qKiBXaGV0aGVyIG9yIG5vdCB0aGlzIHRocmVhZCBjaGFubmVsIGlzIGludml0YWJsZS4gKi9cbiAgZ2V0IGludml0YWJsZSgpOiBib29sZWFuIHtcbiAgICByZXR1cm4gdGhpcy5oYXMoJ2ludml0YWJsZScpXG4gIH1cblxuICAvKiogV2hldGhlciBvciBub3QgdGhpcyB0aHJlYWQgY2hhbm5lbCBpcyBhcmNoaXZlZC4gKi9cbiAgZ2V0IGFyY2hpdmVkKCk6IGJvb2xlYW4ge1xuICAgIHJldHVybiB0aGlzLmhhcygnYXJjaGl2ZWQnKVxuICB9XG5cbiAgLyoqIFdoZXRoZXIgb3Igbm90IHRoaXMgdGhyZWFkIGNoYW5uZWwgaXMgbmV3bHkgY3JlYXRlZC4gKi9cbiAgZ2V0IG5ld2x5Q3JlYXRlZCgpOiBib29sZWFuIHtcbiAgICByZXR1cm4gdGhpcy5oYXMoJ25ld2x5Q3JlYXRlZCcpXG4gIH1cblxuICBnZXQgbWFuYWdlZCgpOiBib29sZWFuIHtcbiAgICByZXR1cm4gdGhpcy5oYXMoJ21hbmFnZWQnKVxuICB9XG5cbiAgLyoqIENoZWNrcyB3aGV0aGVyIG9yIG5vdCB0aGUgcGVybWlzc2lvbnMgZXhpc3QgaW4gdGhpcyAqL1xuICBoYXMocGVybWlzc2lvbnM6IENoYW5uZWxUb2dnbGVLZXlzIHwgQ2hhbm5lbFRvZ2dsZUtleXNbXSk6IGJvb2xlYW4ge1xuICAgIGlmICghQXJyYXkuaXNBcnJheShwZXJtaXNzaW9ucykpIHJldHVybiBzdXBlci5jb250YWlucyhDaGFubmVsVG9nZ2xlW3Blcm1pc3Npb25zXSlcblxuICAgIHJldHVybiBzdXBlci5jb250YWlucyhwZXJtaXNzaW9ucy5yZWR1Y2UoKGEsIGIpID0+IChhIHw9IENoYW5uZWxUb2dnbGVbYl0pLCAwKSlcbiAgfVxuXG4gIC8qKiBMaXN0cyBhbGwgdGhlIHRvZ2dsZXMgZm9yIHRoZSByb2xlIGFuZCB3aGV0aGVyIG9yIG5vdCBlYWNoIGlzIHRydWUgb3IgZmFsc2UuICovXG4gIGxpc3QoKTogUmVjb3JkPENoYW5uZWxUb2dnbGVLZXlzLCBib29sZWFuPiB7XG4gICAgY29uc3QganNvbjogUmVjb3JkPHN0cmluZywgYm9vbGVhbj4gPSB7fVxuICAgIGZvciAoY29uc3QgW2tleSwgdmFsdWVdIG9mIE9iamVjdC5lbnRyaWVzKENoYW5uZWxUb2dnbGUpKSB7XG4gICAgICBqc29uW2tleV0gPSBzdXBlci5jb250YWlucyh2YWx1ZSlcbiAgICB9XG5cbiAgICByZXR1cm4ganNvbiBhcyBSZWNvcmQ8Q2hhbm5lbFRvZ2dsZUtleXMsIGJvb2xlYW4+XG4gIH1cbn1cblxuZXhwb3J0IHR5cGUgQ2hhbm5lbFRvZ2dsZUtleXMgPSBrZXlvZiB0eXBlb2YgQ2hhbm5lbFRvZ2dsZVxuIl0sIm5hbWVzIjpbIlRvZ2dsZUJpdGZpZWxkIiwiQ2hhbm5lbFRvZ2dsZSIsIm5zZnciLCJsb2NrZWQiLCJpbnZpdGFibGUiLCJhcmNoaXZlZCIsIm5ld2x5Q3JlYXRlZCIsIm1hbmFnZWQiLCJDaGFubmVsVG9nZ2xlcyIsImNoYW5uZWxPckJpdGZpZWxkIiwiYml0ZmllbGQiLCJjaGFubmVsIiwiYWRkIiwidGhyZWFkX21ldGFkYXRhIiwibmV3bHlfY3JlYXRlZCIsImhhcyIsInBlcm1pc3Npb25zIiwiQXJyYXkiLCJpc0FycmF5IiwiY29udGFpbnMiLCJyZWR1Y2UiLCJhIiwiYiIsImxpc3QiLCJqc29uIiwia2V5IiwidmFsdWUiLCJPYmplY3QiLCJlbnRyaWVzIl0sIm1hcHBpbmdzIjoiQUFDQSxTQUFTQSxjQUFjLFFBQVEsc0JBQXFCO0FBRXBELE9BQU8sTUFBTUMsZ0JBQWdCO0lBQzNCLGdDQUFnQyxHQUNoQ0MsTUFBTSxLQUFLO0lBQ1gsK0VBQStFLEdBQy9FQyxRQUFRLEtBQUs7SUFDYix1R0FBdUcsR0FDdkdDLFdBQVcsS0FBSztJQUNoQixtQ0FBbUMsR0FDbkNDLFVBQVUsS0FBSztJQUNmLHVGQUF1RixHQUN2RkMsY0FBYyxLQUFLO0lBQ25CLDRHQUE0RyxHQUM1R0MsU0FBUyxLQUFLO0FBQ2hCLEVBQUM7QUFFRCxPQUFPLE1BQU1DLHVCQUF1QlI7SUFDbEMsWUFBWVMsaUJBQTBDLENBQUU7UUFDdEQsS0FBSztRQUVMLElBQUksT0FBT0Esc0JBQXNCLFVBQVUsSUFBSSxDQUFDQyxRQUFRLEdBQUdEO2FBQ3REO1lBQ0gsTUFBTUUsVUFBVUY7WUFDaEIsSUFBSUUsUUFBUVQsSUFBSSxFQUFFLElBQUksQ0FBQ1UsR0FBRyxDQUFDWCxjQUFjQyxJQUFJO1lBQzdDLElBQUlTLFFBQVFFLGVBQWUsRUFBRVYsUUFBUSxJQUFJLENBQUNTLEdBQUcsQ0FBQ1gsY0FBY0UsTUFBTTtZQUNsRSxJQUFJUSxRQUFRRSxlQUFlLEVBQUVULFdBQVcsSUFBSSxDQUFDUSxHQUFHLENBQUNYLGNBQWNHLFNBQVM7WUFDeEUsSUFBSU8sUUFBUUUsZUFBZSxFQUFFUixVQUFVLElBQUksQ0FBQ08sR0FBRyxDQUFDWCxjQUFjSSxRQUFRO1lBQ3RFLElBQUlNLFFBQVFHLGFBQWEsRUFBRSxJQUFJLENBQUNGLEdBQUcsQ0FBQ1gsY0FBY0ssWUFBWTtZQUM5RCxJQUFJSyxRQUFRSixPQUFPLEVBQUUsSUFBSSxDQUFDSyxHQUFHLENBQUNYLGNBQWNNLE9BQU87UUFDckQ7SUFDRjtJQUVBLG9EQUFvRCxHQUNwRCxJQUFJTCxPQUFnQjtRQUNsQixPQUFPLElBQUksQ0FBQ2EsR0FBRyxDQUFDO0lBQ2xCO0lBRUEsa0RBQWtELEdBQ2xELElBQUlaLFNBQWtCO1FBQ3BCLE9BQU8sSUFBSSxDQUFDWSxHQUFHLENBQUM7SUFDbEI7SUFFQSxxREFBcUQsR0FDckQsSUFBSVgsWUFBcUI7UUFDdkIsT0FBTyxJQUFJLENBQUNXLEdBQUcsQ0FBQztJQUNsQjtJQUVBLG9EQUFvRCxHQUNwRCxJQUFJVixXQUFvQjtRQUN0QixPQUFPLElBQUksQ0FBQ1UsR0FBRyxDQUFDO0lBQ2xCO0lBRUEseURBQXlELEdBQ3pELElBQUlULGVBQXdCO1FBQzFCLE9BQU8sSUFBSSxDQUFDUyxHQUFHLENBQUM7SUFDbEI7SUFFQSxJQUFJUixVQUFtQjtRQUNyQixPQUFPLElBQUksQ0FBQ1EsR0FBRyxDQUFDO0lBQ2xCO0lBRUEsd0RBQXdELEdBQ3hEQSxJQUFJQyxXQUFvRCxFQUFXO1FBQ2pFLElBQUksQ0FBQ0MsTUFBTUMsT0FBTyxDQUFDRixjQUFjLE9BQU8sS0FBSyxDQUFDRyxTQUFTbEIsYUFBYSxDQUFDZSxZQUFZO1FBRWpGLE9BQU8sS0FBSyxDQUFDRyxTQUFTSCxZQUFZSSxNQUFNLENBQUMsQ0FBQ0MsR0FBR0MsSUFBT0QsS0FBS3BCLGFBQWEsQ0FBQ3FCLEVBQUUsRUFBRztJQUM5RTtJQUVBLGlGQUFpRixHQUNqRkMsT0FBMkM7UUFDekMsTUFBTUMsT0FBZ0MsQ0FBQztRQUN2QyxLQUFLLE1BQU0sQ0FBQ0MsS0FBS0MsTUFBTSxJQUFJQyxPQUFPQyxPQUFPLENBQUMzQixlQUFnQjtZQUN4RHVCLElBQUksQ0FBQ0MsSUFBSSxHQUFHLEtBQUssQ0FBQ04sU0FBU087UUFDN0I7UUFFQSxPQUFPRjtJQUNUO0FBQ0YifQ==

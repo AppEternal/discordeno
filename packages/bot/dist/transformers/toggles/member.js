@@ -1,114 +1,114 @@
-import { MemberFlags } from '@discordeno/types';
-import { ToggleBitfield } from './ToggleBitfield.js';
+import { MemberFlags } from '@discordeno/types'
+import { ToggleBitfield } from './ToggleBitfield.js'
 /** @private This is subject to breaking changes without notices */ export const memberFlags = [
-    'didRejoin',
-    'startedOnboarding',
-    'bypassesVerification',
-    'completedOnboarding'
-];
+  'didRejoin',
+  'startedOnboarding',
+  'bypassesVerification',
+  'completedOnboarding',
+]
 export const MemberToggle = {
-    /** Whether the user is deafened in voice channels */ deaf: 1 << 0,
-    /** Whether the user is muted in voice channels */ mute: 1 << 1,
-    /** Whether the user has not yet passed the guild's Membership Screening requirements */ pending: 1 << 2,
-    // Member flags
-    /** Member has left and rejoined the guild */ didRejoin: 1 << 3,
-    /** Member has completed onboarding */ startedOnboarding: 1 << 4,
-    /** Member is exempt from guild verification requirements */ bypassesVerification: 1 << 5,
-    /** Member has started onboarding */ completedOnboarding: 1 << 6,
-    /** Member is a guest and can only access the voice channel they were invited to */ isGuest: 1 << 7,
-    /** Member has started Server Guide new member actions */ startedHomeActions: 1 << 8,
-    /** Member has completed Server Guide new member actions */ completedHomeActions: 1 << 9,
-    /** Member's username, display name, or nickname is blocked by AutoMod */ automodQuarantinedUsername: 1 << 10,
-    /** Member has dismissed the DM settings upsell */ dmSettingsUpsellAcknowledged: 1 << 11,
-    /** Member's guild tag is blocked by AutoMod */ automodQuarantinedGuildTag: 1 << 12
-};
+  /** Whether the user is deafened in voice channels */ deaf: 1 << 0,
+  /** Whether the user is muted in voice channels */ mute: 1 << 1,
+  /** Whether the user has not yet passed the guild's Membership Screening requirements */ pending: 1 << 2,
+  // Member flags
+  /** Member has left and rejoined the guild */ didRejoin: 1 << 3,
+  /** Member has completed onboarding */ startedOnboarding: 1 << 4,
+  /** Member is exempt from guild verification requirements */ bypassesVerification: 1 << 5,
+  /** Member has started onboarding */ completedOnboarding: 1 << 6,
+  /** Member is a guest and can only access the voice channel they were invited to */ isGuest: 1 << 7,
+  /** Member has started Server Guide new member actions */ startedHomeActions: 1 << 8,
+  /** Member has completed Server Guide new member actions */ completedHomeActions: 1 << 9,
+  /** Member's username, display name, or nickname is blocked by AutoMod */ automodQuarantinedUsername: 1 << 10,
+  /** Member has dismissed the DM settings upsell */ dmSettingsUpsellAcknowledged: 1 << 11,
+  /** Member's guild tag is blocked by AutoMod */ automodQuarantinedGuildTag: 1 << 12,
+}
 export class MemberToggles extends ToggleBitfield {
-    constructor(memberOrTogglesInt){
-        super();
-        if (typeof memberOrTogglesInt === 'number') this.bitfield = memberOrTogglesInt;
-        else {
-            const member = memberOrTogglesInt;
-            if (member.deaf) this.add(MemberToggle.deaf);
-            if (member.mute) this.add(MemberToggle.mute);
-            if (member.pending) this.add(MemberToggle.pending);
-            if (member.flags) {
-                if (member.flags & MemberFlags.DidRejoin) this.add(MemberToggle.didRejoin);
-                if (member.flags & MemberFlags.StartedOnboarding) this.add(MemberToggle.startedOnboarding);
-                if (member.flags & MemberFlags.BypassesVerification) this.add(MemberToggle.bypassesVerification);
-                if (member.flags & MemberFlags.CompletedOnboarding) this.add(MemberToggle.completedOnboarding);
-                if (member.flags & MemberFlags.IsGuest) this.add(MemberToggle.isGuest);
-                if (member.flags & MemberFlags.StartedHomeActions) this.add(MemberToggle.startedHomeActions);
-                if (member.flags & MemberFlags.CompletedHomeActions) this.add(MemberToggle.completedHomeActions);
-                if (member.flags & MemberFlags.AutomodQuarantinedUsername) this.add(MemberToggle.automodQuarantinedUsername);
-                if (member.flags & MemberFlags.DmSettingsUpsellAcknowledged) this.add(MemberToggle.dmSettingsUpsellAcknowledged);
-                if (member.flags & MemberFlags.AutomodQuarantinedGuildTag) this.add(MemberToggle.automodQuarantinedGuildTag);
-            }
-        }
+  constructor(memberOrTogglesInt) {
+    super()
+    if (typeof memberOrTogglesInt === 'number') this.bitfield = memberOrTogglesInt
+    else {
+      const member = memberOrTogglesInt
+      if (member.deaf) this.add(MemberToggle.deaf)
+      if (member.mute) this.add(MemberToggle.mute)
+      if (member.pending) this.add(MemberToggle.pending)
+      if (member.flags) {
+        if (member.flags & MemberFlags.DidRejoin) this.add(MemberToggle.didRejoin)
+        if (member.flags & MemberFlags.StartedOnboarding) this.add(MemberToggle.startedOnboarding)
+        if (member.flags & MemberFlags.BypassesVerification) this.add(MemberToggle.bypassesVerification)
+        if (member.flags & MemberFlags.CompletedOnboarding) this.add(MemberToggle.completedOnboarding)
+        if (member.flags & MemberFlags.IsGuest) this.add(MemberToggle.isGuest)
+        if (member.flags & MemberFlags.StartedHomeActions) this.add(MemberToggle.startedHomeActions)
+        if (member.flags & MemberFlags.CompletedHomeActions) this.add(MemberToggle.completedHomeActions)
+        if (member.flags & MemberFlags.AutomodQuarantinedUsername) this.add(MemberToggle.automodQuarantinedUsername)
+        if (member.flags & MemberFlags.DmSettingsUpsellAcknowledged) this.add(MemberToggle.dmSettingsUpsellAcknowledged)
+        if (member.flags & MemberFlags.AutomodQuarantinedGuildTag) this.add(MemberToggle.automodQuarantinedGuildTag)
+      }
     }
-    get flags() {
-        let flags = 0;
-        if (this.didRejoin) flags |= MemberFlags.DidRejoin;
-        if (this.startedOnboarding) flags |= MemberFlags.StartedOnboarding;
-        if (this.bypassesVerification) flags |= MemberFlags.BypassesVerification;
-        if (this.completedOnboarding) flags |= MemberFlags.CompletedOnboarding;
-        if (this.isGuest) flags |= MemberFlags.IsGuest;
-        if (this.startedHomeActions) flags |= MemberFlags.StartedHomeActions;
-        if (this.completedHomeActions) flags |= MemberFlags.CompletedHomeActions;
-        if (this.automodQuarantinedUsername) flags |= MemberFlags.AutomodQuarantinedUsername;
-        if (this.dmSettingsUpsellAcknowledged) flags |= MemberFlags.DmSettingsUpsellAcknowledged;
-        if (this.automodQuarantinedGuildTag) flags |= MemberFlags.AutomodQuarantinedGuildTag;
-        return flags;
+  }
+  get flags() {
+    let flags = 0
+    if (this.didRejoin) flags |= MemberFlags.DidRejoin
+    if (this.startedOnboarding) flags |= MemberFlags.StartedOnboarding
+    if (this.bypassesVerification) flags |= MemberFlags.BypassesVerification
+    if (this.completedOnboarding) flags |= MemberFlags.CompletedOnboarding
+    if (this.isGuest) flags |= MemberFlags.IsGuest
+    if (this.startedHomeActions) flags |= MemberFlags.StartedHomeActions
+    if (this.completedHomeActions) flags |= MemberFlags.CompletedHomeActions
+    if (this.automodQuarantinedUsername) flags |= MemberFlags.AutomodQuarantinedUsername
+    if (this.dmSettingsUpsellAcknowledged) flags |= MemberFlags.DmSettingsUpsellAcknowledged
+    if (this.automodQuarantinedGuildTag) flags |= MemberFlags.AutomodQuarantinedGuildTag
+    return flags
+  }
+  /** Whether the user belongs to an OAuth2 application */ get deaf() {
+    return this.has('deaf')
+  }
+  /** Whether the user is muted in voice channels */ get mute() {
+    return this.has('mute')
+  }
+  /** Whether the user has not yet passed the guild's Membership Screening requirements */ get pending() {
+    return this.has('pending')
+  }
+  /** Member has left and rejoined the guild */ get didRejoin() {
+    return this.has('didRejoin')
+  }
+  /** Member has completed onboarding */ get startedOnboarding() {
+    return this.has('startedOnboarding')
+  }
+  /** Member is exempt from guild verification requirements */ get bypassesVerification() {
+    return this.has('bypassesVerification')
+  }
+  /** Member has started onboarding */ get completedOnboarding() {
+    return this.has('completedOnboarding')
+  }
+  /** Member is a guest and can only access the voice channel they were invited to */ get isGuest() {
+    return this.has('isGuest')
+  }
+  /** Member has started Server Guide new member actions */ get startedHomeActions() {
+    return this.has('startedHomeActions')
+  }
+  /** Member has completed Server Guide new member actions */ get completedHomeActions() {
+    return this.has('completedHomeActions')
+  }
+  /** Member's username, display name, or nickname is blocked by AutoMod */ get automodQuarantinedUsername() {
+    return this.has('automodQuarantinedUsername')
+  }
+  /** Member has dismissed the DM settings upsell */ get dmSettingsUpsellAcknowledged() {
+    return this.has('dmSettingsUpsellAcknowledged')
+  }
+  /** Member's guild tag is blocked by AutoMod */ get automodQuarantinedGuildTag() {
+    return this.has('automodQuarantinedGuildTag')
+  }
+  /** Checks whether or not the permissions exist in this */ has(permissions) {
+    if (!Array.isArray(permissions)) return super.contains(MemberToggle[permissions])
+    return super.contains(permissions.reduce((a, b) => (a |= MemberToggle[b]), 0))
+  }
+  /** Lists all the toggles for the role and whether or not each is true or false. */ list() {
+    const json = {}
+    for (const [key, value] of Object.entries(MemberToggle)) {
+      json[key] = super.contains(value)
     }
-    /** Whether the user belongs to an OAuth2 application */ get deaf() {
-        return this.has('deaf');
-    }
-    /** Whether the user is muted in voice channels */ get mute() {
-        return this.has('mute');
-    }
-    /** Whether the user has not yet passed the guild's Membership Screening requirements */ get pending() {
-        return this.has('pending');
-    }
-    /** Member has left and rejoined the guild */ get didRejoin() {
-        return this.has('didRejoin');
-    }
-    /** Member has completed onboarding */ get startedOnboarding() {
-        return this.has('startedOnboarding');
-    }
-    /** Member is exempt from guild verification requirements */ get bypassesVerification() {
-        return this.has('bypassesVerification');
-    }
-    /** Member has started onboarding */ get completedOnboarding() {
-        return this.has('completedOnboarding');
-    }
-    /** Member is a guest and can only access the voice channel they were invited to */ get isGuest() {
-        return this.has('isGuest');
-    }
-    /** Member has started Server Guide new member actions */ get startedHomeActions() {
-        return this.has('startedHomeActions');
-    }
-    /** Member has completed Server Guide new member actions */ get completedHomeActions() {
-        return this.has('completedHomeActions');
-    }
-    /** Member's username, display name, or nickname is blocked by AutoMod */ get automodQuarantinedUsername() {
-        return this.has('automodQuarantinedUsername');
-    }
-    /** Member has dismissed the DM settings upsell */ get dmSettingsUpsellAcknowledged() {
-        return this.has('dmSettingsUpsellAcknowledged');
-    }
-    /** Member's guild tag is blocked by AutoMod */ get automodQuarantinedGuildTag() {
-        return this.has('automodQuarantinedGuildTag');
-    }
-    /** Checks whether or not the permissions exist in this */ has(permissions) {
-        if (!Array.isArray(permissions)) return super.contains(MemberToggle[permissions]);
-        return super.contains(permissions.reduce((a, b)=>a |= MemberToggle[b], 0));
-    }
-    /** Lists all the toggles for the role and whether or not each is true or false. */ list() {
-        const json = {};
-        for (const [key, value] of Object.entries(MemberToggle)){
-            json[key] = super.contains(value);
-        }
-        return json;
-    }
+    return json
+  }
 }
 
 //# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy4uL3NyYy90cmFuc2Zvcm1lcnMvdG9nZ2xlcy9tZW1iZXIudHMiXSwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgdHlwZSBEaXNjb3JkTWVtYmVyLCBNZW1iZXJGbGFncyB9IGZyb20gJ0BkaXNjb3JkZW5vL3R5cGVzJ1xuaW1wb3J0IHsgVG9nZ2xlQml0ZmllbGQgfSBmcm9tICcuL1RvZ2dsZUJpdGZpZWxkLmpzJ1xuXG4vKiogQHByaXZhdGUgVGhpcyBpcyBzdWJqZWN0IHRvIGJyZWFraW5nIGNoYW5nZXMgd2l0aG91dCBub3RpY2VzICovXG5leHBvcnQgY29uc3QgbWVtYmVyRmxhZ3MgPSBbJ2RpZFJlam9pbicsICdzdGFydGVkT25ib2FyZGluZycsICdieXBhc3Nlc1ZlcmlmaWNhdGlvbicsICdjb21wbGV0ZWRPbmJvYXJkaW5nJ10gYXMgY29uc3RcblxuZXhwb3J0IGNvbnN0IE1lbWJlclRvZ2dsZSA9IHtcbiAgLyoqIFdoZXRoZXIgdGhlIHVzZXIgaXMgZGVhZmVuZWQgaW4gdm9pY2UgY2hhbm5lbHMgKi9cbiAgZGVhZjogMSA8PCAwLFxuICAvKiogV2hldGhlciB0aGUgdXNlciBpcyBtdXRlZCBpbiB2b2ljZSBjaGFubmVscyAqL1xuICBtdXRlOiAxIDw8IDEsXG4gIC8qKiBXaGV0aGVyIHRoZSB1c2VyIGhhcyBub3QgeWV0IHBhc3NlZCB0aGUgZ3VpbGQncyBNZW1iZXJzaGlwIFNjcmVlbmluZyByZXF1aXJlbWVudHMgKi9cbiAgcGVuZGluZzogMSA8PCAyLFxuXG4gIC8vIE1lbWJlciBmbGFnc1xuXG4gIC8qKiBNZW1iZXIgaGFzIGxlZnQgYW5kIHJlam9pbmVkIHRoZSBndWlsZCAqL1xuICBkaWRSZWpvaW46IDEgPDwgMyxcbiAgLyoqIE1lbWJlciBoYXMgY29tcGxldGVkIG9uYm9hcmRpbmcgKi9cbiAgc3RhcnRlZE9uYm9hcmRpbmc6IDEgPDwgNCxcbiAgLyoqIE1lbWJlciBpcyBleGVtcHQgZnJvbSBndWlsZCB2ZXJpZmljYXRpb24gcmVxdWlyZW1lbnRzICovXG4gIGJ5cGFzc2VzVmVyaWZpY2F0aW9uOiAxIDw8IDUsXG4gIC8qKiBNZW1iZXIgaGFzIHN0YXJ0ZWQgb25ib2FyZGluZyAqL1xuICBjb21wbGV0ZWRPbmJvYXJkaW5nOiAxIDw8IDYsXG4gIC8qKiBNZW1iZXIgaXMgYSBndWVzdCBhbmQgY2FuIG9ubHkgYWNjZXNzIHRoZSB2b2ljZSBjaGFubmVsIHRoZXkgd2VyZSBpbnZpdGVkIHRvICovXG4gIGlzR3Vlc3Q6IDEgPDwgNyxcbiAgLyoqIE1lbWJlciBoYXMgc3RhcnRlZCBTZXJ2ZXIgR3VpZGUgbmV3IG1lbWJlciBhY3Rpb25zICovXG4gIHN0YXJ0ZWRIb21lQWN0aW9uczogMSA8PCA4LFxuICAvKiogTWVtYmVyIGhhcyBjb21wbGV0ZWQgU2VydmVyIEd1aWRlIG5ldyBtZW1iZXIgYWN0aW9ucyAqL1xuICBjb21wbGV0ZWRIb21lQWN0aW9uczogMSA8PCA5LFxuICAvKiogTWVtYmVyJ3MgdXNlcm5hbWUsIGRpc3BsYXkgbmFtZSwgb3Igbmlja25hbWUgaXMgYmxvY2tlZCBieSBBdXRvTW9kICovXG4gIGF1dG9tb2RRdWFyYW50aW5lZFVzZXJuYW1lOiAxIDw8IDEwLFxuICAvKiogTWVtYmVyIGhhcyBkaXNtaXNzZWQgdGhlIERNIHNldHRpbmdzIHVwc2VsbCAqL1xuICBkbVNldHRpbmdzVXBzZWxsQWNrbm93bGVkZ2VkOiAxIDw8IDExLFxuICAvKiogTWVtYmVyJ3MgZ3VpbGQgdGFnIGlzIGJsb2NrZWQgYnkgQXV0b01vZCAqL1xuICBhdXRvbW9kUXVhcmFudGluZWRHdWlsZFRhZzogMSA8PCAxMixcbn1cblxuZXhwb3J0IGNsYXNzIE1lbWJlclRvZ2dsZXMgZXh0ZW5kcyBUb2dnbGVCaXRmaWVsZCB7XG4gIGNvbnN0cnVjdG9yKG1lbWJlck9yVG9nZ2xlc0ludDogUGFydGlhbDxEaXNjb3JkTWVtYmVyPiB8IG51bWJlcikge1xuICAgIHN1cGVyKClcblxuICAgIGlmICh0eXBlb2YgbWVtYmVyT3JUb2dnbGVzSW50ID09PSAnbnVtYmVyJykgdGhpcy5iaXRmaWVsZCA9IG1lbWJlck9yVG9nZ2xlc0ludFxuICAgIGVsc2Uge1xuICAgICAgY29uc3QgbWVtYmVyID0gbWVtYmVyT3JUb2dnbGVzSW50XG5cbiAgICAgIGlmIChtZW1iZXIuZGVhZikgdGhpcy5hZGQoTWVtYmVyVG9nZ2xlLmRlYWYpXG4gICAgICBpZiAobWVtYmVyLm11dGUpIHRoaXMuYWRkKE1lbWJlclRvZ2dsZS5tdXRlKVxuICAgICAgaWYgKG1lbWJlci5wZW5kaW5nKSB0aGlzLmFkZChNZW1iZXJUb2dnbGUucGVuZGluZylcblxuICAgICAgaWYgKG1lbWJlci5mbGFncykge1xuICAgICAgICBpZiAobWVtYmVyLmZsYWdzICYgTWVtYmVyRmxhZ3MuRGlkUmVqb2luKSB0aGlzLmFkZChNZW1iZXJUb2dnbGUuZGlkUmVqb2luKVxuICAgICAgICBpZiAobWVtYmVyLmZsYWdzICYgTWVtYmVyRmxhZ3MuU3RhcnRlZE9uYm9hcmRpbmcpIHRoaXMuYWRkKE1lbWJlclRvZ2dsZS5zdGFydGVkT25ib2FyZGluZylcbiAgICAgICAgaWYgKG1lbWJlci5mbGFncyAmIE1lbWJlckZsYWdzLkJ5cGFzc2VzVmVyaWZpY2F0aW9uKSB0aGlzLmFkZChNZW1iZXJUb2dnbGUuYnlwYXNzZXNWZXJpZmljYXRpb24pXG4gICAgICAgIGlmIChtZW1iZXIuZmxhZ3MgJiBNZW1iZXJGbGFncy5Db21wbGV0ZWRPbmJvYXJkaW5nKSB0aGlzLmFkZChNZW1iZXJUb2dnbGUuY29tcGxldGVkT25ib2FyZGluZylcbiAgICAgICAgaWYgKG1lbWJlci5mbGFncyAmIE1lbWJlckZsYWdzLklzR3Vlc3QpIHRoaXMuYWRkKE1lbWJlclRvZ2dsZS5pc0d1ZXN0KVxuICAgICAgICBpZiAobWVtYmVyLmZsYWdzICYgTWVtYmVyRmxhZ3MuU3RhcnRlZEhvbWVBY3Rpb25zKSB0aGlzLmFkZChNZW1iZXJUb2dnbGUuc3RhcnRlZEhvbWVBY3Rpb25zKVxuICAgICAgICBpZiAobWVtYmVyLmZsYWdzICYgTWVtYmVyRmxhZ3MuQ29tcGxldGVkSG9tZUFjdGlvbnMpIHRoaXMuYWRkKE1lbWJlclRvZ2dsZS5jb21wbGV0ZWRIb21lQWN0aW9ucylcbiAgICAgICAgaWYgKG1lbWJlci5mbGFncyAmIE1lbWJlckZsYWdzLkF1dG9tb2RRdWFyYW50aW5lZFVzZXJuYW1lKSB0aGlzLmFkZChNZW1iZXJUb2dnbGUuYXV0b21vZFF1YXJhbnRpbmVkVXNlcm5hbWUpXG4gICAgICAgIGlmIChtZW1iZXIuZmxhZ3MgJiBNZW1iZXJGbGFncy5EbVNldHRpbmdzVXBzZWxsQWNrbm93bGVkZ2VkKSB0aGlzLmFkZChNZW1iZXJUb2dnbGUuZG1TZXR0aW5nc1Vwc2VsbEFja25vd2xlZGdlZClcbiAgICAgICAgaWYgKG1lbWJlci5mbGFncyAmIE1lbWJlckZsYWdzLkF1dG9tb2RRdWFyYW50aW5lZEd1aWxkVGFnKSB0aGlzLmFkZChNZW1iZXJUb2dnbGUuYXV0b21vZFF1YXJhbnRpbmVkR3VpbGRUYWcpXG4gICAgICB9XG4gICAgfVxuICB9XG5cbiAgZ2V0IGZsYWdzKCk6IG51bWJlciB7XG4gICAgbGV0IGZsYWdzID0gMFxuXG4gICAgaWYgKHRoaXMuZGlkUmVqb2luKSBmbGFncyB8PSBNZW1iZXJGbGFncy5EaWRSZWpvaW5cbiAgICBpZiAodGhpcy5zdGFydGVkT25ib2FyZGluZykgZmxhZ3MgfD0gTWVtYmVyRmxhZ3MuU3RhcnRlZE9uYm9hcmRpbmdcbiAgICBpZiAodGhpcy5ieXBhc3Nlc1ZlcmlmaWNhdGlvbikgZmxhZ3MgfD0gTWVtYmVyRmxhZ3MuQnlwYXNzZXNWZXJpZmljYXRpb25cbiAgICBpZiAodGhpcy5jb21wbGV0ZWRPbmJvYXJkaW5nKSBmbGFncyB8PSBNZW1iZXJGbGFncy5Db21wbGV0ZWRPbmJvYXJkaW5nXG4gICAgaWYgKHRoaXMuaXNHdWVzdCkgZmxhZ3MgfD0gTWVtYmVyRmxhZ3MuSXNHdWVzdFxuICAgIGlmICh0aGlzLnN0YXJ0ZWRIb21lQWN0aW9ucykgZmxhZ3MgfD0gTWVtYmVyRmxhZ3MuU3RhcnRlZEhvbWVBY3Rpb25zXG4gICAgaWYgKHRoaXMuY29tcGxldGVkSG9tZUFjdGlvbnMpIGZsYWdzIHw9IE1lbWJlckZsYWdzLkNvbXBsZXRlZEhvbWVBY3Rpb25zXG4gICAgaWYgKHRoaXMuYXV0b21vZFF1YXJhbnRpbmVkVXNlcm5hbWUpIGZsYWdzIHw9IE1lbWJlckZsYWdzLkF1dG9tb2RRdWFyYW50aW5lZFVzZXJuYW1lXG4gICAgaWYgKHRoaXMuZG1TZXR0aW5nc1Vwc2VsbEFja25vd2xlZGdlZCkgZmxhZ3MgfD0gTWVtYmVyRmxhZ3MuRG1TZXR0aW5nc1Vwc2VsbEFja25vd2xlZGdlZFxuICAgIGlmICh0aGlzLmF1dG9tb2RRdWFyYW50aW5lZEd1aWxkVGFnKSBmbGFncyB8PSBNZW1iZXJGbGFncy5BdXRvbW9kUXVhcmFudGluZWRHdWlsZFRhZ1xuXG4gICAgcmV0dXJuIGZsYWdzXG4gIH1cblxuICAvKiogV2hldGhlciB0aGUgdXNlciBiZWxvbmdzIHRvIGFuIE9BdXRoMiBhcHBsaWNhdGlvbiAqL1xuICBnZXQgZGVhZigpOiBib29sZWFuIHtcbiAgICByZXR1cm4gdGhpcy5oYXMoJ2RlYWYnKVxuICB9XG5cbiAgLyoqIFdoZXRoZXIgdGhlIHVzZXIgaXMgbXV0ZWQgaW4gdm9pY2UgY2hhbm5lbHMgKi9cbiAgZ2V0IG11dGUoKTogYm9vbGVhbiB7XG4gICAgcmV0dXJuIHRoaXMuaGFzKCdtdXRlJylcbiAgfVxuXG4gIC8qKiBXaGV0aGVyIHRoZSB1c2VyIGhhcyBub3QgeWV0IHBhc3NlZCB0aGUgZ3VpbGQncyBNZW1iZXJzaGlwIFNjcmVlbmluZyByZXF1aXJlbWVudHMgKi9cbiAgZ2V0IHBlbmRpbmcoKTogYm9vbGVhbiB7XG4gICAgcmV0dXJuIHRoaXMuaGFzKCdwZW5kaW5nJylcbiAgfVxuXG4gIC8qKiBNZW1iZXIgaGFzIGxlZnQgYW5kIHJlam9pbmVkIHRoZSBndWlsZCAqL1xuICBnZXQgZGlkUmVqb2luKCk6IGJvb2xlYW4ge1xuICAgIHJldHVybiB0aGlzLmhhcygnZGlkUmVqb2luJylcbiAgfVxuXG4gIC8qKiBNZW1iZXIgaGFzIGNvbXBsZXRlZCBvbmJvYXJkaW5nICovXG4gIGdldCBzdGFydGVkT25ib2FyZGluZygpOiBib29sZWFuIHtcbiAgICByZXR1cm4gdGhpcy5oYXMoJ3N0YXJ0ZWRPbmJvYXJkaW5nJylcbiAgfVxuXG4gIC8qKiBNZW1iZXIgaXMgZXhlbXB0IGZyb20gZ3VpbGQgdmVyaWZpY2F0aW9uIHJlcXVpcmVtZW50cyAqL1xuICBnZXQgYnlwYXNzZXNWZXJpZmljYXRpb24oKTogYm9vbGVhbiB7XG4gICAgcmV0dXJuIHRoaXMuaGFzKCdieXBhc3Nlc1ZlcmlmaWNhdGlvbicpXG4gIH1cblxuICAvKiogTWVtYmVyIGhhcyBzdGFydGVkIG9uYm9hcmRpbmcgKi9cbiAgZ2V0IGNvbXBsZXRlZE9uYm9hcmRpbmcoKTogYm9vbGVhbiB7XG4gICAgcmV0dXJuIHRoaXMuaGFzKCdjb21wbGV0ZWRPbmJvYXJkaW5nJylcbiAgfVxuXG4gIC8qKiBNZW1iZXIgaXMgYSBndWVzdCBhbmQgY2FuIG9ubHkgYWNjZXNzIHRoZSB2b2ljZSBjaGFubmVsIHRoZXkgd2VyZSBpbnZpdGVkIHRvICovXG4gIGdldCBpc0d1ZXN0KCk6IGJvb2xlYW4ge1xuICAgIHJldHVybiB0aGlzLmhhcygnaXNHdWVzdCcpXG4gIH1cblxuICAvKiogTWVtYmVyIGhhcyBzdGFydGVkIFNlcnZlciBHdWlkZSBuZXcgbWVtYmVyIGFjdGlvbnMgKi9cbiAgZ2V0IHN0YXJ0ZWRIb21lQWN0aW9ucygpOiBib29sZWFuIHtcbiAgICByZXR1cm4gdGhpcy5oYXMoJ3N0YXJ0ZWRIb21lQWN0aW9ucycpXG4gIH1cblxuICAvKiogTWVtYmVyIGhhcyBjb21wbGV0ZWQgU2VydmVyIEd1aWRlIG5ldyBtZW1iZXIgYWN0aW9ucyAqL1xuICBnZXQgY29tcGxldGVkSG9tZUFjdGlvbnMoKTogYm9vbGVhbiB7XG4gICAgcmV0dXJuIHRoaXMuaGFzKCdjb21wbGV0ZWRIb21lQWN0aW9ucycpXG4gIH1cblxuICAvKiogTWVtYmVyJ3MgdXNlcm5hbWUsIGRpc3BsYXkgbmFtZSwgb3Igbmlja25hbWUgaXMgYmxvY2tlZCBieSBBdXRvTW9kICovXG4gIGdldCBhdXRvbW9kUXVhcmFudGluZWRVc2VybmFtZSgpOiBib29sZWFuIHtcbiAgICByZXR1cm4gdGhpcy5oYXMoJ2F1dG9tb2RRdWFyYW50aW5lZFVzZXJuYW1lJylcbiAgfVxuXG4gIC8qKiBNZW1iZXIgaGFzIGRpc21pc3NlZCB0aGUgRE0gc2V0dGluZ3MgdXBzZWxsICovXG4gIGdldCBkbVNldHRpbmdzVXBzZWxsQWNrbm93bGVkZ2VkKCk6IGJvb2xlYW4ge1xuICAgIHJldHVybiB0aGlzLmhhcygnZG1TZXR0aW5nc1Vwc2VsbEFja25vd2xlZGdlZCcpXG4gIH1cblxuICAvKiogTWVtYmVyJ3MgZ3VpbGQgdGFnIGlzIGJsb2NrZWQgYnkgQXV0b01vZCAqL1xuICBnZXQgYXV0b21vZFF1YXJhbnRpbmVkR3VpbGRUYWcoKTogYm9vbGVhbiB7XG4gICAgcmV0dXJuIHRoaXMuaGFzKCdhdXRvbW9kUXVhcmFudGluZWRHdWlsZFRhZycpXG4gIH1cblxuICAvKiogQ2hlY2tzIHdoZXRoZXIgb3Igbm90IHRoZSBwZXJtaXNzaW9ucyBleGlzdCBpbiB0aGlzICovXG4gIGhhcyhwZXJtaXNzaW9uczogTWVtYmVyVG9nZ2xlS2V5cyB8IE1lbWJlclRvZ2dsZUtleXNbXSk6IGJvb2xlYW4ge1xuICAgIGlmICghQXJyYXkuaXNBcnJheShwZXJtaXNzaW9ucykpIHJldHVybiBzdXBlci5jb250YWlucyhNZW1iZXJUb2dnbGVbcGVybWlzc2lvbnNdKVxuXG4gICAgcmV0dXJuIHN1cGVyLmNvbnRhaW5zKHBlcm1pc3Npb25zLnJlZHVjZSgoYSwgYikgPT4gKGEgfD0gTWVtYmVyVG9nZ2xlW2JdKSwgMCkpXG4gIH1cblxuICAvKiogTGlzdHMgYWxsIHRoZSB0b2dnbGVzIGZvciB0aGUgcm9sZSBhbmQgd2hldGhlciBvciBub3QgZWFjaCBpcyB0cnVlIG9yIGZhbHNlLiAqL1xuICBsaXN0KCk6IFJlY29yZDxNZW1iZXJUb2dnbGVLZXlzLCBib29sZWFuPiB7XG4gICAgY29uc3QganNvbjogUmVjb3JkPHN0cmluZywgYm9vbGVhbj4gPSB7fVxuICAgIGZvciAoY29uc3QgW2tleSwgdmFsdWVdIG9mIE9iamVjdC5lbnRyaWVzKE1lbWJlclRvZ2dsZSkpIHtcbiAgICAgIGpzb25ba2V5XSA9IHN1cGVyLmNvbnRhaW5zKHZhbHVlKVxuICAgIH1cblxuICAgIHJldHVybiBqc29uIGFzIFJlY29yZDxNZW1iZXJUb2dnbGVLZXlzLCBib29sZWFuPlxuICB9XG59XG5cbmV4cG9ydCB0eXBlIE1lbWJlclRvZ2dsZUtleXMgPSBrZXlvZiB0eXBlb2YgTWVtYmVyVG9nZ2xlXG5cbmV4cG9ydCB0eXBlIE1lbWJlckZsYWdzS2V5cyA9ICh0eXBlb2YgbWVtYmVyRmxhZ3MpW251bWJlcl1cbiJdLCJuYW1lcyI6WyJNZW1iZXJGbGFncyIsIlRvZ2dsZUJpdGZpZWxkIiwibWVtYmVyRmxhZ3MiLCJNZW1iZXJUb2dnbGUiLCJkZWFmIiwibXV0ZSIsInBlbmRpbmciLCJkaWRSZWpvaW4iLCJzdGFydGVkT25ib2FyZGluZyIsImJ5cGFzc2VzVmVyaWZpY2F0aW9uIiwiY29tcGxldGVkT25ib2FyZGluZyIsImlzR3Vlc3QiLCJzdGFydGVkSG9tZUFjdGlvbnMiLCJjb21wbGV0ZWRIb21lQWN0aW9ucyIsImF1dG9tb2RRdWFyYW50aW5lZFVzZXJuYW1lIiwiZG1TZXR0aW5nc1Vwc2VsbEFja25vd2xlZGdlZCIsImF1dG9tb2RRdWFyYW50aW5lZEd1aWxkVGFnIiwiTWVtYmVyVG9nZ2xlcyIsIm1lbWJlck9yVG9nZ2xlc0ludCIsImJpdGZpZWxkIiwibWVtYmVyIiwiYWRkIiwiZmxhZ3MiLCJEaWRSZWpvaW4iLCJTdGFydGVkT25ib2FyZGluZyIsIkJ5cGFzc2VzVmVyaWZpY2F0aW9uIiwiQ29tcGxldGVkT25ib2FyZGluZyIsIklzR3Vlc3QiLCJTdGFydGVkSG9tZUFjdGlvbnMiLCJDb21wbGV0ZWRIb21lQWN0aW9ucyIsIkF1dG9tb2RRdWFyYW50aW5lZFVzZXJuYW1lIiwiRG1TZXR0aW5nc1Vwc2VsbEFja25vd2xlZGdlZCIsIkF1dG9tb2RRdWFyYW50aW5lZEd1aWxkVGFnIiwiaGFzIiwicGVybWlzc2lvbnMiLCJBcnJheSIsImlzQXJyYXkiLCJjb250YWlucyIsInJlZHVjZSIsImEiLCJiIiwibGlzdCIsImpzb24iLCJrZXkiLCJ2YWx1ZSIsIk9iamVjdCIsImVudHJpZXMiXSwibWFwcGluZ3MiOiJBQUFBLFNBQTZCQSxXQUFXLFFBQVEsb0JBQW1CO0FBQ25FLFNBQVNDLGNBQWMsUUFBUSxzQkFBcUI7QUFFcEQsaUVBQWlFLEdBQ2pFLE9BQU8sTUFBTUMsY0FBYztJQUFDO0lBQWE7SUFBcUI7SUFBd0I7Q0FBc0IsQ0FBUztBQUVySCxPQUFPLE1BQU1DLGVBQWU7SUFDMUIsbURBQW1ELEdBQ25EQyxNQUFNLEtBQUs7SUFDWCxnREFBZ0QsR0FDaERDLE1BQU0sS0FBSztJQUNYLHNGQUFzRixHQUN0RkMsU0FBUyxLQUFLO0lBRWQsZUFBZTtJQUVmLDJDQUEyQyxHQUMzQ0MsV0FBVyxLQUFLO0lBQ2hCLG9DQUFvQyxHQUNwQ0MsbUJBQW1CLEtBQUs7SUFDeEIsMERBQTBELEdBQzFEQyxzQkFBc0IsS0FBSztJQUMzQixrQ0FBa0MsR0FDbENDLHFCQUFxQixLQUFLO0lBQzFCLGlGQUFpRixHQUNqRkMsU0FBUyxLQUFLO0lBQ2QsdURBQXVELEdBQ3ZEQyxvQkFBb0IsS0FBSztJQUN6Qix5REFBeUQsR0FDekRDLHNCQUFzQixLQUFLO0lBQzNCLHVFQUF1RSxHQUN2RUMsNEJBQTRCLEtBQUs7SUFDakMsZ0RBQWdELEdBQ2hEQyw4QkFBOEIsS0FBSztJQUNuQyw2Q0FBNkMsR0FDN0NDLDRCQUE0QixLQUFLO0FBQ25DLEVBQUM7QUFFRCxPQUFPLE1BQU1DLHNCQUFzQmhCO0lBQ2pDLFlBQVlpQixrQkFBbUQsQ0FBRTtRQUMvRCxLQUFLO1FBRUwsSUFBSSxPQUFPQSx1QkFBdUIsVUFBVSxJQUFJLENBQUNDLFFBQVEsR0FBR0Q7YUFDdkQ7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

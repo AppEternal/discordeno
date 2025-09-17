@@ -1,13 +1,13 @@
 export async function handleGuildMemberAdd(bot, data) {
-    if (!bot.events.guildMemberAdd) return;
-    const payload = data.d;
-    const guildId = bot.transformers.snowflake(payload.guild_id);
-    const user = bot.transformers.user(bot, payload.user);
-    const member = bot.transformers.member(bot, payload, {
-        guildId,
-        userId: payload.user.id
-    });
-    bot.events.guildMemberAdd(member, user);
+  if (!bot.events.guildMemberAdd) return
+  const payload = data.d
+  const guildId = bot.transformers.snowflake(payload.guild_id)
+  const user = bot.transformers.user(bot, payload.user)
+  const member = bot.transformers.member(bot, payload, {
+    guildId,
+    userId: payload.user.id,
+  })
+  bot.events.guildMemberAdd(member, user)
 }
 
 //# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy4uL3NyYy9oYW5kbGVycy9tZW1iZXJzL0dVSUxEX01FTUJFUl9BREQudHMiXSwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHR5cGUgeyBEaXNjb3JkR2F0ZXdheVBheWxvYWQsIERpc2NvcmRHdWlsZE1lbWJlckFkZCB9IGZyb20gJ0BkaXNjb3JkZW5vL3R5cGVzJ1xuaW1wb3J0IHR5cGUgeyBCb3QgfSBmcm9tICcuLi8uLi9ib3QuanMnXG5cbmV4cG9ydCBhc3luYyBmdW5jdGlvbiBoYW5kbGVHdWlsZE1lbWJlckFkZChib3Q6IEJvdCwgZGF0YTogRGlzY29yZEdhdGV3YXlQYXlsb2FkKTogUHJvbWlzZTx2b2lkPiB7XG4gIGlmICghYm90LmV2ZW50cy5ndWlsZE1lbWJlckFkZCkgcmV0dXJuXG5cbiAgY29uc3QgcGF5bG9hZCA9IGRhdGEuZCBhcyBEaXNjb3JkR3VpbGRNZW1iZXJBZGRcbiAgY29uc3QgZ3VpbGRJZCA9IGJvdC50cmFuc2Zvcm1lcnMuc25vd2ZsYWtlKHBheWxvYWQuZ3VpbGRfaWQpXG4gIGNvbnN0IHVzZXIgPSBib3QudHJhbnNmb3JtZXJzLnVzZXIoYm90LCBwYXlsb2FkLnVzZXIpXG4gIGNvbnN0IG1lbWJlciA9IGJvdC50cmFuc2Zvcm1lcnMubWVtYmVyKGJvdCwgcGF5bG9hZCwgeyBndWlsZElkLCB1c2VySWQ6IHBheWxvYWQudXNlci5pZCB9KVxuICBib3QuZXZlbnRzLmd1aWxkTWVtYmVyQWRkKG1lbWJlciwgdXNlcilcbn1cbiJdLCJuYW1lcyI6WyJoYW5kbGVHdWlsZE1lbWJlckFkZCIsImJvdCIsImRhdGEiLCJldmVudHMiLCJndWlsZE1lbWJlckFkZCIsInBheWxvYWQiLCJkIiwiZ3VpbGRJZCIsInRyYW5zZm9ybWVycyIsInNub3dmbGFrZSIsImd1aWxkX2lkIiwidXNlciIsIm1lbWJlciIsInVzZXJJZCIsImlkIl0sIm1hcHBpbmdzIjoiQUFHQSxPQUFPLGVBQWVBLHFCQUFxQkMsR0FBUSxFQUFFQyxJQUEyQjtJQUM5RSxJQUFJLENBQUNELElBQUlFLE1BQU0sQ0FBQ0MsY0FBYyxFQUFFO0lBRWhDLE1BQU1DLFVBQVVILEtBQUtJLENBQUM7SUFDdEIsTUFBTUMsVUFBVU4sSUFBSU8sWUFBWSxDQUFDQyxTQUFTLENBQUNKLFFBQVFLLFFBQVE7SUFDM0QsTUFBTUMsT0FBT1YsSUFBSU8sWUFBWSxDQUFDRyxJQUFJLENBQUNWLEtBQUtJLFFBQVFNLElBQUk7SUFDcEQsTUFBTUMsU0FBU1gsSUFBSU8sWUFBWSxDQUFDSSxNQUFNLENBQUNYLEtBQUtJLFNBQVM7UUFBRUU7UUFBU00sUUFBUVIsUUFBUU0sSUFBSSxDQUFDRyxFQUFFO0lBQUM7SUFDeEZiLElBQUlFLE1BQU0sQ0FBQ0MsY0FBYyxDQUFDUSxRQUFRRDtBQUNwQyJ9

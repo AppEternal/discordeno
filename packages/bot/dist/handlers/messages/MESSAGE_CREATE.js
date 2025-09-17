@@ -1,9 +1,11 @@
 export async function handleMessageCreate(bot, data, shardId) {
-    if (!bot.events.messageCreate) return;
-    const payload = data.d;
-    bot.events.messageCreate(bot.transformers.message(bot, payload, {
-        shardId
-    }));
+  if (!bot.events.messageCreate) return
+  const payload = data.d
+  bot.events.messageCreate(
+    bot.transformers.message(bot, payload, {
+      shardId,
+    }),
+  )
 }
 
 //# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy4uL3NyYy9oYW5kbGVycy9tZXNzYWdlcy9NRVNTQUdFX0NSRUFURS50cyJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgdHlwZSB7IERpc2NvcmRHYXRld2F5UGF5bG9hZCwgRGlzY29yZE1lc3NhZ2UgfSBmcm9tICdAZGlzY29yZGVuby90eXBlcydcbmltcG9ydCB0eXBlIHsgQm90IH0gZnJvbSAnLi4vLi4vYm90LmpzJ1xuXG5leHBvcnQgYXN5bmMgZnVuY3Rpb24gaGFuZGxlTWVzc2FnZUNyZWF0ZShib3Q6IEJvdCwgZGF0YTogRGlzY29yZEdhdGV3YXlQYXlsb2FkLCBzaGFyZElkOiBudW1iZXIpOiBQcm9taXNlPHZvaWQ+IHtcbiAgaWYgKCFib3QuZXZlbnRzLm1lc3NhZ2VDcmVhdGUpIHJldHVyblxuXG4gIGNvbnN0IHBheWxvYWQgPSBkYXRhLmQgYXMgRGlzY29yZE1lc3NhZ2VcblxuICBib3QuZXZlbnRzLm1lc3NhZ2VDcmVhdGUoYm90LnRyYW5zZm9ybWVycy5tZXNzYWdlKGJvdCwgcGF5bG9hZCwgeyBzaGFyZElkIH0pKVxufVxuIl0sIm5hbWVzIjpbImhhbmRsZU1lc3NhZ2VDcmVhdGUiLCJib3QiLCJkYXRhIiwic2hhcmRJZCIsImV2ZW50cyIsIm1lc3NhZ2VDcmVhdGUiLCJwYXlsb2FkIiwiZCIsInRyYW5zZm9ybWVycyIsIm1lc3NhZ2UiXSwibWFwcGluZ3MiOiJBQUdBLE9BQU8sZUFBZUEsb0JBQW9CQyxHQUFRLEVBQUVDLElBQTJCLEVBQUVDLE9BQWU7SUFDOUYsSUFBSSxDQUFDRixJQUFJRyxNQUFNLENBQUNDLGFBQWEsRUFBRTtJQUUvQixNQUFNQyxVQUFVSixLQUFLSyxDQUFDO0lBRXRCTixJQUFJRyxNQUFNLENBQUNDLGFBQWEsQ0FBQ0osSUFBSU8sWUFBWSxDQUFDQyxPQUFPLENBQUNSLEtBQUtLLFNBQVM7UUFBRUg7SUFBUTtBQUM1RSJ9

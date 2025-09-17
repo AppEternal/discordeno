@@ -1,23 +1,29 @@
-export var ShardState = /*#__PURE__*/ function(ShardState) {
-    /** Shard is fully connected to the gateway and receiving events from Discord. */ ShardState[ShardState["Connected"] = 0] = "Connected";
-    /** Shard started to connect to the gateway. This is only used if the shard is not currently trying to identify or resume. */ ShardState[ShardState["Connecting"] = 1] = "Connecting";
-    /** Shard got disconnected and reconnection actions have been started. */ ShardState[ShardState["Disconnected"] = 2] = "Disconnected";
-    /** The shard is connected to the gateway but only heartbeating. At this state the shard has not been identified with discord. */ ShardState[ShardState["Unidentified"] = 3] = "Unidentified";
-    /** Shard is trying to identify with the gateway to create a new session. */ ShardState[ShardState["Identifying"] = 4] = "Identifying";
-    /** Shard is trying to resume a session with the gateway. */ ShardState[ShardState["Resuming"] = 5] = "Resuming";
-    /** Shard got shut down studied or due to a not (self) fixable error and may not attempt to reconnect on its own. */ ShardState[ShardState["Offline"] = 6] = "Offline";
-    return ShardState;
-}({});
-export var TransportCompression = /*#__PURE__*/ function(TransportCompression) {
-    /**
+export var ShardState = /*#__PURE__*/ (function (ShardState) {
+  /** Shard is fully connected to the gateway and receiving events from Discord. */ ShardState[(ShardState['Connected'] = 0)] = 'Connected'
+  /** Shard started to connect to the gateway. This is only used if the shard is not currently trying to identify or resume. */ ShardState[
+    (ShardState['Connecting'] = 1)
+  ] = 'Connecting'
+  /** Shard got disconnected and reconnection actions have been started. */ ShardState[(ShardState['Disconnected'] = 2)] = 'Disconnected'
+  /** The shard is connected to the gateway but only heartbeating. At this state the shard has not been identified with discord. */ ShardState[
+    (ShardState['Unidentified'] = 3)
+  ] = 'Unidentified'
+  /** Shard is trying to identify with the gateway to create a new session. */ ShardState[(ShardState['Identifying'] = 4)] = 'Identifying'
+  /** Shard is trying to resume a session with the gateway. */ ShardState[(ShardState['Resuming'] = 5)] = 'Resuming'
+  /** Shard got shut down studied or due to a not (self) fixable error and may not attempt to reconnect on its own. */ ShardState[
+    (ShardState['Offline'] = 6)
+  ] = 'Offline'
+  return ShardState
+})({})
+export var TransportCompression = /*#__PURE__*/ (function (TransportCompression) {
+  /**
    * ZLib-Stream Transport Compression.
    *
    * @remarks
    * Uses `node:zlib` to decompress the payloads
    *
    * @see https://discord.com/developers/docs/topics/gateway#zlibstream
-   */ TransportCompression["zlib"] = "zlib-stream";
-    /**
+   */ TransportCompression['zlib'] = 'zlib-stream'
+  /**
    * ZStd-Stream Transport Compression.
    *
    * @remarks
@@ -26,20 +32,28 @@ export var TransportCompression = /*#__PURE__*/ function(TransportCompression) {
    * `fzstd` is an optional dependency. You will need to install it to be able to use it.
    *
    * @see https://discord.com/developers/docs/topics/gateway#zstdstream
-   */ TransportCompression["zstd"] = "zstd-stream";
-    return TransportCompression;
-}({});
-export var ShardSocketCloseCodes = /*#__PURE__*/ function(ShardSocketCloseCodes) {
-    /** A regular Shard shutdown. */ ShardSocketCloseCodes[ShardSocketCloseCodes["Shutdown"] = 3000] = "Shutdown";
-    /** A resume has been requested and therefore the old connection needs to be closed. */ ShardSocketCloseCodes[ShardSocketCloseCodes["ResumeClosingOldConnection"] = 3024] = "ResumeClosingOldConnection";
-    /**
+   */ TransportCompression['zstd'] = 'zstd-stream'
+  return TransportCompression
+})({})
+export var ShardSocketCloseCodes = /*#__PURE__*/ (function (ShardSocketCloseCodes) {
+  /** A regular Shard shutdown. */ ShardSocketCloseCodes[(ShardSocketCloseCodes['Shutdown'] = 3000)] = 'Shutdown'
+  /** A resume has been requested and therefore the old connection needs to be closed. */ ShardSocketCloseCodes[
+    (ShardSocketCloseCodes['ResumeClosingOldConnection'] = 3024)
+  ] = 'ResumeClosingOldConnection'
+  /**
    * Did not receive a heartbeat ACK in time.
    * Closing the shard and creating a new session.
-   */ ShardSocketCloseCodes[ShardSocketCloseCodes["ZombiedConnection"] = 3010] = "ZombiedConnection";
-    /** Discordeno's gateway tests hae been finished, therefore the Shard can be turned off. */ ShardSocketCloseCodes[ShardSocketCloseCodes["TestingFinished"] = 3064] = "TestingFinished";
-    /** Special close code reserved for Discordeno's zero-downtime resharding system. */ ShardSocketCloseCodes[ShardSocketCloseCodes["Resharded"] = 3065] = "Resharded";
-    /** Shard is re-identifying therefore the old connection needs to be closed. */ ShardSocketCloseCodes[ShardSocketCloseCodes["ReIdentifying"] = 3066] = "ReIdentifying";
-    return ShardSocketCloseCodes;
-}({});
+   */ ShardSocketCloseCodes[(ShardSocketCloseCodes['ZombiedConnection'] = 3010)] = 'ZombiedConnection'
+  /** Discordeno's gateway tests hae been finished, therefore the Shard can be turned off. */ ShardSocketCloseCodes[
+    (ShardSocketCloseCodes['TestingFinished'] = 3064)
+  ] = 'TestingFinished'
+  /** Special close code reserved for Discordeno's zero-downtime resharding system. */ ShardSocketCloseCodes[
+    (ShardSocketCloseCodes['Resharded'] = 3065)
+  ] = 'Resharded'
+  /** Shard is re-identifying therefore the old connection needs to be closed. */ ShardSocketCloseCodes[
+    (ShardSocketCloseCodes['ReIdentifying'] = 3066)
+  ] = 'ReIdentifying'
+  return ShardSocketCloseCodes
+})({})
 
 //# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL3NyYy90eXBlcy50cyJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgdHlwZSB7IERpc2NvcmRHYXRld2F5UGF5bG9hZCwgR2F0ZXdheU9wY29kZXMgfSBmcm9tICdAZGlzY29yZGVuby90eXBlcydcbmltcG9ydCB0eXBlIFNoYXJkIGZyb20gJy4vU2hhcmQuanMnXG5cbmV4cG9ydCBlbnVtIFNoYXJkU3RhdGUge1xuICAvKiogU2hhcmQgaXMgZnVsbHkgY29ubmVjdGVkIHRvIHRoZSBnYXRld2F5IGFuZCByZWNlaXZpbmcgZXZlbnRzIGZyb20gRGlzY29yZC4gKi9cbiAgQ29ubmVjdGVkID0gMCxcbiAgLyoqIFNoYXJkIHN0YXJ0ZWQgdG8gY29ubmVjdCB0byB0aGUgZ2F0ZXdheS4gVGhpcyBpcyBvbmx5IHVzZWQgaWYgdGhlIHNoYXJkIGlzIG5vdCBjdXJyZW50bHkgdHJ5aW5nIHRvIGlkZW50aWZ5IG9yIHJlc3VtZS4gKi9cbiAgQ29ubmVjdGluZyA9IDEsXG4gIC8qKiBTaGFyZCBnb3QgZGlzY29ubmVjdGVkIGFuZCByZWNvbm5lY3Rpb24gYWN0aW9ucyBoYXZlIGJlZW4gc3RhcnRlZC4gKi9cbiAgRGlzY29ubmVjdGVkID0gMixcbiAgLyoqIFRoZSBzaGFyZCBpcyBjb25uZWN0ZWQgdG8gdGhlIGdhdGV3YXkgYnV0IG9ubHkgaGVhcnRiZWF0aW5nLiBBdCB0aGlzIHN0YXRlIHRoZSBzaGFyZCBoYXMgbm90IGJlZW4gaWRlbnRpZmllZCB3aXRoIGRpc2NvcmQuICovXG4gIFVuaWRlbnRpZmllZCA9IDMsXG4gIC8qKiBTaGFyZCBpcyB0cnlpbmcgdG8gaWRlbnRpZnkgd2l0aCB0aGUgZ2F0ZXdheSB0byBjcmVhdGUgYSBuZXcgc2Vzc2lvbi4gKi9cbiAgSWRlbnRpZnlpbmcgPSA0LFxuICAvKiogU2hhcmQgaXMgdHJ5aW5nIHRvIHJlc3VtZSBhIHNlc3Npb24gd2l0aCB0aGUgZ2F0ZXdheS4gKi9cbiAgUmVzdW1pbmcgPSA1LFxuICAvKiogU2hhcmQgZ290IHNodXQgZG93biBzdHVkaWVkIG9yIGR1ZSB0byBhIG5vdCAoc2VsZikgZml4YWJsZSBlcnJvciBhbmQgbWF5IG5vdCBhdHRlbXB0IHRvIHJlY29ubmVjdCBvbiBpdHMgb3duLiAqL1xuICBPZmZsaW5lID0gNixcbn1cblxuZXhwb3J0IGVudW0gVHJhbnNwb3J0Q29tcHJlc3Npb24ge1xuICAvKipcbiAgICogWkxpYi1TdHJlYW0gVHJhbnNwb3J0IENvbXByZXNzaW9uLlxuICAgKlxuICAgKiBAcmVtYXJrc1xuICAgKiBVc2VzIGBub2RlOnpsaWJgIHRvIGRlY29tcHJlc3MgdGhlIHBheWxvYWRzXG4gICAqXG4gICAqIEBzZWUgaHR0cHM6Ly9kaXNjb3JkLmNvbS9kZXZlbG9wZXJzL2RvY3MvdG9waWNzL2dhdGV3YXkjemxpYnN0cmVhbVxuICAgKi9cbiAgemxpYiA9ICd6bGliLXN0cmVhbScsXG4gIC8qKlxuICAgKiBaU3RkLVN0cmVhbSBUcmFuc3BvcnQgQ29tcHJlc3Npb24uXG4gICAqXG4gICAqIEByZW1hcmtzXG4gICAqIFRoaXMgd2lsbCB1c2UgYG5vZGU6emxpYmAgenN0ZCBpbXBsZW1lbnRhdGlvbiBpZiBhdmFpbGFibGUgKG5vZGUgdjIyLjE1KyBvciBub2RlIHYyMy44Kykgb3IgYGZ6c3RkYCBvdGhlcndpc2UuXG4gICAqXG4gICAqIGBmenN0ZGAgaXMgYW4gb3B0aW9uYWwgZGVwZW5kZW5jeS4gWW91IHdpbGwgbmVlZCB0byBpbnN0YWxsIGl0IHRvIGJlIGFibGUgdG8gdXNlIGl0LlxuICAgKlxuICAgKiBAc2VlIGh0dHBzOi8vZGlzY29yZC5jb20vZGV2ZWxvcGVycy9kb2NzL3RvcGljcy9nYXRld2F5I3pzdGRzdHJlYW1cbiAgICovXG4gIHpzdGQgPSAnenN0ZC1zdHJlYW0nLFxufVxuXG5leHBvcnQgaW50ZXJmYWNlIFNoYXJkR2F0ZXdheUNvbmZpZyB7XG4gIC8qKlxuICAgKiBXaGF0ZXZlciB0byBlbmFibGUgUGF5bG9hZCBjb21wcmVzc2lvbi5cbiAgICpcbiAgICogQHJlbWFya3NcbiAgICogVGhpcyBpcyBjb21wYXRpYmxlIHdpdGgge0BsaW5rIHRyYW5zcG9ydENvbXByZXNzaW9ufVxuICAgKlxuICAgKiBAZGVmYXVsdCBmYWxzZVxuICAgKlxuICAgKiBAc2VlIGh0dHBzOi8vZGlzY29yZC5jb20vZGV2ZWxvcGVycy9kb2NzL3RvcGljcy9nYXRld2F5I3BheWxvYWQtY29tcHJlc3Npb25cbiAgICovXG4gIGNvbXByZXNzOiBib29sZWFuXG4gIC8qKlxuICAgKiBXaGF0IFRyYW5zcG9ydCBDb21wcmVzc2lvbiBzaG91bGQgYmUgdXNlXG4gICAqXG4gICAqIEBkZWZhdWx0IG51bGxcbiAgICpcbiAgICogQHNlZSBodHRwczovL2Rpc2NvcmQuY29tL2RldmVsb3BlcnMvZG9jcy90b3BpY3MvZ2F0ZXdheSN0cmFuc3BvcnQtY29tcHJlc3Npb25cbiAgICovXG4gIHRyYW5zcG9ydENvbXByZXNzaW9uOiBUcmFuc3BvcnRDb21wcmVzc2lvbiB8IG51bGxcbiAgLyoqIFRoZSBjYWxjdWxhdGVkIGludGVudCB2YWx1ZSBvZiB0aGUgZXZlbnRzIHdoaWNoIHRoZSBzaGFyZCBzaG91bGQgcmVjZWl2ZS5cbiAgICpcbiAgICogQGRlZmF1bHQgMFxuICAgKi9cbiAgaW50ZW50czogbnVtYmVyXG4gIC8qKiBJZGVudGlmeSBwcm9wZXJ0aWVzIHRvIHVzZSAqL1xuICBwcm9wZXJ0aWVzOiB7XG4gICAgLyoqIE9wZXJhdGluZyBzeXN0ZW0gdGhlIHNoYXJkIHJ1bnMgb24uXG4gICAgICpcbiAgICAgKiBAZGVmYXVsdCBcImRhcndpblwiIHwgXCJsaW51eFwiIHwgXCJ3aW5kb3dzXCJcbiAgICAgKi9cbiAgICBvczogc3RyaW5nXG4gICAgLyoqIFRoZSBcImJyb3dzZXJcIiB3aGVyZSB0aGlzIHNoYXJkIGlzIHJ1bm5pbmcgb24uXG4gICAgICpcbiAgICAgKiBAZGVmYXVsdCBcIkRpc2NvcmRlbm9cIlxuICAgICAqL1xuICAgIGJyb3dzZXI6IHN0cmluZ1xuICAgIC8qKiBUaGUgZGV2aWNlIG9uIHdoaWNoIHRoZSBzaGFyZCBpcyBydW5uaW5nLlxuICAgICAqXG4gICAgICogQGRlZmF1bHQgXCJEaXNjb3JkZW5vXCJcbiAgICAgKi9cbiAgICBkZXZpY2U6IHN0cmluZ1xuICB9XG4gIC8qKiBCb3QgdG9rZW4gd2hpY2ggaXMgdXNlZCB0byBjb25uZWN0IHRvIERpc2NvcmQgKi9cbiAgdG9rZW46IHN0cmluZ1xuICAvKiogVGhlIFVSTCBvZiB0aGUgZ2F0ZXdheSB3aGljaCBzaG91bGQgYmUgY29ubmVjdGVkIHRvLlxuICAgKlxuICAgKiBAZGVmYXVsdCBcIndzczovL2dhdGV3YXkuZGlzY29yZC5nZ1wiXG4gICAqL1xuICB1cmw6IHN0cmluZ1xuICAvKiogVGhlIGdhdGV3YXkgdmVyc2lvbiB3aGljaCBzaG91bGQgYmUgdXNlZC5cbiAgICpcbiAgICogQGRlZmF1bHQgMTBcbiAgICovXG4gIHZlcnNpb246IG51bWJlclxuICAvKipcbiAgICogVGhlIHRvdGFsIG51bWJlciBvZiBzaGFyZHMgdG8gY29ubmVjdCB0byBhY3Jvc3MgdGhlIGVudGlyZSBib3QuXG4gICAqIEBkZWZhdWx0IDFcbiAgICovXG4gIHRvdGFsU2hhcmRzOiBudW1iZXJcbn1cblxuZXhwb3J0IGludGVyZmFjZSBTaGFyZEhlYXJ0IHtcbiAgLyoqIFdoZXRoZXIgb3Igbm90IHRoZSBoZWFydGJlYXQgd2FzIGFja25vd2xlZGdlZCBieSBEaXNjb3JkIGluIHRpbWUuICovXG4gIGFja25vd2xlZGdlZDogYm9vbGVhblxuICAvKiogSW50ZXJ2YWwgYmV0d2VlbiBoZWFydGJlYXRzIHJlcXVlc3RlZCBieSBEaXNjb3JkLiAqL1xuICBpbnRlcnZhbDogbnVtYmVyXG4gIC8qKiBJZCBvZiB0aGUgaW50ZXJ2YWwsIHdoaWNoIGlzIHVzZWQgZm9yIHNlbmRpbmcgdGhlIGhlYXJ0YmVhdHMuICovXG4gIGludGVydmFsSWQ/OiBOb2RlSlMuVGltZW91dFxuICAvKiogVW5peCAoaW4gbWlsbGlzZWNvbmRzKSB0aW1lc3RhbXAgd2hlbiB0aGUgbGFzdCBoZWFydGJlYXQgQUNLIHdhcyByZWNlaXZlZCBmcm9tIERpc2NvcmQuICovXG4gIGxhc3RBY2s/OiBudW1iZXJcbiAgLyoqIFVuaXggdGltZXN0YW1wIChpbiBtaWxsaXNlY29uZHMpIHdoZW4gdGhlIGxhc3QgaGVhcnRiZWF0IHdhcyBzZW50LiAqL1xuICBsYXN0QmVhdD86IG51bWJlclxuICAvKiogUm91bmQgdHJpcCB0aW1lIChpbiBtaWxsaXNlY29uZHMpIGZyb20gU2hhcmQgdG8gRGlzY29yZCBhbmQgYmFjay5cbiAgICogQ2FsY3VsYXRlZCB1c2luZyB0aGUgaGVhcnRiZWF0IHN5c3RlbS5cbiAgICogTm90ZTogdGhpcyB2YWx1ZSBpcyB1bmRlZmluZWQgdW50aWwgdGhlIGZpcnN0IGhlYXJ0YmVhdCB0byBEaXNjb3JkIGhhcyBoYXBwZW5lZC5cbiAgICovXG4gIHJ0dD86IG51bWJlclxuICAvKiogSWQgb2YgdGhlIHRpbWVvdXQgd2hpY2ggaXMgdXNlZCBmb3Igc2VuZGluZyB0aGUgZmlyc3QgaGVhcnRiZWF0IHRvIERpc2NvcmQgc2luY2UgaXQncyBcInNwZWNpYWxcIi4gKi9cbiAgdGltZW91dElkPzogTm9kZUpTLlRpbWVvdXRcbn1cblxuZXhwb3J0IGludGVyZmFjZSBTaGFyZEV2ZW50cyB7XG4gIC8qKiBBIGhlYXJ0YmVhdCBoYXMgYmVlbiBzZW5kLiAqL1xuICBoZWFydGJlYXQ/OiAoc2hhcmQ6IFNoYXJkKSA9PiB1bmtub3duXG4gIC8qKiBBIGhlYXJ0YmVhdCBBQ0sgd2FzIHJlY2VpdmVkLiAqL1xuICBoZWFydGJlYXRBY2s/OiAoc2hhcmQ6IFNoYXJkKSA9PiB1bmtub3duXG4gIC8qKiBTaGFyZCBoYXMgcmVjZWl2ZWQgYSBIZWxsbyBwYXlsb2FkLiAqL1xuICBoZWxsbz86IChzaGFyZDogU2hhcmQpID0+IHVua25vd25cbiAgLyoqIFRoZSBTaGFyZHMgc2Vzc2lvbiBoYXMgYmVlbiBpbnZhbGlkYXRlZC4gKi9cbiAgaW52YWxpZFNlc3Npb24/OiAoc2hhcmQ6IFNoYXJkLCByZXN1bWFibGU6IGJvb2xlYW4pID0+IHVua25vd25cbiAgLyoqIFRoZSBzaGFyZCBoYXMgc3RhcnRlZCBhIHJlc3VtZSBhY3Rpb24uICovXG4gIHJlc3VtaW5nPzogKHNoYXJkOiBTaGFyZCkgPT4gdW5rbm93blxuICAvKiogVGhlIHNoYXJkIGhhcyBzdWNjZXNzZnVsbHkgcmVzdW1lZCBhbiBvbGQgc2Vzc2lvbi4gKi9cbiAgcmVzdW1lZD86IChzaGFyZDogU2hhcmQpID0+IHVua25vd25cbiAgLyoqIERpc2NvcmQgaGFzIHJlcXVlc3RlZCB0aGUgU2hhcmQgdG8gcmVjb25uZWN0LiAqL1xuICByZXF1ZXN0ZWRSZWNvbm5lY3Q/OiAoc2hhcmQ6IFNoYXJkKSA9PiB1bmtub3duXG4gIC8qKiBUaGUgc2hhcmQgc3RhcnRlZCB0byBjb25uZWN0IHRvIERpc2NvcmQncyBnYXRld2F5LiAqL1xuICBjb25uZWN0aW5nPzogKHNoYXJkOiBTaGFyZCkgPT4gdW5rbm93blxuICAvKiogVGhlIHNoYXJkIGlzIGNvbm5lY3RlZCB3aXRoIERpc2NvcmQncyBnYXRld2F5LiAqL1xuICBjb25uZWN0ZWQ/OiAoc2hhcmQ6IFNoYXJkKSA9PiB1bmtub3duXG4gIC8qKiBUaGUgc2hhcmQgaGFzIGJlZW4gZGlzY29ubmVjdGVkIGZyb20gRGlzY29yZCdzIGdhdGV3YXkuICovXG4gIGRpc2Nvbm5lY3RlZD86IChzaGFyZDogU2hhcmQpID0+IHVua25vd25cbiAgLyoqIFRoZSBzaGFyZCBoYXMgc3RhcnRlZCB0byBpZGVudGlmeSBpdHNlbGYgdG8gRGlzY29yZC4gKi9cbiAgaWRlbnRpZnlpbmc/OiAoc2hhcmQ6IFNoYXJkKSA9PiB1bmtub3duXG4gIC8qKiBUaGUgc2hhcmQgaGFzIHN1Y2Nlc3NmdWxseSBiZWVuIGlkZW50aWZpZWQgaXRzZWxmIHdpdGggRGlzY29yZC4gKi9cbiAgcmVhZHk/OiAoc2hhcmQ6IFNoYXJkKSA9PiB1bmtub3duXG4gIC8qKiBUaGUgc2hhcmQgaGFzIHJlY2VpdmVkIGEgbWVzc2FnZSBmcm9tIERpc2NvcmQuICovXG4gIG1lc3NhZ2U/OiAoc2hhcmQ6IFNoYXJkLCBwYXlsb2FkOiBEaXNjb3JkR2F0ZXdheVBheWxvYWQpID0+IHVua25vd25cbn1cblxuZXhwb3J0IGVudW0gU2hhcmRTb2NrZXRDbG9zZUNvZGVzIHtcbiAgLyoqIEEgcmVndWxhciBTaGFyZCBzaHV0ZG93bi4gKi9cbiAgU2h1dGRvd24gPSAzMDAwLFxuICAvKiogQSByZXN1bWUgaGFzIGJlZW4gcmVxdWVzdGVkIGFuZCB0aGVyZWZvcmUgdGhlIG9sZCBjb25uZWN0aW9uIG5lZWRzIHRvIGJlIGNsb3NlZC4gKi9cbiAgUmVzdW1lQ2xvc2luZ09sZENvbm5lY3Rpb24gPSAzMDI0LFxuICAvKipcbiAgICogRGlkIG5vdCByZWNlaXZlIGEgaGVhcnRiZWF0IEFDSyBpbiB0aW1lLlxuICAgKiBDbG9zaW5nIHRoZSBzaGFyZCBhbmQgY3JlYXRpbmcgYSBuZXcgc2Vzc2lvbi5cbiAgICovXG4gIFpvbWJpZWRDb25uZWN0aW9uID0gMzAxMCxcbiAgLyoqIERpc2NvcmRlbm8ncyBnYXRld2F5IHRlc3RzIGhhZSBiZWVuIGZpbmlzaGVkLCB0aGVyZWZvcmUgdGhlIFNoYXJkIGNhbiBiZSB0dXJuZWQgb2ZmLiAqL1xuICBUZXN0aW5nRmluaXNoZWQgPSAzMDY0LFxuICAvKiogU3BlY2lhbCBjbG9zZSBjb2RlIHJlc2VydmVkIGZvciBEaXNjb3JkZW5vJ3MgemVyby1kb3dudGltZSByZXNoYXJkaW5nIHN5c3RlbS4gKi9cbiAgUmVzaGFyZGVkID0gMzA2NSxcbiAgLyoqIFNoYXJkIGlzIHJlLWlkZW50aWZ5aW5nIHRoZXJlZm9yZSB0aGUgb2xkIGNvbm5lY3Rpb24gbmVlZHMgdG8gYmUgY2xvc2VkLiAqL1xuICBSZUlkZW50aWZ5aW5nID0gMzA2Nixcbn1cblxuZXhwb3J0IGludGVyZmFjZSBTaGFyZFNvY2tldFJlcXVlc3Qge1xuICAvKiogVGhlIE9QLUNvZGUgZm9yIHRoZSBwYXlsb2FkIHRvIHNlbmQuICovXG4gIG9wOiBHYXRld2F5T3Bjb2Rlc1xuICAvKiogUGF5bG9hZCBkYXRhLiAqL1xuICBkOiB1bmtub3duXG59XG5cbi8qKiBodHRwczovL2Rpc2NvcmQuY29tL2RldmVsb3BlcnMvZG9jcy90b3BpY3MvZ2F0ZXdheSN1cGRhdGUtdm9pY2Utc3RhdGUgKi9cbmV4cG9ydCBpbnRlcmZhY2UgVXBkYXRlVm9pY2VTdGF0ZSB7XG4gIC8qKiBpZCBvZiB0aGUgZ3VpbGQgKi9cbiAgZ3VpbGRJZDogc3RyaW5nXG4gIC8qKiBpZCBvZiB0aGUgdm9pY2UgY2hhbm5lbCBjbGllbnQgd2FudHMgdG8gam9pbiAobnVsbCBpZiBkaXNjb25uZWN0aW5nKSAqL1xuICBjaGFubmVsSWQ6IHN0cmluZyB8IG51bGxcbiAgLyoqIElzIHRoZSBjbGllbnQgbXV0ZWQgKi9cbiAgc2VsZk11dGU6IGJvb2xlYW5cbiAgLyoqIElzIHRoZSBjbGllbnQgZGVhZmVuZWQgKi9cbiAgc2VsZkRlYWY6IGJvb2xlYW5cbn1cbiJdLCJuYW1lcyI6WyJTaGFyZFN0YXRlIiwiVHJhbnNwb3J0Q29tcHJlc3Npb24iLCJTaGFyZFNvY2tldENsb3NlQ29kZXMiXSwibWFwcGluZ3MiOiJBQUdBLE9BQU8sSUFBQSxBQUFLQSxvQ0FBQUE7SUFDViwrRUFBK0U7SUFFL0UsMkhBQTJIO0lBRTNILHVFQUF1RTtJQUV2RSwrSEFBK0g7SUFFL0gsMEVBQTBFO0lBRTFFLDBEQUEwRDtJQUUxRCxrSEFBa0g7V0FieEdBO01BZVg7QUFFRCxPQUFPLElBQUEsQUFBS0MsOENBQUFBO0lBQ1Y7Ozs7Ozs7R0FPQztJQUVEOzs7Ozs7Ozs7R0FTQztXQW5CU0E7TUFxQlg7QUFpSEQsT0FBTyxJQUFBLEFBQUtDLCtDQUFBQTtJQUNWLDhCQUE4QjtJQUU5QixxRkFBcUY7SUFFckY7OztHQUdDO0lBRUQseUZBQXlGO0lBRXpGLGtGQUFrRjtJQUVsRiw2RUFBNkU7V0FkbkVBO01BZ0JYIn0=

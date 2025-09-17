@@ -1,23 +1,23 @@
-import { PresenceStatus } from '@discordeno/types';
+import { PresenceStatus } from '@discordeno/types'
 export const reverseStatusTypes = Object.freeze({
-    0: 'online',
-    1: 'dnd',
-    2: 'idle',
-    4: 'offline'
-});
+  0: 'online',
+  1: 'dnd',
+  2: 'idle',
+  4: 'offline',
+})
 export function transformPresenceToDiscordPresence(bot, payload) {
-    return {
-        user: bot.transformers.reverse.user(bot, payload.user),
-        guild_id: bot.transformers.reverse.snowflake(payload.guildId),
-        // TODO: find better way
-        status: PresenceStatus[payload.status] ?? 'offline',
-        activities: payload.activities.map((activity)=>bot.transformers.reverse.activity(bot, activity)),
-        client_status: {
-            desktop: payload.desktop,
-            mobile: payload.mobile,
-            web: payload.web
-        }
-    };
+  return {
+    user: bot.transformers.reverse.user(bot, payload.user),
+    guild_id: bot.transformers.reverse.snowflake(payload.guildId),
+    // TODO: find better way
+    status: PresenceStatus[payload.status] ?? 'offline',
+    activities: payload.activities.map((activity) => bot.transformers.reverse.activity(bot, activity)),
+    client_status: {
+      desktop: payload.desktop,
+      mobile: payload.mobile,
+      web: payload.web,
+    },
+  }
 }
 
 //# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy4uL3NyYy90cmFuc2Zvcm1lcnMvcmV2ZXJzZS9wcmVzZW5jZS50cyJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyB0eXBlIERpc2NvcmRQcmVzZW5jZVVwZGF0ZSwgUHJlc2VuY2VTdGF0dXMgfSBmcm9tICdAZGlzY29yZGVuby90eXBlcydcbmltcG9ydCB0eXBlIHsgQm90IH0gZnJvbSAnLi4vLi4vYm90LmpzJ1xuaW1wb3J0IHR5cGUgeyBQcmVzZW5jZVVwZGF0ZSB9IGZyb20gJy4uL3R5cGVzLmpzJ1xuXG5leHBvcnQgY29uc3QgcmV2ZXJzZVN0YXR1c1R5cGVzID0gT2JqZWN0LmZyZWV6ZSh7XG4gIDA6ICdvbmxpbmUnLFxuICAxOiAnZG5kJyxcbiAgMjogJ2lkbGUnLFxuICA0OiAnb2ZmbGluZScsXG59IGFzIGNvbnN0KVxuXG5leHBvcnQgZnVuY3Rpb24gdHJhbnNmb3JtUHJlc2VuY2VUb0Rpc2NvcmRQcmVzZW5jZShib3Q6IEJvdCwgcGF5bG9hZDogUHJlc2VuY2VVcGRhdGUpOiBEaXNjb3JkUHJlc2VuY2VVcGRhdGUge1xuICByZXR1cm4ge1xuICAgIHVzZXI6IGJvdC50cmFuc2Zvcm1lcnMucmV2ZXJzZS51c2VyKGJvdCwgcGF5bG9hZC51c2VyKSxcbiAgICBndWlsZF9pZDogYm90LnRyYW5zZm9ybWVycy5yZXZlcnNlLnNub3dmbGFrZShwYXlsb2FkLmd1aWxkSWQpLFxuICAgIC8vIFRPRE86IGZpbmQgYmV0dGVyIHdheVxuICAgIHN0YXR1czogKFByZXNlbmNlU3RhdHVzW3BheWxvYWQuc3RhdHVzXSA/PyAnb2ZmbGluZScpIGFzICdvZmZsaW5lJyxcbiAgICBhY3Rpdml0aWVzOiBwYXlsb2FkLmFjdGl2aXRpZXMubWFwKChhY3Rpdml0eSkgPT4gYm90LnRyYW5zZm9ybWVycy5yZXZlcnNlLmFjdGl2aXR5KGJvdCwgYWN0aXZpdHkpKSxcbiAgICBjbGllbnRfc3RhdHVzOiB7XG4gICAgICBkZXNrdG9wOiBwYXlsb2FkLmRlc2t0b3AsXG4gICAgICBtb2JpbGU6IHBheWxvYWQubW9iaWxlLFxuICAgICAgd2ViOiBwYXlsb2FkLndlYixcbiAgICB9LFxuICB9XG59XG4iXSwibmFtZXMiOlsiUHJlc2VuY2VTdGF0dXMiLCJyZXZlcnNlU3RhdHVzVHlwZXMiLCJPYmplY3QiLCJmcmVlemUiLCJ0cmFuc2Zvcm1QcmVzZW5jZVRvRGlzY29yZFByZXNlbmNlIiwiYm90IiwicGF5bG9hZCIsInVzZXIiLCJ0cmFuc2Zvcm1lcnMiLCJyZXZlcnNlIiwiZ3VpbGRfaWQiLCJzbm93Zmxha2UiLCJndWlsZElkIiwic3RhdHVzIiwiYWN0aXZpdGllcyIsIm1hcCIsImFjdGl2aXR5IiwiY2xpZW50X3N0YXR1cyIsImRlc2t0b3AiLCJtb2JpbGUiLCJ3ZWIiXSwibWFwcGluZ3MiOiJBQUFBLFNBQXFDQSxjQUFjLFFBQVEsb0JBQW1CO0FBSTlFLE9BQU8sTUFBTUMscUJBQXFCQyxPQUFPQyxNQUFNLENBQUM7SUFDOUMsR0FBRztJQUNILEdBQUc7SUFDSCxHQUFHO0lBQ0gsR0FBRztBQUNMLEdBQVc7QUFFWCxPQUFPLFNBQVNDLG1DQUFtQ0MsR0FBUSxFQUFFQyxPQUF1QjtJQUNsRixPQUFPO1FBQ0xDLE1BQU1GLElBQUlHLFlBQVksQ0FBQ0MsT0FBTyxDQUFDRixJQUFJLENBQUNGLEtBQUtDLFFBQVFDLElBQUk7UUFDckRHLFVBQVVMLElBQUlHLFlBQVksQ0FBQ0MsT0FBTyxDQUFDRSxTQUFTLENBQUNMLFFBQVFNLE9BQU87UUFDNUQsd0JBQXdCO1FBQ3hCQyxRQUFTYixjQUFjLENBQUNNLFFBQVFPLE1BQU0sQ0FBQyxJQUFJO1FBQzNDQyxZQUFZUixRQUFRUSxVQUFVLENBQUNDLEdBQUcsQ0FBQyxDQUFDQyxXQUFhWCxJQUFJRyxZQUFZLENBQUNDLE9BQU8sQ0FBQ08sUUFBUSxDQUFDWCxLQUFLVztRQUN4RkMsZUFBZTtZQUNiQyxTQUFTWixRQUFRWSxPQUFPO1lBQ3hCQyxRQUFRYixRQUFRYSxNQUFNO1lBQ3RCQyxLQUFLZCxRQUFRYyxHQUFHO1FBQ2xCO0lBQ0Y7QUFDRiJ9
