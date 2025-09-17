@@ -1,1 +1,0 @@
-{"version":3,"file":"GUILD_ROLE_UPDATE.d.ts","sourceRoot":"","sources":["../../../src/handlers/roles/GUILD_ROLE_UPDATE.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,qBAAqB,EAA0B,MAAM,mBAAmB,CAAA;AACtF,OAAO,KAAK,EAAE,GAAG,EAAE,MAAM,cAAc,CAAA;AAEvC,wBAAsB,qBAAqB,CAAC,GAAG,EAAE,GAAG,EAAE,IAAI,EAAE,qBAAqB,GAAG,OAAO,CAAC,IAAI,CAAC,CAUhG"}

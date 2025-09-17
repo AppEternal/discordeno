@@ -1,1 +1,0 @@
-{"version":3,"file":"GUILD_EMOJIS_UPDATE.d.ts","sourceRoot":"","sources":["../../../src/handlers/emojis/GUILD_EMOJIS_UPDATE.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,qBAAqB,EAA4B,MAAM,mBAAmB,CAAA;AAExF,OAAO,KAAK,EAAE,GAAG,EAAE,MAAM,cAAc,CAAA;AAEvC,wBAAsB,uBAAuB,CAAC,GAAG,EAAE,GAAG,EAAE,IAAI,EAAE,qBAAqB,GAAG,OAAO,CAAC,IAAI,CAAC,CASlG"}

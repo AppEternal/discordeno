@@ -1,1 +1,0 @@
-{"version":3,"file":"widgetSettings.d.ts","sourceRoot":"","sources":["../../src/transformers/widgetSettings.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,0BAA0B,EAAE,MAAM,mBAAmB,CAAA;AACnE,OAAO,KAAK,EAAE,GAAG,EAAE,MAAM,WAAW,CAAA;AACpC,OAAO,KAAK,EAAE,mBAAmB,EAAE,MAAM,YAAY,CAAA;AAErD,wBAAgB,uBAAuB,CAAC,GAAG,EAAE,GAAG,EAAE,OAAO,EAAE,0BAA0B,GAAG,mBAAmB,CAO1G"}

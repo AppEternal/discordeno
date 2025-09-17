@@ -1,1 +1,0 @@
-{"version":3,"file":"applicationCommand.d.ts","sourceRoot":"","sources":["../../../src/transformers/reverse/applicationCommand.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,yBAAyB,EAAE,MAAM,mBAAmB,CAAA;AAClE,OAAO,KAAK,EAAE,GAAG,EAAE,MAAM,cAAc,CAAA;AACvC,OAAO,KAAK,EAAE,kBAAkB,EAAE,MAAM,aAAa,CAAA;AAErD,wBAAgB,sDAAsD,CAAC,GAAG,EAAE,GAAG,EAAE,OAAO,EAAE,kBAAkB,GAAG,yBAAyB,CAevI"}

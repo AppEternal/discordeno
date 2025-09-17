@@ -1,1 +1,0 @@
-{"version":3,"file":"applicationCommand.d.ts","sourceRoot":"","sources":["../../src/transformers/applicationCommand.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,yBAAyB,EAAE,MAAM,mBAAmB,CAAA;AAClE,OAAO,KAAK,EAAE,GAAG,EAAE,MAAM,WAAW,CAAA;AACpC,OAAO,KAAK,EAAE,kBAAkB,EAAE,MAAM,YAAY,CAAA;AAEpD,wBAAgB,2BAA2B,CAAC,GAAG,EAAE,GAAG,EAAE,OAAO,EAAE,yBAAyB,GAAG,kBAAkB,CAkB5G"}

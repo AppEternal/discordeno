@@ -1,1 +1,0 @@
-{"version":3,"file":"permissions.d.ts","sourceRoot":"","sources":["../../src/discordeno/permissions.ts"],"names":[],"mappings":"AAAA,wEAAwE;AAExE,4FAA4F;AAC5F,MAAM,WAAW,eAAe;IAC9B,qCAAqC;IACrC,YAAY,EAAE,MAAM,CAAA;IACpB,6GAA6G;IAC7G,cAAc,CAAC,EAAE,MAAM,CAAA;IACvB,4FAA4F;IAC5F,aAAa,CAAC,EAAE,MAAM,CAAA;CACvB"}

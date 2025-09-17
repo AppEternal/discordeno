@@ -1,1 +1,0 @@
-{"version":3,"file":"GUILD_MEMBER_ADD.d.ts","sourceRoot":"","sources":["../../../src/handlers/members/GUILD_MEMBER_ADD.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,qBAAqB,EAAyB,MAAM,mBAAmB,CAAA;AACrF,OAAO,KAAK,EAAE,GAAG,EAAE,MAAM,cAAc,CAAA;AAEvC,wBAAsB,oBAAoB,CAAC,GAAG,EAAE,GAAG,EAAE,IAAI,EAAE,qBAAqB,GAAG,OAAO,CAAC,IAAI,CAAC,CAQ/F"}

@@ -1,1 +1,0 @@
-{"version":3,"file":"integration.d.ts","sourceRoot":"","sources":["../../src/transformers/integration.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,8BAA8B,EAAE,MAAM,mBAAmB,CAAA;AAEvE,OAAO,KAAK,EAAE,GAAG,EAAE,MAAM,WAAW,CAAA;AACpC,OAAO,KAAK,EAAE,WAAW,EAAE,MAAM,YAAY,CAAA;AAE7C,wBAAgB,oBAAoB,CAAC,GAAG,EAAE,GAAG,EAAE,OAAO,EAAE,8BAA8B,GAAG,WAAW,CAiCnG"}

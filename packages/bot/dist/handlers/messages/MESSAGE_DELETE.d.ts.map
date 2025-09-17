@@ -1,1 +1,0 @@
-{"version":3,"file":"MESSAGE_DELETE.d.ts","sourceRoot":"","sources":["../../../src/handlers/messages/MESSAGE_DELETE.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,qBAAqB,EAAwB,MAAM,mBAAmB,CAAA;AACpF,OAAO,KAAK,EAAE,GAAG,EAAE,MAAM,cAAc,CAAA;AAEvC,wBAAsB,mBAAmB,CAAC,GAAG,EAAE,GAAG,EAAE,IAAI,EAAE,qBAAqB,GAAG,OAAO,CAAC,IAAI,CAAC,CAU9F"}

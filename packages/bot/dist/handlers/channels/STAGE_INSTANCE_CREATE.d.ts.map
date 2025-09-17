@@ -1,1 +1,0 @@
-{"version":3,"file":"STAGE_INSTANCE_CREATE.d.ts","sourceRoot":"","sources":["../../../src/handlers/channels/STAGE_INSTANCE_CREATE.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,qBAAqB,EAAwB,MAAM,mBAAmB,CAAA;AACpF,OAAO,KAAK,EAAE,GAAG,EAAE,MAAM,cAAc,CAAA;AAEvC,wBAAsB,yBAAyB,CAAC,GAAG,EAAE,GAAG,EAAE,IAAI,EAAE,qBAAqB,GAAG,OAAO,CAAC,IAAI,CAAC,CAWpG"}

@@ -1,1 +1,0 @@
-{"version":3,"file":"soundboardSound.d.ts","sourceRoot":"","sources":["../../src/transformers/soundboardSound.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,sBAAsB,EAAE,MAAM,mBAAmB,CAAA;AAC/D,OAAO,KAAK,EAAE,GAAG,EAAE,MAAM,WAAW,CAAA;AAEpC,OAAO,KAAK,EAAE,eAAe,EAAE,MAAM,YAAY,CAAA;AAEjD,wBAAgB,wBAAwB,CAAC,GAAG,EAAE,GAAG,EAAE,OAAO,EAAE,sBAAsB,GAAG,eAAe,CAcnG"}

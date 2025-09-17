@@ -1,3 +1,0 @@
-export const DISCORDENO_VERSION = '22.0.0-beta.1';
-
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL3NyYy9jb25zdGFudHMudHMiXSwic291cmNlc0NvbnRlbnQiOlsiZXhwb3J0IGNvbnN0IERJU0NPUkRFTk9fVkVSU0lPTiA9ICcyMi4wLjAtYmV0YS4xJ1xuIl0sIm5hbWVzIjpbIkRJU0NPUkRFTk9fVkVSU0lPTiJdLCJtYXBwaW5ncyI6IkFBQUEsT0FBTyxNQUFNQSxxQkFBcUIsZ0JBQWUifQ==

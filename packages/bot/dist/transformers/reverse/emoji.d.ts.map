@@ -1,1 +1,0 @@
-{"version":3,"file":"emoji.d.ts","sourceRoot":"","sources":["../../../src/transformers/reverse/emoji.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,YAAY,EAAE,MAAM,mBAAmB,CAAA;AACrD,OAAO,KAAK,EAAE,GAAG,EAAE,MAAM,cAAc,CAAA;AACvC,OAAO,KAAK,EAAE,KAAK,EAAE,MAAM,aAAa,CAAA;AAExC,wBAAgB,4BAA4B,CAAC,GAAG,EAAE,GAAG,EAAE,OAAO,EAAE,KAAK,GAAG,YAAY,CAWnF"}

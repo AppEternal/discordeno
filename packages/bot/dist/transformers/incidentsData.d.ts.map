@@ -1,1 +1,0 @@
-{"version":3,"file":"incidentsData.d.ts","sourceRoot":"","sources":["../../src/transformers/incidentsData.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,oBAAoB,EAAE,MAAM,mBAAmB,CAAA;AAC7D,OAAO,KAAK,EAAE,GAAG,EAAE,MAAM,WAAW,CAAA;AAEpC,OAAO,KAAK,EAAE,aAAa,EAAE,MAAM,YAAY,CAAA;AAE/C,wBAAgB,sBAAsB,CAAC,GAAG,EAAE,GAAG,EAAE,OAAO,EAAE,oBAAoB,GAAG,aAAa,CAU7F"}
